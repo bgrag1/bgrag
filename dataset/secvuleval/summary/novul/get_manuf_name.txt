@@ -1,0 +1,1 @@
+ Function purpose: The function "get_manuf_name" is designed to retrieve the manufacturer name or the hexadecimal address of a device based on its MAC address, using a lookup table and considering certain resolution flags.

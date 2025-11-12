@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2, int VAR3)\n if ((VAR4 = FUN2(0)) == NULL) {\n VAR5 = FUN3(VAR2->VAR6);\n VAR7 = FUN4(VAR5);\n if (VAR7 == NULL) {\n for (VAR8 = 0; VAR8 < FUN5(VAR7); VAR8++) {\n VAR9 = FUN6(VAR7, VAR8);\n if (FUN7(VAR9) != VAR10) {\n VAR11 = FUN8(VAR9);\n if (!FUN9(VAR11)) {\n VAR12 = FUN10(FUN11(VAR2), VAR11);\n VAR12 = FUN12(FUN11(VAR2), VAR11);\n if (VAR12 == NULL) {\n if (FUN13(VAR4, VAR12) == -1) {\n return VAR4;",
+        "FUN1(VAR1 *VAR2, int VAR3)\n if ((VAR4 = FUN2(0)) == NULL) {\n VAR5 = FUN3(VAR2->VAR6);\n VAR7 = FUN4(VAR5);\n if (VAR7 == NULL) {\n for (VAR8 = 0; VAR8 < FUN5(VAR7); VAR8++) {\n VAR9 = FUN6(VAR7, VAR8);\n if (FUN7(VAR9) != VAR10) {\n VAR11 = FUN8(VAR9);\n if (!FUN9(VAR11)) {\n VAR12 = FUN10(FUN11(VAR2), VAR11);\n VAR12 = FUN12(FUN11(VAR2), VAR11);\n if (VAR12 == NULL) {\n if (FUN13(VAR4, VAR12) == -1) {\n FUN14(VAR4);",
+        "FUN1(VAR1 *VAR2, int VAR3)\n VAR4 *VAR5 = NULL, *VAR6 = NULL;\n if ((VAR6 = FUN2(0)) == NULL) {\n VAR7 = FUN3(VAR2->VAR8);\n VAR9 = FUN4(VAR7);\n if (VAR9 == NULL) {\n for (VAR10 = 0; VAR10 < FUN5(VAR9); VAR10++) {\n VAR11 = FUN6(VAR9, VAR10);\n if (FUN7(VAR11) != VAR12) {\n VAR13 = FUN8(VAR11);\n if (!FUN9(VAR13)) {\n VAR5 = FUN10(FUN11(VAR2), VAR13);\n VAR5 = FUN12(FUN11(VAR2), VAR13);\n if (VAR5 == NULL) {\n if (FUN13(VAR6, VAR5) == -1) {\n FUN14(VAR5);",
+        "FUN1(VAR1 *VAR2, int VAR3)\n if ((VAR4 = FUN2(0)) == NULL) {\n VAR5 = FUN3(VAR2->VAR6);\n VAR7 = FUN4(VAR5);\n if (VAR7 == NULL) {\n for (VAR8 = 0; VAR8 < FUN5(VAR7); VAR8++) {\n VAR9 = FUN6(VAR7, VAR8);\n if (FUN7(VAR9) != VAR10) {\n VAR11 = FUN8(VAR9);\n if (!FUN9(VAR11)) {\n VAR12 = FUN10(FUN11(VAR2), VAR11);\n VAR12 = FUN12(FUN11(VAR2), VAR11);\n if (VAR12 == NULL) {\n if (FUN13(VAR4, VAR12) == -1) {\n FUN14(VAR12);"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2, int VAR3)\n if ((VAR4 = FUN2(0)) == NULL) {\n VAR5 = FUN3(VAR2->VAR6);\n VAR7 = FUN4(VAR5);\n if (VAR7 == NULL) {\n for (VAR8 = 0; VAR8 < FUN5(VAR7); VAR8++) {\n VAR9 = FUN6(VAR7, VAR8);\n FUN7(VAR7, VAR10);",
+        "FUN1(VAR1 *VAR2, int VAR3)\n if ((VAR4 = FUN2(0)) == NULL) {\n VAR5 = FUN3(VAR2->VAR6);\n VAR7 = FUN4(VAR5);\n if (VAR7 == NULL) {\n for (VAR8 = 0; VAR8 < FUN5(VAR7); VAR8++) {\n VAR9 = FUN6(VAR7, VAR8);\n FUN7(VAR7, VAR10);"
+    ]
+}

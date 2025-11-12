@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves a specific portion of the request's real path, starting from the position where a predefined base string is located, and returns it as an SDS (Simple Dynamic String) object.

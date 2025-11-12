@@ -1,0 +1,1 @@
+ Function purpose: The function enables a virtual display encoder, initializes its configuration, and triggers resource control for the encoder, ensuring that it is ready to start displaying content.

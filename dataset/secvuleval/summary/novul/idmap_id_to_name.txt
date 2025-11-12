@@ -1,0 +1,1 @@
+ Function purpose: The function "idmap_id_to_name" is designed to map a given ID to its corresponding name, using an authentication name from the request, and return the name encoded in XDR format.

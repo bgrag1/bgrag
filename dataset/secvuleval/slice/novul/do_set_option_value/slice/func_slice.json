@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "FUN1(\n int\tVAR1,\n char\t*VAR2 = NULL;\n\tif (FUN2((VAR3 *)\"\", VAR1) == NULL\n\tif (VAR2 != NULL)\n return VAR2;",
+        "FUN1(\n int\tVAR1,\n int\tVAR2,\n set_op_T\tVAR3,\n long_u\tVAR4,\n VAR5\t*VAR6,\n int\tVAR7,\n int\tVAR8,\n char\t*VAR9,\n size_t\tVAR10)\n if (VAR4 & VAR11)\n\tif (FUN2((VAR5 *)\"\", VAR7) == NULL\n\tif (VAR4 & VAR12)\n VAR13 = FUN3(VAR1, VAR2, &VAR14, VAR7,\n if (VAR13 != NULL)\n if (VAR1 >= 0)\n\tFUN4(VAR1, VAR2, VAR3 == VAR15, VAR16);\n return VAR13;",
+        "FUN1(\n int\tVAR1,\n int\tVAR2,\n set_prefix_T VAR3,\n long_u\tVAR4,\n VAR5\t*VAR6,\n int\tVAR7,\n int\tVAR8,\n int\tVAR9,\n if (VAR4 & VAR10)\n\tVAR11 = FUN2(VAR1, VAR2, VAR3, VAR4, VAR6,\n\tif (VAR11 != NULL)\n if (VAR1 >= 0)\n\tFUN3(VAR1, VAR2, VAR12 == VAR13, VAR14);\n return VAR11;",
+        "FUN1(\n VAR1\t*VAR2 = *VAR3;\n *VAR3 = VAR2;",
+        "FUN1(\n VAR1 = VAR2;\n return VAR1;",
+        "FUN1(\n VAR1\t*VAR2,\n int\tVAR3,\n\tif (FUN2((VAR1 *)\"\", VAR3) == NULL\n VAR4 = FUN3(&VAR5, VAR2, VAR3);\n if (VAR4 != NULL)\n return VAR4;",
+        "FUN1(\n int\tVAR1,\n int\tVAR2,\n set_op_T\tVAR3,\n long_u\tVAR4,\n VAR5\t*VAR6,\n int\tVAR7,\n int\tVAR8,\n char\t*VAR9,\n size_t\tVAR10)\n if (VAR4 & VAR11)\n\tif (FUN2((VAR5 *)\"\", VAR7) == NULL\n\tif (VAR4 & VAR12)\n\telse if (VAR1 >= 0)\n if (FUN3(VAR1, VAR2, &VAR13, VAR7, VAR3,\n if (VAR1 >= 0)\n\tFUN4(VAR1, VAR2, VAR3 == VAR14, VAR15);"
+    ],
+    "API": [
+        "FUN1(\n set_prefix_T VAR1,\n int\tVAR2,\n\tif (FUN2((VAR3 *)\"\", VAR2) == NULL\n\t|| VAR1 != VAR4)",
+        "FUN1(\n int\tVAR1,\n\tif (FUN2((VAR2 *)\"\", VAR1) == NULL\n if (VAR3 != NULL)\n\tif (VAR3 != NULL)\n if (VAR3 != NULL)\n return VAR3;",
+        "FUN1(\n int\tVAR1,\n\tif (FUN2((VAR2 *)\"\", VAR1) == NULL\n VAR3 = FUN3(VAR4, VAR5, &VAR6, VAR1,\n if (VAR3 != NULL)\n if (FUN4(VAR4, VAR5, &VAR6, VAR1, VAR7,\n\tif (VAR3 != NULL)\n VAR3 = FUN5(&VAR6, VAR8, VAR1);\n if (VAR3 != NULL)\n if (VAR4 >= 0)\n\tFUN6(VAR4, VAR5, VAR7 == VAR9, VAR10);\n return VAR3;"
+    ]
+}

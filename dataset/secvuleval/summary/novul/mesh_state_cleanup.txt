@@ -1,0 +1,1 @@
+ Function purpose: The function "mesh_state_cleanup" is designed to clean up and de-initialize various components of a mesh state, including stopping and deleting timers, dropping unsent replies, and clearing modules, before releasing allocated resources.

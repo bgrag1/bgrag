@@ -1,0 +1,1 @@
+ Function purpose: The function "mlx5_eswitch_set_vepa" is designed to set the Virtual eXtensible Permitting Access (VEPA) mode for a Mellanox 5 Ethernet switch, specifically in legacy mode, and returns an error code if the operation is not supported or if the caller lacks the necessary permissions.

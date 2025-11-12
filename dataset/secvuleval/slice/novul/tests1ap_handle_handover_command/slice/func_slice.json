@@ -1,0 +1,30 @@
+{
+    "pointer": [
+        "void FUN1(\n VAR1 = &VAR2->VAR3.VAR4.VAR1;\n FUN2(VAR1);",
+        "void FUN1(\n memcpy(&VAR1->VAR2.VAR3, VAR4->VAR5->VAR6,\n VAR1->VAR2.VAR3 = FUN2(VAR1->VAR2.VAR3);",
+        "void FUN1(\n VAR1 = (VAR2 *)\n FUN2(VAR1);",
+        "void FUN1(\n for (VAR1 = 0; VAR1 < VAR2->VAR3.VAR4.VAR5; VAR1++) {",
+        "void FUN1(\n VAR1 *VAR2, VAR3 *VAR4)\n FUN2(VAR2);\n VAR5 = FUN3(VAR2, VAR6->VAR7);\n FUN2(VAR5);",
+        "void FUN1(\n VAR1 *VAR2, VAR3 *VAR4)\n FUN2(VAR4);",
+        "void FUN1(\n FUN2(VAR1 ==\n FUN2(VAR1 ==\n FUN3(",
+        "void FUN1(\n memcpy(&VAR1->VAR2.VAR3, VAR4->VAR5->VAR6,\n VAR1->VAR2.VAR3 = FUN2(VAR1->VAR2.VAR3);",
+        "void FUN1(\n VAR1 = VAR2->VAR3.VAR1;\n FUN2(VAR1);",
+        "void FUN1(\n FUN2(VAR1 ==\n FUN3(\n FUN2(VAR1 ==",
+        "void FUN1(\n for (VAR1 = 0; VAR1 < VAR2->VAR3.VAR4; VAR1++) {"
+    ],
+    "array": [
+        "void FUN1(\n VAR1 = (VAR2 *)\n FUN2(VAR1);"
+    ],
+    "API": [
+        "void FUN1(\n memcpy(&VAR1->VAR2.VAR3, VAR4->VAR5->VAR6,\n VAR1->VAR2.VAR3 = FUN2(VAR1->VAR2.VAR3);",
+        "void FUN1(\n memcpy(&VAR1->VAR2.VAR3, VAR4->VAR5->VAR6,\n VAR1->VAR2.VAR3 = FUN2(VAR1->VAR2.VAR3);",
+        "void FUN1(\n VAR1 *VAR2, VAR3 *VAR4)\n FUN2(VAR2);\n VAR5 = FUN3(VAR2, VAR6->VAR7);\n FUN2(VAR5);",
+        "void FUN1(\n VAR1 *VAR2, VAR3 *VAR4)\n FUN2(VAR4);",
+        "void FUN1(\n VAR1 = VAR2->VAR3.VAR1;\n FUN2(VAR1);",
+        "void FUN1(\n VAR1 = &VAR2->VAR3.VAR4.VAR1;\n FUN2(VAR1);",
+        "void FUN1(\n VAR1 = (VAR2 *)\n FUN2(VAR1);",
+        "void FUN1(\n VAR1 *VAR2, VAR3 *VAR4)\n FUN2(VAR2);\n VAR5 = FUN3(VAR2, VAR6->VAR7);\n FUN2(VAR5);",
+        "void FUN1(\n FUN2(VAR1 ==\n FUN3(\n FUN2(VAR1 ==\n FUN3(",
+        "void FUN1(\n FUN2(VAR1 ==\n FUN3(\n FUN2(VAR1 ==\n FUN3("
+    ]
+}

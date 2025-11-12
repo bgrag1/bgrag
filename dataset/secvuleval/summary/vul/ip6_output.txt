@@ -1,0 +1,1 @@
+ Function purpose: The function "ip6_output" is responsible for handling the output of IPv6 packets, including setting the protocol type, checking if IPv6 is disabled, and passing the packet through the netfilter framework for further processing.

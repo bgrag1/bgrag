@@ -1,0 +1,24 @@
+{
+    "pointer": [
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tFUN2(VAR4->VAR5 == 0);\n\tVAR4->VAR5++;\n\tif (VAR4->VAR5 >= VAR4->VAR6)\n\tVAR4->VAR5++;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n struct VAR4 * VAR5, VAR6 * VAR7, struct VAR8 * VAR8)\n\tFUN2(VAR3, VAR8->VAR9, VAR10, VAR11, VAR12, VAR13);\n\tFUN3(VAR12, VAR13, VAR5, &VAR14, &VAR15);\n\tVAR16 = VAR13 >> VAR17;\n\tVAR18->VAR19 = VAR12->VAR20.VAR21 + VAR16;\n\tVAR18->VAR22 =\n ((VAR12->VAR20.VAR23 - 1) >> VAR17) - VAR16 + 1;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tFUN2(VAR3, VAR4->VAR5, VAR6, VAR7, VAR8, VAR9);\n\tif (FUN3(VAR3)) {\n\tif (FUN4(VAR3)->VAR10 == VAR11) {\n\tFUN5(VAR7, VAR3);\n\tVAR12 = FUN6(VAR1, VAR3, VAR7, VAR13 | VAR14);\n\tFUN7(VAR7);",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tVAR4 = FUN2(VAR5->VAR6);\n\tif (VAR4 > VAR7->VAR8.VAR9) {\n\tVAR10.VAR11 = VAR4;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tVAR4 = (struct VAR5 *) & VAR6->VAR7;\n\tVAR4 = (struct VAR5 *) FUN2(VAR4);",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n struct VAR4 * VAR5, VAR6 * VAR7, struct VAR8 * VAR8)\n\tFUN2(VAR3, VAR8->VAR9, VAR10, VAR11, VAR12, VAR13);\n\tif (FUN3(VAR3)) {\n\tif (FUN4(VAR3)->VAR14 == VAR15) {\n\tVAR16 = FUN5(VAR1, VAR3, &VAR17, VAR8);\n\treturn VAR16;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tFUN2(VAR3, VAR4->VAR5, VAR6, VAR7, VAR8, VAR9);\n\tif (FUN3(VAR3)) {\n\tif (FUN4(VAR3)->VAR10 == VAR11) {\n\tVAR12.VAR13.VAR3 = VAR3;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tVAR4 = FUN2(VAR5->VAR6);\n\tif (VAR4 > VAR7->VAR8.VAR9) {\n\tVAR10.VAR11 = VAR4;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tif (!(VAR4->VAR5.VAR6 & VAR7)) {",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tFUN2(VAR3, VAR4->VAR5, VAR6, VAR7, VAR8, VAR9);\n\tFUN3(VAR7);",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tVAR4->VAR5 =\n ((VAR6->VAR7.VAR8 - 1) >> VAR9) - VAR10 + 1;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n struct VAR4 * VAR5, VAR6 * VAR7, struct VAR8 * VAR8)\n\tVAR9.VAR10 = VAR5;",
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tFUN2(VAR3, VAR4->VAR5, VAR6, VAR7, VAR8, VAR9);\n\tVAR10.VAR7 = VAR7;"
+    ],
+    "array": [],
+    "integer": [
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n struct VAR4 * VAR5, VAR6 * VAR7, struct VAR8 * VAR8)\n\tFUN2(VAR3, VAR8->VAR9, VAR10, VAR11, VAR12, VAR13);\n\tFUN3(VAR12, VAR13, VAR5, &VAR14, &VAR15);\n\tVAR16 = VAR13 >> VAR17;\n\tVAR18->VAR19 = VAR12->VAR20.VAR21 + VAR16;"
+    ],
+    "API": [
+        "int FUN1(tid_t VAR1, struct VAR2 *VAR3,\n\tVAR4 = FUN2(VAR5->VAR6);\n\tVAR4 = FUN3(VAR5->VAR6);\n\tif (VAR4 > VAR7->VAR8.VAR9) {\n\tVAR10.VAR11 = VAR4;"
+    ]
+}

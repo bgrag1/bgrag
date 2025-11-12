@@ -1,0 +1,1 @@
+ Function purpose: The function calculates and returns the working folder path for a given bundle ID, either by using the system's temporary path or the elevated process's Windows directory, and ensures the path is properly formatted.

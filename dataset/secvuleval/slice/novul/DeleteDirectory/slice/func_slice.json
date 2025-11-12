@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n return FUN3(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR8);\n FUN1(VAR5);\n FUN4(VAR5);"
+    ],
+    "integer": [
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n while (VAR6 != VAR8)\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR9);\n FUN1(VAR5);\n FUN4(VAR5);\n if (!FUN5(VAR6, &VAR7))\n FUN6(VAR6);\n VAR6 = VAR8;\n return FUN7(VAR1) != 0;"
+    ],
+    "API": [
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n return FUN3(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n return FUN3(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n while (VAR6 != VAR8)\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR9);\n FUN1(VAR5);\n FUN4(VAR5);\n if (!FUN5(VAR6, &VAR7))\n FUN6(VAR6);\n VAR6 = VAR8;\n return FUN7(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n while (VAR6 != VAR8)\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR9);\n FUN1(VAR5);\n FUN4(VAR5);\n if (!FUN5(VAR6, &VAR7))\n FUN6(VAR6);\n VAR6 = VAR8;\n return FUN7(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n while (VAR6 != VAR8)\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR9);\n FUN1(VAR5);\n FUN4(VAR5);\n if (!FUN5(VAR6, &VAR7))\n FUN6(VAR6);\n VAR6 = VAR8;\n return FUN7(VAR1) != 0;",
+        "bool FUN1(const wchar_t* VAR1)\n size_t VAR2 = wcslen(VAR1);\n size_t VAR3 = VAR2 + 3 + VAR4;\n wchar_t* VAR5 = (wchar_t*) _alloca(VAR3 * sizeof(wchar_t));\n if (VAR5 == NULL) return false;\n FUN2(VAR5, VAR3, VAR1);\n HANDLE VAR6 = FUN3(VAR5, &VAR7);\n while (VAR6 != VAR8)\n FUN2(VAR5 + VAR2 + 1, VAR3 - (VAR2 + 1), VAR7.VAR9);\n FUN1(VAR5);\n FUN4(VAR5);\n if (!FUN5(VAR6, &VAR7))\n FUN6(VAR6);\n VAR6 = VAR8;\n return FUN7(VAR1) != 0;"
+    ]
+}

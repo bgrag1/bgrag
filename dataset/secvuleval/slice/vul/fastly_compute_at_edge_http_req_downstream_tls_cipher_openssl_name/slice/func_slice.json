@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n if (VAR5 == VAR7) {\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR8);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR9);",
+        "bool FUN1(\n VAR1 *VAR2, VAR3 *VAR4) {\n return FUN2(VAR5, VAR4);"
+    ],
+    "API": [
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR7);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR8);",
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n if (VAR5 == VAR7) {\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR8);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR9);",
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n if (VAR5 == VAR7) {\n return FUN4(VAR5, VAR8);",
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR7);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR8);",
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR7);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR8);",
+        "bool FUN1(\n auto VAR1 = 128;\n VAR2->VAR3 = static_cast<VAR4 *>(FUN2(VAR1, 4));\n auto VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n if (VAR5 == VAR7) {\n FUN4(VAR2->VAR3, VAR1, 4, VAR2->VAR8);\n VAR5 = VAR6::FUN3(reinterpret_cast<char *>(VAR2->VAR3),\n return FUN5(VAR5, VAR9);"
+    ]
+}

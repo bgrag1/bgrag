@@ -1,0 +1,1 @@
+ Function purpose: The function "CacheRemoveWorkingFolder" is designed to remove the working folder associated with a specific bundle ID, ensuring that all files within it are deleted, if the cache has been initialized.

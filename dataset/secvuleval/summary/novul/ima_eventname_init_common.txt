@@ -1,0 +1,1 @@
+ Function purpose: The function "ima_eventname_init_common" initializes the event data for file operations, taking a snapshot of the filename if necessary, and writes the filename to the template field data, ensuring it does not exceed a specified length limit.

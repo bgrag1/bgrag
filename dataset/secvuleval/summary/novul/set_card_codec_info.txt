@@ -1,0 +1,1 @@
+ Function purpose: The function sets the codec information for a given DAI link in a sound card, handling the case where no specific codec is specified by checking for a "codec" child node in the device tree, and if not found, assigns a dummy codec.

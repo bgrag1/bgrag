@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves a chunked cookie by concatenating multiple smaller cookies, each representing a part of the original cookie, and returns the complete cookie value.

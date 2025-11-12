@@ -1,0 +1,1 @@
+ Function purpose: The function "ta_if_invoke_debugfs_write" is designed to handle writing to a debugfs file, parse the input data to initialize a Trusted Application (TA) context, invoke the TA with the provided command ID, and return the result back to the user through the debugfs file.

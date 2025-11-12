@@ -1,0 +1,1 @@
+ Function purpose: The function "fou_from_sock" retrieves the "fou" structure associated with a given socket ("sk") by using RCU dereferencing to access the user data of the socket.

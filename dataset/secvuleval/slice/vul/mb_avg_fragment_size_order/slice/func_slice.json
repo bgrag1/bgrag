@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, ext4_grpblk_t VAR3)\n\tif (VAR4 == FUN2(VAR2))\n\tVAR4--;\n\treturn VAR4;"
+    ]
+}

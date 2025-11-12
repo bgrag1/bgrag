@@ -1,0 +1,1 @@
+ Function purpose: The function processes incoming V2GTP (Vehicle-to-Grid Transport Protocol) messages by reading and validating the header and payload, ensuring the data is within acceptable limits before adjusting buffer positions for further processing.

@@ -1,0 +1,1 @@
+ Function purpose: The function processes an HDLC-like encapsulated packet, unescapes the data, and attempts to identify and decode PPP IP or IPv6 packets within it.

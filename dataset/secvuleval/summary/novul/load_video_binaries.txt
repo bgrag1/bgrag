@@ -1,0 +1,1 @@
+ Function purpose: The function "load_video_binaries" is responsible for loading the necessary video processing binaries and configuring the video pipeline for a given IA_CSS_pipe, including handling viewfinder and scaling requirements.

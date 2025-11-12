@@ -1,0 +1,21 @@
+{
+    "pointer": [
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n if (FUN2(VAR2 == 0 || VAR2 >= VAR7->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR3)) + sizeof(VAR3);\n if (VAR6->VAR2 < VAR2) {\n VAR6 = VAR6->VAR4;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n VAR4 = VAR6->VAR4;\n if (VAR5) VAR5->VAR4 = VAR4;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n if (FUN2(VAR2 == 0 || VAR2 >= VAR3->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR4)) + sizeof(VAR4);\n if (VAR5->VAR2 < VAR2) {\n if (VAR5->VAR2 >= VAR2 + sizeof(VAR4) * 2) {\n VAR6->VAR2 = VAR5->VAR2 - VAR2;\n VAR5->VAR2 = VAR2;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4 = (VAR3 *)VAR1;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n VAR5 = VAR6;\n VAR6 = VAR6->VAR4;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n if (FUN2(VAR2 == 0 || VAR2 >= VAR7->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR3)) + sizeof(VAR3);\n if (VAR6->VAR2 < VAR2) {\n VAR6 = VAR6->VAR4;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n VAR4 = VAR6->VAR4;\n else VAR7->VAR8 = VAR4;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n VAR6 = VAR6->VAR4;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n return (void *)(VAR6 + 1);"
+    ],
+    "integer": [
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n if (FUN2(VAR2 == 0 || VAR2 >= VAR7->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR3)) + sizeof(VAR3);\n if (VAR6->VAR2 < VAR2) {\n VAR6 = VAR6->VAR4;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n if (VAR5) VAR5->VAR4 = VAR4;\n else VAR7->VAR8 = VAR4;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n if (FUN2(VAR2 == 0 || VAR2 >= VAR3->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR4)) + sizeof(VAR4);\n if (VAR5->VAR2 < VAR2) {\n if (VAR5->VAR2 >= VAR2 + sizeof(VAR4) * 2) {\n VAR6->VAR2 = VAR5->VAR2 - VAR2;"
+    ],
+    "API": [
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n if (FUN2(VAR2 == 0 || VAR2 >= VAR7->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR3)) + sizeof(VAR3);\n if (VAR6->VAR2 < VAR2) {\n VAR6 = VAR6->VAR4;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n VAR4 = VAR6->VAR4;\n else VAR7->VAR8 = VAR4;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n VAR3 *VAR4, *VAR5 = NULL, *VAR6 = VAR7->VAR8;\n VAR5 = VAR6;\n VAR4 = (VAR3 *)(void *)((VAR9 *)VAR6 + VAR2);\n if (VAR5) VAR5->VAR4 = VAR4;\n else VAR7->VAR8 = VAR4;\n return (void *)(VAR6 + 1);",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n if (FUN2(VAR2 == 0 || VAR2 >= VAR3->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR4)) + sizeof(VAR4);\n if (VAR5->VAR2 < VAR2) {\n if (VAR5->VAR2 >= VAR2 + sizeof(VAR4) * 2) {\n VAR6->VAR2 = VAR5->VAR2 - VAR2;\n VAR5->VAR2 = VAR2;",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n if (FUN2(VAR2 == 0 || VAR2 >= VAR3->VAR2)) return NULL;\n VAR2 = FUN3(VAR2, sizeof(VAR4)) + sizeof(VAR4);\n if (VAR5->VAR2 < VAR2) {\n if (VAR5->VAR2 >= VAR2 + sizeof(VAR4) * 2) {",
+        "static void *FUN1(void *VAR1, usize VAR2) {\n if (VAR3->VAR2 >= VAR2 + sizeof(VAR4) * 2) {\n VAR5->VAR2 = VAR3->VAR2 - VAR2;\n VAR3->VAR2 = VAR2;"
+    ]
+}

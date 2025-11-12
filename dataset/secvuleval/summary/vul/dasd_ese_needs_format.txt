@@ -1,0 +1,1 @@
+ Function purpose: The function checks if a device needs formatting based on the status of an IRB (Interrupt Request Block) and the sense information from the device.

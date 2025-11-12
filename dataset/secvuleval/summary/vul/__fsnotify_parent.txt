@@ -1,0 +1,1 @@
+ Function purpose: The function "__fsnotify_parent" is responsible for notifying the parent directory of a file system event, including the event on the child directory or file, if necessary.

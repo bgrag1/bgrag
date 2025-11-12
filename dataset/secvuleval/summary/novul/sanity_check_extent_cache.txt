@@ -1,0 +1,1 @@
+ Function purpose: The function "sanity_check_extent_cache" verifies the integrity of the extent information for a given inode and page, ensuring that the block addresses and lengths are valid and within the expected range, and logs a warning if they are not.

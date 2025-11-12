@@ -1,0 +1,1 @@
+ Function purpose: The function "tlsio_openssl_setoption" sets various SSL/TLS options for a given TLS I/O handle, such as trusted certificates, cipher suites, TLS versions, and more, to configure the SSL/TLS context for secure communication.

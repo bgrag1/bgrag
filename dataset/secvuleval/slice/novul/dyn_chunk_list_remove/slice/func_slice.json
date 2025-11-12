@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static_inline void FUN1(VAR1 *VAR2, VAR1 *VAR3) {\n for (VAR4 = VAR5->VAR6; VAR4; VAR4 = VAR4->VAR6) {\n if (VAR4 == VAR3) {\n VAR5 = VAR4;",
+        "static_inline void FUN1(VAR1 *VAR2, VAR1 *VAR3) {\n for (VAR4 = VAR5->VAR6; VAR4; VAR4 = VAR4->VAR6) {\n if (VAR4 == VAR3) {\n VAR5 = VAR4;",
+        "static_inline void FUN1(VAR1 *VAR2, VAR1 *VAR3) {\n VAR1 *VAR4 = VAR2, *VAR5;",
+        "static_inline void FUN1(VAR1 *VAR2, VAR1 *VAR3) {\n if (VAR4 == VAR3) {\n VAR5 = VAR4;"
+    ]
+}

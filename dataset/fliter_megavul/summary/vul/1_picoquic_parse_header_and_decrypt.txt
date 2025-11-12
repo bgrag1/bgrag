@@ -1,0 +1,1 @@
+ Function purpose: The function "picoquic_parse_header_and_decrypt" is designed to parse and decrypt QUIC packet headers, identify the packet type, and create a connection context if necessary, while also handling errors and logging unexpected packets.

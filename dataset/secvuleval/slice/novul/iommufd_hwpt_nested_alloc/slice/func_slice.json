@@ -1,0 +1,26 @@
+{
+    "pointer": [
+        "static struct VAR1 *\n\tif (VAR2->VAR3 || !VAR2->VAR4)",
+        "static struct VAR1 *\nFUN1(struct VAR2 *VAR3,\n\tVAR4 = FUN2(\n\tif (FUN3(VAR4))\n\treturn FUN4(VAR4);",
+        "static struct VAR1 *\nFUN1(struct VAR2 *VAR3,\n\tVAR4 = FUN2(\n\tFUN3(VAR3, &VAR5->VAR6);",
+        "static struct VAR1 *\n\tconst struct VAR2 *VAR3 = FUN1(VAR4->VAR5);\n\tVAR6->VAR7->VAR8 = VAR3;",
+        "static struct VAR1 *\n struct VAR2 *VAR3,\n\tVAR4->VAR3 = VAR3;",
+        "static struct VAR1 *\n struct VAR2 *VAR3, u32 VAR4,\n const struct VAR5 *VAR6)\n\tconst struct VAR7 *VAR8 = FUN1(VAR3->VAR9);\n\tif ((VAR4 & ~VAR10) ||\n\tVAR11->VAR12 = VAR8->FUN2(VAR3->VAR9,\n VAR4 & ~VAR10,\n\tif (FUN3(VAR11->VAR12)) {\n\tVAR13 = FUN4(VAR11->VAR12);\n\treturn FUN5(VAR13);",
+        "static struct VAR1 *\n\tif (FUN1(VAR2->VAR3->VAR4 != VAR5 ||\n !VAR2->VAR3->VAR6->VAR7)) {",
+        "static struct VAR1 *\n\tif ((VAR2 & ~VAR3) ||\n !VAR4->VAR5 || !VAR6->VAR7)",
+        "static struct VAR1 *\nFUN1(struct VAR2 *VAR3,\n\tVAR4 = FUN2(\n\tif (FUN3(VAR4))\n\treturn VAR4;",
+        "static struct VAR1 *\n\tif ((VAR2 & ~VAR3) ||\n !VAR4->VAR5 || !VAR6->VAR7)",
+        "static struct VAR1 *\n\tif (FUN1(VAR2->VAR3->VAR4 != VAR5 ||"
+    ],
+    "API": [
+        "static struct VAR1 *\n\tif ((VAR2 & ~VAR3) ||\n !VAR4->VAR5 || !VAR6->VAR7)",
+        "static struct VAR1 *\n\tif ((VAR2 & ~VAR3) ||\n !VAR4->VAR5 || !VAR6->VAR7)",
+        "static struct VAR1 *\n\tif (VAR2->VAR3 || !VAR2->VAR4)",
+        "static struct VAR1 *\n struct VAR2 *VAR3, u32 VAR4,\n const struct VAR5 *VAR6)\n\tconst struct VAR7 *VAR8 = FUN1(VAR3->VAR9);\n\tif ((VAR4 & ~VAR10) ||\n\tVAR11->VAR12 = VAR8->FUN2(VAR3->VAR9,\n VAR4 & ~VAR10,\n\tif (FUN3(VAR11->VAR12)) {\n\tVAR13 = FUN4(VAR11->VAR12);\n\treturn FUN5(VAR13);",
+        "static struct VAR1 *\n struct VAR2 *VAR3, u32 VAR4,\n const struct VAR5 *VAR6)\n\tconst struct VAR7 *VAR8 = FUN1(VAR3->VAR9);\n\tif ((VAR4 & ~VAR10) ||\n\tVAR11->VAR12 = VAR8->FUN2(VAR3->VAR9,\n VAR4 & ~VAR10,\n\tif (FUN3(VAR11->VAR12)) {\n\tVAR13 = FUN4(VAR11->VAR12);\n\treturn FUN5(VAR13);",
+        "static struct VAR1 *\n\tconst struct VAR2 *VAR3 = FUN1(VAR4->VAR5);\n\tVAR6->VAR7->VAR8 = VAR3;",
+        "static struct VAR1 *\n\tif (FUN1(VAR2->VAR3->VAR4 != VAR5 ||\n !VAR2->VAR3->VAR6->VAR7)) {",
+        "static struct VAR1 *\n\tif (FUN1(VAR2->VAR3->VAR4 != VAR5 ||",
+        "static struct VAR1 *\n\tif (FUN1(VAR2->VAR3->VAR4 != VAR5 ||\n !VAR2->VAR3->VAR6->VAR7)) {"
+    ]
+}

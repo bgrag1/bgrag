@@ -1,0 +1,1 @@
+ Function purpose: The function "mptcp_pm_del_add_timer" is designed to delete a timer associated with an address entry in a Multipath TCP (MPTCP) socket, optionally checking for a specific address ID and managing retransmission attempts.

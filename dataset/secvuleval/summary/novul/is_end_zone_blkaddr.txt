@@ -1,0 +1,1 @@
+ Function purpose: The function checks if a given block address is located at the end of a zone for a specific device in a multi-device F2FS filesystem.

@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and sets up the Open5GS daemon by processing command-line options, initializing necessary components, and starting the application.

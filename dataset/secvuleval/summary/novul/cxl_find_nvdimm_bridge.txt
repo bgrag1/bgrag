@@ -1,0 +1,1 @@
+ Function purpose: The function "cxl_find_nvdimm_bridge" is designed to locate and return a pointer to a "cxl_nvdimm_bridge" structure associated with a given "cxl_port", if such a bridge is found within the CXL root structure.

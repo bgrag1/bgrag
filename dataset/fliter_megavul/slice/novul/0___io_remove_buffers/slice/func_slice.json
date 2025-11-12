@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5; VAR3++)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR3->VAR4[VAR5]);\n\tFUN3(VAR3->VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4->VAR5->VAR6 - VAR4->VAR7;\n\treturn VAR3;",
+        "static int FUN1(struct VAR1 *VAR2,\n\twhile (!FUN2(&VAR3->VAR4)) {"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR3->VAR4[VAR5]);\n\tFUN3(VAR3->VAR4);"
+    ],
+    "integer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4->VAR5->VAR6 - VAR4->VAR7;\n\treturn VAR3;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR3->VAR4[VAR5]);\n\tFUN3(VAR3->VAR4);"
+    ]
+}

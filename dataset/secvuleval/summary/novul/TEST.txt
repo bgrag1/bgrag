@@ -1,0 +1,1 @@
+ Function purpose: The function in the code snippet tests the detection of bitmap corruption in the descriptor table by creating a child process to manipulate the descriptor range and then verifying the integrity of the descriptor usage.

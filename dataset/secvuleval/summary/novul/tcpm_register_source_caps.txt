@@ -1,0 +1,1 @@
+ Function purpose: The function registers the source capabilities of a Type-C port with the partner device, allowing for power delivery negotiation.

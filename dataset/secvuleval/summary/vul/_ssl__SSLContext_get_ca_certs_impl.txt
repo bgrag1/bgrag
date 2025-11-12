@@ -1,0 +1,1 @@
+ Function purpose: The function "_ssl__SSLContext_get_ca_certs_impl" retrieves and returns a list of CA certificates from an SSL context, either in binary or decoded form based on the "binary_form" parameter.

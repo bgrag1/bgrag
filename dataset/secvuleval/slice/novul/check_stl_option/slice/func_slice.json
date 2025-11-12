@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2)\n int\tVAR3 = VAR4;\n\twhile (*VAR2 && *VAR2 != '')\n VAR2++;\n\tif (!*VAR2)\n\tVAR2++;\n\tif (*VAR2 == '' || *VAR2 == VAR5 || *VAR2 == VAR6)\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\twhile (FUN2(*VAR2))\n VAR2++;\n\tif (*VAR2 == VAR7)\n\tif (*VAR2 == '')\n VAR2++;\n while (*VAR2 && FUN2(*VAR2))\n\tVAR2++;\n\tif (*VAR2 == '')\n\tif (FUN3(VAR8, *VAR2) == NULL)\n return FUN4(VAR9, VAR3, *VAR2);\n\tif (*VAR2 == '')\n int VAR10 = (*++VAR2 == '');\n if (VAR10 && *++VAR2 == '')\n while ((*VAR2 != '' || (VAR10 && VAR2[-1] != '')) && *VAR2)\n\tVAR2++;\n if (*VAR2 != '')"
+    ],
+    "array": [
+        "FUN1(VAR1 *VAR2)\n\twhile (*VAR2 && *VAR2 != '')\n VAR2++;\n\tif (!*VAR2)\n\tVAR2++;\n\tif (*VAR2 == '' || *VAR2 == VAR3 || *VAR2 == VAR4)\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\twhile (FUN2(*VAR2))\n VAR2++;\n\tif (*VAR2 == VAR5)\n\tif (*VAR2 == '')\n VAR2++;\n while (*VAR2 && FUN2(*VAR2))\n\tVAR2++;\n\tif (*VAR2 == '')\n\tif (FUN3(VAR6, *VAR2) == NULL)\n return FUN4(VAR7, VAR8, *VAR2);\n\tif (*VAR2 == '')\n int VAR9 = (*++VAR2 == '');\n if (VAR9 && *++VAR2 == '')\n while ((*VAR2 != '' || (VAR9 && VAR2[-1] != '')) && *VAR2)\n\tVAR2++;\n if (*VAR2 != '')\n return NULL;"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2)\n\twhile (*VAR2 && *VAR2 != '')\n VAR2++;\n\tif (!*VAR2)\n\tVAR2++;\n\tif (*VAR2 == '' || *VAR2 == VAR3 || *VAR2 == VAR4)\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\twhile (FUN2(*VAR2))\n VAR2++;\n\tif (*VAR2 == VAR5)\n\tif (*VAR2 == '')\n VAR2++;\n while (*VAR2 && FUN2(*VAR2))\n\tVAR2++;\n\tif (*VAR2 == '')\n\tif (FUN3(VAR6, *VAR2) == NULL)\n\tif (*VAR2 == '')\n int VAR7 = (*++VAR2 == '');\n if (VAR7 && *++VAR2 == '')\n while ((*VAR2 != '' || (VAR7 && VAR2[-1] != '')) && *VAR2)\n\tVAR2++;\n if (*VAR2 != '')\n return NULL;",
+        "FUN1(VAR1 *VAR2)\n\twhile (*VAR2 && *VAR2 != '')\n VAR2++;\n\tif (!*VAR2)\n\tVAR2++;\n\tif (*VAR2 == '' || *VAR2 == VAR3 || *VAR2 == VAR4)\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\tif (*VAR2 == '')\n VAR2++;\n\twhile (FUN2(*VAR2))\n VAR2++;\n\tif (*VAR2 == VAR5)\n\tif (*VAR2 == '')\n VAR2++;\n while (*VAR2 && FUN2(*VAR2))\n\tVAR2++;\n\tif (*VAR2 == '')\n\tif (FUN3(VAR6, *VAR2) == NULL)\n return FUN4(VAR7, VAR8, *VAR2);\n\tif (*VAR2 == '')\n int VAR9 = (*++VAR2 == '');\n if (VAR9 && *++VAR2 == '')\n while ((*VAR2 != '' || (VAR9 && VAR2[-1] != '')) && *VAR2)\n\tVAR2++;\n if (*VAR2 != '')\n return NULL;"
+    ]
+}

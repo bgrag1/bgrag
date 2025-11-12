@@ -1,0 +1,1 @@
+ Function purpose: The function verifies the HMAC signature of a JWS object against a given JWK key.

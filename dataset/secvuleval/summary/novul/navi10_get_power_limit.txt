@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and adjusts power limits for a GPU based on current settings and capabilities, including overclocking adjustments if supported.

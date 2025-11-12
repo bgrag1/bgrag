@@ -1,0 +1,1 @@
+ Function purpose: The function processes and manages the input stream for an ISO media reader, handling tasks such as fetching packets, configuring PIDs, and sending EOS signals to channels based on the stream's state.

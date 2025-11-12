@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static void\n\tu16 VAR1 = FUN1(VAR2->VAR3.VAR4);\n\tu8 VAR5 = FUN2(VAR1);\n\tVAR6 = FUN3(VAR7,\n\tVAR8 = FUN3(VAR9,\n\tVAR10->VAR11 = FUN4(VAR12, VAR6, VAR8);\n\tVAR10->VAR13 = FUN4(VAR12, VAR5, VAR10->VAR11);\n\tVAR10->VAR14 = VAR10->VAR13;",
+        "static void\n\tVAR1->VAR2 = FUN1(VAR3,\n\tVAR1->VAR4 = FUN1(VAR5,",
+        "static void\nFUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tconst struct VAR5 *VAR6 =\n\tFUN2(VAR7->VAR8, VAR4);\n\tif (!VAR6)",
+        "static void\n\tu16 VAR1 = FUN1(VAR2->VAR3.VAR4);\n\tu8 VAR5 = FUN2(VAR1);\n\tVAR6 = FUN3(VAR7,\n\tVAR8 = FUN3(VAR9,\n\tVAR10->VAR11 = FUN4(VAR12, VAR6, VAR8);\n\tVAR10->VAR13 = FUN4(VAR12, VAR5, VAR10->VAR11);\n\tVAR1 = FUN1(VAR2->VAR3.VAR14);\n\tVAR5 = FUN2(VAR1);\n\tVAR10->VAR15 = VAR5;\n\tVAR1 = FUN1(VAR2->VAR3.VAR16);\n\tVAR5 = FUN2(VAR1);\n\tVAR10->VAR15 = FUN4(VAR12, VAR10->VAR15, VAR5);",
+        "static void\n\tVAR1->VAR2 = FUN1(VAR3,",
+        "static void\n\tif (VAR1->VAR2[0] &\n\tif (VAR1->VAR2[0] &",
+        "static void\n\tVAR1 = FUN1(VAR2,\n\tVAR1 = FUN1(VAR3,\n\tVAR4->VAR5 = FUN2(int, VAR1, VAR6);",
+        "static void\n struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tFUN1(VAR4);",
+        "static void\n\tVAR1 = FUN1(VAR2,\n\tVAR1 = FUN1(VAR3,\n\tVAR4->VAR5 = FUN2(int, VAR6, VAR1);",
+        "static void\n\tVAR1 = FUN1(VAR2->VAR3.VAR4);\n\tVAR5 = FUN2(VAR1);\n\tVAR6->VAR7 = VAR5;"
+    ],
+    "array": [
+        "static void\n\tVAR1 = FUN1(VAR2,\n\tVAR1 = FUN1(VAR3,\n\tVAR4->VAR5 = FUN2(int, VAR1, VAR6);",
+        "static void\n\tVAR1->VAR2 = FUN1(VAR3,\n\tVAR1->VAR4 = FUN1(VAR5,",
+        "static void\n\tif (VAR1->VAR2[0] &\n\tif (VAR1->VAR2[0] &",
+        "static void\n\tVAR1 = FUN1(VAR2,\n\tVAR1 = FUN1(VAR3,\n\tVAR4->VAR5 = FUN2(int, VAR6, VAR1);"
+    ]
+}

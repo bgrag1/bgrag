@@ -1,0 +1,21 @@
+{
+    "pointer": [
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n if (FUN3(!VAR4)) return NULL;\n if (!FUN4(VAR4, VAR5, VAR6)) return NULL;\n if (!FUN4(VAR4, VAR5, VAR7)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR1 *VAR4,\n memset(&VAR5, 0, sizeof(VAR5));\n if (!FUN2(VAR4)) {\n VAR4 = &VAR5;\n if (VAR4 != &VAR5) {\n VAR6 = FUN3(VAR4,\n VAR7 = FUN1(VAR3, VAR6, VAR8);\n if (!FUN4(VAR9, VAR10, VAR7)) return NULL;\n return VAR9;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR1 *VAR4) {\n if (FUN2(!FUN3(VAR4))) {\n VAR5 = FUN4(VAR4,\n FUN5(VAR6),\n FUN6(VAR6));\n if (!VAR5) {\n if (FUN7(VAR5)) {\n VAR7 = FUN1(VAR3, VAR8, VAR5);\n if (!FUN8(VAR9, VAR10, VAR7)) return NULL;\n return VAR9;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n VAR6 = FUN5(VAR3, VAR5);\n VAR8 = FUN6(VAR9,\n FUN3(VAR5),\n FUN4(VAR5));\n VAR10 = FUN1(VAR3, VAR8, VAR11);\n if (!FUN7(VAR4, VAR6, VAR10)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n if (!FUN6(VAR4, VAR6, VAR9)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR1 *VAR4) {\n if (FUN2(!FUN3(VAR4))) {\n return FUN4(VAR3, VAR4);",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n if (!FUN6(VAR4, VAR6, VAR8)) return NULL;\n return VAR4;"
+    ],
+    "API": [
+        "VAR1 *FUN1(VAR2 *VAR3,\n memset(&VAR4, 0, sizeof(VAR4));\n VAR5 = &VAR4;\n if (VAR5 != &VAR4) {\n VAR6 = FUN2(VAR5,\n VAR7 = FUN1(VAR3, VAR6, VAR8);\n if (!FUN3(VAR9, VAR10, VAR7)) return NULL;\n return VAR9;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n if (!FUN6(VAR4, VAR6, VAR8)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n VAR6 = FUN5(VAR3, VAR5);\n VAR8 = FUN7(VAR9,\n FUN3(VAR5),\n FUN4(VAR5));\n VAR10 = FUN1(VAR3, VAR8, VAR11);\n if (!FUN6(VAR4, VAR6, VAR10)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n if (!FUN6(VAR4, VAR6, VAR9)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n if (!FUN6(VAR4, VAR6, VAR7)) return NULL;\n VAR6 = FUN5(VAR3, VAR5);\n VAR8 = FUN7(VAR9,\n FUN3(VAR5),\n FUN4(VAR5));\n VAR10 = FUN1(VAR3, VAR8, VAR11);\n if (!FUN6(VAR4, VAR6, VAR10)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n VAR6 = FUN5(VAR3, VAR5);\n VAR8 = FUN6(VAR9,\n FUN3(VAR5),\n FUN4(VAR5));\n VAR10 = FUN1(VAR3, VAR8, VAR11);\n if (!FUN7(VAR4, VAR6, VAR10)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR4 = FUN2(VAR3);\n FUN3(VAR5),\n FUN4(VAR5));\n VAR6 = FUN5(VAR3, VAR5);\n VAR7 = FUN5(VAR3, VAR8);\n VAR6 = FUN5(VAR3, VAR5);\n if (!FUN6(VAR4, VAR6, VAR9)) return NULL;\n return VAR4;",
+        "VAR1 *FUN1(VAR2 *VAR3,\n VAR1 *VAR4) {\n if (FUN2(!FUN3(VAR4))) {\n return FUN4(VAR3, VAR4);"
+    ]
+}

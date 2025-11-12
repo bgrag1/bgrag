@@ -1,0 +1,1 @@
+ Function purpose: The function updates the pipe topology log for a given display configuration state, including both main and phantom streams.

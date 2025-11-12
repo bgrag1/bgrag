@@ -1,0 +1,59 @@
+static int amdgpu_device_recover_vram(struct amdgpu_device *adev)
+{
+	struct dma_fence *fence = NULL, *next = NULL;
+	struct amdgpu_bo *shadow;
+	struct amdgpu_bo_vm *vmbo;
+	long r = 1, tmo;
+
+	if (amdgpu_sriov_runtime(adev))
+		tmo = msecs_to_jiffies(8000);
+	else
+		tmo = msecs_to_jiffies(100);
+
+	dev_info(adev->dev, "recover vram bo from shadow start\n");
+	mutex_lock(&adev->shadow_list_lock);
+	list_for_each_entry(vmbo, &adev->shadow_list, shadow_list) {
+		/* If vm is compute context or adev is APU, shadow will be NULL */
+		if (!vmbo->shadow)
+			continue;
+		shadow = vmbo->shadow;
+
+		/* No need to recover an evicted BO */
+		if (shadow->tbo.resource->mem_type != TTM_PL_TT ||
+		    shadow->tbo.resource->start == AMDGPU_BO_INVALID_OFFSET ||
+		    shadow->parent->tbo.resource->mem_type != TTM_PL_VRAM)
+			continue;
+
+		r = amdgpu_bo_restore_shadow(shadow, &next);
+		if (r)
+			break;
+
+		if (fence) {
+			tmo = dma_fence_wait_timeout(fence, false, tmo);
+			dma_fence_put(fence);
+			fence = next;
+			if (tmo == 0) {
+				r = -ETIMEDOUT;
+				break;
+			} else if (tmo < 0) {
+				r = tmo;
+				break;
+			}
+		} else {
+			fence = next;
+		}
+	}
+	mutex_unlock(&adev->shadow_list_lock);
+
+	if (fence)
+		tmo = dma_fence_wait_timeout(fence, false, tmo);
+	dma_fence_put(fence);
+
+	if (r < 0 || tmo <= 0) {
+		dev_err(adev->dev, "recover vram bo from shadow failed, r is %ld, tmo is %ld\n", r, tmo);
+		return -EIO;
+	}
+
+	dev_info(adev->dev, "recover vram bo from shadow done\n");
+	return 0;
+}

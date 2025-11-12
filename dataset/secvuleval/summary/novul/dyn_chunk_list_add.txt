@@ -1,0 +1,1 @@
+ Function purpose: The function adds a new chunk to the linked list of dynamic chunks, updating the next pointer of the current head and setting the new chunk as the new head.

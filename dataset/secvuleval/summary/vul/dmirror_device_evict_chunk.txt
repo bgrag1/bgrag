@@ -1,0 +1,1 @@
+ Function purpose: The function "dmirror_device_evict_chunk" is designed to evict and migrate device memory pages from a specified range within a chunk, ensuring that the migrated pages are allocated as high-memory and copied from the source device pages to the destination pages.

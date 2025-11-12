@@ -1,0 +1,1 @@
+ Function purpose: The function "infra_create" is responsible for initializing and configuring the infrastructure cache by creating necessary data structures and inserting configuration data into rate limits.

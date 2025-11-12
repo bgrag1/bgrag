@@ -1,0 +1,1 @@
+ Function purpose: The function "kcm_sendmsg" is responsible for sending data through a KCM (Kernel Connection Multiplexing) socket, managing the socket's send buffer, and handling message fragmentation and reassembly as needed.

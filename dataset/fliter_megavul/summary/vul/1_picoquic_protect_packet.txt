@@ -1,0 +1,1 @@
+ Function purpose: The function "picoquic_protect_packet" is responsible for creating, encrypting, and protecting a QUIC packet by adding a packet number (PN) and an AEAD checksum, and optionally logging the outgoing segment.

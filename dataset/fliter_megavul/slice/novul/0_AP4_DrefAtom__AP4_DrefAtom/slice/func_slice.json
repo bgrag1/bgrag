@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "VAR1::FUN1(AP4_UI32 VAR2,\n VAR3& VAR4,\n if (VAR2 <= VAR5 + 4) {\n AP4_LargeSize VAR6 = VAR2 - (VAR5 + 4);\n while (FUN2(VAR7.FUN3(VAR4, \n VAR8.FUN4(VAR9);"
+    ]
+}

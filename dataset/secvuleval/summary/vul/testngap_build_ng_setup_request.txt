@@ -1,0 +1,1 @@
+ Function purpose: The function "testngap_build_ng_setup_request" constructs and returns an NGAP-encoded NGSetupRequest message containing the GlobalRANNodeID, RANNodeName, SupportedTAList, and DefaultPagingDRX, along with supporting slice information for the served TAI and PLMNs.

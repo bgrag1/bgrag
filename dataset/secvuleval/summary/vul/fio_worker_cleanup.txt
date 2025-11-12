@@ -1,0 +1,1 @@
+ Function purpose: The function "fio_worker_cleanup" is responsible for cleaning up resources and signaling the completion of a shutdown process in a system, including logging and force-closing file descriptors.

@@ -1,0 +1,1 @@
+ Function purpose: The function "gfs2_jindex_free" is designed to free all journal descriptors and associated resources from a GFS2 superblock, ensuring that no journal data is left unreleased and that the journal index list is properly reinitialized.

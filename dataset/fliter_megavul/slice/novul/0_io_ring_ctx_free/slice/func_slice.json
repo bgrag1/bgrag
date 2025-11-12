@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->VAR3);\n\tFUN3(&VAR2->VAR3);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(!FUN3(&VAR2->VAR3));",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tif (FUN2(!FUN3(&VAR2->VAR3)))\n\tFUN2(!FUN3(&VAR2->VAR3));"
+    ],
+    "API": [
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->VAR3);\n\tFUN3(&VAR2->VAR3);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->VAR3);\n\tFUN3(&VAR2->VAR3);",
+        "static __cold void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);\n\tFUN6(VAR2);\n\tFUN7(VAR2);\n\tFUN8(VAR2);\n\tFUN9(VAR2, VAR2->VAR3);\n\tFUN10(VAR2);\n\tFUN11(VAR2);\n\tFUN12(VAR2);\n\tFUN13(VAR2);"
+    ]
+}

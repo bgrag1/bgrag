@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and configures an Aac_dev structure, including setting up communication interfaces, managing locks, and allocating memory for queues and FIBs, to prepare the device for further operations.

@@ -1,0 +1,1 @@
+ Function purpose: The function creates and inserts a new IP rate data entry into a cache for rate limiting purposes.

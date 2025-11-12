@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "void VAR1 FUN1(VAR2 *VAR3) {\n if (!VAR3)\n FUN2(VAR3);\n free(VAR3);"
+    ],
+    "API": [
+        "void VAR1 FUN1(VAR2 *VAR3) {\n if (!VAR3)\n FUN2(VAR3);\n free(VAR3);"
+    ]
+}

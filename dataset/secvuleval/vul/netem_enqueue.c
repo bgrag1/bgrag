@@ -1,0 +1,190 @@
+static int netem_enqueue(struct sk_buff *skb, struct Qdisc *sch,
+			 struct sk_buff **to_free)
+{
+	struct netem_sched_data *q = qdisc_priv(sch);
+	/* We don't fill cb now as skb_unshare() may invalidate it */
+	struct netem_skb_cb *cb;
+	struct sk_buff *skb2;
+	struct sk_buff *segs = NULL;
+	unsigned int prev_len = qdisc_pkt_len(skb);
+	int count = 1;
+	int rc = NET_XMIT_SUCCESS;
+	int rc_drop = NET_XMIT_DROP;
+
+	/* Do not fool qdisc_drop_all() */
+	skb->prev = NULL;
+
+	/* Random duplication */
+	if (q->duplicate && q->duplicate >= get_crandom(&q->dup_cor, &q->prng))
+		++count;
+
+	/* Drop packet? */
+	if (loss_event(q)) {
+		if (q->ecn && INET_ECN_set_ce(skb))
+			qdisc_qstats_drop(sch); /* mark packet */
+		else
+			--count;
+	}
+	if (count == 0) {
+		qdisc_qstats_drop(sch);
+		__qdisc_drop(skb, to_free);
+		return NET_XMIT_SUCCESS | __NET_XMIT_BYPASS;
+	}
+
+	/* If a delay is expected, orphan the skb. (orphaning usually takes
+	 * place at TX completion time, so _before_ the link transit delay)
+	 */
+	if (q->latency || q->jitter || q->rate)
+		skb_orphan_partial(skb);
+
+	/*
+	 * If we need to duplicate packet, then re-insert at top of the
+	 * qdisc tree, since parent queuer expects that only one
+	 * skb will be queued.
+	 */
+	if (count > 1 && (skb2 = skb_clone(skb, GFP_ATOMIC)) != NULL) {
+		struct Qdisc *rootq = qdisc_root_bh(sch);
+		u32 dupsave = q->duplicate; /* prevent duplicating a dup... */
+
+		q->duplicate = 0;
+		rootq->enqueue(skb2, rootq, to_free);
+		q->duplicate = dupsave;
+		rc_drop = NET_XMIT_SUCCESS;
+	}
+
+	/*
+	 * Randomized packet corruption.
+	 * Make copy if needed since we are modifying
+	 * If packet is going to be hardware checksummed, then
+	 * do it now in software before we mangle it.
+	 */
+	if (q->corrupt && q->corrupt >= get_crandom(&q->corrupt_cor, &q->prng)) {
+		if (skb_is_gso(skb)) {
+			skb = netem_segment(skb, sch, to_free);
+			if (!skb)
+				return rc_drop;
+			segs = skb->next;
+			skb_mark_not_on_list(skb);
+			qdisc_skb_cb(skb)->pkt_len = skb->len;
+		}
+
+		skb = skb_unshare(skb, GFP_ATOMIC);
+		if (unlikely(!skb)) {
+			qdisc_qstats_drop(sch);
+			goto finish_segs;
+		}
+		if (skb->ip_summed == CHECKSUM_PARTIAL &&
+		    skb_checksum_help(skb)) {
+			qdisc_drop(skb, sch, to_free);
+			skb = NULL;
+			goto finish_segs;
+		}
+
+		skb->data[get_random_u32_below(skb_headlen(skb))] ^=
+			1<<get_random_u32_below(8);
+	}
+
+	if (unlikely(sch->q.qlen >= sch->limit)) {
+		/* re-link segs, so that qdisc_drop_all() frees them all */
+		skb->next = segs;
+		qdisc_drop_all(skb, sch, to_free);
+		return rc_drop;
+	}
+
+	qdisc_qstats_backlog_inc(sch, skb);
+
+	cb = netem_skb_cb(skb);
+	if (q->gap == 0 ||		/* not doing reordering */
+	    q->counter < q->gap - 1 ||	/* inside last reordering gap */
+	    q->reorder < get_crandom(&q->reorder_cor, &q->prng)) {
+		u64 now;
+		s64 delay;
+
+		delay = tabledist(q->latency, q->jitter,
+				  &q->delay_cor, &q->prng, q->delay_dist);
+
+		now = ktime_get_ns();
+
+		if (q->rate) {
+			struct netem_skb_cb *last = NULL;
+
+			if (sch->q.tail)
+				last = netem_skb_cb(sch->q.tail);
+			if (q->t_root.rb_node) {
+				struct sk_buff *t_skb;
+				struct netem_skb_cb *t_last;
+
+				t_skb = skb_rb_last(&q->t_root);
+				t_last = netem_skb_cb(t_skb);
+				if (!last ||
+				    t_last->time_to_send > last->time_to_send)
+					last = t_last;
+			}
+			if (q->t_tail) {
+				struct netem_skb_cb *t_last =
+					netem_skb_cb(q->t_tail);
+
+				if (!last ||
+				    t_last->time_to_send > last->time_to_send)
+					last = t_last;
+			}
+
+			if (last) {
+				/*
+				 * Last packet in queue is reference point (now),
+				 * calculate this time bonus and subtract
+				 * from delay.
+				 */
+				delay -= last->time_to_send - now;
+				delay = max_t(s64, 0, delay);
+				now = last->time_to_send;
+			}
+
+			delay += packet_time_ns(qdisc_pkt_len(skb), q);
+		}
+
+		cb->time_to_send = now + delay;
+		++q->counter;
+		tfifo_enqueue(skb, sch);
+	} else {
+		/*
+		 * Do re-ordering by putting one out of N packets at the front
+		 * of the queue.
+		 */
+		cb->time_to_send = ktime_get_ns();
+		q->counter = 0;
+
+		__qdisc_enqueue_head(skb, &sch->q);
+		sch->qstats.requeues++;
+	}
+
+finish_segs:
+	if (segs) {
+		unsigned int len, last_len;
+		int nb;
+
+		len = skb ? skb->len : 0;
+		nb = skb ? 1 : 0;
+
+		while (segs) {
+			skb2 = segs->next;
+			skb_mark_not_on_list(segs);
+			qdisc_skb_cb(segs)->pkt_len = segs->len;
+			last_len = segs->len;
+			rc = qdisc_enqueue(segs, sch, to_free);
+			if (rc != NET_XMIT_SUCCESS) {
+				if (net_xmit_drop_count(rc))
+					qdisc_qstats_drop(sch);
+			} else {
+				nb++;
+				len += last_len;
+			}
+			segs = skb2;
+		}
+		/* Parent qdiscs accounted for 1 skb of size @prev_len */
+		qdisc_tree_reduce_backlog(sch, -(nb - 1), -(len - prev_len));
+	} else if (!skb) {
+		return NET_XMIT_DROP;
+	}
+	return NET_XMIT_SUCCESS;
+}

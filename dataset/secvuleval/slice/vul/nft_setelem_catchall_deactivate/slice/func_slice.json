@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "static int FUN1(const struct VAR1 *VAR1,\n\tif (!FUN2(VAR1, VAR2))\n\tFUN3(VAR1, VAR3, VAR2);",
+        "static int FUN1(const struct VAR1 *VAR1,\n struct VAR2 *VAR3,\n\tVAR4 = FUN2(VAR3, VAR5->VAR6);\n\tif (!FUN3(VAR1, VAR4))\n\tVAR6->VAR7 = VAR5->VAR6;\n\tFUN4(VAR1, VAR3, VAR4);"
+    ],
+    "API": []
+}

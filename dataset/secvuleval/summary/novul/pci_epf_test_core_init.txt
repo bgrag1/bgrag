@@ -1,0 +1,1 @@
+ Function purpose: The function initializes a PCI Express Peripheral Function (EPF) for testing purposes, configuring its BAR, MSI, and MSI-X capabilities, and scheduling command handling if link-up notification is not supported.

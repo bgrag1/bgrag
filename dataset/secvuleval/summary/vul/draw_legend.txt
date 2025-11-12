@@ -1,0 +1,1 @@
+ Function purpose: The function "draw_legend" in the provided code snippet is responsible for drawing a legend on the output video frame, including information about the audio sample rate, channel layout, zoom range, and frequency/time labels, as well as visualizing spectrum data in a specified color mode.

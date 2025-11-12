@@ -1,0 +1,1 @@
+ Function purpose: The function checks the equivalence of stack states between an explored (safe) state and the current state in the BPF verifier, ensuring that the stack slot types and their associated register states are consistent and safe to proceed with verification.

@@ -1,0 +1,1 @@
+ Function purpose: The function "on_dcid_change" in the provided code snippet is responsible for updating the connection's current SCID to match the newly received DCID if the DCID has not been used previously.

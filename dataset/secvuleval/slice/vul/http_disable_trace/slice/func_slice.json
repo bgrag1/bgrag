@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static int FUN1(VAR1 *VAR2, void *VAR3, const char *VAR4, VAR5 *VAR6)\n FUN2(VAR6, 1);\n FUN3(VAR6, \"\", strlen(\"\"));\n FUN3(VAR6, \"\", strlen(\"\"));",
+        "static int FUN1(VAR1 *VAR2, void *VAR3, const char *VAR4, VAR5 *VAR6)\n struct VAR7 *VAR8 = VAR3;\n VAR9 = FUN2(VAR8, VAR4);\n if (VAR9 < 300) {\n return VAR9;",
+        "static int FUN1(VAR1 *VAR2, void *VAR3, const char *VAR4, VAR5 *VAR6)\n VAR7 = FUN2(VAR8, VAR4);\n if (VAR7 < 300) {\n return VAR7;"
+    ],
+    "API": [
+        "static int FUN1(VAR1 *VAR2, void *VAR3, const char *VAR4, VAR5 *VAR6)\n FUN2(VAR6, \"\", strlen(\"\"));\n FUN2(VAR6, \"\", strlen(\"\"));",
+        "static int FUN1(VAR1 *VAR2, void *VAR3, const char *VAR4, VAR5 *VAR6)\n FUN2(VAR6, \"\", strlen(\"\"));"
+    ]
+}

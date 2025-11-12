@@ -1,0 +1,76 @@
+static int imx_rproc_addr_init(struct imx_rproc *priv,
+			       struct platform_device *pdev)
+{
+	const struct imx_rproc_dcfg *dcfg = priv->dcfg;
+	struct device *dev = &pdev->dev;
+	struct device_node *np = dev->of_node;
+	int a, b = 0, err, nph;
+
+	/* remap required addresses */
+	for (a = 0; a < dcfg->att_size; a++) {
+		const struct imx_rproc_att *att = &dcfg->att[a];
+
+		if (!(att->flags & ATT_OWN))
+			continue;
+
+		if (b >= IMX_RPROC_MEM_MAX)
+			break;
+
+		if (att->flags & ATT_IOMEM)
+			priv->mem[b].cpu_addr = devm_ioremap(&pdev->dev,
+							     att->sa, att->size);
+		else
+			priv->mem[b].cpu_addr = devm_ioremap_wc(&pdev->dev,
+								att->sa, att->size);
+		if (!priv->mem[b].cpu_addr) {
+			dev_err(dev, "failed to remap %#x bytes from %#x\n", att->size, att->sa);
+			return -ENOMEM;
+		}
+		priv->mem[b].sys_addr = att->sa;
+		priv->mem[b].size = att->size;
+		b++;
+	}
+
+	/* memory-region is optional property */
+	nph = of_count_phandle_with_args(np, "memory-region", NULL);
+	if (nph <= 0)
+		return 0;
+
+	/* remap optional addresses */
+	for (a = 0; a < nph; a++) {
+		struct device_node *node;
+		struct resource res;
+
+		node = of_parse_phandle(np, "memory-region", a);
+		if (!node)
+			continue;
+		/* Not map vdevbuffer, vdevring region */
+		if (!strncmp(node->name, "vdev", strlen("vdev"))) {
+			of_node_put(node);
+			continue;
+		}
+		err = of_address_to_resource(node, 0, &res);
+		of_node_put(node);
+		if (err) {
+			dev_err(dev, "unable to resolve memory region\n");
+			return err;
+		}
+
+		if (b >= IMX_RPROC_MEM_MAX)
+			break;
+
+		/* Not use resource version, because we might share region */
+		priv->mem[b].cpu_addr = devm_ioremap_wc(&pdev->dev, res.start, resource_size(&res));
+		if (!priv->mem[b].cpu_addr) {
+			dev_err(dev, "failed to remap %pr\n", &res);
+			return -ENOMEM;
+		}
+		priv->mem[b].sys_addr = res.start;
+		priv->mem[b].size = resource_size(&res);
+		if (!strcmp(node->name, "rsc-table"))
+			priv->rsc_table = priv->mem[b].cpu_addr;
+		b++;
+	}
+
+	return 0;
+}

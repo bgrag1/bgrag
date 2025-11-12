@@ -1,0 +1,1 @@
+ Function purpose: The function validates the code challenge and code verifier in an OAuth2 authentication process, ensuring they meet the required conditions for PKCE (Proof Key for Code Exchange) or a plain code challenge.

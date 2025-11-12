@@ -1,0 +1,4688 @@
+{
+  "functions" : [
+    {
+      "function" : "disable_trace_input",
+      "file" : "/home/m2024-djj/Vulrag/rag/test_data_secvul/novul/disable_trace_input.c",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000101]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23b202",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000101]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "struct flb_hs *hs"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "31"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_hs *"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "hs"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000102]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23b5c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000102]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "const char *name"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "50"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "const char *"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "name"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000103]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23b984",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000103]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "size_t nlen"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "68"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "size_t"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "nlen"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23bd45",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c182",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Local[label=LOCAL; id=1000105]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c543",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23dbc9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f610",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2417d9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "4"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "0"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Local[label=LOCAL; id=1000105]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c182",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Local[label=LOCAL; id=1000105]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c543",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23cba1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c942",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23cd03",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e96b",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in = find_input(hs, name, nlen)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.assignment"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.assignment"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c942",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ce6a",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d6c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23cd03",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d380",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d102",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d4c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d884",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23cba1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "find_input(hs, name, nlen)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "9"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "find_input"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "find_input"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d102",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d6c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dac4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "hs"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "20"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_hs *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "hs"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d4c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dac4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dea4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "name"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "24"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "const char *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "name"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d884",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dea4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d380",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "nlen"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "30"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "size_t"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "nlen"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23dbc9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e082",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ebc5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "CONTROL_STRUCTURE_TYPE",
+              "value" : "IF"
+            },
+            {
+              "key" : "PARSER_TYPE_NAME",
+              "value" : "IfStatement"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "if (in == NULL)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e082",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e6c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e462",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e823",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f948",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24084c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in == NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.equals"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.equals"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e462",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e96b",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ee24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e823",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ee24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e6c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "NAME",
+              "value" : "NULL"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ebc5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f002",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "20"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f002",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f622",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f3e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2426d0",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "return 404;"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f3e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f948",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f622",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "int"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "404"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "15"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f610",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23fba2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240e67",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "CONTROL_STRUCTURE_TYPE",
+              "value" : "IF"
+            },
+            {
+              "key" : "PARSER_TYPE_NAME",
+              "value" : "IfStatement"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "4"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "4"
+            },
+            {
+              "key" : "CODE",
+              "value" : "if (in->chunk_trace_ctxt != NULL)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23fba2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24021f",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ff82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240ac5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241bea",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24236c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in->chunk_trace_ctxt != NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.notEquals"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.notEquals"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ff82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2405c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240362",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240723",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2410c6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in->chunk_trace_ctxt"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.indirectFieldAccess"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.indirectFieldAccess"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240362",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24084c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b240d24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240723",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b240d24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2405c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "chunk_trace_ctxt"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "CANONICAL_NAME",
+              "value" : "chunk_trace_ctxt"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240ac5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2410c6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24021f",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "32"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "NAME",
+              "value" : "NULL"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240e67",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2412e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "38"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2412e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241902",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2416c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242426",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "flb_chunk_trace_context_destroy(in)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "flb_chunk_trace_context_destroy"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "flb_chunk_trace_context_destroy"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2416c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241bea",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241902",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "40"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2417d9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2420c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b241e82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242825",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "5"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "5"
+            },
+            {
+              "key" : "CODE",
+              "value" : "return 201;"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b241e82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242426",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24236c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2420c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "int"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "201"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "11"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b241edf",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2426d0",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242825",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "5"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "static int"
+            },
+            {
+              "key" : "CODE",
+              "value" : "static int"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "0"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000170]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b507",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000170]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "struct flb_hs *hs"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "31"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_hs *"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "hs"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000171]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b8c8",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000171]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "const char *name"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "50"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "const char *"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "name"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000172]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24bc89",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000172]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "size_t nlen"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "68"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "size_t"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "nlen"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23bd45",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c182",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Local[label=LOCAL; id=1000105]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c543",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23dbc9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f610",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2417d9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "4"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "0"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c543",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23cba1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c942",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23cd03",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e96b",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in = find_input(hs, name, nlen)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.assignment"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.assignment"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c942",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ce6a",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d6c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23cd03",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d380",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d102",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d4c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d884",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23cba1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "find_input(hs, name, nlen)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "9"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "find_input"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "find_input"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d102",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d6c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dac4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "hs"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "20"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_hs *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "hs"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d4c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dac4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dea4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "name"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "24"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "const char *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "name"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d884",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23dea4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d380",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "nlen"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "30"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "size_t"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "nlen"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23dbc9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e082",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ebc5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "CONTROL_STRUCTURE_TYPE",
+              "value" : "IF"
+            },
+            {
+              "key" : "PARSER_TYPE_NAME",
+              "value" : "IfStatement"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "3"
+            },
+            {
+              "key" : "CODE",
+              "value" : "if (in == NULL)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e082",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e6c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e462",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e823",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f948",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24084c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in == NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.equals"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.equals"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e462",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e96b",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ee24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e823",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ee24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e6c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "NAME",
+              "value" : "NULL"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ebc5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000112]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f002",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "20"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f002",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000116]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f622",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f3e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2426d0",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "return 404;"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f3e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f948",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23f622",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000117]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000118]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "int"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "404"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "15"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23f610",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23fba2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240e67",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "CONTROL_STRUCTURE_TYPE",
+              "value" : "IF"
+            },
+            {
+              "key" : "PARSER_TYPE_NAME",
+              "value" : "IfStatement"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "4"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "4"
+            },
+            {
+              "key" : "CODE",
+              "value" : "if (in->chunk_trace_ctxt != NULL)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23fba2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24021f",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ff82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240ac5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241bea",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24236c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in->chunk_trace_ctxt != NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.notEquals"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.notEquals"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23ff82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2405c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240362",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240723",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2410c6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in->chunk_trace_ctxt"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "<operator>.indirectFieldAccess"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "<operator>.indirectFieldAccess"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240362",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24084c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b240d24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240723",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b240d24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2405c1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "chunk_trace_ctxt"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "CANONICAL_NAME",
+              "value" : "chunk_trace_ctxt"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240ac5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2410c6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24021f",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000124]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "NULL"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "32"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "NAME",
+              "value" : "NULL"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240e67",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.ControlStructure[label=CONTROL_STRUCTURE; id=1000119]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2412e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "void"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "38"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2412e2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000125]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241902",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2416c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242426",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "flb_chunk_trace_context_destroy(in)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "flb_chunk_trace_context_destroy"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "flb_chunk_trace_context_destroy"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2416c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241bea",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241902",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "40"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2417d9",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000104]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2420c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b241e82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242825",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000130]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "5"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "5"
+            },
+            {
+              "key" : "CODE",
+              "value" : "return 201;"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b241e82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b242426",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24236c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b2420c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Return[label=RETURN; id=1000128]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Literal[label=LITERAL; id=1000129]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "int"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "14"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "201"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "11"
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23cd03",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d380",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d102",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d4c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000110]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23d884",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000111]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23cba1",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000108]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "2"
+            },
+            {
+              "key" : "CODE",
+              "value" : "find_input(hs, name, nlen)"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "9"
+            },
+            {
+              "key" : "METHOD_FULL_NAME",
+              "value" : "find_input"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : ""
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "DISPATCH_TYPE",
+              "value" : "STATIC_DISPATCH"
+            },
+            {
+              "key" : "SIGNATURE",
+              "value" : "TODO"
+            },
+            {
+              "key" : "NAME",
+              "value" : "find_input"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23c942",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ce6a",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000100]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23d6c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000109]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000107]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "4"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "6"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b23e462",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23e96b",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000106]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b23ee24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000115]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000114]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "7"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2416c2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241bea",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000120]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b241902",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000126]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000127]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "40"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "12"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b240362",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000121]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b24084c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Call[label=CALL; id=1000113]"
+            },
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Cfg@3b240d24",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.FieldIdentifier[label=FIELD_IDENTIFIER; id=1000123]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Identifier[label=IDENTIFIER; id=1000122]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : "in"
+            },
+            {
+              "key" : "COLUMN_NUMBER",
+              "value" : "8"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "struct flb_input_instance *"
+            },
+            {
+              "key" : "LINE_NUMBER",
+              "value" : "11"
+            },
+            {
+              "key" : "NAME",
+              "value" : "in"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "function" : "<operator>.equals",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000141]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b244d02",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000141]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000142]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2450c3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000142]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000143]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b245484",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000143]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000144]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b245845",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000144]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000173]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24c522",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000173]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000174]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24c8e3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000174]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000144]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b245845",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000144]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000140]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    },
+    {
+      "function" : "flb_chunk_trace_context_destroy",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000146]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b246062",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000146]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000147]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b246423",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000147]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000148]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2467e4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000148]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000175]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24cd3f",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000175]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000148]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2467e4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000148]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000145]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    },
+    {
+      "function" : "find_input",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000150]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b246fe2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000150]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000151]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b2473a3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000151]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000152]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b247764",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000152]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p3"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p3"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000153]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b247b25",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000153]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000154]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b247ee6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000154]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000176]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24d17c",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000176]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000177]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24d53d",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000177]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000178]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24d8fe",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000178]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "3"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p3"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p3"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000154]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b247ee6",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000154]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000149]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    },
+    {
+      "function" : "<operator>.assignment",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000156]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b248722",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000156]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000157]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b248ae3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000157]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000158]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b248ea4",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000158]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000159]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b249265",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000159]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000179]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24dd79",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000179]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000180]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24e13a",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000180]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000159]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b249265",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000159]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000155]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    },
+    {
+      "function" : "<operator>.notEquals",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000161]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b249a82",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000161]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000162]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b249e43",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000162]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000163]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24a204",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000163]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000164]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24a5c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000164]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000181]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24e596",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000181]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000182]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24e957",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000182]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000164]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24a5c5",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000164]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000160]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    },
+    {
+      "function" : "<operator>.indirectFieldAccess",
+      "file" : "N/A",
+      "id" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]",
+      "AST" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000166]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24ade2",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000166]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000167]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b1a3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterIn[label=METHOD_PARAMETER_IN; id=1000167]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000168]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b564",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodReturn[label=METHOD_RETURN; id=1000168]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "-1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "RET"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000169]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b925",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000169]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000183]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24edb3",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000183]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p1"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p1"
+            }
+          ]
+        },
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000184]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24f174",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.MethodParameterOut[label=METHOD_PARAMETER_OUT; id=1000184]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "ORDER",
+              "value" : "2"
+            },
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "CODE",
+              "value" : "p2"
+            },
+            {
+              "key" : "EVALUATION_STRATEGY",
+              "value" : "BY_VALUE"
+            },
+            {
+              "key" : "NAME",
+              "value" : "p2"
+            }
+          ]
+        }
+      ],
+      "CFG" : [
+        {
+          "id" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000169]",
+          "edges" : [
+            {
+              "id" : "io.shiftleft.codepropertygraph.generated.edges.Ast@3b24b925",
+              "in" : "io.shiftleft.codepropertygraph.generated.nodes.Block[label=BLOCK; id=1000169]",
+              "out" : "io.shiftleft.codepropertygraph.generated.nodes.Method[label=METHOD; id=1000165]"
+            }
+          ],
+          "properties" : [
+            {
+              "key" : "TYPE_FULL_NAME",
+              "value" : "ANY"
+            },
+            {
+              "key" : "ORDER",
+              "value" : "1"
+            },
+            {
+              "key" : "ARGUMENT_INDEX",
+              "value" : "1"
+            },
+            {
+              "key" : "CODE",
+              "value" : ""
+            }
+          ]
+        }
+      ],
+      "PDG" : [
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tVAR2 = FUN7(VAR2, VAR6);\n\tif (!VAR2)\n\tif (VAR2 && (VAR4->VAR7 == VAR8))\n\tVAR2 = FUN8(VAR2, VAR4->VAR9);\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tFUN7(VAR6);"
+    ],
+    "API": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tFUN7(VAR6);",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tVAR2 = FUN7(VAR2, VAR6);\n\tif (!VAR2)\n\tif (VAR2 && (VAR4->VAR7 == VAR8))\n\tVAR2 = FUN8(VAR2, VAR4->VAR9);\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tVAR2 = FUN7(VAR2, VAR6);\n\tif (!VAR2)\n\tif (VAR2 && (VAR4->VAR7 == VAR8))\n\tVAR2 = FUN8(VAR2, VAR4->VAR9);\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tVAR2 = FUN7(VAR2, VAR6);\n\tif (!VAR2)\n\tif (VAR2 && (VAR4->VAR7 == VAR8))\n\tVAR2 = FUN8(VAR2, VAR4->VAR9);\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tFUN2(\"\", VAR2, VAR2->VAR3, FUN3(&VAR4->VAR5));\n\twhile ((VAR6 = FUN4(&VAR4->VAR5))) {\n\tFUN5(VAR6);\n\tif (!FUN6(VAR6)) {\n\tVAR2 = FUN7(VAR2, VAR6);\n\tif (!VAR2)\n\tif (VAR2 && (VAR4->VAR7 == VAR8))\n\tVAR2 = FUN8(VAR2, VAR4->VAR9);\n\treturn VAR2;"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "int\nFUN1(VAR1 *VAR2)\n\tif (FUN2(VAR2))\n\tFUN3(VAR2, VAR3,\n\tFUN4(VAR2);\n\tVAR4 = FUN5(VAR2, VAR5);\n\tFUN4(VAR2);\n\tFUN6(VAR2, VAR6);\n\tFUN7(VAR2);",
+        "int\n\tFUN1(&VAR1->VAR2->VAR3, VAR4);\n\tFUN2(&VAR1->VAR2->VAR3, VAR4);"
+    ],
+    "API": [
+        "int\nFUN1(VAR1 *VAR2)\n\tif (FUN2(VAR2))\n\tFUN3(VAR2, VAR3,\n\tFUN4(VAR2);\n\tVAR4 = FUN5(VAR2, VAR5);\n\tFUN4(VAR2);\n\tFUN6(VAR2, VAR6);\n\tFUN7(VAR2);"
+    ]
+}

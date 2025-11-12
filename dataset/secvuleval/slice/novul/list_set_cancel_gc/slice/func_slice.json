@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static void\nFUN1(struct VAR1 *VAR2)\n\tif (FUN2(VAR2))"
+    ]
+}

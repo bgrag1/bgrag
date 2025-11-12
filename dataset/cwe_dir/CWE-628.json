@@ -1,0 +1,21 @@
+[
+    {
+        "cve_id": "CVE-2019-14844",
+        "func_name": "krb5/enctype_name",
+        "description": "A flaw was found in, Fedora versions of krb5 from 1.16.1 to, including 1.17.x, in the way a Kerberos client could crash the KDC by sending one of the RFC 4556 \"enctypes\". A remote unauthenticated user could use this flaw to crash the KDC.",
+        "git_url": "https://github.com/krb5/krb5/commit/c3e62609849ab62caf52fa9b90d9ab60d365a64d",
+        "commit_title": "Fix KDC crash when logging PKINIT enctypes",
+        "commit_text": " Commit a649279727490687d54becad91fde8cf7429d951 introduced a KDC crash bug due to transposed strlcpy() arguments.  Fix the argument order.  This bug does not affect any MIT krb5 release, but affects the Fedora krb5 packages due to backports.  CVE-2019-14844 has been issued as a result.  ticket: 8772",
+        "func_before": "static krb5_error_code\nenctype_name(krb5_enctype ktype, char *buf, size_t buflen)\n{\n    char *name;\n    size_t len;\n\n    if (buflen == 0)\n        return EINVAL;\n    *buf = '\\0'; /* ensure these are always valid C-strings */\n\n    if (krb5int_c_deprecated_enctype(ktype)) {\n        len = strlcpy(buf, \"DEPRECATED:\", buflen);\n        if (len >= buflen)\n            return ENOMEM;\n        buflen -= len;\n        buf += len;\n    }\n\n    /* rfc4556 recommends that clients wishing to indicate support for these\n     * pkinit algorithms include them in the etype field of the AS-REQ. */\n    if (ktype == ENCTYPE_DSA_SHA1_CMS)\n        name = \"id-dsa-with-sha1-CmsOID\";\n    else if (ktype == ENCTYPE_MD5_RSA_CMS)\n        name = \"md5WithRSAEncryption-CmsOID\";\n    else if (ktype == ENCTYPE_SHA1_RSA_CMS)\n        name = \"sha-1WithRSAEncryption-CmsOID\";\n    else if (ktype == ENCTYPE_RC2_CBC_ENV)\n        name = \"rc2-cbc-EnvOID\";\n    else if (ktype == ENCTYPE_RSA_ENV)\n        name = \"rsaEncryption-EnvOID\";\n    else if (ktype == ENCTYPE_RSA_ES_OAEP_ENV)\n        name = \"id-RSAES-OAEP-EnvOID\";\n    else if (ktype == ENCTYPE_DES3_CBC_ENV)\n        name = \"des-ede3-cbc-EnvOID\";\n    else\n        return krb5_enctype_to_name(ktype, FALSE, buf, buflen);\n\n    if (strlcpy(name, buf, buflen) >= buflen)\n        return ENOMEM;\n    return 0;\n}",
+        "func": "static krb5_error_code\nenctype_name(krb5_enctype ktype, char *buf, size_t buflen)\n{\n    char *name;\n    size_t len;\n\n    if (buflen == 0)\n        return EINVAL;\n    *buf = '\\0'; /* ensure these are always valid C-strings */\n\n    if (krb5int_c_deprecated_enctype(ktype)) {\n        len = strlcpy(buf, \"DEPRECATED:\", buflen);\n        if (len >= buflen)\n            return ENOMEM;\n        buflen -= len;\n        buf += len;\n    }\n\n    /* rfc4556 recommends that clients wishing to indicate support for these\n     * pkinit algorithms include them in the etype field of the AS-REQ. */\n    if (ktype == ENCTYPE_DSA_SHA1_CMS)\n        name = \"id-dsa-with-sha1-CmsOID\";\n    else if (ktype == ENCTYPE_MD5_RSA_CMS)\n        name = \"md5WithRSAEncryption-CmsOID\";\n    else if (ktype == ENCTYPE_SHA1_RSA_CMS)\n        name = \"sha-1WithRSAEncryption-CmsOID\";\n    else if (ktype == ENCTYPE_RC2_CBC_ENV)\n        name = \"rc2-cbc-EnvOID\";\n    else if (ktype == ENCTYPE_RSA_ENV)\n        name = \"rsaEncryption-EnvOID\";\n    else if (ktype == ENCTYPE_RSA_ES_OAEP_ENV)\n        name = \"id-RSAES-OAEP-EnvOID\";\n    else if (ktype == ENCTYPE_DES3_CBC_ENV)\n        name = \"des-ede3-cbc-EnvOID\";\n    else\n        return krb5_enctype_to_name(ktype, FALSE, buf, buflen);\n\n    if (strlcpy(buf, name, buflen) >= buflen)\n        return ENOMEM;\n    return 0;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -35,7 +35,7 @@\n     else\n         return krb5_enctype_to_name(ktype, FALSE, buf, buflen);\n \n-    if (strlcpy(name, buf, buflen) >= buflen)\n+    if (strlcpy(buf, name, buflen) >= buflen)\n         return ENOMEM;\n     return 0;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    if (strlcpy(name, buf, buflen) >= buflen)"
+            ],
+            "added_lines": [
+                "    if (strlcpy(buf, name, buflen) >= buflen)"
+            ]
+        }
+    }
+]

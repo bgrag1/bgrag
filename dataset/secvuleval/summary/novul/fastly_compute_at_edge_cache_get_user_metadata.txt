@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves user metadata from a Fastly Compute@Edge cache, dynamically resizing the buffer if necessary to accommodate the data size returned by the cache.

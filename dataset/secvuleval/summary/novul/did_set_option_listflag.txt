@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_option_listflag" checks if all characters in the string "val" are present in the string "flags" and returns an error message if any character is not found, indicating an illegal character.

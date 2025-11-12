@@ -1,0 +1,1 @@
+ Function purpose: The function decodes VP8 slices by processing bitstream, handling buffer management, and managing decode operations, including resolution changes and error handling.

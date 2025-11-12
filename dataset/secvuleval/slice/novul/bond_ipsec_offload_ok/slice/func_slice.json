@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR6->VAR7);\n\tif (!VAR5)",
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = VAR4->VAR7.VAR8;\n\tVAR9 = FUN2(VAR6);\n\tif (FUN3(VAR9) != VAR10)",
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tif (!VAR5->VAR8 ||\n !VAR5->VAR8->VAR9 ||\n FUN2(VAR5))",
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7->FUN2(VAR2, VAR4);\n\treturn VAR5;",
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tif (!VAR5->VAR6 ||\n !VAR5->VAR6->VAR7 ||",
+        "static bool FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tif (!VAR5->VAR6 ||"
+    ],
+    "API": []
+}

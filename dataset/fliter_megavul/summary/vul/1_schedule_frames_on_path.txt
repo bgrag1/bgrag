@@ -1,0 +1,1 @@
+ Function purpose: The function schedules and prepares QUIC packets for transmission based on the current state of the connection and available data, ensuring efficient use of network resources and proper handling of congestion control.

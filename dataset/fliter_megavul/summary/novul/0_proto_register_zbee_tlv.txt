@@ -1,0 +1,1 @@
+ Function purpose: The function registers a Zigbee TLV protocol with Wireshark, defining its fields, expert information, and a dissector for packet analysis.

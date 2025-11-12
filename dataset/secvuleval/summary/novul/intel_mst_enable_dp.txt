@@ -1,0 +1,1 @@
+ Function purpose: The function enables Multi-Stream Transport (MST) for DisplayPort on an Intel graphics card, configuring the necessary settings and enabling the required transcoder functions.

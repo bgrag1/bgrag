@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "struct VAR1 *FUN1(void *VAR2, enum mtk_vcodec_fw_use VAR3)\n\tstruct VAR4 *VAR5 = VAR2;\n\tstruct VAR6 *VAR7 = VAR2;",
+        "struct VAR1 *FUN1(void *VAR2, enum mtk_vcodec_fw_use VAR3)\n\tVAR4 = VAR5->VAR4;\n\tVAR4 = VAR6->VAR4;\n\tVAR7 = FUN2(VAR4);\n\tif (!VAR7) {\n\tVAR8->VAR7 = VAR7;",
+        "struct VAR1 *FUN1(void *VAR2, enum mtk_vcodec_fw_use VAR3)\n\tVAR4 = FUN2(&VAR5->VAR6, sizeof(*VAR4), VAR7);\n\treturn VAR4;"
+    ],
+    "API": []
+}

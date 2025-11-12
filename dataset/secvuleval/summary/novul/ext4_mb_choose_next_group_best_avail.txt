@@ -1,0 +1,1 @@
+ Function purpose: The function "ext4_mb_choose_next_group_best_avail" in the code snippet is designed to select the next best available group for file system allocation, considering factors such as fragment size and stripe configuration, and to determine the appropriate allocation criteria based on the search results.

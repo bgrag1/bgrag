@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\tstruct VAR4 *VAR5 = VAR2->VAR6;\n\tif (VAR5 == VAR2->VAR6) {\n\tVAR5 = VAR2->VAR6;\n\treturn FUN2(VAR2->VAR6);",
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\tif (FUN2(VAR2))\n\tFUN3(VAR2);\n\telse if ((VAR2->VAR4 < 2) && (!FUN4(VAR2)))\n\tif (FUN5(FUN6(VAR2) || FUN7(VAR2)))\n\treturn FUN8(VAR2, VAR3, VAR5, VAR6, false);\n\tVAR2->VAR4 = FUN9(VAR2);\n\twhile (!FUN10(VAR2, VAR6, &VAR3, &VAR5)) {\n\tif (!FUN4(VAR2))\n\tif (FUN11(VAR2))\n\tif (FUN5(VAR2->VAR4 == VAR7))\n\tVAR2->VAR8 = VAR2->VAR9 - VAR6 + 1;\n\tVAR2->VAR10 = FUN9(VAR2);",
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\telse if ((VAR2->VAR4 < 2) && (!FUN2(VAR2)))\n\telse if (VAR2->VAR4 >= 2)\n\tVAR2->VAR4 -= 2;\n\tif (FUN3(VAR2->VAR4 == VAR5))",
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\tunsigned long VAR4, unsigned long VAR5)\n\tif (VAR3 > VAR4)\n\tif (VAR5 == 0 || VAR4 - VAR3 < VAR5 - 1)\n\tVAR2->VAR6 = VAR3;",
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\tunsigned long VAR4, unsigned long VAR5)\n\tif (VAR3 > VAR4)\n\tif (VAR5 == 0 || VAR4 - VAR3 < VAR5 - 1)\n\tVAR2->VAR6 = VAR4;\n\tif (VAR4 < VAR2->VAR6)\n\tVAR2->VAR6 = VAR4;\n\tVAR2->VAR7 = VAR2->VAR6 - VAR5 + 1;"
+    ],
+    "integer": [
+        "int FUN1(struct VAR1 *VAR2, unsigned long VAR3,\n\tunsigned long VAR4, unsigned long VAR5)\n\tif (VAR3 > VAR4)\n\tif (VAR5 == 0 || VAR4 - VAR3 < VAR5 - 1)\n\tif (FUN2(VAR2))\n\tFUN3(VAR2);\n\telse if ((VAR2->VAR6 < 2) && (!FUN4(VAR2)))\n\tif (FUN5(FUN6(VAR2) || FUN7(VAR2)))\n\tVAR2->VAR6 = FUN8(VAR2);\n\tVAR2->VAR7 = VAR4;\n\twhile (!FUN9(VAR2, VAR5, &VAR3, &VAR4)) {\n\tif (!FUN4(VAR2))\n\tif (VAR4 < VAR2->VAR7)\n\tVAR2->VAR7 = VAR4;\n\tVAR2->VAR8 = VAR2->VAR7 - VAR5 + 1;"
+    ]
+}

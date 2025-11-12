@@ -1,0 +1,1 @@
+ Function purpose: The function computes the MD5 hash of the JA3 fingerprint of the downstream TLS connection and stores it in a provided buffer, handling buffer length errors by reallocating the buffer as necessary.

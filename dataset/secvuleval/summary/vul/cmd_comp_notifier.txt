@@ -1,0 +1,1 @@
+ Function purpose: The function "cmd_comp_notifier" is a callback that handles command completion notifications for a specific device, processing the command vector from an event queue entry (EQE) and invoking the command completion handler for the device.

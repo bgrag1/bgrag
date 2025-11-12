@@ -1,0 +1,1 @@
+ Function purpose: The function "dasd_3990_erp_file_prot" handles the File Protected (FP) error in a DASD device, logging an error message if the suppress bit is not set, and then cleaning up the request with a failed status.

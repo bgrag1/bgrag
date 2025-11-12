@@ -1,0 +1,1 @@
+ Function purpose: The function "ip6_negative_advice" checks if a destination entry is expired or not, and if it is, it removes the expired route and sets the destination entry to NULL, otherwise it releases the destination entry and sets it to NULL.

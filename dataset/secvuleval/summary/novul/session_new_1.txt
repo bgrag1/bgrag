@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and configures an HTTP/2 session, including setting up memory allocation, initializing session parameters, and initializing compression and decompression modules.

@@ -1,0 +1,1 @@
+ Function purpose: The function enables a phantom plane by creating and configuring it based on the properties of the current plane state in a given pipe context, and then adding it to the specified stream in the DC state.

@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the amdgpu_ras_interrupt_dispatch function is to handle the dispatching of Remote Access Storage (RAS) error information to the appropriate interrupt handler for processing.

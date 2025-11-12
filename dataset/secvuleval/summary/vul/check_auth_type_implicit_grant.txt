@@ -1,0 +1,1 @@
+ Function purpose: The function checks the authorization type for an implicit grant, validates the client, and generates an access token to redirect the user to the specified URI with the access token.

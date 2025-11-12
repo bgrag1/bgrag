@@ -1,0 +1,1 @@
+ Function purpose: The function "nghttp2_strerror" is designed to convert HTTP/2 error codes into human-readable error messages, aiding in debugging and error handling in applications utilizing the nghttp2 library.

@@ -1,0 +1,11 @@
+{
+    "pointer": [],
+    "API": [
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR4;\n VAR5->VAR6 << VAR4;\n connect(VAR4, &VAR7::VAR8::VAR9, this, &VAR1::VAR9);\n connect(VAR4, &VAR7::VAR8::VAR10, this, &VAR1::VAR10);\n connect(VAR4, &VAR7::VAR8::VAR11, this, &VAR1::VAR11);\n connect(VAR4, &VAR7::VAR8::VAR12, this, &VAR1::VAR12);\n connect(VAR4, &VAR7::VAR8::VAR13, this, &VAR1::VAR13);",
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR4;\n VAR5->VAR6 << VAR4;\n connect(VAR4, &VAR7::VAR8::VAR9, this, &VAR1::VAR9);\n connect(VAR4, &VAR7::VAR8::VAR10, this, &VAR1::VAR10);\n connect(VAR4, &VAR7::VAR8::VAR11, this, &VAR1::VAR11);\n connect(VAR4, &VAR7::VAR8::VAR12, this, &VAR1::VAR12);\n connect(VAR4, &VAR7::VAR8::VAR13, this, &VAR1::VAR13);",
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR4;\n VAR5->VAR6 << VAR4;\n connect(VAR4, &VAR7::VAR8::VAR9, this, &VAR1::VAR9);\n connect(VAR4, &VAR7::VAR8::VAR10, this, &VAR1::VAR10);\n connect(VAR4, &VAR7::VAR8::VAR11, this, &VAR1::VAR11);\n connect(VAR4, &VAR7::VAR8::VAR12, this, &VAR1::VAR12);\n connect(VAR4, &VAR7::VAR8::VAR13, this, &VAR1::VAR13);",
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR4;\n VAR5->VAR6 << VAR4;\n connect(VAR4, &VAR7::VAR8::VAR9, this, &VAR1::VAR9);\n connect(VAR4, &VAR7::VAR8::VAR10, this, &VAR1::VAR10);\n connect(VAR4, &VAR7::VAR8::VAR11, this, &VAR1::VAR11);\n connect(VAR4, &VAR7::VAR8::VAR12, this, &VAR1::VAR12);\n connect(VAR4, &VAR7::VAR8::VAR13, this, &VAR1::VAR13);",
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR4;\n VAR5->VAR6 << VAR4;\n connect(VAR4, &VAR7::VAR8::VAR9, this, &VAR1::VAR9);\n connect(VAR4, &VAR7::VAR8::VAR10, this, &VAR1::VAR10);\n connect(VAR4, &VAR7::VAR8::VAR11, this, &VAR1::VAR11);\n connect(VAR4, &VAR7::VAR8::VAR12, this, &VAR1::VAR12);\n connect(VAR4, &VAR7::VAR8::VAR13, this, &VAR1::VAR13);",
+        "void VAR1::FUN1(const VAR2 &VAR3)\n FUN2() << \"\" << VAR3;"
+    ]
+}

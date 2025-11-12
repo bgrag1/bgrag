@@ -1,0 +1,1 @@
+ Function purpose: The function initializes the TCAM (Translation-Lookaside Buffer) module in the mlxsw_sp switch, allocating and managing memory for regions and groups, and registering rehash parameters, while also invoking the specific TCAM operations initialization.

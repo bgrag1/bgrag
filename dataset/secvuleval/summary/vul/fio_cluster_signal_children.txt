@@ -1,0 +1,1 @@
+ Function purpose: The function "fio_cluster_signal_children" is designed to initiate a shutdown process for a cluster of servers by sending a shutdown message to all child processes, ensuring that only the parent process (with a specific PID) executes this task.

@@ -1,0 +1,1 @@
+ Function purpose: The function updates the resource context's pipe topology for a given DC state, logging the pipe details for both normal and phantom streams.

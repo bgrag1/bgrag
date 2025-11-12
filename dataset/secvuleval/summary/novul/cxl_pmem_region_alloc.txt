@@ -1,0 +1,1 @@
+ Function purpose: The function allocates and initializes a CXL pmem region for a given CXL region, setting up its mappings and device attributes.

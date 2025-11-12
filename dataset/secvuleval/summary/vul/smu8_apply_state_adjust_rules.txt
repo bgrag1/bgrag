@@ -1,0 +1,1 @@
+ Function purpose: The function adjusts the power state of a SMU8 hardware manager based on the requested and current power states, applying state adjustment rules and handling dynamic clock settings.

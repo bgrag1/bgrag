@@ -1,0 +1,1 @@
+ Function purpose: The function adds an ISO sample to a filter packet and sends it, checking for blocking conditions and suspending the context if necessary.

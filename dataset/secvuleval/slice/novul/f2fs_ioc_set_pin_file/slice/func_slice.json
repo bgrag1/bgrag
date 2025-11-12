@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tFUN4(VAR4);\n\tif (FUN5(VAR4)) {\n\t} else if (FUN6(VAR4)) {\n\tif (FUN7(VAR4)) {\n FUN8(VAR4, NULL)) {\n\tif (FUN9(VAR4, false)) {\n\tVAR7 = FUN10(VAR4);\n\tif (!FUN11(VAR4)) {\n\tFUN12(VAR4, VAR8);\n\tVAR7 = FUN13(VAR4)->VAR9;\n\tFUN14(VAR4);\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tif (!FUN4(VAR6) &&\n\tFUN5(VAR6, VAR7);",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tFUN4(VAR4);\n\tif (FUN5(VAR4)) {\n\tFUN6(VAR4, VAR7);\n\tFUN7(VAR4, 0);\n\tFUN8(VAR4);",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tif (!FUN2(VAR4->VAR5))",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tVAR5 = FUN3(VAR2);\n\treturn VAR5;\n\tFUN4(VAR2);\n\treturn VAR5;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tVAR5 = FUN3(VAR2);\n\treturn VAR5;\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tVAR5 = FUN3(VAR2);\n\treturn VAR5;\n\tFUN4(VAR2);\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tFUN4(VAR4);\n\tif (FUN5(VAR4)) {\n\tFUN6(VAR4, VAR7);\n\tFUN7(VAR4, 0);\n\tFUN8(VAR4);",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tVAR5 = FUN3(VAR2);\n\tFUN4(VAR2);",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tFUN4(VAR4);\n\tif (FUN5(VAR4)) {\n\t} else if (FUN6(VAR4)) {\n\tif (FUN7(VAR4)) {\n\tif (!FUN8(VAR6) &&\n FUN9(VAR4, NULL)) {\n\tif (FUN10(VAR4, false)) {\n\tVAR7 = FUN11(VAR4);\n\tif (!FUN12(VAR4)) {\n\tFUN13(VAR4, VAR8);\n\tVAR7 = FUN14(VAR4)->VAR9;\n\tFUN15(VAR4);\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2, unsigned long VAR3)\n\tstruct VAR4 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR4);\n\tif (!FUN4(VAR6) &&\n\tFUN5(VAR6, VAR7);"
+    ]
+}

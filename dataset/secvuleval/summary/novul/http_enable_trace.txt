@@ -1,0 +1,1 @@
+ Function purpose: The function enables tracing for a specified input in a monitoring tool, allowing for the collection and output of trace data based on provided parameters such as prefix, output destination, and limits.

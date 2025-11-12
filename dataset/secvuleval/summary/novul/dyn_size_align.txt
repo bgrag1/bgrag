@@ -1,0 +1,1 @@
+ Function purpose: The function "dyn_size_align" adjusts the size to accommodate a dynamic chunk header and ensures the size is aligned to a minimum threshold, checking for overflow in the process.

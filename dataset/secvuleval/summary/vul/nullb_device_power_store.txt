@@ -1,0 +1,1 @@
+ Function purpose: The function updates the power state of a nullb_device and manages its configuration and addition/removal based on the new state.

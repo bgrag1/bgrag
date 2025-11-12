@@ -1,0 +1,1 @@
+ Function purpose: The function "choose_slow_rdev" in the code snippet is designed to select a disk from a RAID 1 configuration to read data from, prioritizing disks with fewer bad blocks and larger read lengths in case of partial bad blocks.

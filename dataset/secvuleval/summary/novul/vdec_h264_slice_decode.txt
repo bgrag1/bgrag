@@ -1,0 +1,1 @@
+ Function purpose: The function decodes an H.264 slice by processing the bitstream, handling buffer management, and interacting with the VPU to decode the video data.

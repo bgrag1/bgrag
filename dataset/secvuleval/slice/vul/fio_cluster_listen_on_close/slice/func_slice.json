@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static void FUN1(intptr_t VAR1,\n VAR2 *VAR3) {\n free(VAR3);"
+    ],
+    "API": [
+        "static void FUN1(intptr_t VAR1,\n VAR2 *VAR3) {\n free(VAR3);"
+    ]
+}

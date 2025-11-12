@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tu64 VAR4 = VAR5->VAR4;\n\tif (VAR4 > VAR6->VAR7->VAR8 || VAR4 < VAR6->VAR7->VAR9)\n\tFUN2(VAR2, \"\", VAR4,\n\tFUN2(VAR2, \"\", VAR4,",
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tVAR4 = VAR5->VAR6.VAR7;\n\tVAR8->VAR4 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tif (!FUN2(VAR2))\n\tVAR4 = FUN3(VAR2);\n\tif (!VAR4 || !VAR4->VAR5 || !FUN4(VAR4->VAR5))\n\tFUN5(VAR2, \"\", VAR6,\n\tFUN5(VAR2, \"\", VAR6,\n\tFUN6(VAR2));",
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tif (!VAR4 || !VAR4->VAR5 || !FUN2(VAR4->VAR5))",
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tstruct VAR4 *VAR5 = VAR3;",
+        "static int FUN1(struct VAR1 *VAR2, void *VAR3)\n\tFUN2(VAR2, \"\", VAR4,\n\tFUN3(&VAR5->VAR2));"
+    ]
+}

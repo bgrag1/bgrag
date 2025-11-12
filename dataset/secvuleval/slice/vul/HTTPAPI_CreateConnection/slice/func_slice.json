@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = (VAR4*)malloc(sizeof(VAR4));\n if (VAR3 == NULL)\n memset(VAR3, 0, sizeof(*VAR3));\n size_t VAR5 = FUN2(VAR6, 0, VAR2, -1, NULL, 0);\n if (VAR5 == 0)\n free(VAR3);\n VAR3 = NULL;\n VAR7 = (wchar_t*)malloc(sizeof(wchar_t) * VAR5);\n if (VAR7 == NULL)\n free(VAR3);\n VAR3 = NULL;\n if (FUN2(VAR6, 0, VAR2, -1, VAR7, (int)VAR5) == 0)\n free(VAR3);\n VAR3 = NULL;\n VAR3->VAR8 = FUN3(\n if (VAR3->VAR8 == NULL)\n free(VAR3);\n VAR3 = NULL;\n free(VAR7);\n return (VAR1)VAR3;",
+        "VAR1 FUN1(const char* VAR2)\n size_t VAR3 = FUN2(VAR4, 0, VAR2, -1, NULL, 0);\n if (VAR3 == 0)\n VAR5 = NULL;\n VAR6 = (wchar_t*)malloc(sizeof(wchar_t) * VAR3);\n if (VAR6 == NULL)\n VAR5 = NULL;\n if (FUN2(VAR4, 0, VAR2, -1, VAR6, (int)VAR3) == 0)\n VAR5 = NULL;\n VAR5->VAR7 = FUN3(\n if (VAR5->VAR7 == NULL)\n VAR5 = NULL;\n free(VAR6);\n return (VAR1)VAR5;",
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = NULL;\n return (VAR1)VAR3;"
+    ],
+    "API": [
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = (VAR4*)malloc(sizeof(VAR4));\n if (VAR3 == NULL)\n memset(VAR3, 0, sizeof(*VAR3));\n free(VAR3);\n free(VAR3);\n free(VAR3);\n free(VAR3);\n return (VAR1)VAR3;",
+        " VAR1 = (VAR2*)malloc(sizeof(VAR2));\n if (VAR1 == NULL)\n memset(VAR1, 0, sizeof(*VAR1));\n free(VAR1);",
+        " VAR1 = (VAR2*)malloc(sizeof(VAR2));\n if (VAR1 == NULL)\n memset(VAR1, 0, sizeof(*VAR1));\n free(VAR1);",
+        " VAR1 = (VAR2*)malloc(sizeof(VAR2));\n if (VAR1 == NULL)\n memset(VAR1, 0, sizeof(*VAR1));\n free(VAR1);",
+        " VAR1 = (VAR2*)malloc(sizeof(VAR2));\n if (VAR1 == NULL)\n memset(VAR1, 0, sizeof(*VAR1));\n free(VAR1);",
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = (VAR4*)malloc(sizeof(VAR4));\n if (VAR3 == NULL)\n size_t VAR5 = FUN2(VAR6, 0, VAR2, -1, NULL, 0);\n if (VAR5 == 0)\n VAR7 = (wchar_t*)malloc(sizeof(wchar_t) * VAR5);\n if (VAR7 == NULL)\n if (FUN2(VAR6, 0, VAR2, -1, VAR7, (int)VAR5) == 0)\n VAR3->VAR8 = FUN3(\n free(VAR7);",
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = (VAR4*)malloc(sizeof(VAR4));\n if (VAR3 == NULL)\n size_t VAR5 = FUN2(VAR6, 0, VAR2, -1, NULL, 0);\n if (VAR5 == 0)\n VAR7 = (wchar_t*)malloc(sizeof(wchar_t) * VAR5);\n if (VAR7 == NULL)\n VAR3 = NULL;\n if (FUN2(VAR6, 0, VAR2, -1, VAR7, (int)VAR5) == 0)\n VAR3 = NULL;\n VAR3->VAR8 = FUN3(\n if (VAR3->VAR8 == NULL)\n VAR3 = NULL;\n free(VAR7);\n return (VAR1)VAR3;",
+        "VAR1 FUN1(const char* VAR2)\n VAR3 = (VAR4*)malloc(sizeof(VAR4));\n if (VAR3 == NULL)\n size_t VAR5 = FUN2(VAR6, 0, VAR2, -1, NULL, 0);\n if (VAR5 == 0)\n VAR7 = (wchar_t*)malloc(sizeof(wchar_t) * VAR5);\n if (VAR7 == NULL)\n VAR3 = NULL;\n if (FUN2(VAR6, 0, VAR2, -1, VAR7, (int)VAR5) == 0)\n VAR3 = NULL;\n VAR3->VAR8 = FUN3(\n if (VAR3->VAR8 == NULL)\n VAR3 = NULL;\n free(VAR7);\n return (VAR1)VAR3;"
+    ]
+}

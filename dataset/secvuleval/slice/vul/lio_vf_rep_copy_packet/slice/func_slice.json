@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "static void\n\tVAR1 = ((struct VAR2 *)(VAR3->VAR4));",
+        "static void\n\tstruct VAR1 *VAR2 =\n\t((struct VAR1 *)(VAR3->VAR4));",
+        "static void\n int VAR1)\n\tif (FUN1(VAR1 > VAR2)) {\n\tVAR3 = FUN2(VAR4->VAR5) +\n\tmemcpy(VAR6->VAR7, VAR3, VAR2);\n\tFUN3(VAR6, VAR2);\n\tFUN4(VAR6, FUN5(VAR6)->VAR8,\n\tVAR4->VAR9 + VAR2,\n\tVAR1 - VAR2,",
+        "static void\n struct VAR1 *VAR2,\n\tFUN1(VAR2, VAR3);\n\tFUN2(VAR2, FUN3(VAR2)->VAR4,\n\tVAR5->VAR6 + VAR3,\n\tVAR7 - VAR3,\n\tFUN4(VAR2, FUN5(VAR5->VAR8) +\n\tFUN1(VAR2, VAR7);",
+        "static void\n\tFUN1(VAR1, FUN2(VAR2->VAR3) +\n\tFUN3(VAR2->VAR3);",
+        "static void\n\tVAR1 = FUN1(VAR2->VAR3) +",
+        "static void\n\tFUN1(VAR1, FUN2(VAR2->VAR3) +"
+    ],
+    "API": [
+        "static void\n struct VAR1 *VAR2,\n int VAR3)\n\tif (FUN1(VAR3 > VAR4)) {\n\tFUN2(VAR2, FUN3(VAR5->VAR6) +\n\tFUN4(VAR2, VAR3);",
+        "static void\n int VAR1)\n\tif (FUN1(VAR1 > VAR2)) {\n\tVAR3 = FUN2(VAR4->VAR5) +\n\tmemcpy(VAR6->VAR7, VAR3, VAR2);\n\tFUN3(VAR6, VAR2);\n\tFUN4(VAR6, FUN5(VAR6)->VAR8,\n\tVAR4->VAR9 + VAR2,\n\tVAR1 - VAR2,"
+    ]
+}

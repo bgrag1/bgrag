@@ -1,0 +1,5 @@
+{
+    "API": [
+        "void VAR1::FUN1(const VAR2 &VAR3)\n VAR4::FUN2(VAR3);"
+    ]
+}

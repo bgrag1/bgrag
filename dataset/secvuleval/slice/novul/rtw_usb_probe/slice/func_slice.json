@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = sizeof(struct VAR6) + sizeof(struct VAR7);\n\tVAR8 = FUN2(VAR5, &VAR9);\n\tif (!VAR8)\n\tVAR10->VAR8 = VAR8;\n\tVAR11 = FUN3(VAR10, VAR10->VAR8);\n\tFUN4(VAR10, \"\");\n\tFUN5(VAR10);\n\tFUN6(VAR10);\n\tFUN7(VAR10);\n\tFUN8(VAR10, VAR2);\n\tFUN9(VAR10);\n\treturn VAR11;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR8);\n\tFUN4(VAR8);\n\treturn VAR9;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR8->VAR5 = VAR5;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR5);\n\tVAR9 = FUN4(VAR5, VAR2);\n\tVAR9 = FUN5(VAR5);\n\tVAR9 = FUN6(VAR5);\n\tFUN7(VAR5, \"\");\n\tFUN8(VAR5);\n\tFUN9(VAR5, VAR2);\n\tFUN10(VAR5);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = sizeof(struct VAR6) + sizeof(struct VAR7);\n\tVAR8 = FUN2(VAR5, &VAR9);\n\tif (!VAR8)\n\tFUN3(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5->VAR6 = (struct VAR7 *)VAR4->VAR8;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR5);\n\tVAR9 = FUN4(VAR5, VAR2);\n\tVAR9 = FUN5(VAR5);\n\tFUN6(VAR5, \"\");\n\tFUN7(VAR5, VAR2);\n\tFUN8(VAR5);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR5);\n\tVAR9 = FUN4(VAR5, VAR2);\n\tVAR9 = FUN5(VAR5);\n\tVAR9 = FUN6(VAR5);\n\tVAR9 = FUN7(VAR5);\n\tFUN8(VAR5, \"\");\n\tVAR9 = FUN9(VAR5, VAR5->VAR6);\n\tFUN8(VAR5, \"\");\n\tFUN10(VAR5);\n\tFUN11(VAR5);\n\tFUN12(VAR5);\n\tFUN13(VAR5, VAR2);\n\tFUN14(VAR5);\n\treturn VAR9;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR5);\n\tVAR9 = FUN4(VAR5, VAR2);\n\tFUN5(VAR5, \"\");\n\tFUN6(VAR5);"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = VAR6->VAR7;\n\tVAR8 = FUN2(VAR5);\n\tVAR9 = FUN3(VAR8);\n\tFUN4(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = sizeof(struct VAR6) + sizeof(struct VAR7);\n\tVAR8 = FUN2(VAR5, &VAR9);\n\tif (!VAR8)\n\tFUN3(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4)\n\tVAR5 = sizeof(struct VAR6) + sizeof(struct VAR7);\n\tVAR8 = FUN2(VAR5, &VAR9);\n\tif (!VAR8)\n\tVAR10->VAR8 = VAR8;\n\tVAR11 = FUN3(VAR10, VAR10->VAR8);\n\tFUN4(VAR10, \"\");\n\tFUN5(VAR10);\n\tFUN6(VAR10);\n\tFUN7(VAR10);\n\tFUN8(VAR10, VAR2);\n\tFUN9(VAR10);\n\tFUN10(VAR8);\n\treturn VAR11;"
+    ]
+}

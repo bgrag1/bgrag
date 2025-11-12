@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "unsigned long FUN1(unsigned long VAR1, unsigned long VAR2)\n\tVAR3 = FUN2(VAR1, VAR2);"
+    ]
+}

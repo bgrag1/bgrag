@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = strlen(VAR1);\n\tVAR4 = copy;\n\tVAR4 = FUN2(VAR5, VAR6);\n\tif (!VAR4)\n\tstrcpy(VAR4, VAR1);\n\tif (VAR4[VAR3 - 1] == '')\n\t*VAR2 = VAR4;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3[VAR4 - 1] = '';\n\t*VAR2 = VAR3;"
+    ],
+    "array": [
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3[VAR4 - 1] = '';\n\t*VAR2 = VAR3;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = strlen(VAR1);\n\tVAR4 = copy;\n\tVAR4 = FUN2(VAR5, VAR6);\n\tif (!VAR4)\n\tstrcpy(VAR4, VAR1);\n\tif (VAR4[VAR3 - 1] == '')\n\t*VAR2 = VAR4;"
+    ],
+    "API": [
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3 = strlen(VAR1);\n\tif (VAR3 > VAR4)\n\tif (VAR3 < 1)\n\tif (VAR5[VAR3 - 1] == '')\n\tVAR5[VAR3 - 1] = '';",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3 = strlen(VAR1);\n\tif (VAR3 > VAR4)\n\tif (VAR3 < 1)\n\tstrcpy(VAR5, VAR1);\n\tif (VAR5[VAR3 - 1] == '')\n\tVAR5[VAR3 - 1] = '';\n\t*VAR2 = VAR5;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = copy;\n\tstrcpy(VAR3, VAR1);\n\tif (VAR3[VAR4 - 1] == '')\n\t*VAR2 = VAR3;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = strlen(VAR1);\n\tVAR4 = copy;\n\tVAR4 = FUN2(VAR5, VAR6);\n\tif (!VAR4)\n\tstrcpy(VAR4, VAR1);\n\tif (VAR4[VAR3 - 1] == '')\n\tVAR4[VAR3 - 1] = '';\n\t*VAR2 = VAR4;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = copy;\n\tstrcpy(VAR3, VAR1);\n\tif (VAR3[VAR4 - 1] == '')\n\t*VAR2 = VAR3;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3 = FUN2(VAR4, VAR5);\n\tif (!VAR3)\n\tstrcpy(VAR3, VAR1);\n\tif (VAR3[VAR6 - 1] == '')\n\t*VAR2 = VAR3;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tVAR3 = FUN2(VAR4, VAR5);\n\tif (!VAR3)\n\tstrcpy(VAR3, VAR1);\n\tif (VAR3[VAR6 - 1] == '')\n\t*VAR2 = VAR3;",
+        "static int FUN1(const char *VAR1, char **VAR2)\n\tchar *copy = *VAR2;\n\tVAR3 = strlen(VAR1);\n\tVAR4 = copy;\n\tVAR4 = FUN2(VAR5, VAR6);\n\tif (!VAR4)\n\tstrcpy(VAR4, VAR1);\n\tif (VAR4[VAR3 - 1] == '')\n\t*VAR2 = VAR4;"
+    ]
+}

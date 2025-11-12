@@ -1,0 +1,1 @@
+ Function purpose: The function "notify_handler" processes ACPI events to update the state of button and switch devices, and handles wakeup events by reporting them to the system.

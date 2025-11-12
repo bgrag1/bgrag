@@ -1,0 +1,1 @@
+ Function purpose: The function "fastrpc_req_mmap" is responsible for mapping memory buffers between the host and a DSP (Digital Signal Processor) in a system, handling both addition of pages and remote heap address allocation, and managing the buffer allocation and deallocation on the DSP side.

@@ -1,0 +1,1 @@
+ Function purpose: The function disables IRQs, workqueues, and optionally the MSI or MSI-X capability of a PCI device associated with a PHP slot, when requested.

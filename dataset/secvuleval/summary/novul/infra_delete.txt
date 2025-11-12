@@ -1,0 +1,1 @@
+ Function purpose: The function "infra_delete" is designed to deallocate memory and resources associated with an infrastructure cache structure, including its hash tables and traversal-based data structures.

@@ -1,0 +1,1 @@
+ Function purpose: The function "stop_sessions" is designed to gracefully stop all active SMB sessions by shutting down the transport layer for each connection and then waiting for all sessions to terminate before completing.

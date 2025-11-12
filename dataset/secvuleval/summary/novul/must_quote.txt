@@ -1,0 +1,1 @@
+ Function purpose: The function "must_quote" determines whether a character needs to be quoted based on whether it is a newline character.

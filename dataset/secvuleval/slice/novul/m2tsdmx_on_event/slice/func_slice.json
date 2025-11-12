@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static void FUN1(VAR1 *VAR2, u32 VAR3, void *VAR4)\n\tVAR5 *VAR6 = (VAR5 *) VAR2->VAR7;\n\tVAR8 *VAR9 = FUN2(VAR6);"
+    ]
+}

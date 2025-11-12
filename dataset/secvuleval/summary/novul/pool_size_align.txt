@@ -1,0 +1,1 @@
+ Function purpose: The function adjusts the size to ensure it is a multiple of the size of a pool chunk, plus the size of the pool chunk itself, to facilitate proper memory allocation and management in a pool-based system.

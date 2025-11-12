@@ -1,0 +1,125 @@
+[
+    {
+        "cve_id": "CVE-2022-29225",
+        "func_name": "envoyproxy/envoy/ZlibDecompressorImpl::decompress",
+        "description": "Envoy is a cloud-native high-performance proxy. In versions prior to 1.22.1 secompressors accumulate decompressed data into an intermediate buffer before overwriting the body in the decode/encodeBody. This may allow an attacker to zip bomb the decompressor by sending a small highly compressed payload. Maliciously constructed zip files may exhaust system memory and cause a denial of service. Users are advised to upgrade. Users unable to upgrade may consider disabling decompression.",
+        "git_url": "https://github.com/envoyproxy/envoy/commit/cb4ef0b09200c720dfdb07e097092dd105450343",
+        "commit_title": "decompressors: stop decompressing upon excessive compression ratio (#733)",
+        "commit_text": " Co-authored-by: Ryan Hamilton <rch@google.com>",
+        "func_before": "void ZlibDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                      Buffer::Instance& output_buffer) {\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    zstream_ptr_->avail_in = input_slice.len_;\n    zstream_ptr_->next_in = static_cast<Bytef*>(input_slice.mem_);\n    while (inflateNext()) {\n      if (zstream_ptr_->avail_out == 0) {\n        updateOutput(output_buffer);\n      }\n    }\n  }\n\n  // Flush z_stream and reset its buffer. Otherwise the stale content of the buffer\n  // will pollute output upon the next call to decompress().\n  updateOutput(output_buffer);\n}",
+        "func": "void ZlibDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                      Buffer::Instance& output_buffer) {\n  uint64_t limit = MaxInflateRatio * input_buffer.length();\n\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    zstream_ptr_->avail_in = input_slice.len_;\n    zstream_ptr_->next_in = static_cast<Bytef*>(input_slice.mem_);\n    while (inflateNext()) {\n      if (zstream_ptr_->avail_out == 0) {\n        updateOutput(output_buffer);\n      }\n\n      if (Runtime::runtimeFeatureEnabled(\n              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n          (output_buffer.length() > limit)) {\n        stats_.zlib_data_error_.inc();\n        ENVOY_LOG(trace,\n                  \"excessive decompression ratio detected: output \"\n                  \"size {} for input size {}\",\n                  output_buffer.length(), input_buffer.length());\n        return;\n      }\n    }\n  }\n\n  // Flush z_stream and reset its buffer. Otherwise the stale content of the buffer\n  // will pollute output upon the next call to decompress().\n  updateOutput(output_buffer);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,11 +1,24 @@\n void ZlibDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                       Buffer::Instance& output_buffer) {\n+  uint64_t limit = MaxInflateRatio * input_buffer.length();\n+\n   for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n     zstream_ptr_->avail_in = input_slice.len_;\n     zstream_ptr_->next_in = static_cast<Bytef*>(input_slice.mem_);\n     while (inflateNext()) {\n       if (zstream_ptr_->avail_out == 0) {\n         updateOutput(output_buffer);\n+      }\n+\n+      if (Runtime::runtimeFeatureEnabled(\n+              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n+          (output_buffer.length() > limit)) {\n+        stats_.zlib_data_error_.inc();\n+        ENVOY_LOG(trace,\n+                  \"excessive decompression ratio detected: output \"\n+                  \"size {} for input size {}\",\n+                  output_buffer.length(), input_buffer.length());\n+        return;\n       }\n     }\n   }",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  uint64_t limit = MaxInflateRatio * input_buffer.length();",
+                "",
+                "      }",
+                "",
+                "      if (Runtime::runtimeFeatureEnabled(",
+                "              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&",
+                "          (output_buffer.length() > limit)) {",
+                "        stats_.zlib_data_error_.inc();",
+                "        ENVOY_LOG(trace,",
+                "                  \"excessive decompression ratio detected: output \"",
+                "                  \"size {} for input size {}\",",
+                "                  output_buffer.length(), input_buffer.length());",
+                "        return;"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-29225",
+        "func_name": "envoyproxy/envoy/ZstdDecompressorImpl::decompress",
+        "description": "Envoy is a cloud-native high-performance proxy. In versions prior to 1.22.1 secompressors accumulate decompressed data into an intermediate buffer before overwriting the body in the decode/encodeBody. This may allow an attacker to zip bomb the decompressor by sending a small highly compressed payload. Maliciously constructed zip files may exhaust system memory and cause a denial of service. Users are advised to upgrade. Users unable to upgrade may consider disabling decompression.",
+        "git_url": "https://github.com/envoyproxy/envoy/commit/cb4ef0b09200c720dfdb07e097092dd105450343",
+        "commit_title": "decompressors: stop decompressing upon excessive compression ratio (#733)",
+        "commit_text": " Co-authored-by: Ryan Hamilton <rch@google.com>",
+        "func_before": "void ZstdDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                      Buffer::Instance& output_buffer) {\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    if (input_slice.len_ > 0) {\n      if (ddict_manager_ && !is_dictionary_set_) {\n        is_dictionary_set_ = true;\n        // If id == 0, it means that dictionary id could not be decoded.\n        dictionary_id_ =\n            ZSTD_getDictID_fromFrame(static_cast<uint8_t*>(input_slice.mem_), input_slice.len_);\n        if (dictionary_id_ != 0) {\n          auto dictionary = ddict_manager_->getDictionaryById(dictionary_id_);\n          if (!dictionary) {\n            stats_.zstd_dictionary_error_.inc();\n            return;\n          }\n          const size_t result = ZSTD_DCtx_refDDict(dctx_.get(), dictionary);\n          if (isError(result)) {\n            return;\n          }\n        }\n      }\n\n      setInput(input_slice);\n      if (!process(output_buffer)) {\n        return;\n      }\n    }\n  }\n}",
+        "func": "void ZstdDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                      Buffer::Instance& output_buffer) {\n  uint64_t limit = MaxInflateRatio * input_buffer.length();\n\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    if (input_slice.len_ > 0) {\n      if (ddict_manager_ && !is_dictionary_set_) {\n        is_dictionary_set_ = true;\n        // If id == 0, it means that dictionary id could not be decoded.\n        dictionary_id_ =\n            ZSTD_getDictID_fromFrame(static_cast<uint8_t*>(input_slice.mem_), input_slice.len_);\n        if (dictionary_id_ != 0) {\n          auto dictionary = ddict_manager_->getDictionaryById(dictionary_id_);\n          if (!dictionary) {\n            stats_.zstd_dictionary_error_.inc();\n            return;\n          }\n          const size_t result = ZSTD_DCtx_refDDict(dctx_.get(), dictionary);\n          if (isError(result)) {\n            return;\n          }\n        }\n      }\n\n      setInput(input_slice);\n      if (!process(output_buffer)) {\n        return;\n      }\n      if (Runtime::runtimeFeatureEnabled(\n              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n          (output_buffer.length() > limit)) {\n        stats_.zstd_generic_error_.inc();\n        ENVOY_LOG(trace,\n                  \"excessive decompression ratio detected: output \"\n                  \"size {} for input size {}\",\n                  output_buffer.length(), input_buffer.length());\n        return;\n      }\n    }\n  }\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,5 +1,7 @@\n void ZstdDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                       Buffer::Instance& output_buffer) {\n+  uint64_t limit = MaxInflateRatio * input_buffer.length();\n+\n   for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n     if (input_slice.len_ > 0) {\n       if (ddict_manager_ && !is_dictionary_set_) {\n@@ -24,6 +26,16 @@\n       if (!process(output_buffer)) {\n         return;\n       }\n+      if (Runtime::runtimeFeatureEnabled(\n+              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n+          (output_buffer.length() > limit)) {\n+        stats_.zstd_generic_error_.inc();\n+        ENVOY_LOG(trace,\n+                  \"excessive decompression ratio detected: output \"\n+                  \"size {} for input size {}\",\n+                  output_buffer.length(), input_buffer.length());\n+        return;\n+      }\n     }\n   }\n }",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  uint64_t limit = MaxInflateRatio * input_buffer.length();",
+                "",
+                "      if (Runtime::runtimeFeatureEnabled(",
+                "              \"envoy.reloadable_features.enable_compression_bomb_protection\") &&",
+                "          (output_buffer.length() > limit)) {",
+                "        stats_.zstd_generic_error_.inc();",
+                "        ENVOY_LOG(trace,",
+                "                  \"excessive decompression ratio detected: output \"",
+                "                  \"size {} for input size {}\",",
+                "                  output_buffer.length(), input_buffer.length());",
+                "        return;",
+                "      }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-29225",
+        "func_name": "envoyproxy/envoy/BrotliDecompressorImpl::decompress",
+        "description": "Envoy is a cloud-native high-performance proxy. In versions prior to 1.22.1 secompressors accumulate decompressed data into an intermediate buffer before overwriting the body in the decode/encodeBody. This may allow an attacker to zip bomb the decompressor by sending a small highly compressed payload. Maliciously constructed zip files may exhaust system memory and cause a denial of service. Users are advised to upgrade. Users unable to upgrade may consider disabling decompression.",
+        "git_url": "https://github.com/envoyproxy/envoy/commit/cb4ef0b09200c720dfdb07e097092dd105450343",
+        "commit_title": "decompressors: stop decompressing upon excessive compression ratio (#733)",
+        "commit_text": " Co-authored-by: Ryan Hamilton <rch@google.com>",
+        "func_before": "void BrotliDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                        Buffer::Instance& output_buffer) {\n  Common::BrotliContext ctx(chunk_size_);\n\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    ctx.avail_in_ = input_slice.len_;\n    ctx.next_in_ = static_cast<uint8_t*>(input_slice.mem_);\n\n    while (ctx.avail_in_ > 0) {\n      if (!process(ctx, output_buffer)) {\n        ctx.finalizeOutput(output_buffer);\n        return;\n      }\n    }\n  }\n\n  // Even though the input has been fully consumed by the decoder it still can\n  // be unfolded into output not fitting the output chunk. Thus keep processing\n  // until the decoder's output is fully depleted.\n  bool success;\n  do {\n    success = process(ctx, output_buffer);\n  } while (success && BrotliDecoderHasMoreOutput(state_.get()));\n\n  ctx.finalizeOutput(output_buffer);\n}",
+        "func": "void BrotliDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                        Buffer::Instance& output_buffer) {\n  Common::BrotliContext ctx(chunk_size_, MaxInflateRatio * input_buffer.length());\n\n  for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n    ctx.avail_in_ = input_slice.len_;\n    ctx.next_in_ = static_cast<uint8_t*>(input_slice.mem_);\n\n    while (ctx.avail_in_ > 0) {\n      if (!process(ctx, output_buffer)) {\n        ctx.finalizeOutput(output_buffer);\n        return;\n      }\n    }\n  }\n\n  // Even though the input has been fully consumed by the decoder it still can\n  // be unfolded into output not fitting the output chunk. Thus keep processing\n  // until the decoder's output is fully depleted.\n  bool success;\n  do {\n    success = process(ctx, output_buffer);\n  } while (success && BrotliDecoderHasMoreOutput(state_.get()));\n\n  ctx.finalizeOutput(output_buffer);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,6 +1,6 @@\n void BrotliDecompressorImpl::decompress(const Buffer::Instance& input_buffer,\n                                         Buffer::Instance& output_buffer) {\n-  Common::BrotliContext ctx(chunk_size_);\n+  Common::BrotliContext ctx(chunk_size_, MaxInflateRatio * input_buffer.length());\n \n   for (const Buffer::RawSlice& input_slice : input_buffer.getRawSlices()) {\n     ctx.avail_in_ = input_slice.len_;",
+        "diff_line_info": {
+            "deleted_lines": [
+                "  Common::BrotliContext ctx(chunk_size_);"
+            ],
+            "added_lines": [
+                "  Common::BrotliContext ctx(chunk_size_, MaxInflateRatio * input_buffer.length());"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-29225",
+        "func_name": "envoyproxy/envoy/BrotliDecompressorImpl::process",
+        "description": "Envoy is a cloud-native high-performance proxy. In versions prior to 1.22.1 secompressors accumulate decompressed data into an intermediate buffer before overwriting the body in the decode/encodeBody. This may allow an attacker to zip bomb the decompressor by sending a small highly compressed payload. Maliciously constructed zip files may exhaust system memory and cause a denial of service. Users are advised to upgrade. Users unable to upgrade may consider disabling decompression.",
+        "git_url": "https://github.com/envoyproxy/envoy/commit/cb4ef0b09200c720dfdb07e097092dd105450343",
+        "commit_title": "decompressors: stop decompressing upon excessive compression ratio (#733)",
+        "commit_text": " Co-authored-by: Ryan Hamilton <rch@google.com>",
+        "func_before": "bool BrotliDecompressorImpl::process(Common::BrotliContext& ctx, Buffer::Instance& output_buffer) {\n  BrotliDecoderResult result;\n  result = BrotliDecoderDecompressStream(state_.get(), &ctx.avail_in_, &ctx.next_in_,\n                                         &ctx.avail_out_, &ctx.next_out_, nullptr);\n  if (result == BROTLI_DECODER_RESULT_ERROR) {\n    // TODO(rojkov): currently the Brotli library doesn't specify possible errors in its API. Add\n    // more detailed stats when they are documented.\n    stats_.brotli_error_.inc();\n    return false;\n  }\n\n  ctx.updateOutput(output_buffer);\n\n  return true;\n}",
+        "func": "bool BrotliDecompressorImpl::process(Common::BrotliContext& ctx, Buffer::Instance& output_buffer) {\n  BrotliDecoderResult result;\n  result = BrotliDecoderDecompressStream(state_.get(), &ctx.avail_in_, &ctx.next_in_,\n                                         &ctx.avail_out_, &ctx.next_out_, nullptr);\n  if (result == BROTLI_DECODER_RESULT_ERROR) {\n    // TODO(rojkov): currently the Brotli library doesn't specify possible errors in its API. Add\n    // more detailed stats when they are documented.\n    stats_.brotli_error_.inc();\n    return false;\n  }\n\n  if (Runtime::runtimeFeatureEnabled(\n          \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n      (output_buffer.length() > ctx.max_output_size_)) {\n    stats_.brotli_error_.inc();\n    return false;\n  }\n\n  ctx.updateOutput(output_buffer);\n\n  return true;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -9,6 +9,13 @@\n     return false;\n   }\n \n+  if (Runtime::runtimeFeatureEnabled(\n+          \"envoy.reloadable_features.enable_compression_bomb_protection\") &&\n+      (output_buffer.length() > ctx.max_output_size_)) {\n+    stats_.brotli_error_.inc();\n+    return false;\n+  }\n+\n   ctx.updateOutput(output_buffer);\n \n   return true;",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  if (Runtime::runtimeFeatureEnabled(",
+                "          \"envoy.reloadable_features.enable_compression_bomb_protection\") &&",
+                "      (output_buffer.length() > ctx.max_output_size_)) {",
+                "    stats_.brotli_error_.inc();",
+                "    return false;",
+                "  }",
+                ""
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-29225",
+        "func_name": "envoyproxy/envoy/BrotliContext::BrotliContext",
+        "description": "Envoy is a cloud-native high-performance proxy. In versions prior to 1.22.1 secompressors accumulate decompressed data into an intermediate buffer before overwriting the body in the decode/encodeBody. This may allow an attacker to zip bomb the decompressor by sending a small highly compressed payload. Maliciously constructed zip files may exhaust system memory and cause a denial of service. Users are advised to upgrade. Users unable to upgrade may consider disabling decompression.",
+        "git_url": "https://github.com/envoyproxy/envoy/commit/cb4ef0b09200c720dfdb07e097092dd105450343",
+        "commit_title": "decompressors: stop decompressing upon excessive compression ratio (#733)",
+        "commit_text": " Co-authored-by: Ryan Hamilton <rch@google.com>",
+        "func_before": "BrotliContext::BrotliContext(const uint32_t chunk_size)\n    : chunk_size_{chunk_size}, chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{},\n      next_out_{chunk_ptr_.get()}, avail_in_{0}, avail_out_{chunk_size} {}",
+        "func": "BrotliContext::BrotliContext(uint32_t chunk_size, uint32_t max_output_size)\n    : max_output_size_{max_output_size}, chunk_size_{chunk_size},\n      chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{}, next_out_{chunk_ptr_.get()},\n      avail_in_{0}, avail_out_{chunk_size} {}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,3 +1,4 @@\n-BrotliContext::BrotliContext(const uint32_t chunk_size)\n-    : chunk_size_{chunk_size}, chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{},\n-      next_out_{chunk_ptr_.get()}, avail_in_{0}, avail_out_{chunk_size} {}\n+BrotliContext::BrotliContext(uint32_t chunk_size, uint32_t max_output_size)\n+    : max_output_size_{max_output_size}, chunk_size_{chunk_size},\n+      chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{}, next_out_{chunk_ptr_.get()},\n+      avail_in_{0}, avail_out_{chunk_size} {}",
+        "diff_line_info": {
+            "deleted_lines": [
+                "BrotliContext::BrotliContext(const uint32_t chunk_size)",
+                "    : chunk_size_{chunk_size}, chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{},",
+                "      next_out_{chunk_ptr_.get()}, avail_in_{0}, avail_out_{chunk_size} {}"
+            ],
+            "added_lines": [
+                "BrotliContext::BrotliContext(uint32_t chunk_size, uint32_t max_output_size)",
+                "    : max_output_size_{max_output_size}, chunk_size_{chunk_size},",
+                "      chunk_ptr_{std::make_unique<uint8_t[]>(chunk_size)}, next_in_{}, next_out_{chunk_ptr_.get()},",
+                "      avail_in_{0}, avail_out_{chunk_size} {}"
+            ]
+        }
+    }
+]

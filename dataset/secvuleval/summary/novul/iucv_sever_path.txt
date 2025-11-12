@@ -1,0 +1,1 @@
+ Function purpose: The function "iucv_sever_path" is responsible for severing and freeing an IUCV path associated with a socket, optionally including user data in the process.

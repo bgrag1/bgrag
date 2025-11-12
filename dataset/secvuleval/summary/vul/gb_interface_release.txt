@@ -1,0 +1,1 @@
+ Function purpose: The function "gb_interface_release" is designed to release and free the memory allocated for a "gb_interface" structure, facilitating the proper cleanup of a device interface in the GreenBus framework.

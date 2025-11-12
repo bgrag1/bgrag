@@ -1,0 +1,1 @@
+ Function purpose: The function "yyjson_alc_dyn_free" is designed to free a dynamically allocated memory allocator and all associated memory blocks it manages, ensuring no memory leaks.

@@ -1,0 +1,1 @@
+ Function purpose: The function copies or hardlinks files from a source directory to a destination directory, ensuring that directories are created and handling special cases like symlinks and alternates.

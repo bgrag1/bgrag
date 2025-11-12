@@ -1,0 +1,1 @@
+ Function purpose: The function "message_add_body_amqp_data" is designed to add AMQP data to the body of a message, ensuring proper validation and memory management of the data.

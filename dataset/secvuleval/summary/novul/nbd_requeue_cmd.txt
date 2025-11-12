@@ -1,0 +1,1 @@
+ Function purpose: The function "nbd_requeue_cmd" is designed to manually requeue a command (cmd) that was previously marked as INFLIGHT, ensuring it is retried later by setting the REQUEUED flag and using "blk_mq_requeue_request" to return it to the request queue.

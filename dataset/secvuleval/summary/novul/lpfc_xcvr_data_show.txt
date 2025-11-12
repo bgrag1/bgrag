@@ -1,0 +1,1 @@
+ Function purpose: The function "lpfc_xcvr_data_show" retrieves and displays transceiver information from an SFP module attached to a Fibre Channel host bus adapter, including vendor details, transceiver specifications, and electrical measurements.

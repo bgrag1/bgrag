@@ -1,0 +1,1 @@
+ Function purpose: The function registers a remote NVMe target or initiator port on an NVMe over FC (NVMe-FC) host adapter, setting up communication with the remote port and updating the port's status flags.

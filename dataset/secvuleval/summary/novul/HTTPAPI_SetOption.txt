@@ -1,0 +1,1 @@
+ Function purpose: The function sets various options for an HTTP connection, such as trusted certificates, client certificates, client private keys, HTTP proxy settings, and TLS renegotiation behavior, and returns the result of the operation.

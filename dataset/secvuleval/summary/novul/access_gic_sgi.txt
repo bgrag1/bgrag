@@ -1,0 +1,1 @@
+ Function purpose: The function checks if the KVM instance has a GICv3, handles read and write operations to ICC_SGI1R_EL1, ICC_ASGI1R_EL1, ICC_SGI0R_EL1 registers, and dispatches SGI messages based on the register accessed.

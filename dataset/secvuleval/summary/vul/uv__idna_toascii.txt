@@ -1,0 +1,1 @@
+ Function purpose: The function converts an internationalized domain name (IDN) to its ASCII representation, handling each label in the domain name and ensuring proper encoding.

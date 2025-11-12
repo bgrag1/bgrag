@@ -1,0 +1,1 @@
+ Function purpose: The function adds arguments to a Flatpak bwrap command to configure the environment and bind necessary directories and files for running an application, while handling errors and ensuring security and permissions are respected.

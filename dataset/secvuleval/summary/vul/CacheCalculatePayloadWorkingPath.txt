@@ -1,0 +1,1 @@
+ Function purpose: The function CacheCalculatePayloadWorkingPath is designed to determine and cache the working path for a specific payload associated with a given bundle ID, appending the payload's SHA1 hash to ensure the path is unique and unverified.

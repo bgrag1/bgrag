@@ -1,0 +1,1 @@
+ Function purpose: The function removes and optionally unmaps a specified number of buffers from an io_ring_ctx context, ensuring that the buffers are either moved to a cache list or unmapped and freed as appropriate.

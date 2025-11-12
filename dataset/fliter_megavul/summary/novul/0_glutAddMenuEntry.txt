@@ -1,0 +1,1 @@
+ Function purpose: The function "glutAddMenuEntry" in the provided code snippet is used to add a new menu entry to the currently active menu with a specified label and value, and to attach it to the current menu.

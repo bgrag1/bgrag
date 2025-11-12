@@ -1,0 +1,1 @@
+ Function purpose: The function sets the scaler filter coefficients for a DWBC (Digital White Balance Control) module in a DCN20 (Display Core Network 2.0) system, configuring the filter type and coefficients based on the provided parameters.

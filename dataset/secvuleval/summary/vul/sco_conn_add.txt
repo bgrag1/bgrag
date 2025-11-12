@@ -1,0 +1,1 @@
+ Function purpose: The function "sco_conn_add" is responsible for adding a new SCO connection to the system, initializing its necessary data structures, and associating it with the provided HCI connection.

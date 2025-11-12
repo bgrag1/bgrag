@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(int argc, VAR1 *argv, VALUE VAR2) {\n if (argc == 1 && FUN2(argv[0], VAR3)) {\n VAR4 = FUN3(argv[0], VAR5);\n template = FUN3(argv[0], VAR6);\n VAR4 = argv[0];\n if (VAR4 != VAR7)\n FUN4(VAR4, VAR8);",
+        "static VAR1 FUN1(int argc, VAR1 *argv, VALUE VAR2) {\n VAR3 **VAR4 = NULL;\n if (!VAR4) {"
+    ],
+    "array": [
+        "static VAR1 FUN1(int argc, VAR1 *argv, VALUE VAR2) {\n if (argc == 1 && FUN2(argv[0], VAR3)) {\n VAR4 = FUN3(argv[0], VAR5);\n template = FUN3(argv[0], VAR6);\n if (VAR4 != VAR7)\n FUN4(VAR4, VAR8);",
+        "static VAR1 FUN1(int argc, VAR1 *argv, VALUE VAR2) {\n if (argc == 1 && FUN2(argv[0], VAR3)) {\n VAR4 = argv[0];\n if (VAR4 != VAR5)\n FUN3(VAR4, VAR6);"
+    ]
+}

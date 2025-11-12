@@ -1,0 +1,1 @@
+ Function purpose: The function removes and frees all compression modes associated with a given IAA device, setting the corresponding slots in the device's compression_modes array to NULL.

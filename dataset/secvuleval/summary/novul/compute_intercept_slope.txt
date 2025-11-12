@@ -1,0 +1,1 @@
+ Function purpose: The function computes the slope and offset for each sensor in a thermal management system based on given data points and calibration modes.

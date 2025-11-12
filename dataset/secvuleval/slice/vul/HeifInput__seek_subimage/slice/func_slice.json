@@ -1,0 +1,8 @@
+{
+    "array": [
+        "VAR1::FUN1(int VAR2, int VAR3)\n auto VAR4 = (VAR2 == 0) ? VAR5 : VAR6[VAR2 - 1];\n VAR7 = VAR8->FUN2(VAR4);\n int VAR9 = FUN3(VAR10, VAR4, nullptr,\n VAR9 = VAR11::FUN4(VAR9, 100); // clamp to some reasonable VAR12\n FUN3(VAR10, VAR4, VAR13.FUN5(),\n for (int VAR14 = 0; VAR14 < VAR9; ++VAR14) {\n auto VAR15 = FUN6(VAR10, VAR4, VAR13[VAR14]);\n if (VAR15 == VAR16) {\n int VAR17 = FUN7(VAR10, VAR4,\n for (int VAR14 = 0; VAR14 < VAR17 / 90; ++VAR14)\n } else if (VAR15 == VAR18) {\n int VAR19 = FUN8(VAR10, VAR4,\n if (VAR19 == VAR20) {\n } else if (VAR19 == VAR21) {",
+        "VAR1::FUN1(int VAR2, int VAR3)\n static const int VAR4[] = { 0, 4, 3, 2, 1, 8, 7, 6, 5 };\n VAR5 = VAR4[VAR5];\n if (VAR5 != 1) {\n VAR6.FUN2(\"\", VAR5);\n if (VAR5 >= 5) {",
+        "VAR1::FUN1(int VAR2, int VAR3)\n static const int VAR4[] = { 0, 6, 7, 8, 5, 2, 3, 4, 1 };\n VAR5 = VAR4[VAR5];\n if (VAR5 != 1) {\n VAR6.FUN2(\"\", VAR5);\n if (VAR5 >= 5) {",
+        "VAR1::FUN1(int VAR2, int VAR3)\n static const int VAR4[] = { 0, 2, 1, 4, 3, 6, 5, 8, 7 };\n VAR5 = VAR4[VAR5];\n if (VAR5 != 1) {\n VAR6.FUN2(\"\", VAR5);\n if (VAR5 >= 5) {"
+    ]
+}

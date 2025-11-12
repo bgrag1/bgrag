@@ -1,0 +1,1 @@
+ Function purpose: The function "mlx5_function_teardown" is designed to gracefully close and disable a specific function on an MLX5 device, returning an error code if any step fails.

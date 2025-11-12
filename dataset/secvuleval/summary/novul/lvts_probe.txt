@@ -1,0 +1,1 @@
+ Function purpose: The function "lvts_probe" is responsible for initializing and enabling a LVTS (Linear Voltage Temperature Sensor) device by allocating memory, retrieving resources, mapping memory, initializing the clock and reset control, requesting an interrupt, and setting up the device driver data.

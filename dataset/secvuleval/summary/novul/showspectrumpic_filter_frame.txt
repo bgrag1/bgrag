@@ -1,0 +1,1 @@
+ Function purpose: The function "showspectrumpic_filter_frame" is designed to collect and store audio frames for further processing in a spectrum visualization filter.

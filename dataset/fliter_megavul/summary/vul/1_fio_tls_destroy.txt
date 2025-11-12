@@ -1,0 +1,1 @@
+ Function purpose: The function "fio_tls_destroy" is designed to deallocate and release resources associated with a TLS (Transport Layer Security) context, including its reference count, context, ALPN list, and SNI certificate array, when the reference count drops to zero.

@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static void FUN1(unsigned long *VAR1)\n\tif (!VAR1)\n\tFUN2(FUN3(VAR1));"
+    ],
+    "API": [
+        "static void FUN1(unsigned long *VAR1)\n\tif (!VAR1)\n\tFUN2(FUN3(VAR1));"
+    ]
+}

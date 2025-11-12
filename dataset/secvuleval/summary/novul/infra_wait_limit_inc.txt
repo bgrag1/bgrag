@@ -1,0 +1,1 @@
+ Function purpose: The function updates the wait count for a client IP address in the infrastructure cache if it exists, or creates a new entry if it does not, based on the configuration's wait limit.

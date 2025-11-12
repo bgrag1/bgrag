@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_mouse" is designed to set the mouse mode to all available options and return a flag indicating whether the operation was successful, while also handling error messages if applicable.

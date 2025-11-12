@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR2);\n\tFUN4(VAR4->VAR7, VAR2, &VAR4->VAR8);\n\tFUN4(VAR4->VAR9, VAR2, &VAR4->VAR10);\n\tFUN5(VAR6, NULL, true);\n\tFUN5(VAR6, NULL, false);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6);\n\tFUN3(VAR4, false);\n\tif (!FUN4(VAR4)) {\n\tFUN5(VAR5, NULL, false);\n\tFUN6(VAR4);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6);\n\tFUN3(VAR4, false);\n\tif (!FUN4(VAR4)) {\n\tFUN5(VAR4);\n\tFUN3(VAR7, false);\n\tif (!FUN4(VAR7)) {\n\tFUN6(VAR5, NULL, false);\n\tFUN5(VAR7);"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6);\n\tFUN3(VAR4, false);\n\tif (!FUN4(VAR4)) {\n\tFUN5(VAR4);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6);\n\tstruct VAR3 *VAR7 = FUN2(VAR5->VAR8);\n\tFUN3(VAR4, false);\n\tFUN3(VAR7, false);\n\tif (!FUN4(VAR7)) {\n\tFUN5(VAR7);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR2);\n\tFUN4(VAR6, NULL, true);\n\tFUN4(VAR6, NULL, false);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tstruct VAR5 *VAR6 = FUN3(VAR2);\n\tstruct VAR7 *VAR8 = FUN4(VAR6->VAR9);\n\tstruct VAR7 *VAR10 = FUN4(VAR6->VAR11);\n\tFUN5(VAR8, false);\n\tFUN6(VAR6, NULL, true);\n\tFUN5(VAR10, false);\n\tFUN6(VAR6, NULL, false);"
+    ]
+}

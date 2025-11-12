@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tif (VAR4->VAR5 != VAR6 ||",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tFUN2(FUN3(VAR1->VAR4), VAR1, &VAR5);\n\tFUN4(VAR1->VAR4);",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n (VAR4->VAR5 != VAR6 && VAR4->VAR5 != VAR7)) {\n\tif (VAR4->VAR5 == VAR7 &&",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR1 = FUN3(VAR2, &VAR4);\n\tif (!VAR1) {\n\tFUN4(FUN5(VAR1->VAR5), VAR1, &VAR6);\n\tFUN6(VAR1);",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tVAR4 = VAR1->VAR4;\n\tFUN2(VAR4);\n\tFUN3(VAR4);\n\treturn VAR4;",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n struct VAR4 *VAR5)\n\tVAR6.VAR7 = VAR5;",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tif (VAR4->VAR5 == VAR6 &&\n !VAR4->VAR7) {",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tVAR4 = FUN2(-VAR5);\n\treturn VAR4;",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tif (VAR4->VAR5 != VAR6 ||\n VAR4->VAR7 != VAR8 ||",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tVAR4 = FUN2(-VAR5);\n\treturn VAR4;",
+        "static struct VAR1 *FUN1(int VAR2, int VAR3,\n\tVAR4 = FUN2(-VAR5);\n\treturn VAR4;"
+    ],
+    "API": []
+}

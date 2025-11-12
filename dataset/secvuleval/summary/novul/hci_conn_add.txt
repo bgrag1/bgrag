@@ -1,0 +1,1 @@
+ Function purpose: The function adds a new connection to a Bluetooth device, initializing its parameters and setting up its data structures, while also checking for prerequisites and handling different types of connections such as ACL, LE, SCO, and eSCO.

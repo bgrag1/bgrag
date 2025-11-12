@@ -1,0 +1,33 @@
+{
+    "pointer": [
+        "static bool FUN1(\n\tVAR1 = VAR2->VAR3[VAR4];\n\tif (!VAR1)",
+        "static bool FUN1(\n\tfor (VAR1 = 0; VAR1 < VAR2->VAR3; VAR1++) {",
+        "static bool FUN1(\n\tstruct VAR1 *VAR1)\n\tif (FUN2(VAR1) &&\n\tif (VAR2->VAR3 != VAR1)\n\tif (VAR2->VAR3 != VAR1)",
+        "static bool FUN1(\n\tif (FUN2(VAR1) &&\n\t(!(VAR1->VAR2.VAR3.VAR4.VAR5.VAR6.VAR7 ||",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tVAR1 = (struct VAR2 *)VAR3->VAR4;\n\tif (!VAR1)\n\tif (VAR1 == VAR5[VAR6])",
+        "static bool FUN1(\n\tif (VAR1->VAR2 || VAR1->VAR3 ||",
+        "static bool FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR2, &VAR4->VAR5);\n\tif (!VAR3)\n\tif (FUN3(VAR3))\n\tif (!VAR3->VAR6)\n\tVAR7 = FUN4(VAR2, VAR3->VAR6);\n\tif (!VAR7)\n\tif (FUN3(VAR7))",
+        "static bool FUN1(\n\tfor (VAR1 = 0; VAR1 < VAR2->VAR3->VAR4; VAR1++) {",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)\n\tVAR6[VAR7] = VAR1;",
+        "static bool FUN1(\n\tif (!VAR1 || !VAR1->VAR2)"
+    ],
+    "array": [
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)\n\tVAR6[VAR7] = VAR1;",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tVAR1 = (struct VAR2 *)VAR3->VAR4;\n\tif (!VAR1)\n\tif (VAR1 == VAR5[VAR6])",
+        "static bool FUN1(\n\tVAR1 = VAR2->VAR3[VAR4];\n\tif (!VAR1)"
+    ],
+    "API": [
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)\n\tVAR6[VAR7] = VAR1;",
+        "static bool FUN1(\n\tif (!VAR1 || !VAR1->VAR2)",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)\n\tVAR6[VAR7] = VAR1;",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tif (!VAR1 || !VAR1->VAR5)\n\tVAR6[VAR7] = VAR1;",
+        "static bool FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR2, &VAR4->VAR5);\n\tif (!VAR3)\n\tif (FUN3(VAR3))\n\tif (!VAR3->VAR6)\n\tVAR7 = FUN4(VAR2, VAR3->VAR6);\n\tif (!VAR7)\n\tif (FUN3(VAR7))",
+        "static bool FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR2, &VAR4->VAR5);\n\tif (!VAR3)\n\tif (FUN3(VAR3))\n\tif (!VAR3->VAR6)\n\tVAR7 = FUN4(VAR2, VAR3->VAR6);",
+        "static bool FUN1(\n\tif (VAR1->VAR2 || VAR1->VAR3 ||",
+        "static bool FUN1(\n\tif (VAR1->VAR2 || VAR1->VAR3 ||",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tVAR1 = (struct VAR2 *)VAR3->VAR4;\n\tif (!VAR1)\n\tif (VAR1 == VAR5[VAR6])",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tVAR1 = (struct VAR2 *)VAR3->VAR4;\n\tif (!VAR1)\n\tif (VAR1 == VAR5[VAR6])",
+        "static bool FUN1(\n\tVAR1 = (struct VAR2 *) VAR3->VAR4;\n\tVAR1 = (struct VAR2 *)VAR3->VAR4;\n\tif (!VAR1)\n\tif (VAR1 == VAR5[VAR6])"
+    ]
+}

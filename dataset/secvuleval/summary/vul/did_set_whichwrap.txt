@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_whichwrap" is designed to update the 'whichwrap' option in Vim, allowing for the specification of which keys can wrap to the previous or next line, by adding a comma to the list of flags associated with this option.

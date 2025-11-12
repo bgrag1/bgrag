@@ -1,0 +1,1 @@
+ Function purpose: The function "__nft_expr_type_get" is designed to retrieve the appropriate "nft_expr_type" based on the specified family and an attribute, either by matching the family or by finding a default type if no specific family is required.

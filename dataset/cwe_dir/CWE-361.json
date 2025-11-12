@@ -1,0 +1,21 @@
+[
+    {
+        "cve_id": "CVE-2016-1643",
+        "func_name": "chromium/ImageInputType::ensurePrimaryContent",
+        "description": "The ImageInputType::ensurePrimaryContent function in WebKit/Source/core/html/forms/ImageInputType.cpp in Blink, as used in Google Chrome before 49.0.2623.87, does not properly maintain the user agent shadow DOM, which allows remote attackers to cause a denial of service or possibly have unspecified other impact via vectors that leverage \"type confusion.\"",
+        "git_url": "https://chromium.googlesource.com/chromium/src/+/2386a6a49ea992a1e859eb0296c1cc53e5772cdb",
+        "commit_title": "ImageInputType::ensurePrimaryContent should recreate UA shadow tree.",
+        "commit_text": " Once the fallback shadow tree was created, it was never recreated even if ensurePrimaryContent was called.  Such situation happens by updating |src| attribute.    ",
+        "func_before": "void ImageInputType::ensurePrimaryContent()\n{\n    if (!m_useFallbackContent)\n        return;\n    m_useFallbackContent = false;\n    reattachFallbackContent();\n}",
+        "func": "void ImageInputType::ensurePrimaryContent()\n{\n    if (!m_useFallbackContent)\n        return;\n    m_useFallbackContent = false;\n    if (ShadowRoot* root = element().userAgentShadowRoot())\n        root->removeChildren();\n    createShadowSubtree();\n    reattachFallbackContent();\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -3,5 +3,8 @@\n     if (!m_useFallbackContent)\n         return;\n     m_useFallbackContent = false;\n+    if (ShadowRoot* root = element().userAgentShadowRoot())\n+        root->removeChildren();\n+    createShadowSubtree();\n     reattachFallbackContent();\n }",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "    if (ShadowRoot* root = element().userAgentShadowRoot())",
+                "        root->removeChildren();",
+                "    createShadowSubtree();"
+            ]
+        }
+    }
+]

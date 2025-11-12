@@ -1,0 +1,1 @@
+ Function purpose: The function "sprd_iommu_cleanup" is designed to deallocate memory and disable the IOMMU for a given domain if it has been attached to a device.

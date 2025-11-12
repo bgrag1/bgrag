@@ -1,0 +1,1 @@
+ Function purpose: The function "gtp_encap_enable_socket" enables GTP encapsulation on an existing socket, configuring it to handle UDP traffic and associating it with a GTP device for encapsulation and reception.

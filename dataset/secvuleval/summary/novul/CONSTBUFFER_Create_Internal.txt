@@ -1,0 +1,1 @@
+ Function purpose: The function "CONSTBUFFER_Create_Internal" is designed to create a constant buffer from a given source array of bytes, copying the content and managing the buffer's reference count.

@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n size_t VAR4, void *VAR5, size_t VAR6)\n\tstruct VAR7 *VAR8 = VAR5;\n\tif (!VAR8)\n\tVAR9 = FUN2(VAR8);\n\tFUN3(VAR9, &VAR10);\n\tFUN4(&VAR10, \"\");\n\tFUN5(VAR8->VAR11.VAR12, &VAR10);\n\tFUN6(VAR8->VAR11.VAR13, &VAR10);\n\tFUN4(&VAR10, \"\");\n\tFUN7(VAR8->VAR11.VAR14, &VAR10);\n\tFUN4(&VAR10, \"\");\n\tFUN8(VAR8->VAR11.VAR15[VAR16],\n\tFUN4(&VAR10, \"\");\n\tFUN9(VAR8->VAR11.VAR17, &VAR10);",
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n\tVAR4 = FUN2(VAR5->VAR6);\n\tFUN3(&VAR7, \"\", VAR4.VAR8, VAR4.VAR9);\n\tFUN4(VAR10, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN5(VAR11->VAR12.VAR13, &VAR7);\n\tFUN6(VAR11->VAR12.VAR14, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN7(VAR11->VAR12.VAR15, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN8(VAR11->VAR12.VAR16[VAR17],\n\tFUN3(&VAR7, \"\");\n\tFUN9(VAR11->VAR12.VAR18, &VAR7);",
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n\tVAR4 = FUN2(VAR5->VAR6);\n\tFUN3(&VAR7, \"\", VAR4.VAR8, VAR4.VAR9);\n\tFUN3(&VAR7, \"\", VAR4.VAR8, VAR4.VAR9);\n\tFUN4(VAR10, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN5(VAR11->VAR12.VAR13, &VAR7);\n\tFUN6(VAR11->VAR12.VAR14, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN7(VAR11->VAR12.VAR15, &VAR7);\n\tFUN3(&VAR7, \"\");\n\tFUN8(VAR11->VAR12.VAR16[VAR17],\n\tFUN3(&VAR7, \"\");\n\tFUN9(VAR11->VAR12.VAR18, &VAR7);",
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n\tVAR4.VAR5 = VAR2;"
+    ],
+    "array": [
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n size_t VAR4, void *VAR5, size_t VAR6)\n\tstruct VAR7 *VAR8 = VAR5;\n\tif (!VAR8)\n\tVAR9 = FUN2(VAR8);\n\tFUN3(&VAR10, \"\");\n\tFUN3(&VAR10, \"\" VAR11 \"\");\n\tFUN3(&VAR10, \"\" VAR12 \"\");\n\tVAR13 = FUN4(VAR14->VAR15);\n\tFUN3(&VAR10, \"\", VAR13.VAR16, VAR13.VAR17);\n\tVAR13 = FUN4(VAR14->VAR18);\n\tFUN3(&VAR10, \"\", VAR13.VAR16, VAR13.VAR17);\n\tFUN5(VAR9, &VAR10);\n\tFUN3(&VAR10, \"\");\n\tFUN6(VAR8->VAR19.VAR20, &VAR10);\n\tFUN7(VAR8->VAR19.VAR21, &VAR10);\n\tFUN3(&VAR10, \"\");\n\tFUN8(VAR8->VAR19.VAR22, &VAR10);\n\tFUN3(&VAR10, \"\");\n\tFUN9(VAR8->VAR19.VAR23[VAR24],\n\tFUN3(&VAR10, \"\");\n\tFUN10(VAR8->VAR19.VAR25, &VAR10);"
+    ],
+    "API": [
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n size_t VAR4, void *VAR5, size_t VAR6)\n\tVAR7.VAR8 = VAR4;\n\treturn VAR4 - VAR7.VAR8;",
+        "static VAR1 FUN1(char *VAR2, loff_t VAR3,\n size_t VAR4, void *VAR5, size_t VAR6)\n\tVAR7.VAR8 = VAR4;\n\treturn VAR4 - VAR7.VAR8;"
+    ]
+}

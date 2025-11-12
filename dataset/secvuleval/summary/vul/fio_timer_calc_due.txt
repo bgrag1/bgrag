@@ -1,0 +1,1 @@
+ Function purpose: The function calculates the due time for a timer based on the current time and an interval, adjusting for overflow of nanoseconds into seconds.

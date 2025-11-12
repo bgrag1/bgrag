@@ -1,0 +1,1 @@
+ Function purpose: The function "xfrm_negative_advice" checks if a destination entry is obsolete and releases it if true, returning a potentially updated pointer to the destination entry.

@@ -1,0 +1,1 @@
+ Function purpose: The function "idpf_vport_intr_rel" is designed to release and free the memory allocated for the queue vectors associated with a virtual port in a network interface, ensuring proper resource cleanup.

@@ -1,0 +1,31 @@
+{
+    "pointer": [
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4 = FUN2(VAR5->socket, VAR6, VAR7, VAR3, sizeof(int));\n if (VAR4 == -1) VAR4 = VAR8;\n return VAR4;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4 = FUN2(VAR5, (const char*)VAR3);\n return VAR4;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4 = FUN2(VAR5->socket, VAR6, VAR7, VAR3, sizeof(int));\n if (VAR4 == -1) VAR4 = VAR8;\n return VAR4;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR4* VAR5 = (VAR4*)VAR1;\n VAR6 = FUN2(VAR5, (const char*)VAR3);\n return VAR6;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4 = FUN2(VAR5->socket, VAR6, VAR7, VAR3, sizeof(int));\n if (VAR4 == -1) VAR4 = VAR8;\n return VAR4;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n if (strcmp(VAR2, \"\") == 0)"
+    ],
+    "API": [
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, \"\") == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n else if (strcmp(VAR2, VAR4) == 0)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR4* VAR5 = (VAR4*)VAR1;\n VAR6 = FUN2(VAR5, (const char*)VAR3);\n return VAR6;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4* VAR5 = (VAR4*)VAR1;\n if (strcmp(VAR2, \"\") == 0)\n VAR6 = FUN2(VAR5->socket, VAR7, VAR8, VAR3, sizeof(int));\n if (VAR6 == -1) VAR6 = VAR9;\n else if (strcmp(VAR2, \"\") == 0)\n VAR6 = FUN2(VAR5->socket, VAR10, VAR11, VAR3, sizeof(int));\n if (VAR6 == -1) VAR6 = VAR9;\n else if (strcmp(VAR2, \"\") == 0)\n VAR6 = FUN2(VAR5->socket, VAR12, VAR13, VAR3, sizeof(int));\n if (VAR6 == -1) VAR6 = VAR9;\n else if (strcmp(VAR2, VAR14) == 0)\n else if (strcmp(VAR2, VAR15) == 0)\n VAR6 = FUN3(VAR5, (const char*)VAR3);\n return VAR6;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4* VAR5 = (VAR4*)VAR1;\n VAR6 = FUN2(VAR5, (const char*)VAR3);\n return VAR6;",
+        "int FUN1(CONCRETE_IO_HANDLE VAR1, const char* VAR2, const void* VAR3)\n if (VAR1 == NULL ||\n VAR2 == NULL ||\n VAR3 == NULL)\n VAR4* VAR5 = (VAR4*)VAR1;\n VAR6 = FUN2(VAR5, (const char*)VAR3);\n return VAR6;"
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n struct VAR4 **VAR5, u32 VAR6)\n\tif (FUN2(VAR2, VAR7, VAR5[VAR8],",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n\tVAR4 = &VAR5->VAR6[VAR7 % VAR5->VAR8];\n\tif (FUN2(VAR2, VAR4, VAR9[VAR10],",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n\tstruct VAR4 *VAR5 = FUN2(VAR2);",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n\tstruct VAR4 *VAR5 = FUN2(VAR2);\n\tVAR6 = FUN3(VAR2, VAR7->VAR8);\n\tFUN4(VAR6, VAR9);\n\tFUN5(VAR6);",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n\tint VAR4 = FUN2();\n\tVAR5 = &VAR6->VAR7[VAR4 % VAR6->VAR8];\n\tFUN3(VAR9, VAR4);\n\tFUN4(VAR9);"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2, int VAR3,\n\tVAR4 = &VAR5->VAR6[VAR7 % VAR5->VAR8];\n\tif (FUN2(VAR2, VAR4, VAR9[VAR10],"
+    ]
+}

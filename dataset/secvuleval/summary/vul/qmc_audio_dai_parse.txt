@@ -1,0 +1,1 @@
+ Function purpose: The function "qmc_audio_dai_parse" is responsible for parsing device tree information and configuring a DAI (Digital Audio Interface) driver for a QMC (Quadrature Mixer Controller) audio device.

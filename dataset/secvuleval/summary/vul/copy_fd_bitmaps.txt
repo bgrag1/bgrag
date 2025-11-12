@@ -1,0 +1,1 @@
+ Function purpose: The function copies bitmap arrays from one file descriptor table to another, initializing the remaining file descriptors in the new table to zero.

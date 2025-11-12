@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "FUN1(void)\n VAR1 = FUN2(\"\",\n FUN3(VAR1, VAR2, FUN4(VAR2));\n VAR3 = FUN5(VAR1);\n FUN6(VAR3, VAR4, FUN4(VAR4));",
+        "FUN1(void)\n VAR1 = FUN2(\"\",\n FUN3(VAR1, VAR2, FUN4(VAR2));\n VAR3 = FUN5(VAR1);\n VAR4 = FUN6(VAR1, NULL);\n FUN7(VAR4, \"\",\n FUN8(VAR4, \"\","
+    ]
+}

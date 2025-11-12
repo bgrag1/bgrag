@@ -1,0 +1,21 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3);\n\tFUN3(&VAR4.VAR5, &VAR3);\n\tVAR6 = FUN4(VAR2, VAR7->VAR8, &VAR3);\n\tVAR9 = FUN5(VAR2, VAR7->VAR8);\n\tVAR9 = FUN6(VAR2, VAR7, VAR7->VAR10->VAR11.VAR12);\n\tif (VAR9 && VAR9 != -VAR13)\n\tFUN7(\"\", VAR9);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3->VAR4->mutex);\n\tFUN3(&VAR3->VAR4->mutex);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3);\n\tFUN3(&VAR4.VAR5, &VAR3);\n\tVAR6 = FUN4(VAR2, VAR7->VAR8, &VAR3);\n\tif (!VAR6)\n\tFUN5(VAR6);",
+        "static void FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR2, VAR4, VAR4->VAR6->VAR7.VAR8);\n\tif (VAR5 && VAR5 != -VAR9)\n\tFUN3(\"\", VAR5);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5->VAR6->VAR7);\n\tif (VAR3 == VAR8)"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3);\n\tFUN3(&VAR4.VAR5, &VAR3);\n\tVAR6 = FUN4(VAR2, VAR7->VAR8, &VAR3);\n\tVAR9 = FUN5(VAR2, VAR7->VAR8);\n\tif (VAR9 && VAR9 != -VAR10)\n\tFUN6(\"\", VAR9);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3);\n\tFUN3(&VAR4.VAR5, &VAR3);\n\tVAR6 = FUN4(VAR2, VAR7->VAR8, &VAR3);\n\tVAR9 = FUN5(VAR2, VAR7->VAR8);\n\tVAR9 = FUN6(VAR2, VAR7, VAR7->VAR10->VAR11.VAR12);\n\tif (VAR9 && VAR9 != -VAR13)\n\tFUN7(\"\", VAR9);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3);\n\tFUN3(&VAR4.VAR5, &VAR3);\n\tVAR6 = FUN4(VAR2, VAR7->VAR8, &VAR3);\n\tif (!VAR6)\n\tFUN5(VAR6);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3->VAR4->mutex);\n\tFUN3(&VAR3->VAR4->mutex);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3->VAR4->mutex);\n\tFUN3(&VAR3->VAR4->mutex);",
+        "static void FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4)\n\tFUN2(&VAR5);\n\tFUN3(&VAR6.VAR7, &VAR5);\n\tVAR8 = FUN4(VAR2, VAR4->VAR9, &VAR5);\n\tVAR10 = FUN5(VAR2, VAR4->VAR9);\n\tVAR10 = FUN6(VAR2, VAR4, VAR4->VAR11->VAR12.VAR13);\n\tif (VAR10 && VAR10 != -VAR14)\n\tFUN7(\"\", VAR10);",
+        "static void FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4)\n\tFUN2(&VAR5);\n\tFUN3(&VAR6.VAR7, &VAR5);\n\tVAR8 = FUN4(VAR2, VAR4->VAR9, &VAR5);\n\tVAR10 = FUN5(VAR2, VAR4->VAR9);\n\tVAR10 = FUN6(VAR2, VAR4, VAR4->VAR11->VAR12.VAR13);\n\tif (VAR10 && VAR10 != -VAR14)\n\tFUN7(\"\", VAR10);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5->VAR6->VAR7);\n\tif (VAR3 == VAR8)",
+        "static void FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5->VAR6->VAR7);\n\tif (VAR3 == VAR8)",
+        "static void FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5->VAR6->VAR7);\n\tif (VAR3 == VAR8)"
+    ]
+}

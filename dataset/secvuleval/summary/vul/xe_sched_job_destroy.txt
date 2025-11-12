@@ -1,0 +1,1 @@
+ Function purpose: The function "xe_sched_job_destroy" is responsible for cleaning up and releasing resources associated with a scheduled job, including freeing fences, putting the job back into its queue, and updating runtime power management for the associated device.

@@ -1,0 +1,1 @@
+ Function purpose: The function "nbio_v7_4_handle_ras_controller_intr_no_bifring" in the code snippet is designed to handle interrupt events related to the RAS (Reliability, Availability, and Serviceability) controller for a specific ASIC type, specifically Alderbaran, and to log and manage hardware error counts detected by the RAS subsystem.

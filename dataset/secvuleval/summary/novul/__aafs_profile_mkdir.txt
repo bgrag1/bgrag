@@ -1,0 +1,1 @@
+ Function purpose: The function creates a directory for a new profile in the file system, initializes profile files and links, and recursively creates directories for child profiles.

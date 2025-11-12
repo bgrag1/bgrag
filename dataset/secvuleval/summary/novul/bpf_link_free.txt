@@ -1,0 +1,1 @@
+ Function purpose: The function "bpf_link_free" is designed to free a BPF link object, detach the associated BPF program, and manage the deallocation of resources based on whether the program is sleepable.

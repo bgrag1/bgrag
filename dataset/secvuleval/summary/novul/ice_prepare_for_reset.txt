@@ -1,0 +1,1 @@
+ Function purpose: The function "ice_prepare_for_reset" prepares the network interface controller (NIC) for a reset by disabling VFs, releasing resources, and setting up necessary flags and states to ensure a smooth reset process.

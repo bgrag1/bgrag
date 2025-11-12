@@ -1,0 +1,1 @@
+ Function purpose: The function "ufshcd_mcq_sq_cleanup" is designed to clean up the submission queue (SQ) for a specific task tag in a UFS host controller, stopping and resetting the SQ, and handling any errors that may occur during the process.

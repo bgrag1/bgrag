@@ -1,0 +1,1 @@
+ Function purpose: The function logs the current state of the Display Controller (DC) including DPP (Display Pipe Processor) and MPCC (Multi-Pipeline Clamp and Color) settings and capabilities.

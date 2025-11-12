@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n\tif (FUN5(VAR1, VAR3) < 0) {\n\tVAR5 = FUN6(VAR6,\n FUN7(VAR3));\n\tif (FUN8(VAR5)) {\n\tVAR7 = FUN9(VAR5);\n\treturn VAR7;",
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tif (!VAR2) {\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n FUN4(VAR2)->VAR4,\n\tFUN5(VAR2);\n\tFUN5(VAR2);",
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tFUN3(VAR1);"
+    ],
+    "API": [
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tif (!VAR2) {\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n FUN4(VAR2)->VAR4,\n\tFUN5(VAR2);",
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tif (!VAR2) {\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n\tFUN5(VAR2);",
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n\tif (FUN5(VAR1, VAR3) < 0) {\n\tVAR5 = FUN6(VAR6,\n FUN7(VAR3));\n\tif (FUN8(VAR5)) {\n\tVAR7 = FUN9(VAR5);\n\treturn VAR7;",
+        "static int FUN1(struct socket *VAR1)\n\tVAR2 = FUN2(VAR1);\n\tVAR3 = FUN3(FUN4(VAR2)->VAR4);\n\tif (FUN5(VAR1, VAR3) < 0) {\n\tVAR5 = FUN6(VAR6,\n FUN7(VAR3));\n\tif (FUN8(VAR5)) {\n\tVAR7 = FUN9(VAR5);\n\treturn VAR7;"
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static void FUN1(const char *VAR1) {\n FUN2(\"\", VAR1);"
+    ]
+}

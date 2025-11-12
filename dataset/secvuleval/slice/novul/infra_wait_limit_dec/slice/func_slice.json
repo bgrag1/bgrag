@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1* VAR2, struct VAR3* VAR4,\n\tstruct VAR5* VAR6 = (struct VAR5*)VAR7->VAR8;",
+        "void FUN1(struct VAR1* VAR2, struct VAR3* VAR4,\n\tVAR5 = FUN2(VAR2, &VAR4->VAR6,",
+        "void FUN1(struct VAR1* VAR2, struct VAR3* VAR4,\n\tif(VAR5->VAR6 > 0)\n\tVAR5->VAR6--;"
+    ]
+}

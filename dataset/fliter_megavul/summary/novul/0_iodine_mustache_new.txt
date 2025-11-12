@@ -1,0 +1,1 @@
+ Function purpose: The function "iodine_mustache_new" is responsible for creating a new instance of a Mustache template engine in the Iodine framework, loading either from a file or directly from a string, and handling various error cases during the process.

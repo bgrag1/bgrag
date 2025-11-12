@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and adjusts the power limit values for a Sienna Cichlid GPU based on the current power limit, default power limit, maximum power limit, and minimum power limit, considering overdrive settings if enabled.

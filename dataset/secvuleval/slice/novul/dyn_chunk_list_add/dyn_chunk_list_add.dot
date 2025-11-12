@@ -1,0 +1,17 @@
+digraph dyn_chunk_list_add {  
+"1000100" [label = "(METHOD,dyn_chunk_list_add)" ]
+"1000116" [label = "(METHOD_RETURN,static_inline void)" ]
+"1000101" [label = "(PARAM,dyn_chunk *list)" ]
+"1000102" [label = "(PARAM,dyn_chunk *chunk)" ]
+"1000104" [label = "(<operator>.assignment,chunk->next = list->next)" ]
+"1000111" [label = "(<operator>.assignment,list->next = chunk)" ]
+  "1000104" -> "1000116"  [ label = "DDG: chunk->next"] 
+  "1000111" -> "1000116"  [ label = "DDG: chunk"] 
+  "1000101" -> "1000116"  [ label = "DDG: list"] 
+  "1000102" -> "1000116"  [ label = "DDG: chunk"] 
+  "1000111" -> "1000116"  [ label = "DDG: list->next"] 
+  "1000100" -> "1000101"  [ label = "DDG: "] 
+  "1000100" -> "1000102"  [ label = "DDG: "] 
+  "1000102" -> "1000111"  [ label = "DDG: chunk"] 
+  "1000100" -> "1000111"  [ label = "DDG: "] 
+}

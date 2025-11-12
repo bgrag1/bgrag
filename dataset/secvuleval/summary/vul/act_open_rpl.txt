@@ -1,0 +1,1 @@
+ Function purpose: The function processes the completion of an active open request, handles various connection issues, and releases resources associated with the endpoint if the connection fails.

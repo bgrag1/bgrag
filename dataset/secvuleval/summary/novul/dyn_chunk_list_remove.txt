@@ -1,0 +1,1 @@
+ Function purpose: The function removes a specified chunk from a linked list of dynamic chunks.

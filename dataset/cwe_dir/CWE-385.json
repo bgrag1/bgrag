@@ -1,0 +1,166 @@
+[
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/EC_GROUP_copy",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "int EC_GROUP_copy(EC_GROUP *dest, const EC_GROUP *src)\n\t{\n\tEC_EXTRA_DATA *d;\n\n\tif (dest->meth->group_copy == 0)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_COPY, ERR_R_SHOULD_NOT_HAVE_BEEN_CALLED);\n\t\treturn 0;\n\t\t}\n\tif (dest->meth != src->meth)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_COPY, EC_R_INCOMPATIBLE_OBJECTS);\n\t\treturn 0;\n\t\t}\n\tif (dest == src)\n\t\treturn 1;\n\t\n\tEC_EX_DATA_free_all_data(&dest->extra_data);\n\n\tfor (d = src->extra_data; d != NULL; d = d->next)\n\t\t{\n\t\tvoid *t = d->dup_func(d->data);\n\t\t\n\t\tif (t == NULL)\n\t\t\treturn 0;\n\t\tif (!EC_EX_DATA_set_data(&dest->extra_data, t, d->dup_func, d->free_func, d->clear_free_func))\n\t\t\treturn 0;\n\t\t}\n\n\tif (src->generator != NULL)\n\t\t{\n\t\tif (dest->generator == NULL)\n\t\t\t{\n\t\t\tdest->generator = EC_POINT_new(dest);\n\t\t\tif (dest->generator == NULL) return 0;\n\t\t\t}\n\t\tif (!EC_POINT_copy(dest->generator, src->generator)) return 0;\n\t\t}\n\telse\n\t\t{\n\t\t/* src->generator == NULL */\n\t\tif (dest->generator != NULL)\n\t\t\t{\n\t\t\tEC_POINT_clear_free(dest->generator);\n\t\t\tdest->generator = NULL;\n\t\t\t}\n\t\t}\n\n\tif (!BN_copy(&dest->order, &src->order)) return 0;\n\tif (!BN_copy(&dest->cofactor, &src->cofactor)) return 0;\n\n\tdest->curve_name = src->curve_name;\n\tdest->asn1_flag  = src->asn1_flag;\n\tdest->asn1_form  = src->asn1_form;\n\n\tif (src->seed)\n\t\t{\n\t\tif (dest->seed)\n\t\t\tOPENSSL_free(dest->seed);\n\t\tdest->seed = OPENSSL_malloc(src->seed_len);\n\t\tif (dest->seed == NULL)\n\t\t\treturn 0;\n\t\tif (!memcpy(dest->seed, src->seed, src->seed_len))\n\t\t\treturn 0;\n\t\tdest->seed_len = src->seed_len;\n\t\t}\n\telse\n\t\t{\n\t\tif (dest->seed)\n\t\t\tOPENSSL_free(dest->seed);\n\t\tdest->seed = NULL;\n\t\tdest->seed_len = 0;\n\t\t}\n\t\n\n\treturn dest->meth->group_copy(dest, src);\n\t}",
+        "func": "int EC_GROUP_copy(EC_GROUP *dest, const EC_GROUP *src)\n\t{\n\tEC_EXTRA_DATA *d;\n\n\tif (dest->meth->group_copy == 0)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_COPY, ERR_R_SHOULD_NOT_HAVE_BEEN_CALLED);\n\t\treturn 0;\n\t\t}\n\tif (dest->meth != src->meth)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_COPY, EC_R_INCOMPATIBLE_OBJECTS);\n\t\treturn 0;\n\t\t}\n\tif (dest == src)\n\t\treturn 1;\n\t\n\tEC_EX_DATA_free_all_data(&dest->extra_data);\n\n\tfor (d = src->extra_data; d != NULL; d = d->next)\n\t\t{\n\t\tvoid *t = d->dup_func(d->data);\n\t\t\n\t\tif (t == NULL)\n\t\t\treturn 0;\n\t\tif (!EC_EX_DATA_set_data(&dest->extra_data, t, d->dup_func, d->free_func, d->clear_free_func))\n\t\t\treturn 0;\n\t\t}\n\n\tif (src->mont_data != NULL)\n\t\t{\n\t\tif (dest->mont_data == NULL)\n\t\t\t{\n\t\t\tdest->mont_data = BN_MONT_CTX_new();\n\t\t\tif (dest->mont_data == NULL) return 0;\n\t\t\t}\n\t\tif (!BN_MONT_CTX_copy(dest->mont_data, src->mont_data)) return 0;\n\t\t}\n\telse\n\t\t{\n\t\t/* src->generator == NULL */\n\t\tif (dest->mont_data != NULL)\n\t\t\t{\n\t\t\tBN_MONT_CTX_free(dest->mont_data);\n\t\t\tdest->mont_data = NULL;\n\t\t\t}\n\t\t}\n\n\tif (src->generator != NULL)\n\t\t{\n\t\tif (dest->generator == NULL)\n\t\t\t{\n\t\t\tdest->generator = EC_POINT_new(dest);\n\t\t\tif (dest->generator == NULL) return 0;\n\t\t\t}\n\t\tif (!EC_POINT_copy(dest->generator, src->generator)) return 0;\n\t\t}\n\telse\n\t\t{\n\t\t/* src->generator == NULL */\n\t\tif (dest->generator != NULL)\n\t\t\t{\n\t\t\tEC_POINT_clear_free(dest->generator);\n\t\t\tdest->generator = NULL;\n\t\t\t}\n\t\t}\n\n\tif (!BN_copy(&dest->order, &src->order)) return 0;\n\tif (!BN_copy(&dest->cofactor, &src->cofactor)) return 0;\n\n\tdest->curve_name = src->curve_name;\n\tdest->asn1_flag  = src->asn1_flag;\n\tdest->asn1_form  = src->asn1_form;\n\n\tif (src->seed)\n\t\t{\n\t\tif (dest->seed)\n\t\t\tOPENSSL_free(dest->seed);\n\t\tdest->seed = OPENSSL_malloc(src->seed_len);\n\t\tif (dest->seed == NULL)\n\t\t\treturn 0;\n\t\tif (!memcpy(dest->seed, src->seed, src->seed_len))\n\t\t\treturn 0;\n\t\tdest->seed_len = src->seed_len;\n\t\t}\n\telse\n\t\t{\n\t\tif (dest->seed)\n\t\t\tOPENSSL_free(dest->seed);\n\t\tdest->seed = NULL;\n\t\tdest->seed_len = 0;\n\t\t}\n\t\n\n\treturn dest->meth->group_copy(dest, src);\n\t}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -25,6 +25,25 @@\n \t\t\treturn 0;\n \t\tif (!EC_EX_DATA_set_data(&dest->extra_data, t, d->dup_func, d->free_func, d->clear_free_func))\n \t\t\treturn 0;\n+\t\t}\n+\n+\tif (src->mont_data != NULL)\n+\t\t{\n+\t\tif (dest->mont_data == NULL)\n+\t\t\t{\n+\t\t\tdest->mont_data = BN_MONT_CTX_new();\n+\t\t\tif (dest->mont_data == NULL) return 0;\n+\t\t\t}\n+\t\tif (!BN_MONT_CTX_copy(dest->mont_data, src->mont_data)) return 0;\n+\t\t}\n+\telse\n+\t\t{\n+\t\t/* src->generator == NULL */\n+\t\tif (dest->mont_data != NULL)\n+\t\t\t{\n+\t\t\tBN_MONT_CTX_free(dest->mont_data);\n+\t\t\tdest->mont_data = NULL;\n+\t\t\t}\n \t\t}\n \n \tif (src->generator != NULL)",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "\t\t}",
+                "",
+                "\tif (src->mont_data != NULL)",
+                "\t\t{",
+                "\t\tif (dest->mont_data == NULL)",
+                "\t\t\t{",
+                "\t\t\tdest->mont_data = BN_MONT_CTX_new();",
+                "\t\t\tif (dest->mont_data == NULL) return 0;",
+                "\t\t\t}",
+                "\t\tif (!BN_MONT_CTX_copy(dest->mont_data, src->mont_data)) return 0;",
+                "\t\t}",
+                "\telse",
+                "\t\t{",
+                "\t\t/* src->generator == NULL */",
+                "\t\tif (dest->mont_data != NULL)",
+                "\t\t\t{",
+                "\t\t\tBN_MONT_CTX_free(dest->mont_data);",
+                "\t\t\tdest->mont_data = NULL;",
+                "\t\t\t}"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/EC_GROUP_free",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "void EC_GROUP_free(EC_GROUP *group)\n\t{\n\tif (!group) return;\n\n\tif (group->meth->group_finish != 0)\n\t\tgroup->meth->group_finish(group);\n\n\tEC_EX_DATA_free_all_data(&group->extra_data);\n\n\tif (group->generator != NULL)\n\t\tEC_POINT_free(group->generator);\n\tBN_free(&group->order);\n\tBN_free(&group->cofactor);\n\n\tif (group->seed)\n\t\tOPENSSL_free(group->seed);\n\n\tOPENSSL_free(group);\n\t}",
+        "func": "void EC_GROUP_free(EC_GROUP *group)\n\t{\n\tif (!group) return;\n\n\tif (group->meth->group_finish != 0)\n\t\tgroup->meth->group_finish(group);\n\n\tEC_EX_DATA_free_all_data(&group->extra_data);\n\n\tif (group->mont_data)\n\t\tBN_MONT_CTX_free(group->mont_data);\n\n\tif (group->generator != NULL)\n\t\tEC_POINT_free(group->generator);\n\tBN_free(&group->order);\n\tBN_free(&group->cofactor);\n\n\tif (group->seed)\n\t\tOPENSSL_free(group->seed);\n\n\tOPENSSL_free(group);\n\t}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -6,6 +6,9 @@\n \t\tgroup->meth->group_finish(group);\n \n \tEC_EX_DATA_free_all_data(&group->extra_data);\n+\n+\tif (group->mont_data)\n+\t\tBN_MONT_CTX_free(group->mont_data);\n \n \tif (group->generator != NULL)\n \t\tEC_POINT_free(group->generator);",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "",
+                "\tif (group->mont_data)",
+                "\t\tBN_MONT_CTX_free(group->mont_data);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/EC_GROUP_set_generator",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "int EC_GROUP_set_generator(EC_GROUP *group, const EC_POINT *generator, const BIGNUM *order, const BIGNUM *cofactor)\n\t{\n\tif (generator == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_SET_GENERATOR, ERR_R_PASSED_NULL_PARAMETER);\n\t\treturn 0   ;\n\t\t}\n\n\tif (group->generator == NULL)\n\t\t{\n\t\tgroup->generator = EC_POINT_new(group);\n\t\tif (group->generator == NULL) return 0;\n\t\t}\n\tif (!EC_POINT_copy(group->generator, generator)) return 0;\n\n\tif (order != NULL)\n\t\t{ if (!BN_copy(&group->order, order)) return 0; }\t\n\telse\n\t\tBN_zero(&group->order);\n\n\tif (cofactor != NULL)\n\t\t{ if (!BN_copy(&group->cofactor, cofactor)) return 0; }\t\n\telse\n\t\tBN_zero(&group->cofactor);\n\n\treturn 1;\n\t}",
+        "func": "int EC_GROUP_set_generator(EC_GROUP *group, const EC_POINT *generator, const BIGNUM *order, const BIGNUM *cofactor)\n\t{\n\tif (generator == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_SET_GENERATOR, ERR_R_PASSED_NULL_PARAMETER);\n\t\treturn 0   ;\n\t\t}\n\n\tif (group->generator == NULL)\n\t\t{\n\t\tgroup->generator = EC_POINT_new(group);\n\t\tif (group->generator == NULL) return 0;\n\t\t}\n\tif (!EC_POINT_copy(group->generator, generator)) return 0;\n\n\tif (order != NULL)\n\t\t{ if (!BN_copy(&group->order, order)) return 0; }\t\n\telse\n\t\tBN_zero(&group->order);\n\n\tif (cofactor != NULL)\n\t\t{ if (!BN_copy(&group->cofactor, cofactor)) return 0; }\t\n\telse\n\t\tBN_zero(&group->cofactor);\n\n\t/* We ignore the return value because some groups have an order with\n\t * factors of two, which makes the Montgomery setup fail.\n\t * |group->mont_data| will be NULL in this case. */\n\tec_precompute_mont_data(group);\n\n\treturn 1;\n\t}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -23,5 +23,10 @@\n \telse\n \t\tBN_zero(&group->cofactor);\n \n+\t/* We ignore the return value because some groups have an order with\n+\t * factors of two, which makes the Montgomery setup fail.\n+\t * |group->mont_data| will be NULL in this case. */\n+\tec_precompute_mont_data(group);\n+\n \treturn 1;\n \t}",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "\t/* We ignore the return value because some groups have an order with",
+                "\t * factors of two, which makes the Montgomery setup fail.",
+                "\t * |group->mont_data| will be NULL in this case. */",
+                "\tec_precompute_mont_data(group);",
+                ""
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/EC_GROUP_new",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "EC_GROUP *EC_GROUP_new(const EC_METHOD *meth)\n\t{\n\tEC_GROUP *ret;\n\n\tif (meth == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, EC_R_SLOT_FULL);\n\t\treturn NULL;\n\t\t}\n\tif (meth->group_init == 0)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, ERR_R_SHOULD_NOT_HAVE_BEEN_CALLED);\n\t\treturn NULL;\n\t\t}\n\n\tret = OPENSSL_malloc(sizeof *ret);\n\tif (ret == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, ERR_R_MALLOC_FAILURE);\n\t\treturn NULL;\n\t\t}\n\n\tret->meth = meth;\n\n\tret->extra_data = NULL;\n\n\tret->generator = NULL;\n\tBN_init(&ret->order);\n\tBN_init(&ret->cofactor);\n\n\tret->curve_name = 0;\t\n\tret->asn1_flag  = 0;\n\tret->asn1_form  = POINT_CONVERSION_UNCOMPRESSED;\n\n\tret->seed = NULL;\n\tret->seed_len = 0;\n\n\tif (!meth->group_init(ret))\n\t\t{\n\t\tOPENSSL_free(ret);\n\t\treturn NULL;\n\t\t}\n\t\n\treturn ret;\n\t}",
+        "func": "EC_GROUP *EC_GROUP_new(const EC_METHOD *meth)\n\t{\n\tEC_GROUP *ret;\n\n\tif (meth == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, EC_R_SLOT_FULL);\n\t\treturn NULL;\n\t\t}\n\tif (meth->group_init == 0)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, ERR_R_SHOULD_NOT_HAVE_BEEN_CALLED);\n\t\treturn NULL;\n\t\t}\n\n\tret = OPENSSL_malloc(sizeof *ret);\n\tif (ret == NULL)\n\t\t{\n\t\tECerr(EC_F_EC_GROUP_NEW, ERR_R_MALLOC_FAILURE);\n\t\treturn NULL;\n\t\t}\n\n\tret->meth = meth;\n\n\tret->extra_data = NULL;\n\tret->mont_data = NULL;\n\n\tret->generator = NULL;\n\tBN_init(&ret->order);\n\tBN_init(&ret->cofactor);\n\n\tret->curve_name = 0;\t\n\tret->asn1_flag  = 0;\n\tret->asn1_form  = POINT_CONVERSION_UNCOMPRESSED;\n\n\tret->seed = NULL;\n\tret->seed_len = 0;\n\n\tif (!meth->group_init(ret))\n\t\t{\n\t\tOPENSSL_free(ret);\n\t\treturn NULL;\n\t\t}\n\t\n\treturn ret;\n\t}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -23,6 +23,7 @@\n \tret->meth = meth;\n \n \tret->extra_data = NULL;\n+\tret->mont_data = NULL;\n \n \tret->generator = NULL;\n \tBN_init(&ret->order);",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "\tret->mont_data = NULL;"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/EC_GROUP_clear_free",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "void EC_GROUP_clear_free(EC_GROUP *group)\n\t{\n\tif (!group) return;\n\n\tif (group->meth->group_clear_finish != 0)\n\t\tgroup->meth->group_clear_finish(group);\n\telse if (group->meth->group_finish != 0)\n\t\tgroup->meth->group_finish(group);\n\n\tEC_EX_DATA_clear_free_all_data(&group->extra_data);\n\n\tif (group->generator != NULL)\n\t\tEC_POINT_clear_free(group->generator);\n\tBN_clear_free(&group->order);\n\tBN_clear_free(&group->cofactor);\n\n\tif (group->seed)\n\t\t{\n\t\tOPENSSL_cleanse(group->seed, group->seed_len);\n\t\tOPENSSL_free(group->seed);\n\t\t}\n\n\tOPENSSL_cleanse(group, sizeof *group);\n\tOPENSSL_free(group);\n\t}",
+        "func": "void EC_GROUP_clear_free(EC_GROUP *group)\n\t{\n\tif (!group) return;\n\n\tif (group->meth->group_clear_finish != 0)\n\t\tgroup->meth->group_clear_finish(group);\n\telse if (group->meth->group_finish != 0)\n\t\tgroup->meth->group_finish(group);\n\n\tEC_EX_DATA_clear_free_all_data(&group->extra_data);\n\n\tif (group->mont_data)\n\t\tBN_MONT_CTX_free(group->mont_data);\n\n\tif (group->generator != NULL)\n\t\tEC_POINT_clear_free(group->generator);\n\tBN_clear_free(&group->order);\n\tBN_clear_free(&group->cofactor);\n\n\tif (group->seed)\n\t\t{\n\t\tOPENSSL_cleanse(group->seed, group->seed_len);\n\t\tOPENSSL_free(group->seed);\n\t\t}\n\n\tOPENSSL_cleanse(group, sizeof *group);\n\tOPENSSL_free(group);\n\t}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -8,6 +8,9 @@\n \t\tgroup->meth->group_finish(group);\n \n \tEC_EX_DATA_clear_free_all_data(&group->extra_data);\n+\n+\tif (group->mont_data)\n+\t\tBN_MONT_CTX_free(group->mont_data);\n \n \tif (group->generator != NULL)\n \t\tEC_POINT_clear_free(group->generator);",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "",
+                "\tif (group->mont_data)",
+                "\t\tBN_MONT_CTX_free(group->mont_data);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-7056",
+        "func_name": "openssl/ecdsa_sign_setup",
+        "description": "A timing attack flaw was found in OpenSSL 1.0.1u and before that could allow a malicious user with local access to recover ECDSA P-256 private keys.",
+        "git_url": "https://git.openssl.org/?p=openssl.git;a=commit;h=f54be179aa4cbbd944728771d7d59ed588158a12",
+        "commit_title": "",
+        "commit_text": "Reserve option to use BN_mod_exp_mont_consttime in ECDSA.  Submitted by Shay Gueron, Intel Corp. RT: 3149  ",
+        "func_before": "static int ecdsa_sign_setup(EC_KEY *eckey, BN_CTX *ctx_in,\n\t\t\t\t\tBIGNUM **kinvp, BIGNUM **rp,\n\t\t\t\t\tconst unsigned char *dgst, int dlen)\n{\n\tBN_CTX   *ctx = NULL;\n\tBIGNUM\t *k = NULL, *r = NULL, *order = NULL, *X = NULL;\n\tEC_POINT *tmp_point=NULL;\n\tconst EC_GROUP *group;\n\tint \t ret = 0;\n\n\tif (eckey == NULL || (group = EC_KEY_get0_group(eckey)) == NULL)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_PASSED_NULL_PARAMETER);\n\t\treturn 0;\n\t}\n\n\tif (ctx_in == NULL) \n\t{\n\t\tif ((ctx = BN_CTX_new()) == NULL)\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_MALLOC_FAILURE);\n\t\t\treturn 0;\n\t\t}\n\t}\n\telse\n\t\tctx = ctx_in;\n\n\tk     = BN_new();\t/* this value is later returned in *kinvp */\n\tr     = BN_new();\t/* this value is later returned in *rp    */\n\torder = BN_new();\n\tX     = BN_new();\n\tif (!k || !r || !order || !X)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_MALLOC_FAILURE);\n\t\tgoto err;\n\t}\n\tif ((tmp_point = EC_POINT_new(group)) == NULL)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\tgoto err;\n\t}\n\tif (!EC_GROUP_get_order(group, order, ctx))\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\tgoto err;\n\t}\n\n#ifdef OPENSSL_FIPS\n\tif (!fips_check_ec_prng(eckey))\n\t\tgoto err;\n#endif\n\t\n\tdo\n\t{\n\t\t/* get random k */\t\n\t\tdo\n#ifndef OPENSSL_NO_SHA512\n\t\t\tif (dgst != NULL)\n\t\t\t{\n\t\t\t\tif (!BN_generate_dsa_nonce(k, order, EC_KEY_get0_private_key(eckey),\n\t\t\t\t\t\t\t   dgst, dlen, ctx))\n\t\t\t\t\t{\n\t\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,\n\t\t\t\t\t\t ECDSA_R_RANDOM_NUMBER_GENERATION_FAILED);\n\t\t\t\t\tgoto err;\n\t\t\t\t\t}\n\t\t\t}\n\t\t\telse\n#endif\n\t\t\t{\n\t\t\t\tif (!BN_rand_range(k, order))\n\t\t\t\t{\n\t\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,\n\t\t\t\t\t\t ECDSA_R_RANDOM_NUMBER_GENERATION_FAILED);\n\t\t\t\t\tgoto err;\n\t\t\t\t}\n\t\t\t}\n\t\twhile (BN_is_zero(k));\n\n\t\t/* We do not want timing information to leak the length of k,\n\t\t * so we compute G*k using an equivalent scalar of fixed\n\t\t * bit-length. */\n\n\t\tif (!BN_add(k, k, order)) goto err;\n\t\tif (BN_num_bits(k) <= BN_num_bits(order))\n\t\t\tif (!BN_add(k, k, order)) goto err;\n\n\t\t/* compute r the x-coordinate of generator * k */\n\t\tif (!EC_POINT_mul(group, tmp_point, k, NULL, NULL, ctx))\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\t\tgoto err;\n\t\t}\n\t\tif (EC_METHOD_get_field_type(EC_GROUP_method_of(group)) == NID_X9_62_prime_field)\n\t\t{\n\t\t\tif (!EC_POINT_get_affine_coordinates_GFp(group,\n\t\t\t\ttmp_point, X, NULL, ctx))\n\t\t\t{\n\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_EC_LIB);\n\t\t\t\tgoto err;\n\t\t\t}\n\t\t}\n#ifndef OPENSSL_NO_EC2M\n\t\telse /* NID_X9_62_characteristic_two_field */\n\t\t{\n\t\t\tif (!EC_POINT_get_affine_coordinates_GF2m(group,\n\t\t\t\ttmp_point, X, NULL, ctx))\n\t\t\t{\n\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_EC_LIB);\n\t\t\t\tgoto err;\n\t\t\t}\n\t\t}\n#endif\n\t\tif (!BN_nnmod(r, X, order, ctx))\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\n\t\t}\n\t}\n\twhile (BN_is_zero(r));\n\n\t/* compute the inverse of k */\n\tif (!BN_mod_inverse(k, k, order, ctx))\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\tgoto err;\t\n\t}\n\t/* clear old values if necessary */\n\tif (*rp != NULL)\n\t\tBN_clear_free(*rp);\n\tif (*kinvp != NULL) \n\t\tBN_clear_free(*kinvp);\n\t/* save the pre-computed values  */\n\t*rp    = r;\n\t*kinvp = k;\n\tret = 1;\nerr:\n\tif (!ret)\n\t{\n\t\tif (k != NULL) BN_clear_free(k);\n\t\tif (r != NULL) BN_clear_free(r);\n\t}\n\tif (ctx_in == NULL) \n\t\tBN_CTX_free(ctx);\n\tif (order != NULL)\n\t\tBN_free(order);\n\tif (tmp_point != NULL) \n\t\tEC_POINT_free(tmp_point);\n\tif (X)\n\t\tBN_clear_free(X);\n\treturn(ret);\n}",
+        "func": "static int ecdsa_sign_setup(EC_KEY *eckey, BN_CTX *ctx_in,\n\t\t\t\t\tBIGNUM **kinvp, BIGNUM **rp,\n\t\t\t\t\tconst unsigned char *dgst, int dlen)\n{\n\tBN_CTX   *ctx = NULL;\n\tBIGNUM\t *k = NULL, *r = NULL, *order = NULL, *X = NULL;\n\tEC_POINT *tmp_point=NULL;\n\tconst EC_GROUP *group;\n\tint \t ret = 0;\n\n\tif (eckey == NULL || (group = EC_KEY_get0_group(eckey)) == NULL)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_PASSED_NULL_PARAMETER);\n\t\treturn 0;\n\t}\n\n\tif (ctx_in == NULL) \n\t{\n\t\tif ((ctx = BN_CTX_new()) == NULL)\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_MALLOC_FAILURE);\n\t\t\treturn 0;\n\t\t}\n\t}\n\telse\n\t\tctx = ctx_in;\n\n\tk     = BN_new();\t/* this value is later returned in *kinvp */\n\tr     = BN_new();\t/* this value is later returned in *rp    */\n\torder = BN_new();\n\tX     = BN_new();\n\tif (!k || !r || !order || !X)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_MALLOC_FAILURE);\n\t\tgoto err;\n\t}\n\tif ((tmp_point = EC_POINT_new(group)) == NULL)\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\tgoto err;\n\t}\n\tif (!EC_GROUP_get_order(group, order, ctx))\n\t{\n\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\tgoto err;\n\t}\n\n#ifdef OPENSSL_FIPS\n\tif (!fips_check_ec_prng(eckey))\n\t\tgoto err;\n#endif\n\t\n\tdo\n\t{\n\t\t/* get random k */\t\n\t\tdo\n#ifndef OPENSSL_NO_SHA512\n\t\t\tif (dgst != NULL)\n\t\t\t{\n\t\t\t\tif (!BN_generate_dsa_nonce(k, order, EC_KEY_get0_private_key(eckey),\n\t\t\t\t\t\t\t   dgst, dlen, ctx))\n\t\t\t\t\t{\n\t\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,\n\t\t\t\t\t\t ECDSA_R_RANDOM_NUMBER_GENERATION_FAILED);\n\t\t\t\t\tgoto err;\n\t\t\t\t\t}\n\t\t\t}\n\t\t\telse\n#endif\n\t\t\t{\n\t\t\t\tif (!BN_rand_range(k, order))\n\t\t\t\t{\n\t\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,\n\t\t\t\t\t\t ECDSA_R_RANDOM_NUMBER_GENERATION_FAILED);\n\t\t\t\t\tgoto err;\n\t\t\t\t}\n\t\t\t}\n\t\twhile (BN_is_zero(k));\n\n\t\t/* We do not want timing information to leak the length of k,\n\t\t * so we compute G*k using an equivalent scalar of fixed\n\t\t * bit-length. */\n\n\t\tif (!BN_add(k, k, order)) goto err;\n\t\tif (BN_num_bits(k) <= BN_num_bits(order))\n\t\t\tif (!BN_add(k, k, order)) goto err;\n\n\t\t/* compute r the x-coordinate of generator * k */\n\t\tif (!EC_POINT_mul(group, tmp_point, k, NULL, NULL, ctx))\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_EC_LIB);\n\t\t\tgoto err;\n\t\t}\n\t\tif (EC_METHOD_get_field_type(EC_GROUP_method_of(group)) == NID_X9_62_prime_field)\n\t\t{\n\t\t\tif (!EC_POINT_get_affine_coordinates_GFp(group,\n\t\t\t\ttmp_point, X, NULL, ctx))\n\t\t\t{\n\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_EC_LIB);\n\t\t\t\tgoto err;\n\t\t\t}\n\t\t}\n#ifndef OPENSSL_NO_EC2M\n\t\telse /* NID_X9_62_characteristic_two_field */\n\t\t{\n\t\t\tif (!EC_POINT_get_affine_coordinates_GF2m(group,\n\t\t\t\ttmp_point, X, NULL, ctx))\n\t\t\t{\n\t\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP,ERR_R_EC_LIB);\n\t\t\t\tgoto err;\n\t\t\t}\n\t\t}\n#endif\n\t\tif (!BN_nnmod(r, X, order, ctx))\n\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\n\t\t}\n\t}\n\twhile (BN_is_zero(r));\n\n\t/* compute the inverse of k */\n\tif (EC_GROUP_get_mont_data(group) != NULL)\n\t\t{\n\t\t/* We want inverse in constant time, therefore we utilize the\n\t\t * fact order must be prime and use Fermats Little Theorem\n\t\t * instead. */\n\t\tif (!BN_set_word(X, 2) )\n\t\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\n\t\t\t}\n\t\tif (!BN_mod_sub(X, order, X, order, ctx))\n\t\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\n\t\t\t}\n\t\tBN_set_flags(X, BN_FLG_CONSTTIME);\n\t\tif (!BN_mod_exp_mont_consttime(k, k, X, order, ctx, EC_GROUP_get_mont_data(group)))\n\t\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\n\t\t\t}\n\t\t}\n\telse\n\t\t{\n\t\tif (!BN_mod_inverse(k, k, order, ctx))\n\t\t\t{\n\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n\t\t\tgoto err;\t\n\t\t\t}\n\t\t}\n\n\t/* clear old values if necessary */\n\tif (*rp != NULL)\n\t\tBN_clear_free(*rp);\n\tif (*kinvp != NULL) \n\t\tBN_clear_free(*kinvp);\n\t/* save the pre-computed values  */\n\t*rp    = r;\n\t*kinvp = k;\n\tret = 1;\nerr:\n\tif (!ret)\n\t{\n\t\tif (k != NULL) BN_clear_free(k);\n\t\tif (r != NULL) BN_clear_free(r);\n\t}\n\tif (ctx_in == NULL) \n\t\tBN_CTX_free(ctx);\n\tif (order != NULL)\n\t\tBN_free(order);\n\tif (tmp_point != NULL) \n\t\tEC_POINT_free(tmp_point);\n\tif (X)\n\t\tBN_clear_free(X);\n\treturn(ret);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -120,11 +120,37 @@\n \twhile (BN_is_zero(r));\n \n \t/* compute the inverse of k */\n-\tif (!BN_mod_inverse(k, k, order, ctx))\n-\t{\n-\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n-\t\tgoto err;\t\n-\t}\n+\tif (EC_GROUP_get_mont_data(group) != NULL)\n+\t\t{\n+\t\t/* We want inverse in constant time, therefore we utilize the\n+\t\t * fact order must be prime and use Fermats Little Theorem\n+\t\t * instead. */\n+\t\tif (!BN_set_word(X, 2) )\n+\t\t\t{\n+\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n+\t\t\tgoto err;\n+\t\t\t}\n+\t\tif (!BN_mod_sub(X, order, X, order, ctx))\n+\t\t\t{\n+\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n+\t\t\tgoto err;\n+\t\t\t}\n+\t\tBN_set_flags(X, BN_FLG_CONSTTIME);\n+\t\tif (!BN_mod_exp_mont_consttime(k, k, X, order, ctx, EC_GROUP_get_mont_data(group)))\n+\t\t\t{\n+\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n+\t\t\tgoto err;\n+\t\t\t}\n+\t\t}\n+\telse\n+\t\t{\n+\t\tif (!BN_mod_inverse(k, k, order, ctx))\n+\t\t\t{\n+\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);\n+\t\t\tgoto err;\t\n+\t\t\t}\n+\t\t}\n+\n \t/* clear old values if necessary */\n \tif (*rp != NULL)\n \t\tBN_clear_free(*rp);",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\tif (!BN_mod_inverse(k, k, order, ctx))",
+                "\t{",
+                "\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);",
+                "\t\tgoto err;\t",
+                "\t}"
+            ],
+            "added_lines": [
+                "\tif (EC_GROUP_get_mont_data(group) != NULL)",
+                "\t\t{",
+                "\t\t/* We want inverse in constant time, therefore we utilize the",
+                "\t\t * fact order must be prime and use Fermats Little Theorem",
+                "\t\t * instead. */",
+                "\t\tif (!BN_set_word(X, 2) )",
+                "\t\t\t{",
+                "\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);",
+                "\t\t\tgoto err;",
+                "\t\t\t}",
+                "\t\tif (!BN_mod_sub(X, order, X, order, ctx))",
+                "\t\t\t{",
+                "\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);",
+                "\t\t\tgoto err;",
+                "\t\t\t}",
+                "\t\tBN_set_flags(X, BN_FLG_CONSTTIME);",
+                "\t\tif (!BN_mod_exp_mont_consttime(k, k, X, order, ctx, EC_GROUP_get_mont_data(group)))",
+                "\t\t\t{",
+                "\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);",
+                "\t\t\tgoto err;",
+                "\t\t\t}",
+                "\t\t}",
+                "\telse",
+                "\t\t{",
+                "\t\tif (!BN_mod_inverse(k, k, order, ctx))",
+                "\t\t\t{",
+                "\t\t\tECDSAerr(ECDSA_F_ECDSA_SIGN_SETUP, ERR_R_BN_LIB);",
+                "\t\t\tgoto err;\t",
+                "\t\t\t}",
+                "\t\t}",
+                ""
+            ]
+        }
+    }
+]

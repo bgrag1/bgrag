@@ -1,0 +1,26 @@
+[
+    {
+        "cve_id": "CVE-2014-125059",
+        "func_name": "sternenseemann/sternenblog/blog_post",
+        "description": "A vulnerability, which was classified as problematic, has been found in sternenseemann sternenblog. This issue affects the function blog_index of the file main.c. The manipulation of the argument post_path leads to file inclusion. The attack may be initiated remotely. The complexity of an attack is rather high. The exploitation is known to be difficult. Upgrading to version 0.1.0 is able to address this issue. The identifier of the patch is cf715d911d8ce17969a7926dea651e930c27e71a. It is recommended to upgrade the affected component. The identifier VDB-217613 was assigned to this vulnerability. NOTE: This case is rather theoretical and probably won't happen. Maybe only on obscure Web servers.",
+        "git_url": "https://github.com/sternenseemann/sternenblog/commit/cf715d911d8ce17969a7926dea651e930c27e71a",
+        "commit_title": "fixed LFI vulnerability",
+        "commit_text": "",
+        "func_before": "void blog_post(char post_path[]) {\n\tif(file_exists(post_path) > 0) {\n\t\tstruct blogpost post = make_blogpost(post_path);\n\n\t\tsend_header(\"Content-type\", \"text/html\");\n\t\tterminate_headers();\n\n\t\ttemplate_header();\n\t\ttemplate_post_single_entry(post);\n\t} else {\n\t\tsend_header(\"Content-type\", \"text/html\");\n\t\tsend_header(\"Status\", \"404 Not Found\");\n\t\tterminate_headers();\n\n\t\ttemplate_header();\n\t\ttemplate_error_404();\n\t}\n\n\ttemplate_footer();\n}",
+        "func": "void blog_post(char post_path[]) {\n\tif(strlen(post_path) != 0 || post_path[0] == '.'\n\t\t\t|| strchr(post_path, '/') == NULL) {\n\t\tsend_header(\"Content-type\", \"text/plain\");\n\t\tterminate_headers();\n\t\tprintf(\"No, my dear h4xxx0r :)\\nYou won\\'t do that :p\\n\");\n\t\treturn;\n\t}\n\n\tif(file_exists(post_path) > 0) {\n\t\tstruct blogpost post = make_blogpost(post_path);\n\n\t\tsend_header(\"Content-type\", \"text/html\");\n\t\tterminate_headers();\n\n\t\ttemplate_header();\n\t\ttemplate_post_single_entry(post);\n\t} else {\n\t\tsend_header(\"Content-type\", \"text/html\");\n\t\tsend_header(\"Status\", \"404 Not Found\");\n\t\tterminate_headers();\n\n\t\ttemplate_header();\n\t\ttemplate_error_404();\n\t}\n\n\ttemplate_footer();\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,4 +1,12 @@\n void blog_post(char post_path[]) {\n+\tif(strlen(post_path) != 0 || post_path[0] == '.'\n+\t\t\t|| strchr(post_path, '/') == NULL) {\n+\t\tsend_header(\"Content-type\", \"text/plain\");\n+\t\tterminate_headers();\n+\t\tprintf(\"No, my dear h4xxx0r :)\\nYou won\\'t do that :p\\n\");\n+\t\treturn;\n+\t}\n+\n \tif(file_exists(post_path) > 0) {\n \t\tstruct blogpost post = make_blogpost(post_path);\n ",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "\tif(strlen(post_path) != 0 || post_path[0] == '.'",
+                "\t\t\t|| strchr(post_path, '/') == NULL) {",
+                "\t\tsend_header(\"Content-type\", \"text/plain\");",
+                "\t\tterminate_headers();",
+                "\t\tprintf(\"No, my dear h4xxx0r :)\\nYou won\\'t do that :p\\n\");",
+                "\t\treturn;",
+                "\t}",
+                ""
+            ]
+        }
+    }
+]

@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4* VAR5 = (VAR4*)VAR1;\n if (VAR5 != NULL)\n if (VAR2 == NULL)\n VAR6 = (unsigned char*)realloc(VAR5->VAR7, VAR5->VAR8 + VAR3);\n if (VAR6 == NULL)\n VAR5->VAR7 = VAR6;\n if (memcpy(VAR5->VAR7 + VAR5->VAR8, VAR2, VAR3) == NULL)\n VAR5->VAR8 += VAR3;",
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4 = (unsigned char*)realloc(VAR5->VAR6, VAR5->VAR7 + VAR3);"
+    ],
+    "integer": [
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4 = (unsigned char*)realloc(VAR5->VAR6, VAR5->VAR7 + VAR3);\n if (VAR4 == NULL)\n VAR5->VAR6 = VAR4;\n if (memcpy(VAR5->VAR6 + VAR5->VAR7, VAR2, VAR3) == NULL)\n VAR5->VAR7 += VAR3;"
+    ],
+    "API": [
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4 = (unsigned char*)realloc(VAR5->VAR6, VAR5->VAR7 + VAR3);\n if (VAR4 == NULL)\n VAR5->VAR6 = VAR4;\n if (memcpy(VAR5->VAR6 + VAR5->VAR7, VAR2, VAR3) == NULL)\n VAR5->VAR7 += VAR3;",
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4* VAR5 = (VAR4*)VAR1;\n if (VAR5 != NULL)\n if (VAR2 == NULL)\n VAR6 = (unsigned char*)realloc(VAR5->VAR7, VAR5->VAR8 + VAR3);\n if (VAR6 == NULL)\n VAR5->VAR7 = VAR6;\n if (memcpy(VAR5->VAR7 + VAR5->VAR8, VAR2, VAR3) == NULL)",
+        "static void FUN1(void* VAR1, const unsigned char* VAR2, size_t VAR3)\n VAR4* VAR5 = (VAR4*)VAR1;\n if (VAR5 != NULL)\n if (VAR2 == NULL)\n VAR6 = (unsigned char*)realloc(VAR5->VAR7, VAR5->VAR8 + VAR3);\n if (VAR6 == NULL)\n VAR5->VAR7 = VAR6;\n if (memcpy(VAR5->VAR7 + VAR5->VAR8, VAR2, VAR3) == NULL)\n VAR5->VAR8 += VAR3;"
+    ]
+}

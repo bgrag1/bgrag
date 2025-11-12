@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2)\n for (VAR3 = *VAR4; *VAR3; )\n\twhile (*VAR3 && *VAR3 != '')\n if (FUN2((VAR5 *)VAR6, *VAR3) == NULL\n && !FUN3(*VAR3) && *VAR3 != '')\n\tVAR7 = FUN4(VAR2->VAR8, VAR2->VAR9, *VAR3);\n ++VAR3;\n\tif (*VAR3++ == VAR10)\n\telse if (*VAR3 == '' || *VAR3 == VAR10)\n\tif (VAR7 != NULL)\n\twhile (*VAR3 && *VAR3 != '')\n if (*VAR3 == '' && VAR3[1] != VAR10)\n\t++VAR3;\n ++VAR3;\n\tVAR3 = FUN5(VAR3);\n return VAR7;",
+        "FUN1(VAR1 *VAR2)\n if (FUN2((VAR3 *)VAR4, *VAR5) == NULL\n VAR6 = VAR7;\n\tif (VAR6 != NULL)\n return VAR6;",
+        "FUN1(VAR1 *VAR2)\n VAR3\t**VAR4 = (VAR3 **)VAR2->VAR5;",
+        "FUN1(VAR1 *VAR2)\n char\t*VAR3 = NULL;\n if (FUN2((VAR4 *)VAR5, *VAR6) == NULL\n\tif (VAR3 != NULL)\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n if (FUN2((VAR3 *)VAR4, *VAR5) == NULL\n VAR6 = VAR7;\n\tif (VAR6 != NULL)\n return VAR6;"
+    ],
+    "array": [
+        "FUN1(VAR1 *VAR2)\n for (VAR3 = *VAR4; *VAR3; )\n\twhile (*VAR3 && *VAR3 != '')\n if (FUN2((VAR5 *)VAR6, *VAR3) == NULL\n && !FUN3(*VAR3) && *VAR3 != '')\n\tVAR7 = FUN4(VAR2->VAR8, VAR2->VAR9, *VAR3);\n ++VAR3;\n\tif (*VAR3++ == VAR10)\n\telse if (*VAR3 == '' || *VAR3 == VAR10)\n\tif (VAR7 != NULL)\n\twhile (*VAR3 && *VAR3 != '')\n if (*VAR3 == '' && VAR3[1] != VAR10)\n\t++VAR3;\n ++VAR3;\n\tVAR3 = FUN5(VAR3);\n return VAR7;"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2)\n char\t*VAR3 = NULL;\n for (VAR4 = *VAR5; *VAR4; )\n\twhile (*VAR4 && *VAR4 != '')\n if (FUN2((VAR6 *)VAR7, *VAR4) == NULL\n && !FUN3(*VAR4) && *VAR4 != '')\n\tVAR3 = FUN4(VAR2->VAR8, VAR2->VAR9, *VAR4);\n ++VAR4;\n\tif (*VAR4++ == VAR10)\n VAR3 = VAR11;\n\telse if (*VAR4 == '' || *VAR4 == VAR10)\n VAR3 = VAR12;\n\tif (VAR3 != NULL)\n\twhile (*VAR4 && *VAR4 != '')\n if (*VAR4 == '' && VAR4[1] != VAR10)\n\t++VAR4;\n ++VAR4;\n\tVAR4 = FUN5(VAR4);",
+        "FUN1(VAR1 *VAR2)\n char\t*VAR3 = NULL;\n for (VAR4 = *VAR5; *VAR4; )\n\twhile (*VAR4 && *VAR4 != '')\n if (FUN2((VAR6 *)VAR7, *VAR4) == NULL\n && !FUN3(*VAR4) && *VAR4 != '')\n\tVAR3 = FUN4(VAR2->VAR8, VAR2->VAR9, *VAR4);\n ++VAR4;\n\tif (*VAR4++ == VAR10)\n VAR3 = VAR11;\n\telse if (*VAR4 == '' || *VAR4 == VAR10)\n VAR3 = VAR12;\n\tif (VAR3 != NULL)\n\twhile (*VAR4 && *VAR4 != '')\n if (*VAR4 == '' && VAR4[1] != VAR10)\n\t++VAR4;\n ++VAR4;\n\tVAR4 = FUN5(VAR4);\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n for (VAR3 = *VAR4; *VAR3; )\n\twhile (*VAR3 && *VAR3 != '')\n if (FUN2((VAR5 *)VAR6, *VAR3) == NULL\n && !FUN3(*VAR3) && *VAR3 != '')\n\tVAR7 = FUN4(VAR2->VAR8, VAR2->VAR9, *VAR3);\n ++VAR3;\n\tif (*VAR3++ == VAR10)\n\telse if (*VAR3 == '' || *VAR3 == VAR10)\n\tif (VAR7 != NULL)\n\twhile (*VAR3 && *VAR3 != '')\n if (*VAR3 == '' && VAR3[1] != VAR10)\n\t++VAR3;\n ++VAR3;\n\tVAR3 = FUN5(VAR3);\n return VAR7;"
+    ]
+}

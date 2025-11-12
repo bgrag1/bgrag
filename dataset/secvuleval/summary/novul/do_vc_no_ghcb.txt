@@ -1,0 +1,1 @@
+ Function purpose: The function "do_vc_no_ghcb" handles CPUID exits in a virtual machine running under SEV-ES, ensuring that the CPUID instructions are executed securely and validating the CPUID results to prevent sensitive data exposure.

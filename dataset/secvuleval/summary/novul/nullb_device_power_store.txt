@@ -1,0 +1,1 @@
+ Function purpose: The function "nullb_device_power_store" is designed to store and manage the power state of a nullb device, updating its configuration and status flags based on the provided boolean value.

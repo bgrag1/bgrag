@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3, VAR2->VAR4[VAR5]);\n\tVAR2->VAR4[VAR5] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tfor (VAR3 = 0; VAR3 < VAR2->VAR4; VAR3++) {",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]);\n\tVAR2->VAR3[VAR4] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);"
+    ],
+    "array": [
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3, VAR2->VAR4[VAR5]);\n\tVAR2->VAR4[VAR5] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]);\n\tVAR2->VAR3[VAR4] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3, VAR2->VAR4[VAR5]);\n\tVAR2->VAR4[VAR5] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]->VAR5);\n\tFUN3(VAR2->VAR3[VAR4]->VAR5);"
+    ]
+}

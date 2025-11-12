@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the "rdma_restrack_clean" function is to detect and report unreleased RDMA resources in an InfiniBand device, and to clean up the resource tracking structures.

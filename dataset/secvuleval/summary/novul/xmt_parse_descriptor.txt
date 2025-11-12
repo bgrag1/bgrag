@@ -1,0 +1,1 @@
+ Function purpose: The function "xmt_parse_descriptor" parses and processes descriptor elements from an XML document, creating and managing descriptor objects based on the parsed data, and establishing relationships between descriptors as specified by attributes such as "binaryID", "objectDescriptorID", "ES_ID", and "dependsOn_ES_ID".

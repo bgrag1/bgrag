@@ -1,0 +1,1 @@
+ Function purpose: The function "netem_enqueue" is responsible for enqueuing, duplicating, delaying, and possibly corrupting packets in a network traffic emulator (netem) queue, and it handles the reordering of packets based on specified parameters.

@@ -1,0 +1,1 @@
+ Function purpose: The function "choose_bb_rdev" selects the best disk for reading data from a RAID 1 array based on the availability, readablity, and status of the disks, and updates the read sectors information accordingly.

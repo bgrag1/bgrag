@@ -1,0 +1,1 @@
+ Function purpose: The function sets up a pipe configuration for a specified OTG instance, panel instance, and power sequence instance using the ABM (Adaptive Backlight Modulation) module, and returns true upon successful execution.

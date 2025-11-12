@@ -1,0 +1,1 @@
+ Function purpose: The function "ip_identify_apply" validates and configures an IP identification object, resolves host addresses via SRV or DNS lookup, and marks the identify as having dynamic content if necessary.

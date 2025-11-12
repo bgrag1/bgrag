@@ -1,0 +1,1 @@
+ Function purpose: The function updates the resource log for the pipe topology of a display controller, including both main and phantom streams.

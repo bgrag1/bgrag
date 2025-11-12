@@ -1,0 +1,1 @@
+ Function purpose: The function calculates and returns the working folder path for a given bundle ID, indicating whether the folder is elevated, and stores it in a dynamically allocated string.

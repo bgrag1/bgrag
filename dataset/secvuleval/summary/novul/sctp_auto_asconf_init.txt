@@ -1,0 +1,1 @@
+ Function purpose: The function "sctp_auto_asconf_init" initializes the auto-asconf feature for a given SCTP socket, adding it to the auto-asconf list if the default auto-asconf setting is enabled.

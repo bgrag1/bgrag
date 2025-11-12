@@ -1,0 +1,1 @@
+ Function purpose: The function "lmh_probe" is responsible for initializing and configuring the LMH (Limited Memory Hardware) hardware for a specific CPU node in a Linux kernel driver, setting up thermal trips and enabling various subfunctions based on the device tree configuration.

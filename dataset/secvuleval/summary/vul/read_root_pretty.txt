@@ -1,0 +1,1 @@
+ Function purpose: The function reads and parses JSON data into a yyjson_doc structure, handling various JSON types and errors, and allocating memory for the JSON values dynamically.

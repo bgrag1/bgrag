@@ -1,0 +1,23 @@
+{
+    "pointer": [
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n FUN2(\"\", VAR1);",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (strcmp(VAR1, VAR3) == 0)",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n VAR3 = NULL;\n return VAR3;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n VAR3 = NULL;\n return VAR3;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n strcpy((char *)VAR4, (char *)VAR2);",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n FUN2(\"\", VAR1);",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n FUN2(\"\", VAR1);"
+    ],
+    "API": [
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);\n return VAR5;",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (strcmp(VAR1, VAR3) == 0)",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (strcmp(VAR1, VAR3) == 0)",
+        "static void* FUN1(const char* VAR1, const void* VAR2)\n if (VAR1 != NULL)\n if (VAR2 == NULL)\n size_t VAR3 = FUN2(strlen((char*)VAR2), 1);\n VAR3 = FUN3(VAR3, sizeof(char));\n if (VAR3 == VAR4)\n else if ((VAR5 = malloc(VAR3)) == NULL)\n strcpy((char *)VAR5, (char *)VAR2);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function maps a given Directed Physical Address (DPA) to a CXL region by checking if the device is an endpoint decoder and if the DPA falls within the decoder's reserved address range, then it returns the corresponding region.

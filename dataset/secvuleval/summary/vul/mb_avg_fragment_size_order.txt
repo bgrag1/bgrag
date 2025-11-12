@@ -1,0 +1,1 @@
+ Function purpose: The function calculates the order of a fragment size based on the number of free blocks in a group, adjusting for special cases like groups with only 1 block free or completely empty groups.

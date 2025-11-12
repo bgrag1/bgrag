@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, const char *VAR3)\n\tif (VAR2 == FUN2())\n\tfor (VAR4 = 0; VAR4 < VAR5; ++VAR4) {\n\tif (!(FUN3(VAR2, VAR4) & VAR6))\n\tVAR7 = FUN4(VAR2, VAR4);\n\tVAR8 = FUN5(VAR2, VAR4);\n\tFUN6(VAR7, VAR8);\n\tVAR9 = FUN7(VAR2);\n\treturn VAR9;"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, const char *VAR3)\n\tif (VAR2 == FUN2())\n\tfor (VAR4 = 0; VAR4 < VAR5; ++VAR4) {\n\tif (!(FUN3(VAR2, VAR4) & VAR6))\n\tVAR7 = FUN4(VAR2, VAR4);\n\tVAR8 = FUN5(VAR2, VAR4);\n\tVAR9 = FUN6(VAR2);\n\treturn VAR9;",
+        "int FUN1(struct VAR1 *VAR2, const char *VAR3)\n\tif (VAR2 == FUN2())\n\tfor (VAR4 = 0; VAR4 < VAR5; ++VAR4) {\n\tif (!(FUN3(VAR2, VAR4) & VAR6))\n\tVAR7 = FUN4(VAR2, VAR4);\n\tVAR8 = FUN5(VAR2, VAR4);\n\tVAR9 = FUN6(VAR2);\n\treturn VAR9;"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "void FUN1() {\n VAR1 *VAR2 = FUN2();\n VAR2++;"
+    ],
+    "API": [
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n snprintf(VAR4, sizeof(VAR4), \"\", VAR2, VAR5);\n if (FUN2(VAR4)) {\n FUN3(VAR4);\n sprintf(VAR4, \"\", VAR2, VAR6);\n if (FUN2(VAR4))\n FUN3(VAR4);",
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n snprintf(VAR4, sizeof(VAR4), \"\", VAR2, VAR5);\n if (FUN2(VAR4)) {\n sprintf(VAR4, \"\", VAR2, VAR6);\n if (FUN2(VAR4))\n FUN3(VAR4);",
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n if (FUN2(VAR1)) {\n FUN3(VAR1);\n snprintf(VAR4, sizeof(VAR4), \"\", VAR2, VAR5);\n if (FUN2(VAR4)) {\n FUN3(VAR4);\n sprintf(VAR4, \"\", VAR2, VAR6);\n if (FUN2(VAR4))\n FUN3(VAR4);",
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n if (FUN2(VAR1)) {\n FUN3(VAR1);",
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n snprintf(VAR4, sizeof(VAR4), \"\", VAR2, VAR5);\n if (FUN2(VAR4)) {\n FUN3(VAR4);",
+        "void FUN1() {\n sprintf(VAR1, \"\", VAR2, VAR3);\n snprintf(VAR4, sizeof(VAR4), \"\", VAR2, VAR5);\n if (FUN2(VAR4)) {\n sprintf(VAR4, \"\", VAR2, VAR6);\n if (FUN2(VAR4))\n FUN3(VAR4);"
+    ]
+}

@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(VAR2* VAR3, HTTPAPI_REQUEST_TYPE VAR4, const char* VAR5, VAR6 *VAR7)\n if ((VAR8 = FUN2(VAR4)) == NULL)\n else if ((VAR9 = FUN3(VAR10, 0, VAR5, -1, NULL, 0)) == 0)\n else if ((VAR11 = (wchar_t*)malloc((VAR9 + 1) * sizeof(wchar_t))) == NULL)\n else if (FUN3(VAR10, 0, VAR5, -1, VAR11, (int)VAR9) == 0)\n else if ((*VAR7 = FUN4(\n else if ((VAR3->VAR12 != NULL) &&\n !FUN5(\n (void*)FUN6(VAR3->VAR12),\n (void)FUN7(*VAR7);\n *VAR7 = NULL;\n free(VAR11);",
+        "static VAR1 FUN1(VAR2* VAR3, HTTPAPI_REQUEST_TYPE VAR4, const char* VAR5, VAR6 *VAR7)\n wchar_t* VAR8 = NULL;\n free(VAR8);"
+    ],
+    "API": [
+        "static VAR1 FUN1(VAR2* VAR3, HTTPAPI_REQUEST_TYPE VAR4, const char* VAR5, VAR6 *VAR7)\n wchar_t* VAR8 = NULL;\n if ((VAR9 = FUN2(VAR4)) == NULL)\n else if ((VAR10 = FUN3(VAR11, 0, VAR5, -1, NULL, 0)) == 0)\n else if ((VAR8 = (wchar_t*)malloc((VAR10 + 1) * sizeof(wchar_t))) == NULL)\n else if (FUN3(VAR11, 0, VAR5, -1, VAR8, (int)VAR10) == 0)\n else if ((*VAR7 = FUN4(\n free(VAR8);",
+        "static VAR1 FUN1(VAR2* VAR3, HTTPAPI_REQUEST_TYPE VAR4, const char* VAR5, VAR6 *VAR7)\n if ((VAR8 = FUN2(VAR4)) == NULL)\n else if ((VAR9 = FUN3(VAR10, 0, VAR5, -1, NULL, 0)) == 0)\n else if ((VAR11 = (wchar_t*)malloc((VAR9 + 1) * sizeof(wchar_t))) == NULL)\n else if (FUN3(VAR10, 0, VAR5, -1, VAR11, (int)VAR9) == 0)\n else if ((*VAR7 = FUN4(\n else if ((VAR3->VAR12 != NULL) &&\n !FUN5(\n (void*)FUN6(VAR3->VAR12),\n (void)FUN7(*VAR7);\n *VAR7 = NULL;\n free(VAR11);"
+    ]
+}

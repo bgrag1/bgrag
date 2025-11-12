@@ -1,0 +1,1 @@
+ Function purpose: The function "gfs2_put_super" is responsible for cleaning up and releasing resources associated with a GFS2 file system after it is unmounted, ensuring that all outstanding operations are completed and resources are properly released.

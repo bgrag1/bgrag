@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "extern \"\" VAR1 FUN1(\n __deref_out_z VAR2* VAR3\n VAR4 = FUN2(VAR3, NULL);\n FUN3(VAR4, \"\");\n return VAR4;"
+    ]
+}

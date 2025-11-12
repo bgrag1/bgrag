@@ -1,0 +1,1 @@
+ Function purpose: The function sets the intermediate frequency (IF) for a DVB frontend based on the target bandwidth and calculates the necessary PLL factors and sample frequency for the TD10048 demodulator.

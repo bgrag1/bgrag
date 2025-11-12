@@ -1,0 +1,1 @@
+ Function purpose: The function "ice_free_q_vector" is designed to free a queue vector (q_vector) associated with a specific VSI (Virtual Switch Interface) and its associated netdev, releasing any allocated resources such as NAPI, interrupts, and memory.

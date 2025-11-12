@@ -1,0 +1,1 @@
+ Function purpose: The function allocates and initializes an io_ring_ctx structure, setting up necessary data structures and resources for an io_uring context, including hash tables, reference counting, and wait queues.

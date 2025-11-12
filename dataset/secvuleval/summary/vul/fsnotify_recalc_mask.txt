@@ -1,0 +1,1 @@
+ Function purpose: The function "fsnotify_recalc_mask" recalculates the notification mask for a file system event mark connector and updates the inode's child dentry flags if the connector is associated with an inode.

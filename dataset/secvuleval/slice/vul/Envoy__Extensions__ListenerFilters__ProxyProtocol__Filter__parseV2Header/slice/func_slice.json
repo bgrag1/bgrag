@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "bool VAR1::FUN1(const char* VAR2) {\n VAR3 = reinterpret_cast<const VAR4*>(&VAR2[VAR5]);",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 - 1];\n size_t VAR5 = (VAR6 << 8) + VAR3;",
+        "bool VAR1::FUN1(const char* VAR2) {\n VAR3 = reinterpret_cast<const VAR4*>(&VAR2[VAR5]);",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 - 2];\n size_t VAR5 = (VAR3 << 8) + VAR6;",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 + 1];\n if (((VAR3 & 0x0f) == VAR5) ||\n ((VAR3 & 0x0f) == VAR6)) {\n if (((VAR3 & 0xf0) >> 4) == VAR7) {\n } else if (((VAR3 & 0xf0) >> 4) == VAR8) {",
+        "bool VAR1::FUN1(const char* VAR2) {\n const int VAR3 = VAR2[VAR4];\n if ((VAR3 & 0xf) == VAR5) {\n if ((VAR3 & 0xf) == VAR6) {"
+    ],
+    "array": [
+        "bool VAR1::FUN1(const char* VAR2) {\n VAR3 = reinterpret_cast<const VAR4*>(&VAR2[VAR5]);",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 - 2];\n size_t VAR5 = (VAR3 << 8) + VAR6;",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 + 1];\n if (((VAR3 & 0x0f) == VAR5) ||\n ((VAR3 & 0x0f) == VAR6)) {\n if (((VAR3 & 0xf0) >> 4) == VAR7) {\n } else if (((VAR3 & 0xf0) >> 4) == VAR8) {",
+        "bool VAR1::FUN1(const char* VAR2) {\n VAR3 = reinterpret_cast<const VAR4*>(&VAR2[VAR5]);",
+        "bool VAR1::FUN1(const char* VAR2) {\n const int VAR3 = VAR2[VAR4];\n if ((VAR3 & 0xf) == VAR5) {\n if ((VAR3 & 0xf) == VAR6) {",
+        "bool VAR1::FUN1(const char* VAR2) {\n uint8_t VAR3 = VAR2[VAR4 - 1];\n size_t VAR5 = (VAR6 << 8) + VAR3;"
+    ],
+    "API": []
+}

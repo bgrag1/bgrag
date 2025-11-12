@@ -1,0 +1,1 @@
+ Function purpose: The function sets ECC certificate information by importing an ECC private key and associating it with a certificate context using NCrypt APIs, and returns success or failure status.

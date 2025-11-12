@@ -1,0 +1,1 @@
+ Function purpose: The function "tvb_get_manuf_name_if_known" extracts a manufacturer name from a TVB (Tree-Walk Byte) buffer at a specified offset and checks if it is known, returning the manufacturer name if available.

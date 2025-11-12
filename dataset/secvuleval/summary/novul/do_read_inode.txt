@@ -1,0 +1,1 @@
+ Function purpose: The function reads and initializes the metadata of an inode from the F2FS filesystem, including its mode, ownership, size, timestamps, and other attributes, and handles various error cases and consistency checks.

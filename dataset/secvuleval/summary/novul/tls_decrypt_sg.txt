@@ -1,0 +1,1 @@
+ Function purpose: The function "tls_decrypt_sg" is designed to decrypt a TLS encrypted packet by processing the data through an AEAD (Authenticated Encryption with Associated Data) algorithm, handling the decryption process, and preparing the decrypted data for output.

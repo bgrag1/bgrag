@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the "i915_vma_revoke_fence" function is to revoke a fence from a virtual memory area (VMA) in the Intel GPU driver, ensuring that the fence register is cleared and the VMA is properly disconnected from the fence, while also considering the device's power state to avoid undefined hardware states.

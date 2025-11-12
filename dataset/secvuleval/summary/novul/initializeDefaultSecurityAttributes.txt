@@ -1,0 +1,1 @@
+ Function purpose: The function initializes a security attributes structure and a security attribute data structure to their default states, setting the security attributes pointer to NULL and clearing the data structure.

@@ -1,0 +1,1 @@
+ Function purpose: The function "freerdp_bitmap_planar_context_reset" initializes or reinitializes a bitmap context for planar bitmap operations, setting up memory allocation and alignment for the planes, and preparing the context for further processing.

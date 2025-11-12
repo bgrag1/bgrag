@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n else if (VAR5->VAR4 == NULL)\n if (VAR6 == NULL)\n VAR3->VAR4 = VAR6;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR7], VAR5->VAR4, VAR5->VAR7);\n VAR3->VAR7 += VAR5->VAR7;",
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if (VAR3->VAR4 ==0)\n unsigned char* VAR5 = (unsigned char*)realloc(VAR6->VAR7, VAR6->VAR4 + VAR3->VAR4);",
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n VAR3* VAR4 = (VAR3*)VAR1;",
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n if (VAR5->VAR6 ==0)\n unsigned char* VAR7 = (unsigned char*)realloc(VAR3->VAR4, VAR3->VAR6 + VAR5->VAR6);\n if (VAR7 == NULL)\n VAR3->VAR4 = VAR7;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR6], VAR5->VAR4, VAR5->VAR6);\n VAR3->VAR6 += VAR5->VAR6;",
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n VAR3* VAR4 = (VAR3*)VAR2;"
+    ],
+    "array": [
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n else if (VAR5->VAR4 == NULL)\n if (VAR5->VAR6 ==0)\n unsigned char* VAR7 = (unsigned char*)realloc(VAR3->VAR4, VAR3->VAR6 + VAR5->VAR6);\n if (VAR7 == NULL)\n VAR3->VAR4 = VAR7;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR6], VAR5->VAR4, VAR5->VAR6);\n VAR3->VAR6 += VAR5->VAR6;"
+    ],
+    "integer": [
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n if (VAR5->VAR6 ==0)\n unsigned char* VAR7 = (unsigned char*)realloc(VAR3->VAR4, VAR3->VAR6 + VAR5->VAR6);\n if (VAR7 == NULL)\n VAR3->VAR4 = VAR7;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR6], VAR5->VAR4, VAR5->VAR6);\n VAR3->VAR6 += VAR5->VAR6;"
+    ],
+    "API": [
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n if (VAR5->VAR6 ==0)\n unsigned char* VAR7 = (unsigned char*)realloc(VAR3->VAR4, VAR3->VAR6 + VAR5->VAR6);\n if (VAR7 == NULL)\n VAR3->VAR4 = VAR7;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR6], VAR5->VAR4, VAR5->VAR6);\n VAR3->VAR6 += VAR5->VAR6;",
+        "int FUN1(BUFFER_HANDLE VAR1, BUFFER_HANDLE VAR2)\n if ( (VAR1 == NULL) || (VAR2 == NULL) || (VAR1 == VAR2) )\n if (VAR3->VAR4 == NULL)\n else if (VAR5->VAR4 == NULL)\n if (VAR5->VAR6 ==0)\n unsigned char* VAR7 = (unsigned char*)realloc(VAR3->VAR4, VAR3->VAR6 + VAR5->VAR6);\n if (VAR7 == NULL)\n VAR3->VAR4 = VAR7;\n (void)memcpy(&VAR3->VAR4[VAR3->VAR6], VAR5->VAR4, VAR5->VAR6);\n VAR3->VAR6 += VAR5->VAR6;"
+    ]
+}

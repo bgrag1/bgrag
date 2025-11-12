@@ -1,0 +1,1 @@
+ Function purpose: The function withdraws a cache files volume by invalidating its cookie and updating its extended attributes before freeing the volume structure.

@@ -1,0 +1,1 @@
+ Function purpose: The function "ipv4_negative_advice" is designed to check if a destination entry is obsolete or redirected, and if so, it releases the route and returns NULL, indicating that the destination entry should not be used.

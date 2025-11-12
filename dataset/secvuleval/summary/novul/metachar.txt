@@ -1,0 +1,1 @@
+ Function purpose: The function "metachar" checks if a given character is a metacharacter by searching for it in a predefined string of metacharacters.

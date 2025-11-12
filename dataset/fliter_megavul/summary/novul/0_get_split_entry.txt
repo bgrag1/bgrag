@@ -1,0 +1,1 @@
+ Function purpose: The function "get_split_entry" processes configuration entries by extracting keywords, encodings, and values, and converts them into appropriate data types for further use in the OSCORE library.

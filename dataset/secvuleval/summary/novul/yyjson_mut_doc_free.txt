@@ -1,0 +1,1 @@
+ Function purpose: The function "yyjson_mut_doc_free" is designed to free a mutable JSON document and release all associated memory, including string and value pools, by calling the appropriate release functions and then freeing the document itself using the provided allocator.

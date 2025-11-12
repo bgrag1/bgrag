@@ -1,0 +1,1 @@
+ Function purpose: The function updates the CPU-affinity settings for the transmit queues of a network device, ensuring that packets are directed to the appropriate CPU based on the configured CPU mask.

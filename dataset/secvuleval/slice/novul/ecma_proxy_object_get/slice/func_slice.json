@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        " FUN1 (FUN2 (VAR1));\n VAR2 *VAR3 = (VAR2 *) VAR1;\n FUN3 (VAR1);\n FUN4 (VAR1);",
+        " ecma_value_t VAR1 = VAR2->VAR1;\n ecma_value_t VAR3 = FUN1 (VAR1, VAR4);\n if (FUN2 (VAR3))\n if (FUN3 (VAR3))\n VAR5 *VAR6 = FUN4 (VAR3);\n ecma_value_t VAR7[] = { VAR2->VAR8, VAR9, VAR10 };\n ecma_value_t VAR11 = FUN5 (VAR6, VAR1, VAR7, 3);\n FUN6 (VAR6);",
+        " ecma_value_t VAR1 = FUN1 (VAR2);\n ecma_value_t VAR3 = FUN2 (VAR4->VAR5, VAR2, &VAR6);\n if (FUN3 (VAR3))\n return VAR3;\n if (FUN4 (VAR3))\n FUN5 (&VAR6);",
+        " if (FUN1 (VAR1) || (VAR2->VAR3.VAR4 & VAR5))",
+        " VAR1 *VAR2 = FUN1 (VAR3->VAR4);\n ecma_value_t VAR5 = FUN2 (VAR2, VAR6, VAR7);\n return VAR5;"
+    ],
+    "API": [
+        " ecma_value_t VAR1 = VAR2->VAR1;\n ecma_value_t VAR3 = FUN1 (VAR1, VAR4);\n if (FUN2 (VAR3))\n if (FUN3 (VAR3))\n VAR5 *VAR6 = FUN4 (VAR3);\n ecma_value_t VAR7[] = { VAR2->VAR8, VAR9, VAR10 };\n ecma_value_t VAR11 = FUN5 (VAR6, VAR1, VAR7, 3);\n if (FUN2 (VAR11) || (VAR12->VAR13.VAR14 & VAR15))\n FUN6 (VAR11);",
+        " ecma_value_t VAR1 = FUN1 (VAR2);\n ecma_value_t VAR3 = FUN2 (VAR4->VAR5, VAR2, &VAR6);\n FUN3 (&VAR6);",
+        " ecma_value_t VAR1 = VAR2->VAR1;\n ecma_value_t VAR3 = FUN1 (VAR1, VAR4);\n if (FUN2 (VAR3))\n if (FUN3 (VAR3))\n VAR5 *VAR6 = FUN4 (VAR3);\n ecma_value_t VAR7[] = { VAR2->VAR8, VAR9, VAR10 };\n ecma_value_t VAR11 = FUN5 (VAR6, VAR1, VAR7, 3);\n if (FUN2 (VAR11) || (VAR12->VAR13.VAR14 & VAR15))\n && !(VAR16.VAR17 & VAR18) && !FUN6 (VAR11, VAR16.VAR19))\n && VAR16.VAR20 == NULL && !FUN3 (VAR11))\n FUN7 (VAR11);"
+    ]
+}

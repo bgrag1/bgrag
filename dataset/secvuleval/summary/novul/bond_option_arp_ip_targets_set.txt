@@ -1,0 +1,1 @@
+ Function purpose: The function "bond_option_arp_ip_targets_set" sets or modifies ARP IP targets for a bonding interface, allowing addition or removal of IP addresses as specified by the input string or directly by a value.

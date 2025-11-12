@@ -1,0 +1,1 @@
+ Function purpose: The function "xfrm6_get_saddr" is designed to look up and retrieve the source address for an IPv6 packet, based on the destination address, interface index, and other parameters, using the xfrm6_dst_lookup function to obtain a destination entry, and then using ipv6_dev_get_saddr to find the appropriate source address.

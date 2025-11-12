@@ -1,0 +1,1 @@
+ Function purpose: The function "hv_uio_rescind" is designed to disable the interrupt for a specific Hyper-V virtual channel and notify any waiting readers by setting the interrupt file handle to zero and invoking the UIO event notification mechanism.

@@ -1,0 +1,1 @@
+ Function purpose: The function "cmd_db_dev_probe" is responsible for initializing and setting up the command database (cmd_db) by mapping the reserved memory region, verifying its magic number, and creating a debugfs file for it, while also marking the device as not requiring power management.

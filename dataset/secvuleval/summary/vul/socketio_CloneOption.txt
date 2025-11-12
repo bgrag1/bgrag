@@ -1,0 +1,1 @@
+ Function purpose: The function "socketio_CloneOption" is designed to clone an option with a given name and value, specifically for the network interface's MAC address, and returns a newly allocated memory containing the cloned value.

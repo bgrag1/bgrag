@@ -1,0 +1,1 @@
+ Function purpose: Initializes the PFCP context by setting up various pools and initializing the necessary data structures for managing PFCP entities.

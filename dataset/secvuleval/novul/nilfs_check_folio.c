@@ -1,0 +1,76 @@
+static bool nilfs_check_folio(struct folio *folio, char *kaddr)
+{
+	struct inode *dir = folio->mapping->host;
+	struct super_block *sb = dir->i_sb;
+	unsigned int chunk_size = nilfs_chunk_size(dir);
+	size_t offs, rec_len;
+	size_t limit = folio_size(folio);
+	struct nilfs_dir_entry *p;
+	char *error;
+
+	if (dir->i_size < folio_pos(folio) + limit) {
+		limit = dir->i_size - folio_pos(folio);
+		if (limit & (chunk_size - 1))
+			goto Ebadsize;
+		if (!limit)
+			goto out;
+	}
+	for (offs = 0; offs <= limit - NILFS_DIR_REC_LEN(1); offs += rec_len) {
+		p = (struct nilfs_dir_entry *)(kaddr + offs);
+		rec_len = nilfs_rec_len_from_disk(p->rec_len);
+
+		if (rec_len < NILFS_DIR_REC_LEN(1))
+			goto Eshort;
+		if (rec_len & 3)
+			goto Ealign;
+		if (rec_len < NILFS_DIR_REC_LEN(p->name_len))
+			goto Enamelen;
+		if (((offs + rec_len - 1) ^ offs) & ~(chunk_size-1))
+			goto Espan;
+		if (unlikely(p->inode &&
+			     NILFS_PRIVATE_INODE(le64_to_cpu(p->inode))))
+			goto Einumber;
+	}
+	if (offs != limit)
+		goto Eend;
+out:
+	folio_set_checked(folio);
+	return true;
+
+	/* Too bad, we had an error */
+
+Ebadsize:
+	nilfs_error(sb,
+		    "size of directory #%lu is not a multiple of chunk size",
+		    dir->i_ino);
+	goto fail;
+Eshort:
+	error = "rec_len is smaller than minimal";
+	goto bad_entry;
+Ealign:
+	error = "unaligned directory entry";
+	goto bad_entry;
+Enamelen:
+	error = "rec_len is too small for name_len";
+	goto bad_entry;
+Espan:
+	error = "directory entry across blocks";
+	goto bad_entry;
+Einumber:
+	error = "disallowed inode number";
+bad_entry:
+	nilfs_error(sb,
+		    "bad entry in directory #%lu: %s - offset=%lu, inode=%lu, rec_len=%zd, name_len=%d",
+		    dir->i_ino, error, (folio->index << PAGE_SHIFT) + offs,
+		    (unsigned long)le64_to_cpu(p->inode),
+		    rec_len, p->name_len);
+	goto fail;
+Eend:
+	p = (struct nilfs_dir_entry *)(kaddr + offs);
+	nilfs_error(sb,
+		    "entry in directory #%lu spans the page boundary offset=%lu, inode=%lu",
+		    dir->i_ino, (folio->index << PAGE_SHIFT) + offs,
+		    (unsigned long)le64_to_cpu(p->inode));
+fail:
+	return false;
+}

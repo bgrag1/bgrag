@@ -1,0 +1,1 @@
+ Function purpose: The function "nsim_destroy" is responsible for deallocating resources and unregistering a network device associated with a "netdevsim" structure, and it performs specific teardown operations if the device is a physical function.

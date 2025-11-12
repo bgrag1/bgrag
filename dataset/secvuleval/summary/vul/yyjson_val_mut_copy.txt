@@ -1,0 +1,1 @@
+ Function purpose: The function copies immutable JSON values and their sub-values into a contiguous block of mutable JSON values, maintaining their original relationships.

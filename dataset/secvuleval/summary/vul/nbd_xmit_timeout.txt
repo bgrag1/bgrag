@@ -1,0 +1,1 @@
+ Function purpose: The function "nbd_xmit_timeout" handles the timeout logic for NBD (Network Block Device) commands, including retrying the command on different connections or shutting down the connection if the timeout is configured.

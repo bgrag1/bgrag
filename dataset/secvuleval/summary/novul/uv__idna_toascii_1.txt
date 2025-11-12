@@ -1,0 +1,1 @@
+ Function purpose: The function converts an Internationalized Domain Name (IDN) label from Unicode to ASCII using the Punycode encoding, and handles multiple labels separated by dots.

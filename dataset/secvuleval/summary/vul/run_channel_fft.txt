@@ -1,0 +1,1 @@
+ Function purpose: The function processes audio data by applying a window function and optionally a frequency shift, then performs FFT and IFFT operations on the data, and stores the results in a buffer for further processing.

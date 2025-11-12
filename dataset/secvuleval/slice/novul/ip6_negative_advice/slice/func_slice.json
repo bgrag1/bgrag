@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2);\n\tFUN2(VAR2);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tif (FUN3(VAR6)) {\n\tFUN4(VAR4);\n\tFUN5(VAR6);"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tif (FUN3(VAR6)) {\n\tFUN4(VAR6);"
+    ]
+}

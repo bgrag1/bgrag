@@ -1,0 +1,1 @@
+ Function purpose: The function "ReceiveResponseHeaders" in the provided code snippet is designed to retrieve and parse the response headers from an HTTP request, converting them into a more manageable format for further processing.

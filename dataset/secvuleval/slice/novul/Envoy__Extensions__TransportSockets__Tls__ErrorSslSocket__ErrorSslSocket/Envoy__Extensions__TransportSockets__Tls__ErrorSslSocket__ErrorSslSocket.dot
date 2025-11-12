@@ -1,0 +1,7 @@
+digraph ErrorSslSocket {  
+"1000100" [label = "(METHOD,ErrorSslSocket)" ]
+"1000103" [label = "(METHOD_RETURN,int)" ]
+"1000101" [label = "(PARAM,absl::string_view error)" ]
+  "1000101" -> "1000103"  [ label = "DDG: error"] 
+  "1000100" -> "1000101"  [ label = "DDG: "] 
+}

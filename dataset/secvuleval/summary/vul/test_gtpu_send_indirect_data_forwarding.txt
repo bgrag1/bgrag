@@ -1,0 +1,1 @@
+ Function purpose: The function "test_gtpu_send_indirect_data_forwarding" is designed to send a GTP-U packet with a specified QFI or EBI for indirect data forwarding in a test environment.

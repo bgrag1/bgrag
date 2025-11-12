@@ -1,0 +1,1 @@
+ Function purpose: The function "comphy_gbe_phy_init" initializes a gigabit Ethernet PHY by setting specific register values based on whether the operation is for 1 Gbps or 3.125 Gbps, using a predefined set of fix values for the latter.

@@ -1,0 +1,1 @@
+ Function purpose: The function "tvb_get_manuf_name" retrieves a manufacturer name from a byte array (tvb) at a specified offset, using a helper function "get_manuf_name" to convert the byte sequence to a string.

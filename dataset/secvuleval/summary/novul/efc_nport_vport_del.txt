@@ -1,0 +1,1 @@
+ Function purpose: The function "efc_nport_vport_del" deletes a vport and its associated nport from the efc structure, and posts a shutdown event to the nport's state machine.

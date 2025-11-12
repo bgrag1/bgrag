@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2) {\n if (!FUN2(VAR2)) {\n FUN3(VAR2, 400, \"\",\n else if (FUN4(VAR2)) {\n FUN5(VAR2);\n FUN3(VAR2, 401, \"\",\n FUN6(VAR2);\n FUN6(VAR2);\n FUN3(VAR2, 501, \"\",",
+        "static void FUN1(struct VAR1 *VAR2) {\n else if (VAR3 != NULL &&\n (VAR2->VAR4 == NULL ||",
+        "static void FUN1(struct VAR1 *VAR2) {\n else if (VAR3 != NULL &&\n (VAR2->VAR4 == NULL ||\n !FUN2(VAR2->VAR4, VAR3))) {"
+    ],
+    "API": []
+}

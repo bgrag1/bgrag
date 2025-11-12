@@ -1,0 +1,1 @@
+ Function purpose: The function "sk_psock_verdict_data_ready" is responsible for processing incoming data on a socket, invoking the appropriate callback for a proxied socket if one is attached, and tracing the data ready event.

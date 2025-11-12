@@ -1,0 +1,1 @@
+ Function purpose: The function vgic_its_check_cache in the code snippet is designed to check if a specific interrupt (LPI) is cached in the KVM's VGIC (Virtual Global Interrupt Controller) for a given device ID and event ID, and to ensure thread safety by using a spinlock.

@@ -1,0 +1,1 @@
+ Function purpose: The function prepares a framebuffer for a DRM plane in an AMD GPU display module, ensuring the framebuffer is properly pinned and its attributes are updated for use by the display controller.

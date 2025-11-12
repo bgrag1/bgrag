@@ -1,0 +1,1 @@
+ Function purpose: The function "cli_print_body" is responsible for printing detailed information about an "ip_identify_match" object, including its endpoint name, matches, transport, header, and request URI, in a structured format for CLI output, with optional recursion and detail levels.

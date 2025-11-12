@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "VAR1 *FUN1(void) {\n const yyjson_alc VAR2 = VAR3;\n usize VAR4 = sizeof(VAR1) + sizeof(VAR5);\n VAR1 *VAR6 = (VAR1 *)VAR2.malloc(VAR2.VAR7, VAR4);\n if (FUN2(!VAR6)) return NULL;\n VAR6->VAR7 = VAR6 + 1;\n return VAR6;",
+        "VAR1 *FUN1(void) {\n const yyjson_alc VAR2 = VAR3;\n usize VAR4 = sizeof(VAR1) + sizeof(VAR5);\n VAR1 *VAR6 = (VAR1 *)VAR2.malloc(VAR2.VAR7, VAR4);\n VAR5 *VAR7 = (VAR5 *)(void *)(VAR6 + 1);\n memset(VAR7, 0, sizeof(*VAR7));",
+        " const yyjson_alc VAR1 = VAR2;\n usize VAR3 = sizeof(VAR4) + sizeof(VAR5);\n VAR4 *VAR6 = (VAR4 *)VAR1.malloc(VAR1.VAR7, VAR3);\n VAR5 *VAR7 = (VAR5 *)(void *)(VAR6 + 1);"
+    ],
+    "API": [
+        "VAR1 *FUN1(void) {\n const yyjson_alc VAR2 = VAR3;\n usize VAR4 = sizeof(VAR1) + sizeof(VAR5);\n VAR1 *VAR6 = (VAR1 *)VAR2.malloc(VAR2.VAR7, VAR4);\n VAR5 *VAR7 = (VAR5 *)(void *)(VAR6 + 1);\n memset(VAR7, 0, sizeof(*VAR7));",
+        "VAR1 *FUN1(void) {\n const yyjson_alc VAR2 = VAR3;\n usize VAR4 = sizeof(VAR1) + sizeof(VAR5);\n VAR1 *VAR6 = (VAR1 *)VAR2.malloc(VAR2.VAR7, VAR4);\n VAR5 *VAR7 = (VAR5 *)(void *)(VAR6 + 1);\n if (FUN2(!VAR6)) return NULL;\n VAR6->VAR7 = VAR6 + 1;\n memset(VAR7, 0, sizeof(*VAR7));\n return VAR6;",
+        "VAR1 *FUN1(void) {\n usize VAR2 = sizeof(VAR1) + sizeof(VAR3);\n VAR1 *VAR4 = (VAR1 *)VAR5.malloc(VAR5.VAR6, VAR2);\n VAR3 *VAR6 = (VAR3 *)(void *)(VAR4 + 1);\n if (FUN2(!VAR4)) return NULL;\n VAR4->VAR6 = VAR4 + 1;\n memset(VAR6, 0, sizeof(*VAR6));\n return VAR4;"
+    ]
+}

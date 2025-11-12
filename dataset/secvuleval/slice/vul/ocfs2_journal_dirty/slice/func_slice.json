@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "void FUN1(VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 *VAR6 = VAR2->VAR7->VAR8;\n\tFUN2(VAR6, VAR9);",
+        "void FUN1(VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR2, VAR4);\n\tFUN3(VAR5);\n\tVAR2->VAR6 = VAR5;",
+        "void FUN1(VAR1 *VAR2, struct VAR3 *VAR4)\n\tFUN2((unsigned long long)VAR4->VAR5);",
+        "void FUN1(VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR2, VAR4);\n\tif (!FUN3(VAR2)) {\n\tFUN4(VAR2);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function processes AC-3/EAC-3 audio packets, parses them, and outputs them with appropriate timestamps and properties, handling buffer management and seeking operations.

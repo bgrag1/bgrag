@@ -1,0 +1,44 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR10;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tVAR9 |= VAR12;\n\tVAR9 |= VAR13 |\n VAR14 |\n VAR15 |\n\tVAR9 = (unsigned long)VAR16->VAR17;\n\tif (VAR18 != -1) {\n\tFUN4(VAR4, \"\",\n\tVAR7->VAR19 = FUN5(VAR4, VAR20->VAR21,\n\tFUN6(VAR4);\n\tVAR7->VAR22 = FUN7(VAR4, \"\");\n\tif (FUN8(VAR7->VAR22)) {\n\tVAR23 = FUN9(VAR4, FUN10(VAR7->VAR22),\n\tif (!VAR7->VAR22)\n\treturn VAR23;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tconst char *VAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tVAR9 = FUN4(VAR6->VAR10, NULL, -1);\n\tFUN5(VAR4, \"\", VAR6->VAR10);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR10;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tVAR9 |= VAR12;\n\tVAR9 |= VAR13 |\n VAR14 |\n VAR15 |\n\tVAR9 = (unsigned long)VAR16->VAR17;\n\tif (VAR18 != -1) {\n\tFUN4(VAR4, \"\",\n\tVAR7->VAR19 = FUN5(VAR4, VAR20->VAR21,\n\tif (FUN6(VAR7->VAR19)) {\n\tVAR22 = FUN7(VAR4, FUN8(VAR7->VAR19),\n\treturn VAR22;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = VAR4->VAR5.VAR6;\n\tVAR7 = FUN2(&VAR8,\n\tVAR7 = FUN3(VAR9, &VAR8);\n\tFUN4(VAR9, \"\", VAR7);\n\tFUN5(VAR2, &VAR8);\n\treturn VAR7;\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n\tVAR6 = FUN3(VAR4->VAR5,\n\tif (!VAR6) {",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n \"\", FUN3(VAR3));\n\tVAR6 = FUN4(VAR3);\n\tFUN5(VAR3);\n\tif (!VAR6)\n\tVAR7->VAR6 = FUN6(VAR6);\n\tFUN7(FUN8(VAR7->VAR6),\n\tVAR8 = FUN9(VAR6, VAR7);\n\tFUN10(VAR7->VAR6);\n\tFUN11(FUN8(VAR7->VAR6));\n\tFUN12(VAR7->VAR6);\n\treturn VAR8;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2, &VAR3);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tif (!VAR7)\n\tFUN4(&VAR9, VAR7);\n\tVAR10 = FUN5(VAR11, VAR7);\n\tVAR10 = FUN6(&VAR9,\n\tVAR10 = FUN7(VAR4, &VAR9);\n\tFUN8(VAR4, \"\", VAR10);\n\tFUN9(VAR2, &VAR9);\n\treturn VAR10;\n\treturn VAR10;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tVAR9.VAR4 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tVAR7 = FUN3(VAR4, sizeof(*VAR7), VAR8);\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR10;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tFUN4(VAR4, \"\");\n\tVAR9 |= VAR11;\n\tVAR9 |= VAR12;\n\tVAR9 |= VAR13 |\n VAR14 |\n VAR15 |\n\tVAR9 = (unsigned long)VAR16->VAR17;\n\tif (VAR18 != -1) {\n\tFUN4(VAR4, \"\",\n\tVAR7->VAR19 = FUN5(VAR4, VAR20->VAR21,\n\tFUN6(VAR4);\n\tVAR7->VAR22 = FUN7(VAR4, \"\");\n\tVAR23 = FUN8(VAR4);\n\tVAR24 = FUN9(VAR4, &VAR25);\n\tFUN10(VAR4, \"\", VAR24);\n\tFUN11(VAR2, &VAR25);\n\treturn VAR24;\n\treturn VAR24;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tconst char *VAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = \"\";\n\tsnprintf(VAR4, sizeof(VAR4),\n\tVAR5.VAR6 = VAR4;\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR5.VAR8 = VAR7;"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tconst char *VAR3 = \"\";\n\tconst char *VAR4 = \"\";\n\tVAR5 = 2;\n\tVAR5 = 1;\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR4 = \"\";\n\tVAR4 = \"\";\n\tVAR3 = \"\";\n\tsnprintf(VAR8, sizeof(VAR8),\n\tsnprintf(VAR9, sizeof(VAR9),\n\tVAR10.VAR11 = VAR9;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (VAR3[VAR4].VAR5->VAR6 &&\n !strcmp(VAR3[VAR4].VAR5->VAR6,",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n\tsnprintf(VAR6, sizeof(VAR6),\n \"\", FUN3(VAR3));\n\tVAR7[VAR8].VAR9->VAR10 = VAR6;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tconst char *VAR3 = \"\";\n\tconst char *VAR4 = \"\";\n\tVAR5 = 2;\n\tVAR5 = 1;\n\tVAR6 = \"\";\n\tVAR6 = \"\";\n\tVAR6 = \"\";\n\tVAR6 = \"\";\n\tVAR4 = \"\";\n\tVAR4 = \"\";\n\tVAR3 = \"\";\n\tsnprintf(VAR7, sizeof(VAR7),\n\tVAR8.VAR9 = VAR7;\n\tsnprintf(VAR10, sizeof(VAR10),\n\tVAR8.VAR11 = VAR10;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tconst char *VAR3 = \"\";\n\tconst char *VAR4 = \"\";\n\tVAR5 = 2;\n\tVAR5 = 1;\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR6 = \"\";\n\tVAR7 = \"\";\n\tVAR4 = \"\";\n\tVAR4 = \"\";\n\tVAR3 = \"\";\n\tsnprintf(VAR8, sizeof(VAR8),\n\tsnprintf(VAR9, sizeof(VAR9),\n\tVAR10.VAR11 = VAR9;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n\tsnprintf(VAR6, sizeof(VAR6),\n \"\", FUN3(VAR3));\n\tVAR7[VAR8].VAR9->VAR10 = VAR6;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n \"\", FUN3(VAR3));\n\tVAR6 = FUN4(VAR3);\n\tif (!VAR6)\n\tVAR7->VAR6 = FUN5(VAR6);\n\tFUN6(FUN7(VAR7->VAR6),\n\tFUN8(VAR7->VAR6);\n\tFUN9(FUN7(VAR7->VAR6));\n\tFUN10(VAR7->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5, NULL, -1);\n \"\", FUN3(VAR3));\n\tVAR6 = FUN4(VAR3);\n\tif (!VAR6)\n\tVAR7->VAR6 = FUN5(VAR6);\n\tFUN6(FUN7(VAR7->VAR6),\n\tFUN8(VAR7->VAR6);\n\tFUN9(FUN7(VAR7->VAR6));",
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (VAR3[VAR4].VAR5->VAR6 &&\n !strcmp(VAR3[VAR4].VAR5->VAR6,",
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (VAR3[VAR4].VAR5->VAR6 &&\n !strcmp(VAR3[VAR4].VAR5->VAR6,",
+        "\tif (VAR1[VAR2].VAR3->VAR4 &&\n !strcmp(VAR1[VAR2].VAR3->VAR4,"
+    ]
+}

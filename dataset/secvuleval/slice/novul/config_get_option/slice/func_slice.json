@@ -1,0 +1,24 @@
+{
+    "pointer": [
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tvoid (*VAR4)(char*,void*), void* VAR5)\n\tFUN2(FUN3(VAR4));"
+    ],
+    "array": [
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;"
+    ],
+    "API": [
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;",
+        "FUN1(struct VAR1* VAR2, const char* VAR3,\n\tif(!VAR3) return 0;\n\tif(VAR3 && VAR3[strlen(VAR3)-1] == '' && strlen(VAR3)<sizeof(VAR4)) {\n\tmemmove(VAR4, VAR3, strlen(VAR3));\n\tVAR4[strlen(VAR3)-1] = 0;\n\tVAR3 = VAR4;"
+    ]
+}

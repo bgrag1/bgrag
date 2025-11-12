@@ -1,0 +1,1 @@
+ Function purpose: The function "isor_reader_get_sample" retrieves and processes video or audio samples from an ISO media file, handling track switching, sample allocation, and error handling.

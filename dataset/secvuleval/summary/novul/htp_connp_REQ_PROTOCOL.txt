@@ -1,0 +1,1 @@
+ Function purpose: The function processes an HTTP request, determining if it is a short-style HTTP/0.9 request and adjusting the state accordingly to either parse request headers or finalize the request.

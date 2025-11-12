@@ -1,0 +1,1 @@
+ Function purpose: The function checks if the given path contains any encoded slashes or "../" sequences, returning -1 if found, otherwise returning 0.

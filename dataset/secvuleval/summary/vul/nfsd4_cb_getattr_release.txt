@@ -1,0 +1,1 @@
+ Function purpose: The function "nfsd4_cb_getattr_release" is designed to release resources and clear the busy state of a callback associated with a file attribute request in an NFS (Network File System) protocol implementation.

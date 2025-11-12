@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "static bool FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR2, VAR4, false);\n\tFUN3(VAR3);\n\treturn false;",
+        "static bool FUN1(struct VAR1 *VAR2,\n const struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR2, VAR4, false);\n\tFUN3(VAR5);\n\treturn false;"
+    ],
+    "API": [
+        "static bool FUN1(struct VAR1 *VAR2,\n const struct VAR3 *VAR4)\n\tVAR5 = FUN2(VAR2, VAR4, false);\n\tFUN3(VAR5);"
+    ]
+}

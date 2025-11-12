@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves the OpenSSL name of the TLS cipher used in the downstream HTTP request and handles dynamic memory allocation and reallocation if the buffer size is insufficient.

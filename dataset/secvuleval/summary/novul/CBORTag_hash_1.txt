@@ -1,0 +1,1 @@
+ Function purpose: The function "CBORTag_hash" in the code snippet is designed to compute the hash value of a CBORTagObject, ensuring that it does not contain a reference to itself, and managing a set of running hash computations in a thread-local variable to avoid recursive references.

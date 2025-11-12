@@ -1,0 +1,1 @@
+ Function purpose: The function "i801_block_transaction_by_block" is designed to handle block read and write transactions for I2C devices using the Intel I801 chip, supporting both data block transfer and procedure call commands.

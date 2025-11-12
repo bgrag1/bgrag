@@ -1,0 +1,1 @@
+ Function purpose: The function "btrfs_load_zone_info" in the provided code snippet is responsible for loading and processing zone information for a given device in a Btrfs filesystem, determining the allocation offset within a zone based on its write pointer and condition, and marking the zone as active if applicable.

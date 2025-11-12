@@ -1,0 +1,1 @@
+ Function purpose: The function sets up signal handlers for SIGINT, SIGTERM, and optionally SIGUSR1, and configures the handling of SIGPIPE to ignore it, ensuring that the signal handlers are properly initialized and stored for future reference.

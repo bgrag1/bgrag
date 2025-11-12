@@ -1,0 +1,1 @@
+ Function purpose: The function "of_irq_parse_one" is designed to parse and extract interrupt information from a device tree node, specifically handling both "interrupts-extended" properties and traditional "interrupts" properties, and it can also handle old-world mac workarounds.

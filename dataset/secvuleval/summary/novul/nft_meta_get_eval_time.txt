@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and stores specific time-related metadata (such as nanoseconds, day of the week, or hour) based on the provided key.

@@ -1,0 +1,1 @@
+ Function purpose: The function "clsact_destroy" is responsible for cleaning up and deactivating the classifier and action scheduling (clsact) qdisc, freeing associated BPF program entries, and decrementing the ingress and egress queue counts.

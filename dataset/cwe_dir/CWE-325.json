@@ -1,0 +1,82 @@
+[
+    {
+        "cve_id": "CVE-2023-40012",
+        "func_name": "trailofbits/uthenticode/SignedData::verify_signature",
+        "description": "uthenticode is a small cross-platform library for partially verifying Authenticode digital signatures. Versions of uthenticode prior to the 2.x series did not check Extended Key Usages in certificates, in violation of the Authenticode X.509 certificate profile. As a result, a malicious user could produce a \"signed\" PE file that uthenticode would verify and consider valid using an X.509 certificate that isn't entitled to produce code signatures (e.g., a SSL certificate). By design, uthenticode does not perform full-chain validation. However, the absence of EKU validation was an unintended oversight. The 2.0.0 release series includes EKU checks. There are no workarounds to this vulnerability.",
+        "git_url": "https://github.com/trailofbits/uthenticode/commit/caeb1eb62412605f71bd96ce9bb9420644b6db53",
+        "commit_title": "src: bump OpenSSL, EKU check (#78)",
+        "commit_text": " * src: bump OpenSSL, EKU check\r \r \r * README: bump OpenSSL\r \r \r * test: EKU test, testcase\r \r \r ---------\r \r",
+        "func_before": "bool SignedData::verify_signature() const {\n  STACK_OF(X509) *certs = nullptr;\n  switch (OBJ_obj2nid(p7_->type)) {\n    case NID_pkcs7_signed: {\n      certs = p7_->d.sign->cert;\n      break;\n    }\n    /* NOTE(ww): I'm pretty sure Authenticode signatures are always SignedData and never\n     * SignedAndEnvelopedData, but it doesn't hurt us to handle the latter as well.\n     */\n    case NID_pkcs7_signedAndEnveloped: {\n      certs = p7_->d.signed_and_enveloped->cert;\n      break;\n    }\n  }\n\n  if (certs == nullptr) {\n    return false;\n  }\n\n  /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back\n   * into DER form so that we can unwrap its ASN.1 sequence and pass the underlying data\n   * to PKCS7_verify for verification. This displays our intent a little more clearly than\n   * our previous approach, which was to walk the PKCS#7 structure manually.\n   */\n  std::uint8_t *indirect_data_buf = nullptr;\n  auto buf_size = impl::i2d_Authenticode_SpcIndirectDataContent(indirect_data_, &indirect_data_buf);\n  if (buf_size < 0 || indirect_data_buf == nullptr) {\n    return false;\n  }\n  auto indirect_data_ptr =\n      impl::OpenSSL_ptr(reinterpret_cast<char *>(indirect_data_buf), impl::OpenSSL_free);\n\n  const auto *signed_data_seq = reinterpret_cast<std::uint8_t *>(indirect_data_ptr.get());\n  long length = 0;\n  int tag = 0, tag_class = 0;\n  ASN1_get_object(&signed_data_seq, &length, &tag, &tag_class, buf_size);\n  if (tag != V_ASN1_SEQUENCE) {\n    return false;\n  }\n\n  auto *signed_data_ptr = BIO_new_mem_buf(signed_data_seq, length);\n  if (signed_data_ptr == nullptr) {\n    return false;\n  }\n  impl::BIO_ptr signed_data(signed_data_ptr, BIO_free);\n\n  /* Our actual verification happens here.\n   *\n   * We pass `certs` explicitly, but (experimentally) we don't have to -- the function correctly\n   * extracts then from the SignedData in `p7_`.\n   *\n   * We pass `nullptr` for the X509_STORE, since we don't do full-chain verification\n   * (we can't, since we don't have access to Windows's Trusted Publishers store on non-Windows).\n   */\n  auto status = PKCS7_verify(p7_, certs, nullptr, signed_data.get(), nullptr, PKCS7_NOVERIFY);\n\n  return status == 1;\n}",
+        "func": "bool SignedData::verify_signature() const {\n  STACK_OF(X509) *certs = nullptr;\n  switch (OBJ_obj2nid(p7_->type)) {\n    case NID_pkcs7_signed: {\n      certs = p7_->d.sign->cert;\n      break;\n    }\n    /* NOTE(ww): I'm pretty sure Authenticode signatures are always SignedData and never\n     * SignedAndEnvelopedData, but it doesn't hurt us to handle the latter as well.\n     */\n    case NID_pkcs7_signedAndEnveloped: {\n      certs = p7_->d.signed_and_enveloped->cert;\n      break;\n    }\n  }\n\n  if (certs == nullptr) {\n    return false;\n  }\n\n  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);\n  if (signers_stack_ptr == nullptr) {\n    return false;\n  }\n  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);\n\n  /* NOTE(ww): Authenticode specification, page 13: the signer must have the\n   * codeSigning EKU, **or** no member of the signer's chain may have it.\n   *\n   * The check below is more strict than that: **every** signer must have\n   * the codeSigning EKU, and we don't check the embedded chain (since\n   * we can't do full chain verification anyways).\n   */\n  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {\n    auto *signer = sk_X509_value(signers_stack.get(), i);\n\n    /* NOTE(ww): Ths should really be X509_check_purpose with\n     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present\n     * in even the latest releases of OpenSSL as of 2023-05.\n     */\n    auto xku_flags = X509_get_extended_key_usage(signer);\n    if (!(xku_flags & XKU_CODE_SIGN)) {\n      return false;\n    }\n  }\n\n  /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back\n   * into DER form so that we can unwrap its ASN.1 sequence and pass the underlying data\n   * to PKCS7_verify for verification. This displays our intent a little more clearly than\n   * our previous approach, which was to walk the PKCS#7 structure manually.\n   */\n  std::uint8_t *indirect_data_buf = nullptr;\n  auto buf_size = impl::i2d_Authenticode_SpcIndirectDataContent(indirect_data_, &indirect_data_buf);\n  if (buf_size < 0 || indirect_data_buf == nullptr) {\n    return false;\n  }\n  auto indirect_data_ptr =\n      impl::OpenSSL_ptr(reinterpret_cast<char *>(indirect_data_buf), impl::OpenSSL_free);\n\n  const auto *signed_data_seq = reinterpret_cast<std::uint8_t *>(indirect_data_ptr.get());\n  long length = 0;\n  int tag = 0, tag_class = 0;\n  ASN1_get_object(&signed_data_seq, &length, &tag, &tag_class, buf_size);\n  if (tag != V_ASN1_SEQUENCE) {\n    return false;\n  }\n\n  auto *signed_data_ptr = BIO_new_mem_buf(signed_data_seq, length);\n  if (signed_data_ptr == nullptr) {\n    return false;\n  }\n  impl::BIO_ptr signed_data(signed_data_ptr, BIO_free);\n\n  /* Our actual verification happens here.\n   *\n   * We pass `certs` explicitly, but (experimentally) we don't have to -- the function correctly\n   * extracts then from the SignedData in `p7_`.\n   *\n   * We pass `nullptr` for the X509_STORE, since we don't do full-chain verification\n   * (we can't, since we don't have access to Windows's Trusted Publishers store on non-Windows).\n   */\n  auto status = PKCS7_verify(p7_, certs, nullptr, signed_data.get(), nullptr, PKCS7_NOVERIFY);\n\n  return status == 1;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -16,6 +16,32 @@\n \n   if (certs == nullptr) {\n     return false;\n+  }\n+\n+  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);\n+  if (signers_stack_ptr == nullptr) {\n+    return false;\n+  }\n+  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);\n+\n+  /* NOTE(ww): Authenticode specification, page 13: the signer must have the\n+   * codeSigning EKU, **or** no member of the signer's chain may have it.\n+   *\n+   * The check below is more strict than that: **every** signer must have\n+   * the codeSigning EKU, and we don't check the embedded chain (since\n+   * we can't do full chain verification anyways).\n+   */\n+  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {\n+    auto *signer = sk_X509_value(signers_stack.get(), i);\n+\n+    /* NOTE(ww): Ths should really be X509_check_purpose with\n+     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present\n+     * in even the latest releases of OpenSSL as of 2023-05.\n+     */\n+    auto xku_flags = X509_get_extended_key_usage(signer);\n+    if (!(xku_flags & XKU_CODE_SIGN)) {\n+      return false;\n+    }\n   }\n \n   /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  }",
+                "",
+                "  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);",
+                "  if (signers_stack_ptr == nullptr) {",
+                "    return false;",
+                "  }",
+                "  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);",
+                "",
+                "  /* NOTE(ww): Authenticode specification, page 13: the signer must have the",
+                "   * codeSigning EKU, **or** no member of the signer's chain may have it.",
+                "   *",
+                "   * The check below is more strict than that: **every** signer must have",
+                "   * the codeSigning EKU, and we don't check the embedded chain (since",
+                "   * we can't do full chain verification anyways).",
+                "   */",
+                "  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {",
+                "    auto *signer = sk_X509_value(signers_stack.get(), i);",
+                "",
+                "    /* NOTE(ww): Ths should really be X509_check_purpose with",
+                "     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present",
+                "     * in even the latest releases of OpenSSL as of 2023-05.",
+                "     */",
+                "    auto xku_flags = X509_get_extended_key_usage(signer);",
+                "    if (!(xku_flags & XKU_CODE_SIGN)) {",
+                "      return false;",
+                "    }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2020-10702",
+        "func_name": "qemu/pac_sub",
+        "description": "A flaw was found in QEMU in the implementation of the Pointer Authentication (PAuth) support for ARM introduced in version 4.0 and fixed in version 5.0.0. A general failure of the signature generation process caused every PAuth-enforced pointer to be signed with the same signature. A local attacker could obtain the signature of a protected pointer and abuse this flaw to bypass PAuth protection for all programs running on QEMU.",
+        "git_url": "https://github.com/qemu/qemu/commit/de0b1bae6461f67243282555475f88b2384a1eb9",
+        "commit_title": "target/arm: Fix PAuth sbox functions",
+        "commit_text": " In the PAC computation, sbox was applied over wrong bits. As this is a 4-bit sbox, bit index should be incremented by 4 instead of 16.  Test vector from QARMA paper (https://eprint.iacr.org/2016/444.pdf) was used to verify one computation of the pauth_computepac() function which uses sbox2.  Launchpad: https://bugs.launchpad.net/bugs/1859713",
+        "func_before": "static uint64_t pac_sub(uint64_t i)\n{\n    static const uint8_t sub[16] = {\n        0xb, 0x6, 0x8, 0xf, 0xc, 0x0, 0x9, 0xe,\n        0x3, 0x7, 0x4, 0x5, 0xd, 0x2, 0x1, 0xa,\n    };\n    uint64_t o = 0;\n    int b;\n\n    for (b = 0; b < 64; b += 16) {\n        o |= (uint64_t)sub[(i >> b) & 0xf] << b;\n    }\n    return o;\n}",
+        "func": "static uint64_t pac_sub(uint64_t i)\n{\n    static const uint8_t sub[16] = {\n        0xb, 0x6, 0x8, 0xf, 0xc, 0x0, 0x9, 0xe,\n        0x3, 0x7, 0x4, 0x5, 0xd, 0x2, 0x1, 0xa,\n    };\n    uint64_t o = 0;\n    int b;\n\n    for (b = 0; b < 64; b += 4) {\n        o |= (uint64_t)sub[(i >> b) & 0xf] << b;\n    }\n    return o;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -7,7 +7,7 @@\n     uint64_t o = 0;\n     int b;\n \n-    for (b = 0; b < 64; b += 16) {\n+    for (b = 0; b < 64; b += 4) {\n         o |= (uint64_t)sub[(i >> b) & 0xf] << b;\n     }\n     return o;",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    for (b = 0; b < 64; b += 16) {"
+            ],
+            "added_lines": [
+                "    for (b = 0; b < 64; b += 4) {"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2020-10702",
+        "func_name": "qemu/pac_inv_sub",
+        "description": "A flaw was found in QEMU in the implementation of the Pointer Authentication (PAuth) support for ARM introduced in version 4.0 and fixed in version 5.0.0. A general failure of the signature generation process caused every PAuth-enforced pointer to be signed with the same signature. A local attacker could obtain the signature of a protected pointer and abuse this flaw to bypass PAuth protection for all programs running on QEMU.",
+        "git_url": "https://github.com/qemu/qemu/commit/de0b1bae6461f67243282555475f88b2384a1eb9",
+        "commit_title": "target/arm: Fix PAuth sbox functions",
+        "commit_text": " In the PAC computation, sbox was applied over wrong bits. As this is a 4-bit sbox, bit index should be incremented by 4 instead of 16.  Test vector from QARMA paper (https://eprint.iacr.org/2016/444.pdf) was used to verify one computation of the pauth_computepac() function which uses sbox2.  Launchpad: https://bugs.launchpad.net/bugs/1859713",
+        "func_before": "static uint64_t pac_inv_sub(uint64_t i)\n{\n    static const uint8_t inv_sub[16] = {\n        0x5, 0xe, 0xd, 0x8, 0xa, 0xb, 0x1, 0x9,\n        0x2, 0x6, 0xf, 0x0, 0x4, 0xc, 0x7, 0x3,\n    };\n    uint64_t o = 0;\n    int b;\n\n    for (b = 0; b < 64; b += 16) {\n        o |= (uint64_t)inv_sub[(i >> b) & 0xf] << b;\n    }\n    return o;\n}",
+        "func": "static uint64_t pac_inv_sub(uint64_t i)\n{\n    static const uint8_t inv_sub[16] = {\n        0x5, 0xe, 0xd, 0x8, 0xa, 0xb, 0x1, 0x9,\n        0x2, 0x6, 0xf, 0x0, 0x4, 0xc, 0x7, 0x3,\n    };\n    uint64_t o = 0;\n    int b;\n\n    for (b = 0; b < 64; b += 4) {\n        o |= (uint64_t)inv_sub[(i >> b) & 0xf] << b;\n    }\n    return o;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -7,7 +7,7 @@\n     uint64_t o = 0;\n     int b;\n \n-    for (b = 0; b < 64; b += 16) {\n+    for (b = 0; b < 64; b += 4) {\n         o |= (uint64_t)inv_sub[(i >> b) & 0xf] << b;\n     }\n     return o;",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    for (b = 0; b < 64; b += 16) {"
+            ],
+            "added_lines": [
+                "    for (b = 0; b < 64; b += 4) {"
+            ]
+        }
+    }
+]

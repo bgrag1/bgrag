@@ -1,0 +1,485 @@
+[
+    {
+        "cve_id": "CVE-2019-1010279",
+        "func_name": "OISF/suricata/DetectRunCleanup",
+        "description": "Open Information Security Foundation Suricata prior to version 4.1.3 is affected by: Denial of Service - TCP/HTTP detection bypass. The impact is: An attacker can evade a signature detection with a specialy formed sequence of network packets. The component is: detect.c (https://github.com/OISF/suricata/pull/3625/commits/d8634daf74c882356659addb65fb142b738a186b). The attack vector is: An attacker can trigger the vulnerability by a specifically crafted network TCP session. The fixed version is: 4.1.3.",
+        "git_url": "https://github.com/OISF/suricata/commit/d8634daf74c882356659addb65fb142b738a186b",
+        "commit_title": "stream: fix false negative on bad RST",
+        "commit_text": " If a bad RST was received the stream inspection would not happen for that packet, but it would still move the 'raw progress' tracker forward. Following good packets would then fail to detect anything before the 'raw progress' position.  Bug #2770 ",
+        "func_before": "static void DetectRunCleanup(DetectEngineThreadCtx *det_ctx,\n        Packet *p, Flow * const pflow)\n{\n    PACKET_PROFILING_DETECT_START(p, PROF_DETECT_CLEANUP);\n    /* cleanup pkt specific part of the patternmatcher */\n    PacketPatternCleanup(det_ctx);\n\n    if (pflow != NULL) {\n        /* update inspected tracker for raw reassembly */\n        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL) {\n            StreamReassembleRawUpdateProgress(pflow->protoctx, p,\n                    det_ctx->raw_stream_progress);\n\n            DetectEngineCleanHCBDBuffers(det_ctx);\n        }\n    }\n    PACKET_PROFILING_DETECT_END(p, PROF_DETECT_CLEANUP);\n    SCReturn;\n}",
+        "func": "static void DetectRunCleanup(DetectEngineThreadCtx *det_ctx,\n        Packet *p, Flow * const pflow)\n{\n    PACKET_PROFILING_DETECT_START(p, PROF_DETECT_CLEANUP);\n    /* cleanup pkt specific part of the patternmatcher */\n    PacketPatternCleanup(det_ctx);\n\n    if (pflow != NULL) {\n        /* update inspected tracker for raw reassembly */\n        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL &&\n            (p->flags & PKT_STREAM_EST))\n        {\n            StreamReassembleRawUpdateProgress(pflow->protoctx, p,\n                    det_ctx->raw_stream_progress);\n\n            DetectEngineCleanHCBDBuffers(det_ctx);\n        }\n    }\n    PACKET_PROFILING_DETECT_END(p, PROF_DETECT_CLEANUP);\n    SCReturn;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -7,7 +7,9 @@\n \n     if (pflow != NULL) {\n         /* update inspected tracker for raw reassembly */\n-        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL) {\n+        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL &&\n+            (p->flags & PKT_STREAM_EST))\n+        {\n             StreamReassembleRawUpdateProgress(pflow->protoctx, p,\n                     det_ctx->raw_stream_progress);\n ",
+        "diff_line_info": {
+            "deleted_lines": [
+                "        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL) {"
+            ],
+            "added_lines": [
+                "        if (p->proto == IPPROTO_TCP && pflow->protoctx != NULL &&",
+                "            (p->flags & PKT_STREAM_EST))",
+                "        {"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2021-3521",
+        "func_name": "rpm-software-management/rpm/pgpPrtParams",
+        "description": "There is a flaw in RPM's signature functionality. OpenPGP subkeys are associated with a primary key via a \"binding signature.\" RPM does not check the binding signature of subkeys prior to importing them. If an attacker is able to add or socially engineer another party to add a malicious subkey to a legitimate public key, RPM could wrongly trust a malicious signature. The greatest impact of this flaw is to data integrity. To exploit this flaw, an attacker must either compromise an RPM repository or convince an administrator to install an untrusted RPM or public key. It is strongly recommended to only use RPMs and public keys from trusted sources.",
+        "git_url": "https://github.com/rpm-software-management/rpm/commit/bd36c5dc9fb6d90c46fbfed8c2d67516fc571ec8",
+        "commit_title": "Validate and require subkey binding signatures on PGP public keys",
+        "commit_text": " All subkeys must be followed by a binding signature by the primary key as per the OpenPGP RFC, enforce the presence and validity in the parser.  The implementation is as kludgey as they come to work around our simple-minded parser structure without touching API, to maximise backportability. Store all the raw packets internally as we decode them to be able to access previous elements at will, needed to validate ordering and access the actual data. Add testcases for manipulated keys whose import previously would succeed.  Depends on the two previous commits: 7b399fcb8f52566e6f3b4327197a85facd08db91 and 236b802a4aa48711823a191d1b7f753c82a89ec5  Fixes CVE-2021-3521.",
+        "func_before": "int pgpPrtParams(const uint8_t * pkts, size_t pktlen, unsigned int pkttype,\n\t\t pgpDigParams * ret)\n{\n    const uint8_t *p = pkts;\n    const uint8_t *pend = pkts + pktlen;\n    pgpDigParams digp = NULL;\n    struct pgpPkt pkt;\n    int rc = -1; /* assume failure */\n\n    while (p < pend) {\n\tif (decodePkt(p, (pend - p), &pkt))\n\t    break;\n\n\tif (digp == NULL) {\n\t    if (pkttype && pkt.tag != pkttype) {\n\t\tbreak;\n\t    } else {\n\t\tdigp = pgpDigParamsNew(pkt.tag);\n\t    }\n\t}\n\n\tif (pgpPrtPkt(&pkt, digp))\n\t    break;\n\n\tp += (pkt.body - pkt.head) + pkt.blen;\n\tif (pkttype == PGPTAG_SIGNATURE)\n\t    break;\n    }\n\n    rc = (digp && (p == pend)) ? 0 : -1;\n\n    if (ret && rc == 0) {\n\t*ret = digp;\n    } else {\n\tpgpDigParamsFree(digp);\n    }\n    return rc;\n}",
+        "func": "int pgpPrtParams(const uint8_t * pkts, size_t pktlen, unsigned int pkttype,\n\t\t pgpDigParams * ret)\n{\n    const uint8_t *p = pkts;\n    const uint8_t *pend = pkts + pktlen;\n    pgpDigParams digp = NULL;\n    pgpDigParams selfsig = NULL;\n    int i = 0;\n    int alloced = 16; /* plenty for normal cases */\n    struct pgpPkt *all = xmalloc(alloced * sizeof(*all));\n    int rc = -1; /* assume failure */\n    int expect = 0;\n    int prevtag = 0;\n\n    while (p < pend) {\n\tstruct pgpPkt *pkt = &all[i];\n\tif (decodePkt(p, (pend - p), pkt))\n\t    break;\n\n\tif (digp == NULL) {\n\t    if (pkttype && pkt->tag != pkttype) {\n\t\tbreak;\n\t    } else {\n\t\tdigp = pgpDigParamsNew(pkt->tag);\n\t    }\n\t}\n\n\tif (expect) {\n\t    if (pkt->tag != expect)\n\t\tbreak;\n\t    selfsig = pgpDigParamsNew(pkt->tag);\n\t}\n\n\tif (pgpPrtPkt(pkt, selfsig ? selfsig : digp))\n\t    break;\n\n\tif (selfsig) {\n\t    /* subkeys must be followed by binding signature */\n\t    if (prevtag == PGPTAG_PUBLIC_SUBKEY) {\n\t\tif (selfsig->sigtype != PGPSIGTYPE_SUBKEY_BINDING)\n\t\t    break;\n\t    }\n\n\t    int xx = pgpVerifySelf(digp, selfsig, all, i);\n\n\t    selfsig = pgpDigParamsFree(selfsig);\n\t    if (xx)\n\t\tbreak;\n\t    expect = 0;\n\t}\n\n\tif (pkt->tag == PGPTAG_PUBLIC_SUBKEY)\n\t    expect = PGPTAG_SIGNATURE;\n\tprevtag = pkt->tag;\n\n\ti++;\n\tp += (pkt->body - pkt->head) + pkt->blen;\n\tif (pkttype == PGPTAG_SIGNATURE)\n\t    break;\n\n\tif (alloced <= i) {\n\t    alloced *= 2;\n\t    all = xrealloc(all, alloced * sizeof(*all));\n\t}\n    }\n\n    rc = (digp && (p == pend) && expect == 0) ? 0 : -1;\n\n    free(all);\n    if (ret && rc == 0) {\n\t*ret = digp;\n    } else {\n\tpgpDigParamsFree(digp);\n    }\n    return rc;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -4,31 +4,69 @@\n     const uint8_t *p = pkts;\n     const uint8_t *pend = pkts + pktlen;\n     pgpDigParams digp = NULL;\n-    struct pgpPkt pkt;\n+    pgpDigParams selfsig = NULL;\n+    int i = 0;\n+    int alloced = 16; /* plenty for normal cases */\n+    struct pgpPkt *all = xmalloc(alloced * sizeof(*all));\n     int rc = -1; /* assume failure */\n+    int expect = 0;\n+    int prevtag = 0;\n \n     while (p < pend) {\n-\tif (decodePkt(p, (pend - p), &pkt))\n+\tstruct pgpPkt *pkt = &all[i];\n+\tif (decodePkt(p, (pend - p), pkt))\n \t    break;\n \n \tif (digp == NULL) {\n-\t    if (pkttype && pkt.tag != pkttype) {\n+\t    if (pkttype && pkt->tag != pkttype) {\n \t\tbreak;\n \t    } else {\n-\t\tdigp = pgpDigParamsNew(pkt.tag);\n+\t\tdigp = pgpDigParamsNew(pkt->tag);\n \t    }\n \t}\n \n-\tif (pgpPrtPkt(&pkt, digp))\n+\tif (expect) {\n+\t    if (pkt->tag != expect)\n+\t\tbreak;\n+\t    selfsig = pgpDigParamsNew(pkt->tag);\n+\t}\n+\n+\tif (pgpPrtPkt(pkt, selfsig ? selfsig : digp))\n \t    break;\n \n-\tp += (pkt.body - pkt.head) + pkt.blen;\n+\tif (selfsig) {\n+\t    /* subkeys must be followed by binding signature */\n+\t    if (prevtag == PGPTAG_PUBLIC_SUBKEY) {\n+\t\tif (selfsig->sigtype != PGPSIGTYPE_SUBKEY_BINDING)\n+\t\t    break;\n+\t    }\n+\n+\t    int xx = pgpVerifySelf(digp, selfsig, all, i);\n+\n+\t    selfsig = pgpDigParamsFree(selfsig);\n+\t    if (xx)\n+\t\tbreak;\n+\t    expect = 0;\n+\t}\n+\n+\tif (pkt->tag == PGPTAG_PUBLIC_SUBKEY)\n+\t    expect = PGPTAG_SIGNATURE;\n+\tprevtag = pkt->tag;\n+\n+\ti++;\n+\tp += (pkt->body - pkt->head) + pkt->blen;\n \tif (pkttype == PGPTAG_SIGNATURE)\n \t    break;\n+\n+\tif (alloced <= i) {\n+\t    alloced *= 2;\n+\t    all = xrealloc(all, alloced * sizeof(*all));\n+\t}\n     }\n \n-    rc = (digp && (p == pend)) ? 0 : -1;\n+    rc = (digp && (p == pend) && expect == 0) ? 0 : -1;\n \n+    free(all);\n     if (ret && rc == 0) {\n \t*ret = digp;\n     } else {",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    struct pgpPkt pkt;",
+                "\tif (decodePkt(p, (pend - p), &pkt))",
+                "\t    if (pkttype && pkt.tag != pkttype) {",
+                "\t\tdigp = pgpDigParamsNew(pkt.tag);",
+                "\tif (pgpPrtPkt(&pkt, digp))",
+                "\tp += (pkt.body - pkt.head) + pkt.blen;",
+                "    rc = (digp && (p == pend)) ? 0 : -1;"
+            ],
+            "added_lines": [
+                "    pgpDigParams selfsig = NULL;",
+                "    int i = 0;",
+                "    int alloced = 16; /* plenty for normal cases */",
+                "    struct pgpPkt *all = xmalloc(alloced * sizeof(*all));",
+                "    int expect = 0;",
+                "    int prevtag = 0;",
+                "\tstruct pgpPkt *pkt = &all[i];",
+                "\tif (decodePkt(p, (pend - p), pkt))",
+                "\t    if (pkttype && pkt->tag != pkttype) {",
+                "\t\tdigp = pgpDigParamsNew(pkt->tag);",
+                "\tif (expect) {",
+                "\t    if (pkt->tag != expect)",
+                "\t\tbreak;",
+                "\t    selfsig = pgpDigParamsNew(pkt->tag);",
+                "\t}",
+                "",
+                "\tif (pgpPrtPkt(pkt, selfsig ? selfsig : digp))",
+                "\tif (selfsig) {",
+                "\t    /* subkeys must be followed by binding signature */",
+                "\t    if (prevtag == PGPTAG_PUBLIC_SUBKEY) {",
+                "\t\tif (selfsig->sigtype != PGPSIGTYPE_SUBKEY_BINDING)",
+                "\t\t    break;",
+                "\t    }",
+                "",
+                "\t    int xx = pgpVerifySelf(digp, selfsig, all, i);",
+                "",
+                "\t    selfsig = pgpDigParamsFree(selfsig);",
+                "\t    if (xx)",
+                "\t\tbreak;",
+                "\t    expect = 0;",
+                "\t}",
+                "",
+                "\tif (pkt->tag == PGPTAG_PUBLIC_SUBKEY)",
+                "\t    expect = PGPTAG_SIGNATURE;",
+                "\tprevtag = pkt->tag;",
+                "",
+                "\ti++;",
+                "\tp += (pkt->body - pkt->head) + pkt->blen;",
+                "",
+                "\tif (alloced <= i) {",
+                "\t    alloced *= 2;",
+                "\t    all = xrealloc(all, alloced * sizeof(*all));",
+                "\t}",
+                "    rc = (digp && (p == pend) && expect == 0) ? 0 : -1;",
+                "    free(all);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-42010",
+        "func_name": "dbus/_dbus_validate_signature_with_reason",
+        "description": "An issue was discovered in D-Bus before 1.12.24, 1.13.x and 1.14.x before 1.14.4, and 1.15.x before 1.15.2. An authenticated attacker can cause dbus-daemon and other programs that use libdbus to crash when receiving a message with certain invalid type signatures.",
+        "git_url": "https://cgit.freedesktop.org/dbus/dbus/commit/?id=9d07424e9011e3bbe535e83043d335f3093d2916",
+        "commit_title": "In debug builds with assertions enabled, a signature with incorrectly",
+        "commit_text": "nested `()` and `{}`, for example `a{i(u}` or `(a{ii)}`, could result in an assertion failure.  In production builds without assertions enabled, a signature with incorrectly nested `()` and `{}` could potentially result in a crash or incorrect message parsing, although we do not have a concrete example of either of these failure modes.  Thanks: Evgeny Vereshchagin Resolves: https://gitlab.freedesktop.org/dbus/dbus/-/issues/418 Resolves: CVE-2022-42010 ",
+        "func_before": "DBusValidity\n_dbus_validate_signature_with_reason (const DBusString *type_str,\n                                      int               type_pos,\n                                      int               len)\n{\n  const unsigned char *p;\n  const unsigned char *end;\n  int last;\n  int struct_depth;\n  int array_depth;\n  int dict_entry_depth;\n  DBusValidity result;\n\n  int element_count;\n  DBusList *element_count_stack;\n\n  result = DBUS_VALID;\n  element_count_stack = NULL;\n\n  if (!_dbus_list_append (&element_count_stack, _DBUS_INT_TO_POINTER (0)))\n    {\n      result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n      goto out;\n    }\n\n  _dbus_assert (type_str != NULL);\n  _dbus_assert (type_pos < _DBUS_INT32_MAX - len);\n  _dbus_assert (len >= 0);\n  _dbus_assert (type_pos >= 0);\n\n  if (len > DBUS_MAXIMUM_SIGNATURE_LENGTH)\n    {\n      result = DBUS_INVALID_SIGNATURE_TOO_LONG;\n      goto out;\n    }\n\n  p = _dbus_string_get_const_udata_len (type_str, type_pos, 0);\n\n  end = _dbus_string_get_const_udata_len (type_str, type_pos + len, 0);\n  struct_depth = 0;\n  array_depth = 0;\n  dict_entry_depth = 0;\n  last = DBUS_TYPE_INVALID;\n\n  while (p != end)\n    {\n      switch (*p)\n        {\n        case DBUS_TYPE_BYTE:\n        case DBUS_TYPE_BOOLEAN:\n        case DBUS_TYPE_INT16:\n        case DBUS_TYPE_UINT16:\n        case DBUS_TYPE_INT32:\n        case DBUS_TYPE_UINT32:\n        case DBUS_TYPE_UNIX_FD:\n        case DBUS_TYPE_INT64:\n        case DBUS_TYPE_UINT64:\n        case DBUS_TYPE_DOUBLE:\n        case DBUS_TYPE_STRING:\n        case DBUS_TYPE_OBJECT_PATH:\n        case DBUS_TYPE_SIGNATURE:\n        case DBUS_TYPE_VARIANT:\n          break;\n\n        case DBUS_TYPE_ARRAY:\n          array_depth += 1;\n          if (array_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_ARRAY_RECURSION;\n              goto out;\n            }\n          break;\n\n        case DBUS_STRUCT_BEGIN_CHAR:\n          struct_depth += 1;\n\n          if (struct_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_STRUCT_RECURSION;\n              goto out;\n            }\n          \n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (0)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n\n          break;\n\n        case DBUS_STRUCT_END_CHAR:\n          if (struct_depth == 0)\n            {\n              result = DBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n\n          if (last == DBUS_STRUCT_BEGIN_CHAR)\n            {\n              result = DBUS_INVALID_STRUCT_HAS_NO_FIELDS;\n              goto out;\n            }\n\n          _dbus_list_pop_last (&element_count_stack);\n\n          struct_depth -= 1;\n          break;\n\n        case DBUS_DICT_ENTRY_BEGIN_CHAR:\n          if (last != DBUS_TYPE_ARRAY)\n            {\n              result = DBUS_INVALID_DICT_ENTRY_NOT_INSIDE_ARRAY;\n              goto out;\n            }\n            \n          dict_entry_depth += 1;\n\n          if (dict_entry_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_DICT_ENTRY_RECURSION;\n              goto out;\n            }\n\n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (0)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n\n          break;\n\n        case DBUS_DICT_ENTRY_END_CHAR:\n          if (dict_entry_depth == 0)\n            {\n              result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n            \n          dict_entry_depth -= 1;\n\n          element_count = \n            _DBUS_POINTER_TO_INT (_dbus_list_pop_last (&element_count_stack));\n\n          if (element_count != 2)\n            {\n              if (element_count == 0)\n                result = DBUS_INVALID_DICT_ENTRY_HAS_NO_FIELDS;\n              else if (element_count == 1)\n                result = DBUS_INVALID_DICT_ENTRY_HAS_ONLY_ONE_FIELD;\n              else\n                result = DBUS_INVALID_DICT_ENTRY_HAS_TOO_MANY_FIELDS;\n              \n              goto out;\n            }\n          break;\n          \n        case DBUS_TYPE_STRUCT:     /* doesn't appear in signatures */\n        case DBUS_TYPE_DICT_ENTRY: /* ditto */\n        default:\n          result = DBUS_INVALID_UNKNOWN_TYPECODE;\n\t  goto out;\n        }\n\n      if (*p != DBUS_TYPE_ARRAY && \n          *p != DBUS_DICT_ENTRY_BEGIN_CHAR && \n\t  *p != DBUS_STRUCT_BEGIN_CHAR) \n        {\n          element_count = \n            _DBUS_POINTER_TO_INT (_dbus_list_pop_last (&element_count_stack));\n\n          ++element_count;\n\n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (element_count)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n        }\n      \n      if (array_depth > 0)\n        {\n          if (*p == DBUS_TYPE_ARRAY && p != end)\n            {\n               const unsigned char *p1;\n\t       p1 = p + 1;\n               if (*p1 == DBUS_STRUCT_END_CHAR ||\n                   *p1 == DBUS_DICT_ENTRY_END_CHAR)\n                 {\n                   result = DBUS_INVALID_MISSING_ARRAY_ELEMENT_TYPE;\n                   goto out;\n                 }\n            }\n          else\n\t    {\n              array_depth = 0;\n\t    }\n        }\n\n      if (last == DBUS_DICT_ENTRY_BEGIN_CHAR)\n        {\n          if (!(dbus_type_is_valid (*p) && dbus_type_is_basic (*p)))\n            {\n              result = DBUS_INVALID_DICT_KEY_MUST_BE_BASIC_TYPE;\n              goto out;\n            }\n        }\n\n      last = *p;\n      ++p;\n    }\n\n\n  if (array_depth > 0)\n    {\n      result = DBUS_INVALID_MISSING_ARRAY_ELEMENT_TYPE;\n      goto out;\n    }\n    \n  if (struct_depth > 0)\n    {\n       result = DBUS_INVALID_STRUCT_STARTED_BUT_NOT_ENDED;\n       goto out;\n    }\n    \n  if (dict_entry_depth > 0)\n    {\n      result =  DBUS_INVALID_DICT_ENTRY_STARTED_BUT_NOT_ENDED;\n      goto out;\n    }\n    \n  _dbus_assert (last != DBUS_TYPE_ARRAY);\n  _dbus_assert (last != DBUS_STRUCT_BEGIN_CHAR);\n  _dbus_assert (last != DBUS_DICT_ENTRY_BEGIN_CHAR);\n\n  result = DBUS_VALID;\n\nout:\n  _dbus_list_clear (&element_count_stack);\n  return result;\n}",
+        "func": "DBusValidity\n_dbus_validate_signature_with_reason (const DBusString *type_str,\n                                      int               type_pos,\n                                      int               len)\n{\n  const unsigned char *p;\n  const unsigned char *end;\n  int last;\n  int struct_depth;\n  int array_depth;\n  int dict_entry_depth;\n  DBusValidity result;\n\n  int element_count;\n  DBusList *element_count_stack;\n  char opened_brackets[DBUS_MAXIMUM_TYPE_RECURSION_DEPTH * 2 + 1] = { '\\0' };\n  char last_bracket;\n\n  result = DBUS_VALID;\n  element_count_stack = NULL;\n\n  if (!_dbus_list_append (&element_count_stack, _DBUS_INT_TO_POINTER (0)))\n    {\n      result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n      goto out;\n    }\n\n  _dbus_assert (type_str != NULL);\n  _dbus_assert (type_pos < _DBUS_INT32_MAX - len);\n  _dbus_assert (len >= 0);\n  _dbus_assert (type_pos >= 0);\n\n  if (len > DBUS_MAXIMUM_SIGNATURE_LENGTH)\n    {\n      result = DBUS_INVALID_SIGNATURE_TOO_LONG;\n      goto out;\n    }\n\n  p = _dbus_string_get_const_udata_len (type_str, type_pos, 0);\n\n  end = _dbus_string_get_const_udata_len (type_str, type_pos + len, 0);\n  struct_depth = 0;\n  array_depth = 0;\n  dict_entry_depth = 0;\n  last = DBUS_TYPE_INVALID;\n\n  while (p != end)\n    {\n      _dbus_assert (struct_depth + dict_entry_depth >= 0);\n      _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n      _dbus_assert (opened_brackets[struct_depth + dict_entry_depth] == '\\0');\n\n      switch (*p)\n        {\n        case DBUS_TYPE_BYTE:\n        case DBUS_TYPE_BOOLEAN:\n        case DBUS_TYPE_INT16:\n        case DBUS_TYPE_UINT16:\n        case DBUS_TYPE_INT32:\n        case DBUS_TYPE_UINT32:\n        case DBUS_TYPE_UNIX_FD:\n        case DBUS_TYPE_INT64:\n        case DBUS_TYPE_UINT64:\n        case DBUS_TYPE_DOUBLE:\n        case DBUS_TYPE_STRING:\n        case DBUS_TYPE_OBJECT_PATH:\n        case DBUS_TYPE_SIGNATURE:\n        case DBUS_TYPE_VARIANT:\n          break;\n\n        case DBUS_TYPE_ARRAY:\n          array_depth += 1;\n          if (array_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_ARRAY_RECURSION;\n              goto out;\n            }\n          break;\n\n        case DBUS_STRUCT_BEGIN_CHAR:\n          struct_depth += 1;\n\n          if (struct_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_STRUCT_RECURSION;\n              goto out;\n            }\n          \n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (0)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n\n          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');\n          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_STRUCT_BEGIN_CHAR;\n          break;\n\n        case DBUS_STRUCT_END_CHAR:\n          if (struct_depth == 0)\n            {\n              result = DBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n\n          if (last == DBUS_STRUCT_BEGIN_CHAR)\n            {\n              result = DBUS_INVALID_STRUCT_HAS_NO_FIELDS;\n              goto out;\n            }\n\n          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];\n\n          if (last_bracket != DBUS_STRUCT_BEGIN_CHAR)\n            {\n              result = DBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n\n          _dbus_list_pop_last (&element_count_stack);\n\n          struct_depth -= 1;\n          opened_brackets[struct_depth + dict_entry_depth] = '\\0';\n          break;\n\n        case DBUS_DICT_ENTRY_BEGIN_CHAR:\n          if (last != DBUS_TYPE_ARRAY)\n            {\n              result = DBUS_INVALID_DICT_ENTRY_NOT_INSIDE_ARRAY;\n              goto out;\n            }\n            \n          dict_entry_depth += 1;\n\n          if (dict_entry_depth > DBUS_MAXIMUM_TYPE_RECURSION_DEPTH)\n            {\n              result = DBUS_INVALID_EXCEEDED_MAXIMUM_DICT_ENTRY_RECURSION;\n              goto out;\n            }\n\n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (0)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n\n          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');\n          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_DICT_ENTRY_BEGIN_CHAR;\n          break;\n\n        case DBUS_DICT_ENTRY_END_CHAR:\n          if (dict_entry_depth == 0)\n            {\n              result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n\n          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];\n\n          if (last_bracket != DBUS_DICT_ENTRY_BEGIN_CHAR)\n            {\n              result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;\n              goto out;\n            }\n\n          dict_entry_depth -= 1;\n          opened_brackets[struct_depth + dict_entry_depth] = '\\0';\n\n          element_count = \n            _DBUS_POINTER_TO_INT (_dbus_list_pop_last (&element_count_stack));\n\n          if (element_count != 2)\n            {\n              if (element_count == 0)\n                result = DBUS_INVALID_DICT_ENTRY_HAS_NO_FIELDS;\n              else if (element_count == 1)\n                result = DBUS_INVALID_DICT_ENTRY_HAS_ONLY_ONE_FIELD;\n              else\n                result = DBUS_INVALID_DICT_ENTRY_HAS_TOO_MANY_FIELDS;\n              \n              goto out;\n            }\n          break;\n          \n        case DBUS_TYPE_STRUCT:     /* doesn't appear in signatures */\n        case DBUS_TYPE_DICT_ENTRY: /* ditto */\n        default:\n          result = DBUS_INVALID_UNKNOWN_TYPECODE;\n\t  goto out;\n        }\n\n      if (*p != DBUS_TYPE_ARRAY && \n          *p != DBUS_DICT_ENTRY_BEGIN_CHAR && \n\t  *p != DBUS_STRUCT_BEGIN_CHAR) \n        {\n          element_count = \n            _DBUS_POINTER_TO_INT (_dbus_list_pop_last (&element_count_stack));\n\n          ++element_count;\n\n          if (!_dbus_list_append (&element_count_stack, \n                             _DBUS_INT_TO_POINTER (element_count)))\n            {\n              result = DBUS_VALIDITY_UNKNOWN_OOM_ERROR;\n              goto out;\n            }\n        }\n      \n      if (array_depth > 0)\n        {\n          if (*p == DBUS_TYPE_ARRAY && p != end)\n            {\n               const unsigned char *p1;\n\t       p1 = p + 1;\n               if (*p1 == DBUS_STRUCT_END_CHAR ||\n                   *p1 == DBUS_DICT_ENTRY_END_CHAR)\n                 {\n                   result = DBUS_INVALID_MISSING_ARRAY_ELEMENT_TYPE;\n                   goto out;\n                 }\n            }\n          else\n\t    {\n              array_depth = 0;\n\t    }\n        }\n\n      if (last == DBUS_DICT_ENTRY_BEGIN_CHAR)\n        {\n          if (!(dbus_type_is_valid (*p) && dbus_type_is_basic (*p)))\n            {\n              result = DBUS_INVALID_DICT_KEY_MUST_BE_BASIC_TYPE;\n              goto out;\n            }\n        }\n\n      last = *p;\n      ++p;\n    }\n\n\n  if (array_depth > 0)\n    {\n      result = DBUS_INVALID_MISSING_ARRAY_ELEMENT_TYPE;\n      goto out;\n    }\n    \n  if (struct_depth > 0)\n    {\n       result = DBUS_INVALID_STRUCT_STARTED_BUT_NOT_ENDED;\n       goto out;\n    }\n    \n  if (dict_entry_depth > 0)\n    {\n      result =  DBUS_INVALID_DICT_ENTRY_STARTED_BUT_NOT_ENDED;\n      goto out;\n    }\n    \n  _dbus_assert (last != DBUS_TYPE_ARRAY);\n  _dbus_assert (last != DBUS_STRUCT_BEGIN_CHAR);\n  _dbus_assert (last != DBUS_DICT_ENTRY_BEGIN_CHAR);\n\n  result = DBUS_VALID;\n\nout:\n  _dbus_list_clear (&element_count_stack);\n  return result;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -13,6 +13,8 @@\n \n   int element_count;\n   DBusList *element_count_stack;\n+  char opened_brackets[DBUS_MAXIMUM_TYPE_RECURSION_DEPTH * 2 + 1] = { '\\0' };\n+  char last_bracket;\n \n   result = DBUS_VALID;\n   element_count_stack = NULL;\n@@ -44,6 +46,10 @@\n \n   while (p != end)\n     {\n+      _dbus_assert (struct_depth + dict_entry_depth >= 0);\n+      _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n+      _dbus_assert (opened_brackets[struct_depth + dict_entry_depth] == '\\0');\n+\n       switch (*p)\n         {\n         case DBUS_TYPE_BYTE:\n@@ -87,6 +93,10 @@\n               goto out;\n             }\n \n+          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n+          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n+          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');\n+          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_STRUCT_BEGIN_CHAR;\n           break;\n \n         case DBUS_STRUCT_END_CHAR:\n@@ -102,9 +112,20 @@\n               goto out;\n             }\n \n+          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n+          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n+          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];\n+\n+          if (last_bracket != DBUS_STRUCT_BEGIN_CHAR)\n+            {\n+              result = DBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED;\n+              goto out;\n+            }\n+\n           _dbus_list_pop_last (&element_count_stack);\n \n           struct_depth -= 1;\n+          opened_brackets[struct_depth + dict_entry_depth] = '\\0';\n           break;\n \n         case DBUS_DICT_ENTRY_BEGIN_CHAR:\n@@ -129,6 +150,10 @@\n               goto out;\n             }\n \n+          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n+          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n+          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');\n+          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_DICT_ENTRY_BEGIN_CHAR;\n           break;\n \n         case DBUS_DICT_ENTRY_END_CHAR:\n@@ -137,8 +162,19 @@\n               result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;\n               goto out;\n             }\n-            \n+\n+          _dbus_assert (struct_depth + dict_entry_depth >= 1);\n+          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));\n+          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];\n+\n+          if (last_bracket != DBUS_DICT_ENTRY_BEGIN_CHAR)\n+            {\n+              result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;\n+              goto out;\n+            }\n+\n           dict_entry_depth -= 1;\n+          opened_brackets[struct_depth + dict_entry_depth] = '\\0';\n \n           element_count = \n             _DBUS_POINTER_TO_INT (_dbus_list_pop_last (&element_count_stack));",
+        "diff_line_info": {
+            "deleted_lines": [
+                "            "
+            ],
+            "added_lines": [
+                "  char opened_brackets[DBUS_MAXIMUM_TYPE_RECURSION_DEPTH * 2 + 1] = { '\\0' };",
+                "  char last_bracket;",
+                "      _dbus_assert (struct_depth + dict_entry_depth >= 0);",
+                "      _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));",
+                "      _dbus_assert (opened_brackets[struct_depth + dict_entry_depth] == '\\0');",
+                "",
+                "          _dbus_assert (struct_depth + dict_entry_depth >= 1);",
+                "          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));",
+                "          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');",
+                "          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_STRUCT_BEGIN_CHAR;",
+                "          _dbus_assert (struct_depth + dict_entry_depth >= 1);",
+                "          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));",
+                "          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];",
+                "",
+                "          if (last_bracket != DBUS_STRUCT_BEGIN_CHAR)",
+                "            {",
+                "              result = DBUS_INVALID_STRUCT_ENDED_BUT_NOT_STARTED;",
+                "              goto out;",
+                "            }",
+                "",
+                "          opened_brackets[struct_depth + dict_entry_depth] = '\\0';",
+                "          _dbus_assert (struct_depth + dict_entry_depth >= 1);",
+                "          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));",
+                "          _dbus_assert (opened_brackets[struct_depth + dict_entry_depth - 1] == '\\0');",
+                "          opened_brackets[struct_depth + dict_entry_depth - 1] = DBUS_DICT_ENTRY_BEGIN_CHAR;",
+                "",
+                "          _dbus_assert (struct_depth + dict_entry_depth >= 1);",
+                "          _dbus_assert (struct_depth + dict_entry_depth < _DBUS_N_ELEMENTS (opened_brackets));",
+                "          last_bracket = opened_brackets[struct_depth + dict_entry_depth - 1];",
+                "",
+                "          if (last_bracket != DBUS_DICT_ENTRY_BEGIN_CHAR)",
+                "            {",
+                "              result = DBUS_INVALID_DICT_ENTRY_ENDED_BUT_NOT_STARTED;",
+                "              goto out;",
+                "            }",
+                "",
+                "          opened_brackets[struct_depth + dict_entry_depth] = '\\0';"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-24884",
+        "func_name": "freifunk-gluon/ecdsautils/ecdsa_verify_legacy",
+        "description": "ecdsautils is a tiny collection of programs used for ECDSA (keygen, sign, verify). `ecdsa_verify_[prepare_]legacy()` does not check whether the signature values `r` and `s` are non-zero. A signature consisting only of zeroes is always considered valid, making it trivial to forge signatures. Requiring multiple signatures from different public keys does not mitigate the issue: `ecdsa_verify_list_legacy()` will accept an arbitrary number of such forged signatures. Both the `ecdsautil verify` CLI command and the libecdsautil library are affected. The issue has been fixed in ecdsautils 0.4.1. All older versions of ecdsautils (including versions before the split into a library and a CLI utility) are vulnerable.",
+        "git_url": "https://github.com/freifunk-gluon/ecdsautils/commit/1d4b091abdf15ad7b2312535b5b95ad70f6dbd08",
+        "commit_title": "verify: fix signature verification (CVE-2022-24884)",
+        "commit_text": " Verify that r and s are non-zero. Without these checks, an all-zero signature is always considered valid.  While it would be nicer to error out in ecdsa_verify_prepare_legacy() already, that would require users of libecdsautil to check a return value of the prepare step. To be safe, implement the fix in an API/ABI-compatible way that doesn't need changes to the users.",
+        "func_before": "bool ecdsa_verify_legacy(const ecdsa_verify_context_t *ctx, const ecc_25519_work_t *pubkey) {\n  ecc_25519_work_t s2, work;\n  ecc_int256_t w, tmp;\n\n  ecc_25519_scalarmult(&s2, &ctx->u2, pubkey);\n  ecc_25519_add(&work, &ctx->s1, &s2);\n  ecc_25519_store_xy_legacy(&w, NULL, &work);\n  ecc_25519_gf_sub(&tmp, &ctx->r, &w);\n\n  return ecc_25519_gf_is_zero(&tmp);\n}",
+        "func": "bool ecdsa_verify_legacy(const ecdsa_verify_context_t *ctx, const ecc_25519_work_t *pubkey) {\n  ecc_25519_work_t s2, work;\n  ecc_int256_t w, tmp;\n\n  // Signature was detected as invalid in prepare step\n  if (ecc_25519_gf_is_zero(&ctx->r))\n    return false;\n\n  ecc_25519_scalarmult(&s2, &ctx->u2, pubkey);\n  ecc_25519_add(&work, &ctx->s1, &s2);\n  ecc_25519_store_xy_legacy(&w, NULL, &work);\n  ecc_25519_gf_sub(&tmp, &ctx->r, &w);\n\n  return ecc_25519_gf_is_zero(&tmp);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,6 +1,10 @@\n bool ecdsa_verify_legacy(const ecdsa_verify_context_t *ctx, const ecc_25519_work_t *pubkey) {\n   ecc_25519_work_t s2, work;\n   ecc_int256_t w, tmp;\n+\n+  // Signature was detected as invalid in prepare step\n+  if (ecc_25519_gf_is_zero(&ctx->r))\n+    return false;\n \n   ecc_25519_scalarmult(&s2, &ctx->u2, pubkey);\n   ecc_25519_add(&work, &ctx->s1, &s2);",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "",
+                "  // Signature was detected as invalid in prepare step",
+                "  if (ecc_25519_gf_is_zero(&ctx->r))",
+                "    return false;"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-24884",
+        "func_name": "freifunk-gluon/ecdsautils/ecdsa_verify_prepare_legacy",
+        "description": "ecdsautils is a tiny collection of programs used for ECDSA (keygen, sign, verify). `ecdsa_verify_[prepare_]legacy()` does not check whether the signature values `r` and `s` are non-zero. A signature consisting only of zeroes is always considered valid, making it trivial to forge signatures. Requiring multiple signatures from different public keys does not mitigate the issue: `ecdsa_verify_list_legacy()` will accept an arbitrary number of such forged signatures. Both the `ecdsautil verify` CLI command and the libecdsautil library are affected. The issue has been fixed in ecdsautils 0.4.1. All older versions of ecdsautils (including versions before the split into a library and a CLI utility) are vulnerable.",
+        "git_url": "https://github.com/freifunk-gluon/ecdsautils/commit/1d4b091abdf15ad7b2312535b5b95ad70f6dbd08",
+        "commit_title": "verify: fix signature verification (CVE-2022-24884)",
+        "commit_text": " Verify that r and s are non-zero. Without these checks, an all-zero signature is always considered valid.  While it would be nicer to error out in ecdsa_verify_prepare_legacy() already, that would require users of libecdsautil to check a return value of the prepare step. To be safe, implement the fix in an API/ABI-compatible way that doesn't need changes to the users.",
+        "func_before": "void ecdsa_verify_prepare_legacy(ecdsa_verify_context_t *ctx, const ecc_int256_t *hash, const ecdsa_signature_t *signature) {\n  ecc_int256_t w, u1, tmp;\n\n  ctx->r = signature->r;\n\n  ecc_25519_gf_recip(&w, &signature->s);\n  ecc_25519_gf_reduce(&tmp, hash);\n  ecc_25519_gf_mult(&u1, &tmp, &w);\n  ecc_25519_gf_mult(&ctx->u2, &ctx->r, &w);\n  ecc_25519_scalarmult_base(&ctx->s1, &u1);\n}",
+        "func": "void ecdsa_verify_prepare_legacy(ecdsa_verify_context_t *ctx, const ecc_int256_t *hash, const ecdsa_signature_t *signature) {\n  ecc_int256_t w, u1, tmp;\n\n  if (ecc_25519_gf_is_zero(&signature->s) || ecc_25519_gf_is_zero(&signature->r)) {\n    // Signature is invalid, mark by setting ctx->r to an invalid value\n    memset(&ctx->r, 0, sizeof(ctx->r));\n    return;\n  }\n\n  ctx->r = signature->r;\n\n  ecc_25519_gf_recip(&w, &signature->s);\n  ecc_25519_gf_reduce(&tmp, hash);\n  ecc_25519_gf_mult(&u1, &tmp, &w);\n  ecc_25519_gf_mult(&ctx->u2, &ctx->r, &w);\n  ecc_25519_scalarmult_base(&ctx->s1, &u1);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,5 +1,11 @@\n void ecdsa_verify_prepare_legacy(ecdsa_verify_context_t *ctx, const ecc_int256_t *hash, const ecdsa_signature_t *signature) {\n   ecc_int256_t w, u1, tmp;\n+\n+  if (ecc_25519_gf_is_zero(&signature->s) || ecc_25519_gf_is_zero(&signature->r)) {\n+    // Signature is invalid, mark by setting ctx->r to an invalid value\n+    memset(&ctx->r, 0, sizeof(ctx->r));\n+    return;\n+  }\n \n   ctx->r = signature->r;\n ",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "",
+                "  if (ecc_25519_gf_is_zero(&signature->s) || ecc_25519_gf_is_zero(&signature->r)) {",
+                "    // Signature is invalid, mark by setting ctx->r to an invalid value",
+                "    memset(&ctx->r, 0, sizeof(ctx->r));",
+                "    return;",
+                "  }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-9604",
+        "func_name": "torvalds/linux/keyctl_join_session_keyring",
+        "description": "It was discovered in the Linux kernel before 4.11-rc8 that root can gain direct access to an internal keyring, such as '.dns_resolver' in RHEL-7 or '.builtin_trusted_keys' upstream, by joining it as its session keyring. This allows root to bypass module signature verification by adding a new public key of its own devising to the keyring.",
+        "git_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=ee8f844e3c5a73b999edf733df1c529d6503ec2f",
+        "commit_title": "This fixes CVE-2016-9604.",
+        "commit_text": " Keyrings whose name begin with a '.' are special internal keyrings and so userspace isn't allowed to create keyrings by this name to prevent shadowing.  However, the patch that added the guard didn't fix KEYCTL_JOIN_SESSION_KEYRING.  Not only can that create dot-named keyrings, it can also subscribe to them as a session keyring if they grant SEARCH permission to the user.  This, for example, allows a root process to set .builtin_trusted_keys as its session keyring, at which point it has full access because now the possessor permissions are added.  This permits root to add extra public keys, thereby bypassing module verification.  This also affects kexec and IMA.  This can be tested by (as root):  \tkeyctl session .builtin_trusted_keys \tkeyctl add user a a @s \tkeyctl list @s  which on my test box gives me:  \t2 keys in keyring: \t180010936: ---lswrv     0     0 asymmetric: Build time autogenerated kernel key: ae3d4a31b82daa8e1a75b49dc2bba949fd992a05 \t801382539: --alswrv     0     0 user: a   Fix this by rejecting names beginning with a '.' in the keyctl.  cc: linux-ima-devel@lists.sourceforge.net cc: stable@vger.kernel.org ",
+        "func_before": "long keyctl_join_session_keyring(const char __user *_name)\n{\n\tchar *name;\n\tlong ret;\n\n\t/* fetch the name from userspace */\n\tname = NULL;\n\tif (_name) {\n\t\tname = strndup_user(_name, KEY_MAX_DESC_SIZE);\n\t\tif (IS_ERR(name)) {\n\t\t\tret = PTR_ERR(name);\n\t\t\tgoto error;\n\t\t}\n\t}\n\n\t/* join the session */\n\tret = join_session_keyring(name);\n\tkfree(name);\n\nerror:\n\treturn ret;\n}",
+        "func": "long keyctl_join_session_keyring(const char __user *_name)\n{\n\tchar *name;\n\tlong ret;\n\n\t/* fetch the name from userspace */\n\tname = NULL;\n\tif (_name) {\n\t\tname = strndup_user(_name, KEY_MAX_DESC_SIZE);\n\t\tif (IS_ERR(name)) {\n\t\t\tret = PTR_ERR(name);\n\t\t\tgoto error;\n\t\t}\n\n\t\tret = -EPERM;\n\t\tif (name[0] == '.')\n\t\t\tgoto error_name;\n\t}\n\n\t/* join the session */\n\tret = join_session_keyring(name);\nerror_name:\n\tkfree(name);\nerror:\n\treturn ret;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -11,12 +11,16 @@\n \t\t\tret = PTR_ERR(name);\n \t\t\tgoto error;\n \t\t}\n+\n+\t\tret = -EPERM;\n+\t\tif (name[0] == '.')\n+\t\t\tgoto error_name;\n \t}\n \n \t/* join the session */\n \tret = join_session_keyring(name);\n+error_name:\n \tkfree(name);\n-\n error:\n \treturn ret;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                ""
+            ],
+            "added_lines": [
+                "",
+                "\t\tret = -EPERM;",
+                "\t\tif (name[0] == '.')",
+                "\t\t\tgoto error_name;",
+                "error_name:"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2018-15836",
+        "func_name": "xelerance/Openswan/verify_signed_hash",
+        "description": "In verify_signed_hash() in lib/liboswkeys/signatures.c in Openswan before 2.6.50.1, the RSA implementation does not verify the value of padding string during PKCS#1 v1.5 signature verification. Consequently, a remote attacker can forge signatures when small public exponents are being used. IKEv2 signature verification is affected when RAW RSA keys are used.",
+        "git_url": "https://github.com/xelerance/Openswan/commit/9eaa6c2a823c1d2b58913506a15f9474bf857a3d",
+        "commit_title": "wo#7449 . verify padding contents for IKEv2 RSA sig check",
+        "commit_text": " Special thanks to Sze Yiu Chau of Purdue University (schau@purdue.edu) who reported the issue.",
+        "func_before": "err_t verify_signed_hash(const struct RSA_public_key *k\n                         , u_char *s, unsigned int s_max_octets\n                         , u_char **psig\n                         , size_t hash_len\n                         , const u_char *sig_val, size_t sig_len)\n{\n    unsigned int padlen;\n\n    /* actual exponentiation; see PKCS#1 v2.0 5.1 */\n    {\n\tchunk_t temp_s;\n\tMP_INT c;\n\n\tn_to_mpz(&c, sig_val, sig_len);\n\toswcrypto.mod_exp(&c, &c, &k->e, &k->n);\n\n\ttemp_s = mpz_to_n(&c, sig_len);\t/* back to octets */\n        if(s_max_octets < sig_len) {\n            return \"2\"\"exponentiation failed; too many octets\";\n        }\n\tmemcpy(s, temp_s.ptr, sig_len);\n\tpfree(temp_s.ptr);\n\tmpz_clear(&c);\n    }\n\n    /* check signature contents */\n    /* verify padding (not including any DER digest info! */\n    padlen = sig_len - 3 - hash_len;\n    /* now check padding */\n\n    DBG(DBG_CRYPT,\n\tDBG_dump(\"verify_sh decrypted SIG1:\", s, sig_len));\n    DBG(DBG_CRYPT, DBG_log(\"pad_len calculated: %d hash_len: %d\", padlen, (int)hash_len));\n\n    /* skip padding */\n    if(s[0]    != 0x00\n       || s[1] != 0x01\n       || s[padlen+2] != 0x00) {\n\treturn \"3\"\"SIG padding does not check out\";\n    }\n\n    s += padlen + 3;\n    (*psig) = s;\n\n    /* return SUCCESS */\n    return NULL;\n}",
+        "func": "err_t verify_signed_hash(const struct RSA_public_key *k\n                         , u_char *s, unsigned int s_max_octets\n                         , u_char **psig\n                         , size_t hash_len\n                         , const u_char *sig_val, size_t sig_len)\n{\n    unsigned int padlen;\n\n    /* actual exponentiation; see PKCS#1 v2.0 5.1 */\n    {\n\tchunk_t temp_s;\n\tMP_INT c;\n\n\tn_to_mpz(&c, sig_val, sig_len);\n\toswcrypto.mod_exp(&c, &c, &k->e, &k->n);\n\n\ttemp_s = mpz_to_n(&c, sig_len);\t/* back to octets */\n        if(s_max_octets < sig_len) {\n            return \"2\"\"exponentiation failed; too many octets\";\n        }\n\tmemcpy(s, temp_s.ptr, sig_len);\n\tpfree(temp_s.ptr);\n\tmpz_clear(&c);\n    }\n\n    /* check signature contents */\n    /* verify padding (not including any DER digest info! */\n    padlen = sig_len - 3 - hash_len;\n    /* now check padding */\n\n    DBG(DBG_CRYPT,\n\tDBG_dump(\"verify_sh decrypted SIG1:\", s, sig_len));\n    DBG(DBG_CRYPT, DBG_log(\"pad_len calculated: %d hash_len: %d\", padlen, (int)hash_len));\n\n    /* skip padding */\n    if(s[0]    != 0x00\n       || s[1] != 0x01\n       || s[padlen+2] != 0x00) {\n\treturn \"3\"\"SIG padding does not check out\";\n    }\n\n    /* signature starts after ASN wrapped padding [00,01,FF..FF,00] */\n    (*psig) = s + padlen + 3;\n\n    /* verify padding contents */\n    {\n        const u_char *p;\n        size_t cnt_ffs = 0;\n\n        for (p = s+2; p < s+padlen+2; p++)\n            if (*p == 0xFF)\n                cnt_ffs ++;\n\n        if (cnt_ffs != padlen)\n            return \"4\" \"invalid Padding String\";\n    }\n\n    /* return SUCCESS */\n    return NULL;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -39,8 +39,21 @@\n \treturn \"3\"\"SIG padding does not check out\";\n     }\n \n-    s += padlen + 3;\n-    (*psig) = s;\n+    /* signature starts after ASN wrapped padding [00,01,FF..FF,00] */\n+    (*psig) = s + padlen + 3;\n+\n+    /* verify padding contents */\n+    {\n+        const u_char *p;\n+        size_t cnt_ffs = 0;\n+\n+        for (p = s+2; p < s+padlen+2; p++)\n+            if (*p == 0xFF)\n+                cnt_ffs ++;\n+\n+        if (cnt_ffs != padlen)\n+            return \"4\" \"invalid Padding String\";\n+    }\n \n     /* return SUCCESS */\n     return NULL;",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    s += padlen + 3;",
+                "    (*psig) = s;"
+            ],
+            "added_lines": [
+                "    /* signature starts after ASN wrapped padding [00,01,FF..FF,00] */",
+                "    (*psig) = s + padlen + 3;",
+                "",
+                "    /* verify padding contents */",
+                "    {",
+                "        const u_char *p;",
+                "        size_t cnt_ffs = 0;",
+                "",
+                "        for (p = s+2; p < s+padlen+2; p++)",
+                "            if (*p == 0xFF)",
+                "                cnt_ffs ++;",
+                "",
+                "        if (cnt_ffs != padlen)",
+                "            return \"4\" \"invalid Padding String\";",
+                "    }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2018-16149",
+        "func_name": "igrr/axtls-8266/x509_verify",
+        "description": "In sig_verify() in x509.c in axTLS version 2.1.3 and before, the PKCS#1 v1.5 signature verification blindly trusts the declared lengths in the ASN.1 structure. Consequently, when small public exponents are being used, a remote attacker can generate purposefully crafted signatures (and put them on X.509 certificates) to induce illegal memory access and crash the verifier.",
+        "git_url": "https://github.com/igrr/axtls-8266/commit/5efe2947ab45e81d84b5f707c51d1c64be52f36c",
+        "commit_title": "Apply CVE fixes for X509 parsing",
+        "commit_text": " Apply patches developed by Sze Yiu which correct a vulnerability in X509 parsing.  See CVE-2018-16150 and CVE-2018-16149 for more info.",
+        "func_before": "int x509_verify(const CA_CERT_CTX *ca_cert_ctx, const X509_CTX *cert, \n        int *pathLenConstraint) \n{\n    int ret = X509_OK, i = 0;\n    bigint *cert_sig;\n    X509_CTX *next_cert = NULL;\n    BI_CTX *ctx = NULL;\n    bigint *mod = NULL, *expn = NULL;\n    int match_ca_cert = 0;\n    struct timeval tv;\n    uint8_t is_self_signed = 0;\n\n    if (cert == NULL)\n    {\n        ret = X509_VFY_ERROR_NO_TRUSTED_CERT;       \n        goto end_verify;\n    }\n\n    /* a self-signed certificate that is not in the CA store - use this \n       to check the signature */\n    if (asn1_compare_dn(cert->ca_cert_dn, cert->cert_dn) == 0)\n    {\n        is_self_signed = 1;\n        ctx = cert->rsa_ctx->bi_ctx;\n        mod = cert->rsa_ctx->m;\n        expn = cert->rsa_ctx->e;\n    }\n\n    gettimeofday(&tv, NULL);\n\n    /* check the not before date */\n    if (tv.tv_sec < cert->not_before)\n    {\n        ret = X509_VFY_ERROR_NOT_YET_VALID;\n        goto end_verify;\n    }\n\n    /* check the not after date */\n    if (tv.tv_sec > cert->not_after)\n    {\n        ret = X509_VFY_ERROR_EXPIRED;\n        goto end_verify;\n    }\n\n    if (cert->basic_constraint_present)\n    {\n        /* If the cA boolean is not asserted,\n           then the keyCertSign bit in the key usage extension MUST NOT be\n           asserted. */\n        if (!cert->basic_constraint_cA &&\n                IS_SET_KEY_USAGE_FLAG(cert, KEY_USAGE_KEY_CERT_SIGN))\n        {\n            ret = X509_VFY_ERROR_BASIC_CONSTRAINT;\n            goto end_verify;\n        }\n\n        /* The pathLenConstraint field is meaningful only if the cA boolean is\n           asserted and the key usage extension, if present, asserts the\n           keyCertSign bit.  In this case, it gives the maximum number of \n           non-self-issued intermediate certificates that may follow this \n           certificate in a valid certification path. */\n        if (cert->basic_constraint_cA &&\n            (!cert->key_usage_present || \n                IS_SET_KEY_USAGE_FLAG(cert, KEY_USAGE_KEY_CERT_SIGN)) &&\n            (cert->basic_constraint_pathLenConstraint+1) < *pathLenConstraint)\n        {\n            ret = X509_VFY_ERROR_BASIC_CONSTRAINT;\n            goto end_verify;\n        }\n    }\n\n    next_cert = cert->next;\n\n    /* last cert in the chain - look for a trusted cert */\n    if (next_cert == NULL)\n    {\n       if (ca_cert_ctx != NULL) \n       {\n            /* go thru the CA store */\n            while (i < CONFIG_X509_MAX_CA_CERTS && ca_cert_ctx->cert[i])\n            {\n                /* the extension is present but the cA boolean is not \n                   asserted, then the certified public key MUST NOT be used \n                   to verify certificate signatures. */\n                if (cert->basic_constraint_present && \n                        !ca_cert_ctx->cert[i]->basic_constraint_cA)\n                    continue;\n                        \n                if (asn1_compare_dn(cert->ca_cert_dn,\n                                            ca_cert_ctx->cert[i]->cert_dn) == 0)\n                {\n                    /* use this CA certificate for signature verification */\n                    match_ca_cert = true;\n                    ctx = ca_cert_ctx->cert[i]->rsa_ctx->bi_ctx;\n                    mod = ca_cert_ctx->cert[i]->rsa_ctx->m;\n                    expn = ca_cert_ctx->cert[i]->rsa_ctx->e;\n\n\n                    break;\n                }\n\n                i++;\n            }\n        }\n\n        /* couldn't find a trusted cert (& let self-signed errors \n           be returned) */\n        if (!match_ca_cert && !is_self_signed)\n        {\n            ret = X509_VFY_ERROR_NO_TRUSTED_CERT;       \n            goto end_verify;\n        }\n    }\n    else if (asn1_compare_dn(cert->ca_cert_dn, next_cert->cert_dn) != 0)\n    {\n        /* check the chain */\n        ret = X509_VFY_ERROR_INVALID_CHAIN;\n        goto end_verify;\n    }\n    else /* use the next certificate in the chain for signature verify */\n    {\n        ctx = next_cert->rsa_ctx->bi_ctx;\n        mod = next_cert->rsa_ctx->m;\n        expn = next_cert->rsa_ctx->e;\n    }\n\n    /* cert is self signed */\n    if (!match_ca_cert && is_self_signed)\n    {\n        ret = X509_VFY_ERROR_SELF_SIGNED;\n        goto end_verify;\n    }\n\n    /* check the signature */\n    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, \n                        bi_clone(ctx, mod), bi_clone(ctx, expn));\n\n    if (cert_sig && cert->digest)\n    {\n        if (bi_compare(cert_sig, cert->digest) != 0)\n            ret = X509_VFY_ERROR_BAD_SIGNATURE;\n\n\n        bi_free(ctx, cert_sig);\n    }\n    else\n    {\n        ret = X509_VFY_ERROR_BAD_SIGNATURE;\n    }\n\n    bi_clear_cache(ctx);\n\n    if (ret)\n        goto end_verify;\n\n    /* go down the certificate chain using recursion. */\n    if (next_cert != NULL)\n    {\n        (*pathLenConstraint)++; /* don't include last certificate */\n        ret = x509_verify(ca_cert_ctx, next_cert, pathLenConstraint);\n    }\n\nend_verify:\n    return ret;\n}",
+        "func": "int x509_verify(const CA_CERT_CTX *ca_cert_ctx, const X509_CTX *cert, \n        int *pathLenConstraint) \n{\n    int ret = X509_OK, i = 0;\n    bigint *cert_sig;\n    X509_CTX *next_cert = NULL;\n    BI_CTX *ctx = NULL;\n    bigint *mod = NULL, *expn = NULL;\n    int match_ca_cert = 0;\n    struct timeval tv;\n    uint8_t is_self_signed = 0;\n\n    if (cert == NULL)\n    {\n        ret = X509_VFY_ERROR_NO_TRUSTED_CERT;       \n        goto end_verify;\n    }\n\n    /* a self-signed certificate that is not in the CA store - use this \n       to check the signature */\n    if (asn1_compare_dn(cert->ca_cert_dn, cert->cert_dn) == 0)\n    {\n        is_self_signed = 1;\n        ctx = cert->rsa_ctx->bi_ctx;\n        mod = cert->rsa_ctx->m;\n        expn = cert->rsa_ctx->e;\n    }\n\n    gettimeofday(&tv, NULL);\n\n    /* check the not before date */\n    if (tv.tv_sec < cert->not_before)\n    {\n        ret = X509_VFY_ERROR_NOT_YET_VALID;\n        goto end_verify;\n    }\n\n    /* check the not after date */\n    if (tv.tv_sec > cert->not_after)\n    {\n        ret = X509_VFY_ERROR_EXPIRED;\n        goto end_verify;\n    }\n\n    if (cert->basic_constraint_present)\n    {\n        /* If the cA boolean is not asserted,\n           then the keyCertSign bit in the key usage extension MUST NOT be\n           asserted. */\n        if (!cert->basic_constraint_cA &&\n                IS_SET_KEY_USAGE_FLAG(cert, KEY_USAGE_KEY_CERT_SIGN))\n        {\n            ret = X509_VFY_ERROR_BASIC_CONSTRAINT;\n            goto end_verify;\n        }\n\n        /* The pathLenConstraint field is meaningful only if the cA boolean is\n           asserted and the key usage extension, if present, asserts the\n           keyCertSign bit.  In this case, it gives the maximum number of \n           non-self-issued intermediate certificates that may follow this \n           certificate in a valid certification path. */\n        if (cert->basic_constraint_cA &&\n            (!cert->key_usage_present || \n                IS_SET_KEY_USAGE_FLAG(cert, KEY_USAGE_KEY_CERT_SIGN)) &&\n            (cert->basic_constraint_pathLenConstraint+1) < *pathLenConstraint)\n        {\n            ret = X509_VFY_ERROR_BASIC_CONSTRAINT;\n            goto end_verify;\n        }\n    }\n\n    next_cert = cert->next;\n\n    /* last cert in the chain - look for a trusted cert */\n    if (next_cert == NULL)\n    {\n       if (ca_cert_ctx != NULL) \n       {\n            /* go thru the CA store */\n            while (i < CONFIG_X509_MAX_CA_CERTS && ca_cert_ctx->cert[i])\n            {\n                /* the extension is present but the cA boolean is not \n                   asserted, then the certified public key MUST NOT be used \n                   to verify certificate signatures. */\n                if (cert->basic_constraint_present && \n                        !ca_cert_ctx->cert[i]->basic_constraint_cA)\n                    continue;\n                        \n                if (asn1_compare_dn(cert->ca_cert_dn,\n                                            ca_cert_ctx->cert[i]->cert_dn) == 0)\n                {\n                    /* use this CA certificate for signature verification */\n                    match_ca_cert = true;\n                    ctx = ca_cert_ctx->cert[i]->rsa_ctx->bi_ctx;\n                    mod = ca_cert_ctx->cert[i]->rsa_ctx->m;\n                    expn = ca_cert_ctx->cert[i]->rsa_ctx->e;\n\n\n                    break;\n                }\n\n                i++;\n            }\n        }\n\n        /* couldn't find a trusted cert (& let self-signed errors \n           be returned) */\n        if (!match_ca_cert && !is_self_signed)\n        {\n            ret = X509_VFY_ERROR_NO_TRUSTED_CERT;       \n            goto end_verify;\n        }\n    }\n    else if (asn1_compare_dn(cert->ca_cert_dn, next_cert->cert_dn) != 0)\n    {\n        /* check the chain */\n        ret = X509_VFY_ERROR_INVALID_CHAIN;\n        goto end_verify;\n    }\n    else /* use the next certificate in the chain for signature verify */\n    {\n        ctx = next_cert->rsa_ctx->bi_ctx;\n        mod = next_cert->rsa_ctx->m;\n        expn = next_cert->rsa_ctx->e;\n    }\n\n    /* cert is self signed */\n    if (!match_ca_cert && is_self_signed)\n    {\n        ret = X509_VFY_ERROR_SELF_SIGNED;\n        goto end_verify;\n    }\n\n    /* check the signature */\n    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, cert->sig_type,\n                        bi_clone(ctx, mod), bi_clone(ctx, expn));\n\n    if (cert_sig && cert->digest)\n    {\n        if (bi_compare(cert_sig, cert->digest) != 0)\n            ret = X509_VFY_ERROR_BAD_SIGNATURE;\n\n\n        bi_free(ctx, cert_sig);\n    }\n    else\n    {\n        ret = X509_VFY_ERROR_BAD_SIGNATURE;\n    }\n\n    bi_clear_cache(ctx);\n\n    if (ret)\n        goto end_verify;\n\n    /* go down the certificate chain using recursion. */\n    if (next_cert != NULL)\n    {\n        (*pathLenConstraint)++; /* don't include last certificate */\n        ret = x509_verify(ca_cert_ctx, next_cert, pathLenConstraint);\n    }\n\nend_verify:\n    return ret;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -132,7 +132,7 @@\n     }\n \n     /* check the signature */\n-    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, \n+    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, cert->sig_type,\n                         bi_clone(ctx, mod), bi_clone(ctx, expn));\n \n     if (cert_sig && cert->digest)",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, "
+            ],
+            "added_lines": [
+                "    cert_sig = sig_verify(ctx, cert->signature, cert->sig_len, cert->sig_type,"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2018-16149",
+        "func_name": "igrr/axtls-8266/sig_verify",
+        "description": "In sig_verify() in x509.c in axTLS version 2.1.3 and before, the PKCS#1 v1.5 signature verification blindly trusts the declared lengths in the ASN.1 structure. Consequently, when small public exponents are being used, a remote attacker can generate purposefully crafted signatures (and put them on X.509 certificates) to induce illegal memory access and crash the verifier.",
+        "git_url": "https://github.com/igrr/axtls-8266/commit/5efe2947ab45e81d84b5f707c51d1c64be52f36c",
+        "commit_title": "Apply CVE fixes for X509 parsing",
+        "commit_text": " Apply patches developed by Sze Yiu which correct a vulnerability in X509 parsing.  See CVE-2018-16150 and CVE-2018-16149 for more info.",
+        "func_before": "static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len,\n        bigint *modulus, bigint *pub_exp)\n{\n    int i, size;\n    bigint *decrypted_bi, *dat_bi;\n    bigint *bir = NULL;\n    uint8_t *block = (uint8_t *)malloc(sig_len);\n\n    /* decrypt */\n    dat_bi = bi_import(ctx, sig, sig_len);\n    ctx->mod_offset = BIGINT_M_OFFSET;\n\n    /* convert to a normal block */\n    decrypted_bi = bi_mod_power2(ctx, dat_bi, modulus, pub_exp);\n\n    bi_export(ctx, decrypted_bi, block, sig_len);\n    ctx->mod_offset = BIGINT_M_OFFSET;\n\n    i = 10; /* start at the first possible non-padded byte */\n    while (block[i++] && i < sig_len);\n    size = sig_len - i;\n\n    /* get only the bit we want */\n    if (size > 0)\n    {\n        int len;\n        const uint8_t *sig_ptr = get_signature(&block[i], &len);\n\n        if (sig_ptr)\n        {\n            bir = bi_import(ctx, sig_ptr, len);\n        }\n    }\n    free(block);\n    /* save a few bytes of memory */\n    bi_clear_cache(ctx);\n    return bir;\n}",
+        "func": "static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len, uint8_t sig_type,\n        bigint *modulus, bigint *pub_exp)\n{\n    int i;\n    bigint *decrypted_bi, *dat_bi;\n    bigint *bir = NULL;\n    uint8_t *block = (uint8_t *)malloc(sig_len);\n\n    const uint8_t *sig_prefix = NULL;\n    uint8_t sig_prefix_size = 0, hash_len = 0;\n    /* adjust our expections */\n    switch (sig_type)\n    {\n        case SIG_TYPE_MD5:\n            sig_prefix = sig_prefix_md5;\n            sig_prefix_size = sizeof(sig_prefix_md5);\n        break;\n        case SIG_TYPE_SHA1:\n            sig_prefix = sig_prefix_sha1;\n            sig_prefix_size = sizeof(sig_prefix_sha1);\n        break;\n        case SIG_TYPE_SHA256:\n            sig_prefix = sig_prefix_sha256;\n            sig_prefix_size = sizeof(sig_prefix_sha256);\n        break;\n        case SIG_TYPE_SHA384:\n            sig_prefix = sig_prefix_sha384;\n            sig_prefix_size = sizeof(sig_prefix_sha384);\n        break;\n        case SIG_TYPE_SHA512:\n            sig_prefix = sig_prefix_sha512;\n            sig_prefix_size = sizeof(sig_prefix_sha512);\n        break;\n    }\n    if (sig_prefix)\n        hash_len = sig_prefix[sig_prefix_size - 1];\n\n    /* check length (#A) */\n    if (sig_len < 2 + 8 + 1 + sig_prefix_size + hash_len)\n        goto err;\n\n    /* decrypt */\n    dat_bi = bi_import(ctx, sig, sig_len);\n    ctx->mod_offset = BIGINT_M_OFFSET;\n\n    /* convert to a normal block */\n    decrypted_bi = bi_mod_power2(ctx, dat_bi, modulus, pub_exp);\n\n    bi_export(ctx, decrypted_bi, block, sig_len);\n    ctx->mod_offset = BIGINT_M_OFFSET;\n\n    /* check the first 2 bytes */\n    if (block[0] != 0 || block[1] != 1)\n        goto err;\n\n    /* check the padding */\n    i = 2; /* start at the first padding byte */\n    while (i < sig_len - 1 - sig_prefix_size - hash_len)\n    { /* together with (#A), we require at least 8 bytes of padding */\n        if (block[i++] != 0xFF)\n            goto err;\n    }\n\n    /* check end of padding */\n    if (block[i++] != 0)\n        goto err;\n\n    /* check the ASN.1 metadata */\n    if (memcmp_P(block+i, sig_prefix, sig_prefix_size))\n        goto err;\n\n    /* now we can get the hash we need */\n    bir = bi_import(ctx, block + i + sig_prefix_size, hash_len);\n\nerr:\n    free(block);\n    /* save a few bytes of memory */\n    bi_clear_cache(ctx);\n    return bir;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,10 +1,43 @@\n-static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len,\n+static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len, uint8_t sig_type,\n         bigint *modulus, bigint *pub_exp)\n {\n-    int i, size;\n+    int i;\n     bigint *decrypted_bi, *dat_bi;\n     bigint *bir = NULL;\n     uint8_t *block = (uint8_t *)malloc(sig_len);\n+\n+    const uint8_t *sig_prefix = NULL;\n+    uint8_t sig_prefix_size = 0, hash_len = 0;\n+    /* adjust our expections */\n+    switch (sig_type)\n+    {\n+        case SIG_TYPE_MD5:\n+            sig_prefix = sig_prefix_md5;\n+            sig_prefix_size = sizeof(sig_prefix_md5);\n+        break;\n+        case SIG_TYPE_SHA1:\n+            sig_prefix = sig_prefix_sha1;\n+            sig_prefix_size = sizeof(sig_prefix_sha1);\n+        break;\n+        case SIG_TYPE_SHA256:\n+            sig_prefix = sig_prefix_sha256;\n+            sig_prefix_size = sizeof(sig_prefix_sha256);\n+        break;\n+        case SIG_TYPE_SHA384:\n+            sig_prefix = sig_prefix_sha384;\n+            sig_prefix_size = sizeof(sig_prefix_sha384);\n+        break;\n+        case SIG_TYPE_SHA512:\n+            sig_prefix = sig_prefix_sha512;\n+            sig_prefix_size = sizeof(sig_prefix_sha512);\n+        break;\n+    }\n+    if (sig_prefix)\n+        hash_len = sig_prefix[sig_prefix_size - 1];\n+\n+    /* check length (#A) */\n+    if (sig_len < 2 + 8 + 1 + sig_prefix_size + hash_len)\n+        goto err;\n \n     /* decrypt */\n     dat_bi = bi_import(ctx, sig, sig_len);\n@@ -16,21 +49,30 @@\n     bi_export(ctx, decrypted_bi, block, sig_len);\n     ctx->mod_offset = BIGINT_M_OFFSET;\n \n-    i = 10; /* start at the first possible non-padded byte */\n-    while (block[i++] && i < sig_len);\n-    size = sig_len - i;\n+    /* check the first 2 bytes */\n+    if (block[0] != 0 || block[1] != 1)\n+        goto err;\n \n-    /* get only the bit we want */\n-    if (size > 0)\n-    {\n-        int len;\n-        const uint8_t *sig_ptr = get_signature(&block[i], &len);\n+    /* check the padding */\n+    i = 2; /* start at the first padding byte */\n+    while (i < sig_len - 1 - sig_prefix_size - hash_len)\n+    { /* together with (#A), we require at least 8 bytes of padding */\n+        if (block[i++] != 0xFF)\n+            goto err;\n+    }\n \n-        if (sig_ptr)\n-        {\n-            bir = bi_import(ctx, sig_ptr, len);\n-        }\n-    }\n+    /* check end of padding */\n+    if (block[i++] != 0)\n+        goto err;\n+\n+    /* check the ASN.1 metadata */\n+    if (memcmp_P(block+i, sig_prefix, sig_prefix_size))\n+        goto err;\n+\n+    /* now we can get the hash we need */\n+    bir = bi_import(ctx, block + i + sig_prefix_size, hash_len);\n+\n+err:\n     free(block);\n     /* save a few bytes of memory */\n     bi_clear_cache(ctx);",
+        "diff_line_info": {
+            "deleted_lines": [
+                "static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len,",
+                "    int i, size;",
+                "    i = 10; /* start at the first possible non-padded byte */",
+                "    while (block[i++] && i < sig_len);",
+                "    size = sig_len - i;",
+                "    /* get only the bit we want */",
+                "    if (size > 0)",
+                "    {",
+                "        int len;",
+                "        const uint8_t *sig_ptr = get_signature(&block[i], &len);",
+                "        if (sig_ptr)",
+                "        {",
+                "            bir = bi_import(ctx, sig_ptr, len);",
+                "        }",
+                "    }"
+            ],
+            "added_lines": [
+                "static bigint *sig_verify(BI_CTX *ctx, const uint8_t *sig, int sig_len, uint8_t sig_type,",
+                "    int i;",
+                "",
+                "    const uint8_t *sig_prefix = NULL;",
+                "    uint8_t sig_prefix_size = 0, hash_len = 0;",
+                "    /* adjust our expections */",
+                "    switch (sig_type)",
+                "    {",
+                "        case SIG_TYPE_MD5:",
+                "            sig_prefix = sig_prefix_md5;",
+                "            sig_prefix_size = sizeof(sig_prefix_md5);",
+                "        break;",
+                "        case SIG_TYPE_SHA1:",
+                "            sig_prefix = sig_prefix_sha1;",
+                "            sig_prefix_size = sizeof(sig_prefix_sha1);",
+                "        break;",
+                "        case SIG_TYPE_SHA256:",
+                "            sig_prefix = sig_prefix_sha256;",
+                "            sig_prefix_size = sizeof(sig_prefix_sha256);",
+                "        break;",
+                "        case SIG_TYPE_SHA384:",
+                "            sig_prefix = sig_prefix_sha384;",
+                "            sig_prefix_size = sizeof(sig_prefix_sha384);",
+                "        break;",
+                "        case SIG_TYPE_SHA512:",
+                "            sig_prefix = sig_prefix_sha512;",
+                "            sig_prefix_size = sizeof(sig_prefix_sha512);",
+                "        break;",
+                "    }",
+                "    if (sig_prefix)",
+                "        hash_len = sig_prefix[sig_prefix_size - 1];",
+                "",
+                "    /* check length (#A) */",
+                "    if (sig_len < 2 + 8 + 1 + sig_prefix_size + hash_len)",
+                "        goto err;",
+                "    /* check the first 2 bytes */",
+                "    if (block[0] != 0 || block[1] != 1)",
+                "        goto err;",
+                "    /* check the padding */",
+                "    i = 2; /* start at the first padding byte */",
+                "    while (i < sig_len - 1 - sig_prefix_size - hash_len)",
+                "    { /* together with (#A), we require at least 8 bytes of padding */",
+                "        if (block[i++] != 0xFF)",
+                "            goto err;",
+                "    }",
+                "    /* check end of padding */",
+                "    if (block[i++] != 0)",
+                "        goto err;",
+                "",
+                "    /* check the ASN.1 metadata */",
+                "    if (memcmp_P(block+i, sig_prefix, sig_prefix_size))",
+                "        goto err;",
+                "",
+                "    /* now we can get the hash we need */",
+                "    bir = bi_import(ctx, block + i + sig_prefix_size, hash_len);",
+                "",
+                "err:"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2023-40012",
+        "func_name": "trailofbits/uthenticode/SignedData::verify_signature",
+        "description": "uthenticode is a small cross-platform library for partially verifying Authenticode digital signatures. Versions of uthenticode prior to the 2.x series did not check Extended Key Usages in certificates, in violation of the Authenticode X.509 certificate profile. As a result, a malicious user could produce a \"signed\" PE file that uthenticode would verify and consider valid using an X.509 certificate that isn't entitled to produce code signatures (e.g., a SSL certificate). By design, uthenticode does not perform full-chain validation. However, the absence of EKU validation was an unintended oversight. The 2.0.0 release series includes EKU checks. There are no workarounds to this vulnerability.",
+        "git_url": "https://github.com/trailofbits/uthenticode/commit/caeb1eb62412605f71bd96ce9bb9420644b6db53",
+        "commit_title": "src: bump OpenSSL, EKU check (#78)",
+        "commit_text": " * src: bump OpenSSL, EKU check\r \r \r * README: bump OpenSSL\r \r \r * test: EKU test, testcase\r \r \r ---------\r \r",
+        "func_before": "bool SignedData::verify_signature() const {\n  STACK_OF(X509) *certs = nullptr;\n  switch (OBJ_obj2nid(p7_->type)) {\n    case NID_pkcs7_signed: {\n      certs = p7_->d.sign->cert;\n      break;\n    }\n    /* NOTE(ww): I'm pretty sure Authenticode signatures are always SignedData and never\n     * SignedAndEnvelopedData, but it doesn't hurt us to handle the latter as well.\n     */\n    case NID_pkcs7_signedAndEnveloped: {\n      certs = p7_->d.signed_and_enveloped->cert;\n      break;\n    }\n  }\n\n  if (certs == nullptr) {\n    return false;\n  }\n\n  /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back\n   * into DER form so that we can unwrap its ASN.1 sequence and pass the underlying data\n   * to PKCS7_verify for verification. This displays our intent a little more clearly than\n   * our previous approach, which was to walk the PKCS#7 structure manually.\n   */\n  std::uint8_t *indirect_data_buf = nullptr;\n  auto buf_size = impl::i2d_Authenticode_SpcIndirectDataContent(indirect_data_, &indirect_data_buf);\n  if (buf_size < 0 || indirect_data_buf == nullptr) {\n    return false;\n  }\n  auto indirect_data_ptr =\n      impl::OpenSSL_ptr(reinterpret_cast<char *>(indirect_data_buf), impl::OpenSSL_free);\n\n  const auto *signed_data_seq = reinterpret_cast<std::uint8_t *>(indirect_data_ptr.get());\n  long length = 0;\n  int tag = 0, tag_class = 0;\n  ASN1_get_object(&signed_data_seq, &length, &tag, &tag_class, buf_size);\n  if (tag != V_ASN1_SEQUENCE) {\n    return false;\n  }\n\n  auto *signed_data_ptr = BIO_new_mem_buf(signed_data_seq, length);\n  if (signed_data_ptr == nullptr) {\n    return false;\n  }\n  impl::BIO_ptr signed_data(signed_data_ptr, BIO_free);\n\n  /* Our actual verification happens here.\n   *\n   * We pass `certs` explicitly, but (experimentally) we don't have to -- the function correctly\n   * extracts then from the SignedData in `p7_`.\n   *\n   * We pass `nullptr` for the X509_STORE, since we don't do full-chain verification\n   * (we can't, since we don't have access to Windows's Trusted Publishers store on non-Windows).\n   */\n  auto status = PKCS7_verify(p7_, certs, nullptr, signed_data.get(), nullptr, PKCS7_NOVERIFY);\n\n  return status == 1;\n}",
+        "func": "bool SignedData::verify_signature() const {\n  STACK_OF(X509) *certs = nullptr;\n  switch (OBJ_obj2nid(p7_->type)) {\n    case NID_pkcs7_signed: {\n      certs = p7_->d.sign->cert;\n      break;\n    }\n    /* NOTE(ww): I'm pretty sure Authenticode signatures are always SignedData and never\n     * SignedAndEnvelopedData, but it doesn't hurt us to handle the latter as well.\n     */\n    case NID_pkcs7_signedAndEnveloped: {\n      certs = p7_->d.signed_and_enveloped->cert;\n      break;\n    }\n  }\n\n  if (certs == nullptr) {\n    return false;\n  }\n\n  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);\n  if (signers_stack_ptr == nullptr) {\n    return false;\n  }\n  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);\n\n  /* NOTE(ww): Authenticode specification, page 13: the signer must have the\n   * codeSigning EKU, **or** no member of the signer's chain may have it.\n   *\n   * The check below is more strict than that: **every** signer must have\n   * the codeSigning EKU, and we don't check the embedded chain (since\n   * we can't do full chain verification anyways).\n   */\n  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {\n    auto *signer = sk_X509_value(signers_stack.get(), i);\n\n    /* NOTE(ww): Ths should really be X509_check_purpose with\n     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present\n     * in even the latest releases of OpenSSL as of 2023-05.\n     */\n    auto xku_flags = X509_get_extended_key_usage(signer);\n    if (!(xku_flags & XKU_CODE_SIGN)) {\n      return false;\n    }\n  }\n\n  /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back\n   * into DER form so that we can unwrap its ASN.1 sequence and pass the underlying data\n   * to PKCS7_verify for verification. This displays our intent a little more clearly than\n   * our previous approach, which was to walk the PKCS#7 structure manually.\n   */\n  std::uint8_t *indirect_data_buf = nullptr;\n  auto buf_size = impl::i2d_Authenticode_SpcIndirectDataContent(indirect_data_, &indirect_data_buf);\n  if (buf_size < 0 || indirect_data_buf == nullptr) {\n    return false;\n  }\n  auto indirect_data_ptr =\n      impl::OpenSSL_ptr(reinterpret_cast<char *>(indirect_data_buf), impl::OpenSSL_free);\n\n  const auto *signed_data_seq = reinterpret_cast<std::uint8_t *>(indirect_data_ptr.get());\n  long length = 0;\n  int tag = 0, tag_class = 0;\n  ASN1_get_object(&signed_data_seq, &length, &tag, &tag_class, buf_size);\n  if (tag != V_ASN1_SEQUENCE) {\n    return false;\n  }\n\n  auto *signed_data_ptr = BIO_new_mem_buf(signed_data_seq, length);\n  if (signed_data_ptr == nullptr) {\n    return false;\n  }\n  impl::BIO_ptr signed_data(signed_data_ptr, BIO_free);\n\n  /* Our actual verification happens here.\n   *\n   * We pass `certs` explicitly, but (experimentally) we don't have to -- the function correctly\n   * extracts then from the SignedData in `p7_`.\n   *\n   * We pass `nullptr` for the X509_STORE, since we don't do full-chain verification\n   * (we can't, since we don't have access to Windows's Trusted Publishers store on non-Windows).\n   */\n  auto status = PKCS7_verify(p7_, certs, nullptr, signed_data.get(), nullptr, PKCS7_NOVERIFY);\n\n  return status == 1;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -16,6 +16,32 @@\n \n   if (certs == nullptr) {\n     return false;\n+  }\n+\n+  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);\n+  if (signers_stack_ptr == nullptr) {\n+    return false;\n+  }\n+  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);\n+\n+  /* NOTE(ww): Authenticode specification, page 13: the signer must have the\n+   * codeSigning EKU, **or** no member of the signer's chain may have it.\n+   *\n+   * The check below is more strict than that: **every** signer must have\n+   * the codeSigning EKU, and we don't check the embedded chain (since\n+   * we can't do full chain verification anyways).\n+   */\n+  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {\n+    auto *signer = sk_X509_value(signers_stack.get(), i);\n+\n+    /* NOTE(ww): Ths should really be X509_check_purpose with\n+     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present\n+     * in even the latest releases of OpenSSL as of 2023-05.\n+     */\n+    auto xku_flags = X509_get_extended_key_usage(signer);\n+    if (!(xku_flags & XKU_CODE_SIGN)) {\n+      return false;\n+    }\n   }\n \n   /* NOTE(ww): What happens below is a bit dumb: we convert our SpcIndirectDataContent back",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  }",
+                "",
+                "  auto *signers_stack_ptr = PKCS7_get0_signers(p7_, nullptr, 0);",
+                "  if (signers_stack_ptr == nullptr) {",
+                "    return false;",
+                "  }",
+                "  auto signers_stack = impl::STACK_OF_X509_ptr(signers_stack_ptr, impl::SK_X509_free);",
+                "",
+                "  /* NOTE(ww): Authenticode specification, page 13: the signer must have the",
+                "   * codeSigning EKU, **or** no member of the signer's chain may have it.",
+                "   *",
+                "   * The check below is more strict than that: **every** signer must have",
+                "   * the codeSigning EKU, and we don't check the embedded chain (since",
+                "   * we can't do full chain verification anyways).",
+                "   */",
+                "  for (auto i = 0; i < sk_X509_num(signers_stack.get()); ++i) {",
+                "    auto *signer = sk_X509_value(signers_stack.get(), i);",
+                "",
+                "    /* NOTE(ww): Ths should really be X509_check_purpose with",
+                "     * X509_PURPOSE_CODE_SIGN, but this is inexplicably not present",
+                "     * in even the latest releases of OpenSSL as of 2023-05.",
+                "     */",
+                "    auto xku_flags = X509_get_extended_key_usage(signer);",
+                "    if (!(xku_flags & XKU_CODE_SIGN)) {",
+                "      return false;",
+                "    }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2020-12607",
+        "func_name": "AntonKueltz/fastecdsa/pointZZ_pMul",
+        "description": "An issue was discovered in fastecdsa before 2.1.2. When using the NIST P-256 curve in the ECDSA implementation, the point at infinity is mishandled. This means that for an extreme value in k and s^-1, the signature verification fails even if the signature is correct. This behavior is not solely a usability problem. There are some threat models where an attacker can benefit by successfully guessing users for whom signature verification will fail.",
+        "git_url": "https://github.com/AntonKueltz/fastecdsa/commit/e592f106edd5acf6dacedfab2ad16fe6c735c9d1",
+        "commit_title": "Properly handle the point at infinity",
+        "commit_text": "",
+        "func_before": "void pointZZ_pMul(PointZZ_p * rop, const PointZZ_p * point, const mpz_t scalar, const CurveZZ_p * curve) {\n    PointZZ_p R0, R1, tmp;\n    mpz_inits(R1.x, R1.y, tmp.x, tmp.y, NULL);\n    mpz_init_set(R0.x, point->x);\n    mpz_init_set(R0.y, point->y);\n    pointZZ_pDouble(&R1, point, curve);\n\n    int dbits = mpz_sizeinbase(scalar, 2), i;\n\n    for(i = dbits - 2; i >= 0; i--) {\n        if(mpz_tstbit(scalar, i)) {\n            mpz_set(tmp.x, R0.x);\n            mpz_set(tmp.y, R0.y);\n            pointZZ_pAdd(&R0, &R1, &tmp, curve);\n            mpz_set(tmp.x, R1.x);\n            mpz_set(tmp.y, R1.y);\n            pointZZ_pDouble(&R1, &tmp, curve);\n        }\n        else {\n            mpz_set(tmp.x, R1.x);\n            mpz_set(tmp.y, R1.y);\n            pointZZ_pAdd(&R1, &R0, &tmp, curve);\n            mpz_set(tmp.x, R0.x);\n            mpz_set(tmp.y, R0.y);\n            pointZZ_pDouble(&R0, &tmp, curve);\n        }\n    }\n\n    mpz_init_set(rop->x, R0.x);\n    mpz_init_set(rop->y, R0.y);\n    mpz_clears(R0.x, R0.y, R1.x, R1.y, tmp.x, tmp.y, NULL);\n}",
+        "func": "void pointZZ_pMul(PointZZ_p * rop, const PointZZ_p * point, const mpz_t scalar, const CurveZZ_p * curve) {\n    // handle the identity element\n    if(pointZZ_pIsIdentityElement(point)) {\n        return pointZZ_pSetToIdentityElement(rop);\n    }\n\n    PointZZ_p R0, R1, tmp;\n    mpz_inits(R1.x, R1.y, tmp.x, tmp.y, NULL);\n    mpz_init_set(R0.x, point->x);\n    mpz_init_set(R0.y, point->y);\n    pointZZ_pDouble(&R1, point, curve);\n\n    int dbits = mpz_sizeinbase(scalar, 2), i;\n\n    for(i = dbits - 2; i >= 0; i--) {\n        if(mpz_tstbit(scalar, i)) {\n            mpz_set(tmp.x, R0.x);\n            mpz_set(tmp.y, R0.y);\n            pointZZ_pAdd(&R0, &R1, &tmp, curve);\n            mpz_set(tmp.x, R1.x);\n            mpz_set(tmp.y, R1.y);\n            pointZZ_pDouble(&R1, &tmp, curve);\n        }\n        else {\n            mpz_set(tmp.x, R1.x);\n            mpz_set(tmp.y, R1.y);\n            pointZZ_pAdd(&R1, &R0, &tmp, curve);\n            mpz_set(tmp.x, R0.x);\n            mpz_set(tmp.y, R0.y);\n            pointZZ_pDouble(&R0, &tmp, curve);\n        }\n    }\n\n    mpz_init_set(rop->x, R0.x);\n    mpz_init_set(rop->y, R0.y);\n    mpz_clears(R0.x, R0.y, R1.x, R1.y, tmp.x, tmp.y, NULL);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,4 +1,9 @@\n void pointZZ_pMul(PointZZ_p * rop, const PointZZ_p * point, const mpz_t scalar, const CurveZZ_p * curve) {\n+    // handle the identity element\n+    if(pointZZ_pIsIdentityElement(point)) {\n+        return pointZZ_pSetToIdentityElement(rop);\n+    }\n+\n     PointZZ_p R0, R1, tmp;\n     mpz_inits(R1.x, R1.y, tmp.x, tmp.y, NULL);\n     mpz_init_set(R0.x, point->x);",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "    // handle the identity element",
+                "    if(pointZZ_pIsIdentityElement(point)) {",
+                "        return pointZZ_pSetToIdentityElement(rop);",
+                "    }",
+                ""
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2020-12607",
+        "func_name": "AntonKueltz/fastecdsa/pointZZ_pAdd",
+        "description": "An issue was discovered in fastecdsa before 2.1.2. When using the NIST P-256 curve in the ECDSA implementation, the point at infinity is mishandled. This means that for an extreme value in k and s^-1, the signature verification fails even if the signature is correct. This behavior is not solely a usability problem. There are some threat models where an attacker can benefit by successfully guessing users for whom signature verification will fail.",
+        "git_url": "https://github.com/AntonKueltz/fastecdsa/commit/e592f106edd5acf6dacedfab2ad16fe6c735c9d1",
+        "commit_title": "Properly handle the point at infinity",
+        "commit_text": "",
+        "func_before": "void pointZZ_pAdd(PointZZ_p * rop, const PointZZ_p * op1, const PointZZ_p * op2, const CurveZZ_p * curve) {\n    mpz_t xdiff, ydiff, lambda;\n    mpz_inits(xdiff, ydiff, lambda, NULL);\n\n    // calculate lambda\n    mpz_sub(ydiff, op2->y, op1->y);\n    mpz_sub(xdiff, op2->x, op1->x);\n    mpz_invert(xdiff, xdiff, curve->p);  // TODO check status\n    mpz_mul(lambda, ydiff, xdiff);\n    mpz_mod(lambda, lambda, curve->p);\n\n    // calculate resulting x coord\n    mpz_mul(rop->x, lambda, lambda);\n    mpz_sub(rop->x, rop->x, op1->x);\n    mpz_sub(rop->x, rop->x, op2->x);\n    mpz_mod(rop->x, rop->x, curve->p);\n\n    //calculate resulting y coord\n    mpz_sub(rop->y, op1->x, rop->x);\n    mpz_mul(rop->y, lambda, rop->y);\n    mpz_sub(rop->y, rop->y, op1->y);\n    mpz_mod(rop->y, rop->y, curve->p);\n\n    mpz_clears(xdiff, ydiff, lambda, NULL);\n}",
+        "func": "void pointZZ_pAdd(PointZZ_p * rop, const PointZZ_p * op1, const PointZZ_p * op2, const CurveZZ_p * curve) {\n    // handle identity element cases\n    if(pointZZ_pIsIdentityElement(op1) && pointZZ_pIsIdentityElement(op2)) {\n        return pointZZ_pSetToIdentityElement(rop);\n    } else if(pointZZ_pIsIdentityElement(op1)) {\n        mpz_set(rop->x, op2->x);\n        mpz_set(rop->y, op2->y);\n        return;\n    } else if(pointZZ_pIsIdentityElement(op2)) {\n        mpz_set(rop->x, op1->x);\n        mpz_set(rop->y, op1->y);\n        return;\n    }\n\n    // use doubling algorithm if points are equal\n    if(pointZZ_pEqual(op1, op2)) {\n        pointZZ_pDouble(rop, op1, curve);\n        return;\n    }\n\n    // check if points sum to identity element\n    mpz_t negy;\n    mpz_init(negy);\n    mpz_sub(negy, curve->p, op2->y);\n    if(mpz_cmp(op1->x, op2->x) == 0 && mpz_cmp(op1->y, negy) == 0) {\n        mpz_clear(negy);\n        return pointZZ_pSetToIdentityElement(rop);\n    }\n\n\n    mpz_t xdiff, ydiff, lambda;\n    mpz_inits(xdiff, ydiff, lambda, NULL);\n\n    // calculate lambda\n    mpz_sub(ydiff, op2->y, op1->y);\n    mpz_sub(xdiff, op2->x, op1->x);\n    mpz_invert(xdiff, xdiff, curve->p);  // TODO check status\n    mpz_mul(lambda, ydiff, xdiff);\n    mpz_mod(lambda, lambda, curve->p);\n\n    // calculate resulting x coord\n    mpz_mul(rop->x, lambda, lambda);\n    mpz_sub(rop->x, rop->x, op1->x);\n    mpz_sub(rop->x, rop->x, op2->x);\n    mpz_mod(rop->x, rop->x, curve->p);\n\n    //calculate resulting y coord\n    mpz_sub(rop->y, op1->x, rop->x);\n    mpz_mul(rop->y, lambda, rop->y);\n    mpz_sub(rop->y, rop->y, op1->y);\n    mpz_mod(rop->y, rop->y, curve->p);\n\n    mpz_clears(negy, xdiff, ydiff, lambda, NULL);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,4 +1,33 @@\n void pointZZ_pAdd(PointZZ_p * rop, const PointZZ_p * op1, const PointZZ_p * op2, const CurveZZ_p * curve) {\n+    // handle identity element cases\n+    if(pointZZ_pIsIdentityElement(op1) && pointZZ_pIsIdentityElement(op2)) {\n+        return pointZZ_pSetToIdentityElement(rop);\n+    } else if(pointZZ_pIsIdentityElement(op1)) {\n+        mpz_set(rop->x, op2->x);\n+        mpz_set(rop->y, op2->y);\n+        return;\n+    } else if(pointZZ_pIsIdentityElement(op2)) {\n+        mpz_set(rop->x, op1->x);\n+        mpz_set(rop->y, op1->y);\n+        return;\n+    }\n+\n+    // use doubling algorithm if points are equal\n+    if(pointZZ_pEqual(op1, op2)) {\n+        pointZZ_pDouble(rop, op1, curve);\n+        return;\n+    }\n+\n+    // check if points sum to identity element\n+    mpz_t negy;\n+    mpz_init(negy);\n+    mpz_sub(negy, curve->p, op2->y);\n+    if(mpz_cmp(op1->x, op2->x) == 0 && mpz_cmp(op1->y, negy) == 0) {\n+        mpz_clear(negy);\n+        return pointZZ_pSetToIdentityElement(rop);\n+    }\n+\n+\n     mpz_t xdiff, ydiff, lambda;\n     mpz_inits(xdiff, ydiff, lambda, NULL);\n \n@@ -21,5 +50,5 @@\n     mpz_sub(rop->y, rop->y, op1->y);\n     mpz_mod(rop->y, rop->y, curve->p);\n \n-    mpz_clears(xdiff, ydiff, lambda, NULL);\n+    mpz_clears(negy, xdiff, ydiff, lambda, NULL);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    mpz_clears(xdiff, ydiff, lambda, NULL);"
+            ],
+            "added_lines": [
+                "    // handle identity element cases",
+                "    if(pointZZ_pIsIdentityElement(op1) && pointZZ_pIsIdentityElement(op2)) {",
+                "        return pointZZ_pSetToIdentityElement(rop);",
+                "    } else if(pointZZ_pIsIdentityElement(op1)) {",
+                "        mpz_set(rop->x, op2->x);",
+                "        mpz_set(rop->y, op2->y);",
+                "        return;",
+                "    } else if(pointZZ_pIsIdentityElement(op2)) {",
+                "        mpz_set(rop->x, op1->x);",
+                "        mpz_set(rop->y, op1->y);",
+                "        return;",
+                "    }",
+                "",
+                "    // use doubling algorithm if points are equal",
+                "    if(pointZZ_pEqual(op1, op2)) {",
+                "        pointZZ_pDouble(rop, op1, curve);",
+                "        return;",
+                "    }",
+                "",
+                "    // check if points sum to identity element",
+                "    mpz_t negy;",
+                "    mpz_init(negy);",
+                "    mpz_sub(negy, curve->p, op2->y);",
+                "    if(mpz_cmp(op1->x, op2->x) == 0 && mpz_cmp(op1->y, negy) == 0) {",
+                "        mpz_clear(negy);",
+                "        return pointZZ_pSetToIdentityElement(rop);",
+                "    }",
+                "",
+                "",
+                "    mpz_clears(negy, xdiff, ydiff, lambda, NULL);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2020-12607",
+        "func_name": "AntonKueltz/fastecdsa/pointZZ_pDouble",
+        "description": "An issue was discovered in fastecdsa before 2.1.2. When using the NIST P-256 curve in the ECDSA implementation, the point at infinity is mishandled. This means that for an extreme value in k and s^-1, the signature verification fails even if the signature is correct. This behavior is not solely a usability problem. There are some threat models where an attacker can benefit by successfully guessing users for whom signature verification will fail.",
+        "git_url": "https://github.com/AntonKueltz/fastecdsa/commit/e592f106edd5acf6dacedfab2ad16fe6c735c9d1",
+        "commit_title": "Properly handle the point at infinity",
+        "commit_text": "",
+        "func_before": "void pointZZ_pDouble(PointZZ_p * rop, const PointZZ_p * op, const CurveZZ_p * curve) {\n    mpz_t numer, denom, lambda;\n    mpz_inits(numer, denom, lambda, NULL);\n\n    // calculate lambda\n    mpz_mul(numer, op->x, op->x);\n    mpz_mul_ui(numer, numer, 3);\n    mpz_add(numer, numer, curve->a);\n    mpz_mul_ui(denom, op->y, 2);\n    mpz_invert(denom, denom, curve->p);  // TODO check status\n    mpz_mul(lambda, numer, denom);\n    mpz_mod(lambda, lambda, curve->p);\n\n    // calculate resulting x coord\n    mpz_mul(rop->x, lambda, lambda);\n    mpz_sub(rop->x, rop->x, op->x);\n    mpz_sub(rop->x, rop->x, op->x);\n    mpz_mod(rop->x, rop->x, curve->p);\n\n    //calculate resulting y coord\n    mpz_sub(rop->y, op->x, rop->x);\n    mpz_mul(rop->y, lambda, rop->y);\n    mpz_sub(rop->y, rop->y, op->y);\n    mpz_mod(rop->y, rop->y, curve->p);\n\n    mpz_clears(numer, denom, lambda, NULL);\n}",
+        "func": "void pointZZ_pDouble(PointZZ_p * rop, const PointZZ_p * op, const CurveZZ_p * curve) {\n    if(pointZZ_pIsIdentityElement(op)) {\n        return pointZZ_pSetToIdentityElement(rop);\n    }\n\n    mpz_t numer, denom, lambda;\n    mpz_inits(numer, denom, lambda, NULL);\n\n    // calculate lambda\n    mpz_mul(numer, op->x, op->x);\n    mpz_mul_ui(numer, numer, 3);\n    mpz_add(numer, numer, curve->a);\n    mpz_mul_ui(denom, op->y, 2);\n    mpz_invert(denom, denom, curve->p);  // TODO check status\n    mpz_mul(lambda, numer, denom);\n    mpz_mod(lambda, lambda, curve->p);\n\n    // calculate resulting x coord\n    mpz_mul(rop->x, lambda, lambda);\n    mpz_sub(rop->x, rop->x, op->x);\n    mpz_sub(rop->x, rop->x, op->x);\n    mpz_mod(rop->x, rop->x, curve->p);\n\n    //calculate resulting y coord\n    mpz_sub(rop->y, op->x, rop->x);\n    mpz_mul(rop->y, lambda, rop->y);\n    mpz_sub(rop->y, rop->y, op->y);\n    mpz_mod(rop->y, rop->y, curve->p);\n\n    mpz_clears(numer, denom, lambda, NULL);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,4 +1,8 @@\n void pointZZ_pDouble(PointZZ_p * rop, const PointZZ_p * op, const CurveZZ_p * curve) {\n+    if(pointZZ_pIsIdentityElement(op)) {\n+        return pointZZ_pSetToIdentityElement(rop);\n+    }\n+\n     mpz_t numer, denom, lambda;\n     mpz_inits(numer, denom, lambda, NULL);\n ",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "    if(pointZZ_pIsIdentityElement(op)) {",
+                "        return pointZZ_pSetToIdentityElement(rop);",
+                "    }",
+                ""
+            ]
+        }
+    }
+]

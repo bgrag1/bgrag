@@ -1,0 +1,1 @@
+ Function purpose: The function checks if IPsec offloading is possible for a given skb and xfrm_state on an active-backup bond interface, ensuring that the real device supports IPsec offloading and that the bond mode is active-backup.

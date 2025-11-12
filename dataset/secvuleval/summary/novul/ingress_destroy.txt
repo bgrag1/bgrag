@@ -1,0 +1,1 @@
+ Function purpose: The function "ingress_destroy" is responsible for cleaning up and deactivating the ingress scheduling queue, releasing resources, and decrementing the ingress queue count when the ingress Qdisc is being destroyed.

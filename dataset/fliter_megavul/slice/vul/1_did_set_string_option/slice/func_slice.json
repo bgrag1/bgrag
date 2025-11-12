@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "char *\n char\t*VAR1,\t// buffer for VAR2, or NULL\n FUN1(VAR3);\n\tVAR3.VAR4 = VAR1;\n FUN2(VAR3.VAR5);\n FUN3(VAR6, VAR7, VAR3.VAR5);\n\tif (VAR6 == &(VAR8->VAR9->VAR10))\n if (VAR6 == &VAR11)\n if (VAR6 == &VAR12)\n if ((VAR6 == &VAR13 || VAR6 == &(VAR14->VAR15))\n if ((VAR7 & VAR16) == 0)",
+        "char *\n\tVAR1 = FUN1(&VAR2);",
+        "char *\n VAR1\t*VAR2,\t// previous value of the VAR3\n FUN1(VAR2);",
+        "char *\n int\tVAR1,\t// index in VAR2[] VAR3\n VAR4\t**VAR5,\t// pointer to the option VAR6\n int\tVAR7,\t// OPT_LOCAL and/or VAR8\n long_u\tVAR9 = (FUN1(VAR1) & VAR10);\n opt_did_set_cb_T VAR11 = FUN2(VAR1);\n if (VAR5 == &VAR12)\n\tVAR1 = FUN3((VAR4 *)\"\");\n\tif (VAR1 >= 0)\n VAR9 = (FUN1(VAR1) & VAR10);\n VAR11 = FUN2(VAR1);\n else if (FUN4(VAR1, VAR5))\n\tFUN5(VAR1, VAR7, VAR13);\n\tFUN6(VAR1, VAR10);\n\tif ((VAR7 & (VAR14 | VAR8)) == 0\n\t&& FUN7(VAR1))\n VAR4 *VAR15 = FUN8(VAR1, VAR14);\n FUN9(*(VAR4 **)VAR15);\n *(VAR4 **)VAR15 = VAR16;",
+        "char *\n int\tVAR1,\t// index in VAR2[] VAR3\n VAR4\t**VAR5,\t// pointer to the option VAR6\n long_u\tVAR7 = (FUN1(VAR1) & VAR8);\n opt_did_set_cb_T VAR9 = FUN2(VAR1);\n if (VAR5 == &VAR10)\n else if (FUN3(VAR1, VAR5))\n\tVAR11.VAR12 = (VAR4 *)VAR5;\n\tif (VAR5 == &VAR13)\n if (VAR5 == &VAR14)\n if (VAR5 == &VAR15)\n if ((VAR5 == &VAR16 || VAR5 == &(VAR17->VAR18))",
+        "char *\n\tVAR1 = VAR2;\n if (VAR1 != NULL)\n return VAR1;",
+        "char *\n VAR1\t*VAR2,\t// new value of the VAR3\n\tVAR4.VAR5.VAR6 = VAR2;",
+        "char *\n int\tVAR1,\t// index in VAR2[] VAR3\n VAR4\t**VAR5,\t// pointer to the option VAR6\n int\tVAR7,\t// OPT_LOCAL and/or VAR8\n long_u\tVAR9 = (FUN1(VAR1) & VAR10);\n opt_did_set_cb_T VAR11 = FUN2(VAR1);\n if (VAR5 == &VAR12)\n\tVAR1 = FUN3((VAR4 *)\"\");\n\tif (VAR1 >= 0)\n VAR9 = (FUN1(VAR1) & VAR10);\n VAR11 = FUN2(VAR1);\n else if (FUN4(VAR1, VAR5))\n\tVAR13.VAR14 = (VAR4 *)VAR5;\n\tFUN5(VAR1, VAR7, VAR15);\n\tFUN6(VAR1, VAR10);\n\t&& FUN7(VAR1))\n FUN8(VAR1, VAR5);\n\tif (VAR5 == &(VAR16->VAR17))\n\telse if (VAR5 == &(VAR16->VAR18))\n FUN9(VAR5, VAR7, VAR13.VAR19);\n\tif (VAR5 == &(VAR20->VAR21->VAR22))\n if (VAR5 == &VAR23)\n if (VAR5 == &VAR24)\n if ((VAR5 == &VAR25 || VAR5 == &(VAR16->VAR26))\n if ((VAR7 & VAR27) == 0)",
+        "char *\n VAR1\t*VAR2,\t// previous value of the VAR3\n\t*VAR4 = VAR2;",
+        "char *\n VAR1\t*VAR2,\t// previous value of the VAR3\n\tVAR4.VAR5.VAR6 = VAR2;"
+    ],
+    "API": [
+        "char *\n int\tVAR1,\t// index in VAR2[] VAR3\n long_u\tVAR4 = (FUN1(VAR1) & VAR5);",
+        "char *\n int\tVAR1,\t// index in VAR2[] VAR3\n long_u\tVAR4 = (FUN1(VAR1) & VAR5);\n\tVAR1 = FUN2((VAR6 *)\"\");\n\tif (VAR1 >= 0)\n VAR4 = (FUN1(VAR1) & VAR5);",
+        "char *\n VAR1\t*VAR2,\t// previous value of the VAR3\n FUN1(VAR2);"
+    ]
+}

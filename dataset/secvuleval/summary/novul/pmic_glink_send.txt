@@ -1,0 +1,1 @@
+ Function purpose: The function sends a message over a remote processor messaging (RPMsg) endpoint associated with a given PMIC G-Link client, with error handling for when the endpoint is not available.

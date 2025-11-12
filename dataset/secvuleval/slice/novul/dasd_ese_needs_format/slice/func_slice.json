@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tVAR4 = VAR2->VAR5;\n\tif (!VAR4 || !VAR4->VAR6->VAR7)\n\tif (!VAR4->VAR6->FUN2(VAR4))",
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tVAR4 = FUN2(VAR3);\n\tif (!VAR4)\n\tif (VAR4[1] & VAR5)\n\tif ((VAR4[1] & VAR6) &&\n FUN3(&VAR3->VAR7) &&\n !(VAR4[2] & VAR8))",
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tif (!VAR4 || !VAR4->VAR5->VAR6)",
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tif ((VAR4[1] & VAR5) &&\n FUN2(&VAR3->VAR6) &&",
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tif (!VAR2)"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tVAR4 = FUN2(VAR3);\n\tif (!VAR4)\n\tif (VAR4[1] & VAR5)\n\tif ((VAR4[1] & VAR6) &&",
+        "static int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3)\n\tVAR4 = FUN2(VAR3);\n\tif (!VAR4)\n\tif ((VAR4[1] & VAR5) &&\n FUN3(&VAR3->VAR6) &&\n !(VAR4[2] & VAR7))"
+    ]
+}

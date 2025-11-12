@@ -1,0 +1,33 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tstruct VAR9 *VAR10 = &VAR11->VAR10;\n\tif (VAR12 || (!FUN2(VAR8)))\n\tFUN3(VAR10, VAR8, &VAR13);\n\tVAR12 = FUN4(VAR10, &VAR13->VAR14);\n\tVAR12 = FUN5(VAR10);\n\tif (VAR12 || VAR13->VAR15) {\n\tFUN6(VAR11->VAR16,\n\tif (!VAR12)\n\tif (VAR12 && VAR13->VAR14.VAR17)\n\treturn VAR12;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (!VAR4)\n\tif (FUN2((char *)VAR4, (void *)&VAR8->VAR9, sizeof(VAR10)))",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR9 = FUN2(VAR8, VAR10);\n\tif (!VAR9)\n\tif (FUN3((void *)VAR9, &VAR4[VAR11], VAR8)) {\n\tVAR12->VAR13.VAR14 = FUN4(VAR9);\n\tVAR12->VAR13.VAR15 = VAR8;\n\tVAR12->VAR13.VAR16 = VAR9;\n\tFUN5(VAR9);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tVAR8 = FUN2((void *)&VAR12, &VAR4[VAR10], sizeof(VAR11));\n\tif (FUN2((void *)VAR13, &VAR4[VAR10], VAR12)) {\n\tVAR14->VAR15.VAR16 = VAR12;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tstruct VAR9 *VAR10 = &VAR11->VAR10;\n\tif (VAR12 || (!FUN2(VAR8)))\n\tFUN3(VAR10, VAR8, &VAR13);\n\tVAR12 = FUN4(VAR10, &VAR13->VAR14);\n\tVAR12 = FUN5(VAR10);\n\tif (VAR12 || VAR13->VAR15) {\n\tVAR12 = FUN6(VAR10);\n\tif (VAR12 || VAR13->VAR15) {\n\tFUN7(VAR11->VAR16, \"\",\n\tif (!VAR12)\n\tif (VAR12 && VAR13->VAR14.VAR17)\n\treturn VAR12;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (!VAR8->VAR9.VAR10) {\n\tif (VAR11 && VAR8->VAR9.VAR10)\n\treturn VAR11;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tstruct VAR8 *VAR9 = (struct VAR8 *)FUN2(VAR3)->VAR10;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (!VAR8->VAR9 || !VAR8->VAR9->VAR10) {",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (FUN2((char *)VAR4, (void *)&VAR8->VAR9, sizeof(VAR10)))",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tstruct VAR8 *VAR9 = (struct VAR8 *)FUN2(VAR3)->VAR10;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tstruct VAR9 *VAR10 = &VAR11->VAR10;\n\tif (VAR12 || (!FUN2(VAR8)))\n\tFUN3(VAR10, VAR8, &VAR13);\n\tVAR12 = FUN4(VAR10, &VAR13->VAR14);\n\tFUN5(&VAR13->VAR14);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (!VAR8->VAR9 || !VAR8->VAR9->VAR10) {",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tstruct VAR9 *VAR10 = &VAR11->VAR10;\n\tif (VAR12 || (!FUN2(VAR8)))\n\tFUN3(VAR10, VAR8, &VAR13);\n\tVAR13->VAR8 = VAR8;"
+    ],
+    "array": [
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tVAR8 = FUN2((void *)&VAR12, &VAR4[VAR10], sizeof(VAR11));\n\tif (FUN2((void *)VAR13, &VAR4[VAR10], VAR12)) {\n\tVAR14->VAR15.VAR16 = VAR12;"
+    ],
+    "API": [
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tstruct VAR9 *VAR10 = &VAR11->VAR10;\n\tif (VAR12 || (!FUN2(VAR8)))\n\tFUN3(VAR10, VAR8, &VAR13);\n\tVAR12 = FUN4(VAR10, &VAR13->VAR14);\n\tFUN5(&VAR13->VAR14);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR9 = FUN2(VAR8, VAR10);\n\tif (!VAR9)\n\tif (FUN3((void *)VAR9, &VAR4[VAR11], VAR8)) {\n\tVAR12->VAR13.VAR14 = FUN4(VAR9);\n\tFUN5(VAR9);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tif (VAR8 || (!FUN3(VAR9)))",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tif (VAR8 || (!FUN3(VAR9)))\n\tVAR8 = FUN2((void *)&VAR12, &VAR4[VAR10], sizeof(VAR11));\n\tif (FUN2((void *)VAR13, &VAR4[VAR10], VAR12)) {\n\tVAR14->VAR15.VAR16 = VAR12;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR8 += sizeof(VAR9);\n\tVAR8 += sizeof(VAR9);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tVAR8 = FUN2((void *)&VAR12, &VAR4[VAR10], sizeof(VAR11));",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tVAR8 = FUN2((void *)&VAR9, &VAR4[VAR10], sizeof(VAR11));\n\tVAR8 = FUN2((void *)&VAR12, &VAR4[VAR10], sizeof(VAR11));\n\tif (FUN2((void *)VAR13, &VAR4[VAR10], VAR12)) {\n\tVAR14->VAR15.VAR16 = VAR12;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR8 += sizeof(VAR9);\n\tVAR8 += sizeof(VAR9);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR9 = FUN2((void *)&VAR10, &VAR4[VAR11], sizeof(VAR12));\n\tVAR9 = FUN2((void *)&VAR8, &VAR4[VAR11], sizeof(VAR12));\n\tVAR13 = FUN3(VAR8, VAR14);\n\tif (!VAR13)\n\tif (FUN2((void *)VAR13, &VAR4[VAR11], VAR8)) {\n\tVAR15->VAR16.VAR17 = VAR8;",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tuint32_t VAR8 = 0;\n\tVAR8 += sizeof(VAR9);\n\tVAR8 += sizeof(VAR9);",
+        "static VAR1 FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5, VAR6 *VAR7)\n\tif (!VAR4)\n\tif (FUN2((char *)VAR4, (void *)&VAR8->VAR9, sizeof(VAR10)))"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function allocates a buffer ring for use in an I/O ring context, mapping the necessary pages and initializing the buffer list structure.

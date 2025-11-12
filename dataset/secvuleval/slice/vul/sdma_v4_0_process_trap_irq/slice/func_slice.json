@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (FUN2(VAR2, VAR3, 0) ==",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (FUN2(VAR2, VAR3, 0) !="
+    ],
+    "array": []
+}

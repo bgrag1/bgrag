@@ -1,0 +1,1 @@
+ Function purpose: The function CacheCalculateBundleLayoutWorkingPath is designed to calculate and cache the working path for a bundle layout by retrieving the working folder for the given bundle ID and appending the bundle ID to it.

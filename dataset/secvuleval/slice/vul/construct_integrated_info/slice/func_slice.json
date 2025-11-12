@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "static enum VAR1 FUN1(\n\tFUN2(\"\"\n\tif (VAR2->VAR3.VAR4->VAR5->VAR6.VAR7 && VAR8->VAR9.VAR10 == 0) {\n\tVAR8->VAR9.VAR10 = VAR2->VAR3.VAR4->VAR5->VAR6.VAR7 & 0xF;\n\tFUN2(\"\", VAR8->VAR9.VAR10);",
+        "static enum VAR1 FUN1(\n\tstruct VAR2 *VAR3,\n\tstruct VAR4 *VAR5)\n\tif (VAR5 && FUN2(VAR6)) {\n\tVAR7 = FUN3(VAR3, VAR5);\n\tif (VAR7 == VAR8) {\n\tif (VAR7 != VAR8)\n\treturn VAR7;\n\treturn VAR7;",
+        "static enum VAR1 FUN1(\n\tstruct VAR2 *VAR3,\n\tstruct VAR4 *VAR5)\n\tif (VAR5 && FUN2(VAR6)) {\n\tVAR7 = FUN3(VAR3, VAR5);\n\tif (VAR7 == VAR8) {\n\tif (VAR7 != VAR8)\n\treturn VAR7;\n\treturn VAR7;",
+        "static enum VAR1 FUN1(\n\tif (VAR2->VAR3[VAR4].VAR5 <\n\tFUN2(VAR2->VAR3[VAR4-1], VAR2->VAR3[VAR4]);",
+        "static enum VAR1 FUN1(\n\tfor (VAR2 = 0; VAR2 < VAR3; VAR2++) {\n\tif (VAR4->VAR5.VAR6[VAR2].VAR7 != 0)\n\tFUN2(\"\"\n\tif (VAR4->VAR5.VAR6[VAR2].VAR8 & VAR9)\n\tFUN2(\"\", VAR2);\n\tVAR4->VAR5.VAR6[VAR2].VAR8 |= VAR9;\n\tFUN2(\"\", VAR2);",
+        "static enum VAR1 FUN1(\n\tstruct VAR2 *VAR3,\n\tstruct VAR4 *VAR5)\n\tif (VAR5 && FUN2(VAR6)) {\n\tVAR7 = FUN3(VAR3, VAR5);\n\tif (VAR7 == VAR8) {\n\tif (VAR7 != VAR8)\n\treturn VAR7;\n\treturn VAR7;"
+    ],
+    "array": [
+        "static enum VAR1 FUN1(\n\tfor (VAR2 = 0; VAR2 < VAR3; VAR2++) {\n\tif (VAR4->VAR5.VAR6[VAR2].VAR7 != 0)\n\tFUN2(\"\"\n\tif (VAR4->VAR5.VAR6[VAR2].VAR8 & VAR9)\n\tFUN2(\"\", VAR2);\n\tVAR4->VAR5.VAR6[VAR2].VAR8 |= VAR9;\n\tFUN2(\"\", VAR2);",
+        "static enum VAR1 FUN1(\n\tif (VAR2->VAR3[VAR4].VAR5 <\n\tFUN2(VAR2->VAR3[VAR4-1], VAR2->VAR3[VAR4]);"
+    ],
+    "API": []
+}

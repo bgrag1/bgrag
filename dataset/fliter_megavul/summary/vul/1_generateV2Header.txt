@@ -1,0 +1,1 @@
+ Function purpose: The function generates a Proxy Protocol V2 header and appends optional TLVs to a buffer, based on the provided proxy protocol data and configuration settings.

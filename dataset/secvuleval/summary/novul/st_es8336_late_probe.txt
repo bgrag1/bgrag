@@ -1,0 +1,1 @@
+ Function purpose: The function "st_es8336_late_probe" is designed to initialize and configure an audio codec device using ACPI and GPIOs, specifically for the ESSX8336 chip, and handle errors if any components are not found or cannot be configured.

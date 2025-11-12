@@ -1,0 +1,1 @@
+ Function purpose: The function "cfg80211_get_station" retrieves information about a specific station (client) connected to a wireless network device, as defined by its MAC address, and stores it in a "station_info" structure.

@@ -1,0 +1,1 @@
+ Function purpose: The function generates a list of UnboundedHelloWorld objects with sequentially incremented indices and messages, using a default maximum of 10 if no maximum is provided.

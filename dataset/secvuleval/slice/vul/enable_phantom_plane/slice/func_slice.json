@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tstruct VAR5 *VAR6,\n\tstruct VAR7 *VAR8 = NULL;\n\tif (VAR9->VAR10 && VAR9->VAR10->VAR11 == VAR9->VAR11) {\n\tVAR12 = VAR8;\n\tVAR12 = VAR2->VAR13.VAR14.VAR15.FUN2(\n\tVAR2->VAR13.VAR14.VAR15.FUN3(VAR2->VAR13.VAR14.VAR15.VAR16, VAR6, VAR12, VAR4);\n\tVAR8 = VAR12;"
+    ],
+    "array": [],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tstruct VAR5 *VAR6,\n\tstruct VAR7 *VAR8 = NULL;\n\tif (VAR9->VAR10 && VAR9->VAR10->VAR11 == VAR9->VAR11) {\n\tVAR12 = VAR8;\n\tVAR12 = VAR2->VAR13.VAR14.VAR15.FUN2(\n\tVAR2->VAR13.VAR14.VAR15.FUN3(VAR2->VAR13.VAR14.VAR15.VAR16, VAR6, VAR12, VAR4);\n\tVAR8 = VAR12;",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tstruct VAR5 *VAR6,\n\tstruct VAR7 *VAR8 = NULL;\n\tif (VAR9->VAR10 && VAR9->VAR10->VAR11 == VAR9->VAR11) {\n\tVAR12 = VAR8;\n\tVAR12 = VAR2->VAR13.VAR14.VAR15.FUN2(\n\tVAR2->VAR13.VAR14.VAR15.FUN3(VAR2->VAR13.VAR14.VAR15.VAR16, VAR6, VAR12, VAR4);\n\tVAR8 = VAR12;"
+    ]
+}

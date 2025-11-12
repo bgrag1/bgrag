@@ -1,0 +1,1 @@
+ Function purpose: The function validates the bandwidth requirements for a given display configuration state in a display controller, allocating and freeing memory for pipe parameters, and logging validation results.

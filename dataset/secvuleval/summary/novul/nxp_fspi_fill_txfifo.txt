@@ -1,0 +1,1 @@
+ Function purpose: The function "nxp_fspi_fill_txfifo" is designed to fill the TX FIFO of an nxp_fspi controller with data from the SPI memory operation, ensuring that the FIFO is cleared and data is written in chunks of up to 8 bytes or the remaining bytes if less than 8.

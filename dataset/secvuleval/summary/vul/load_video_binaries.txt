@@ -1,0 +1,1 @@
+ Function purpose: The function "load_video_binaries" is responsible for loading the necessary video binaries and configuring the video processing pipeline for a given video stream, including handling scaling, viewfinder processing, and temporal noise reduction.

@@ -1,0 +1,1 @@
+ Function purpose: The function "br_multicast_del_port" is designed to clean up and remove a bridge port's multicast-related resources and entries from the bridge's data structures, ensuring that the port is properly deinitialized before its removal.

@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(const VAR2* VAR3, const VAR2* VAR4, VAR5* VAR6)\n\tFUN2(VAR4);\n\tif (!FUN3(VAR3, 2, VAR4))\n\tVAR7 = ((VAR8)VAR3[1]) | (((VAR8)VAR3[2]) << 8);\n\treturn VAR7;",
+        "static VAR1 FUN1(const VAR2* VAR3, const VAR2* VAR4, VAR5* VAR6)\n\tFUN2(VAR6);",
+        "static VAR1 FUN1(const VAR2* VAR3, const VAR2* VAR4, VAR5* VAR6)\n\tFUN2(VAR3);\n\tif (!FUN3(VAR3, 2, VAR4))\n\tVAR7 = ((VAR8)VAR3[1]) | (((VAR8)VAR3[2]) << 8);\n\treturn VAR7;"
+    ],
+    "array": [
+        "static VAR1 FUN1(const VAR2* VAR3, const VAR2* VAR4, VAR5* VAR6)\n\tFUN2(VAR3);\n\tFUN2(VAR4);\n\tif (!FUN3(VAR3, 2, VAR4))\n\tVAR7 = ((VAR8)VAR3[1]) | (((VAR8)VAR3[2]) << 8);\n\treturn VAR7;",
+        "static VAR1 FUN1(const VAR2* VAR3, const VAR2* VAR4, VAR5* VAR6)\n\tFUN2(VAR3);\n\tFUN2(VAR4);\n\tif (!FUN3(VAR3, 2, VAR4))\n\tVAR7 = ((VAR8)VAR3[1]) | (((VAR8)VAR3[2]) << 8);\n\treturn VAR7;"
+    ]
+}

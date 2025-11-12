@@ -1,0 +1,1 @@
+ Function purpose: The function "rdp_write_logon_info_v1" writes logon information, including domain, username, and session ID, into a stream in a specific format.

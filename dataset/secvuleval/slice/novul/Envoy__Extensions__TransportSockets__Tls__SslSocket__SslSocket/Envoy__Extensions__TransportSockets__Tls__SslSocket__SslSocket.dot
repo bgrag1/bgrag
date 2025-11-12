@@ -1,0 +1,10 @@
+digraph SslSocket__SslSocket {  
+"1000100" [label = "(METHOD,SslSocket::SslSocket)" ]
+"1000104" [label = "(METHOD_RETURN,int)" ]
+"1000101" [label = "(PARAM,Envoy::Ssl::ContextSharedPtr ctx)" ]
+"1000102" [label = "(PARAM,const Network::TransportSocketOptionsConstSharedPtr& transport_socket_options)" ]
+  "1000102" -> "1000104"  [ label = "DDG: transport_socket_options"] 
+  "1000101" -> "1000104"  [ label = "DDG: ctx"] 
+  "1000100" -> "1000101"  [ label = "DDG: "] 
+  "1000100" -> "1000102"  [ label = "DDG: "] 
+}

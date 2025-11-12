@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and formats CA certificates from an SSL context, either in binary DER format or as Python objects, and returns them as a list.

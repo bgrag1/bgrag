@@ -1,0 +1,1 @@
+ Function purpose: The function "z_erofs_parse_cfgs" is responsible for parsing and configuring the compression algorithms specified in the erofs superblock, initializing the available compression algorithms for the filesystem, and loading the configuration for the LZ4 compression algorithm if no other configurations are present.

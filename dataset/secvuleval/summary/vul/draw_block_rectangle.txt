@@ -1,0 +1,1 @@
+ Function purpose: The function "draw_block_rectangle" fills a rectangular area in a buffer with a specified color, including the top and bottom borders and the left and right sides of the rectangle.

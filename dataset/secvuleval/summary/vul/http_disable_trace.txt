@@ -1,0 +1,1 @@
+ Function purpose: The function "http_disable_trace" is designed to disable a specific input trace in a system and return a response status based on the success of the operation, using MessagePack for data serialization.

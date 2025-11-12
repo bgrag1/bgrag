@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "bool FUN1(const char *VAR1)\n if (FUN2(VAR1, &VAR2) == 0) {\n FUN3(VAR3) << \"\"\n << VAR4::FUN4(VAR1);"
+    ]
+}

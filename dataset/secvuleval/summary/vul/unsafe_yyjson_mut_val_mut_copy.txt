@@ -1,0 +1,1 @@
+ Function purpose: The function "unsafe_yyjson_mut_val_mut_copy" in the code snippet is designed to create a deep copy of a mutable JSON value, including its type, length, and content, while maintaining the circular linked list structure of objects or arrays.

@@ -1,0 +1,1 @@
+ Function purpose: The function "fio_worker_cleanup" is responsible for cleaning up resources and signaling the end of a server or worker process in a system.

@@ -1,0 +1,7 @@
+digraph cert_chain_t__clear {  
+"1000100" [label = "(METHOD,cert_chain_t::clear)" ]
+"1000103" [label = "(METHOD_RETURN,int)" ]
+"1000102" [label = "(_certs.clear,_certs.clear())" ]
+  "1000102" -> "1000103"  [ label = "DDG: _certs.clear()"] 
+  "1000100" -> "1000102"  [ label = "DDG: "] 
+}

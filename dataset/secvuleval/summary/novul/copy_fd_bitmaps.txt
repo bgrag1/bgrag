@@ -1,0 +1,1 @@
+ Function purpose: The function copies and extends bitmap arrays from an old file descriptor table (ofdt) to a new file descriptor table (nfdt), ensuring that the bitmaps are appropriately resized and copied to accommodate the maximum number of file descriptors.

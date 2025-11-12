@@ -1,0 +1,1 @@
+ Function purpose: The function processes HTTP requests to enable or disable tracing based on the request method and returns the result in a JSON format.

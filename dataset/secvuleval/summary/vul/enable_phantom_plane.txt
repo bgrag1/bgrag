@@ -1,0 +1,1 @@
+ Function purpose: The function enables a phantom plane by creating and configuring it for a given display pipe in a DC state, copying properties from the current plane state, and adding it to the display configuration.

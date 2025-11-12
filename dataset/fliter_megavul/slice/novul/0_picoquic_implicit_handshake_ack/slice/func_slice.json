@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n VAR7* VAR8 = VAR4->VAR9[VAR5].VAR10;\n while (VAR8 != NULL) {\n VAR7* VAR11 = VAR8->VAR12;\n VAR3 * VAR13 = VAR8->VAR14;\n if (VAR13 != NULL) {\n if (VAR8->VAR15 && VAR2->VAR16 != NULL) {\n FUN2(VAR2, VAR13,\n (void)FUN3(VAR2, VAR8, 1);\n VAR8 = VAR11;",
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n VAR7* VAR8 = VAR4->VAR9[VAR5].VAR10;\n while (VAR8 != NULL) {\n VAR7* VAR11 = VAR8->VAR12;\n VAR3 * VAR13 = VAR8->VAR14;\n if (VAR13 != NULL) {\n if (VAR8->VAR15 && VAR2->VAR16 != NULL) {\n VAR8 = VAR11;",
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n if (VAR7->VAR8 == VAR9 && VAR7->VAR10 == 0) {",
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n if (VAR7->VAR8 == VAR9 && VAR7->VAR10 == 0) {"
+    ],
+    "array": [
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n VAR7* VAR8 = VAR4->VAR9[VAR5].VAR10;\n while (VAR8 != NULL) {\n if (VAR11 != NULL) {\n if (VAR8->VAR12 && VAR2->VAR13 != NULL) {\n FUN2(VAR2, VAR11,\n (void)FUN3(VAR2, VAR8, 1);"
+    ],
+    "API": [
+        "void FUN1(VAR1* VAR2, VAR3 *VAR4, picoquic_packet_context_enum VAR5, uint64_t VAR6)\n while (VAR7 != NULL) {\n VAR3 * VAR8 = VAR7->VAR9;\n if (VAR8 != NULL) {\n if (VAR7->VAR10 && VAR2->VAR11 != NULL) {\n FUN2(VAR2, VAR8,\n (void)FUN3(VAR2, VAR7, 1);"
+    ]
+}

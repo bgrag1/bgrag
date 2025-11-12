@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and configures an osnoise_tool structure for monitoring system noise, setting up event handlers and data allocation based on the number of CPUs.

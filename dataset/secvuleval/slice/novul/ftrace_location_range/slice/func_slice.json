@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "unsigned long FUN1(unsigned long VAR1, unsigned long VAR2)\n\tVAR3 = FUN2(VAR1, VAR2);",
+        "unsigned long FUN1(unsigned long VAR1, unsigned long VAR2)\n\tVAR3 = VAR4->VAR3;\n\treturn VAR3;"
+    ],
+    "API": []
+}

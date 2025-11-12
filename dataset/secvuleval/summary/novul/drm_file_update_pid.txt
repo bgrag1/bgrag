@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the function is to update the process ID (PID) associated with a DRM file structure, ensuring that the master node retains the original ownership for proper permission checks.

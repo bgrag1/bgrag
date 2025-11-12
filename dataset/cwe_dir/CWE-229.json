@@ -1,0 +1,64 @@
+[
+    {
+        "cve_id": "CVE-2024-0607",
+        "func_name": "torvalds/linux/nft_byteorder_eval",
+        "description": "A flaw was found in the Netfilter subsystem in the Linux kernel. The issue is in the nft_byteorder_eval() function, where the code iterates through a loop and writes to the `dst` array. On each iteration, 8 bytes are written, but `dst` is an array of u32, so each element only has space for 4 bytes. That means every iteration overwrites part of the previous element corrupting this array of u32. This flaw allows a local user to cause a denial of service or potentially break NetFilter functionality.",
+        "git_url": "https://github.com/torvalds/linux/commit/c301f0981fdd3fd1ffac6836b423c4d7a8e0eb63",
+        "commit_title": "netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()",
+        "commit_text": " The problem is in nft_byteorder_eval() where we are iterating through a loop and writing to dst[0], dst[1], dst[2] and so on...  On each iteration we are writing 8 bytes.  But dst[] is an array of u32 so each element only has space for 4 bytes.  That means that every iteration overwrites part of the previous element.  I spotted this bug while reviewing commit caf3ef7468f7 (\"netfilter: nf_tables: prevent OOB access in nft_byteorder_eval\") which is a related issue.  I think that the reason we have not detected this bug in testing is that most of time we only write one element. ",
+        "func_before": "void nft_byteorder_eval(const struct nft_expr *expr,\n\t\t\tstruct nft_regs *regs,\n\t\t\tconst struct nft_pktinfo *pkt)\n{\n\tconst struct nft_byteorder *priv = nft_expr_priv(expr);\n\tu32 *src = &regs->data[priv->sreg];\n\tu32 *dst = &regs->data[priv->dreg];\n\tu16 *s16, *d16;\n\tunsigned int i;\n\n\ts16 = (void *)src;\n\td16 = (void *)dst;\n\n\tswitch (priv->size) {\n\tcase 8: {\n\t\tu64 src64;\n\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 8; i++) {\n\t\t\t\tsrc64 = nft_reg_load64(&src[i]);\n\t\t\t\tnft_reg_store64(&dst[i],\n\t\t\t\t\t\tbe64_to_cpu((__force __be64)src64));\n\t\t\t}\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 8; i++) {\n\t\t\t\tsrc64 = (__force __u64)\n\t\t\t\t\tcpu_to_be64(nft_reg_load64(&src[i]));\n\t\t\t\tnft_reg_store64(&dst[i], src64);\n\t\t\t}\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\t}\n\tcase 4:\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 4; i++)\n\t\t\t\tdst[i] = ntohl((__force __be32)src[i]);\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 4; i++)\n\t\t\t\tdst[i] = (__force __u32)htonl(src[i]);\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\tcase 2:\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 2; i++)\n\t\t\t\td16[i] = ntohs((__force __be16)s16[i]);\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 2; i++)\n\t\t\t\td16[i] = (__force __u16)htons(s16[i]);\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\t}\n}",
+        "func": "void nft_byteorder_eval(const struct nft_expr *expr,\n\t\t\tstruct nft_regs *regs,\n\t\t\tconst struct nft_pktinfo *pkt)\n{\n\tconst struct nft_byteorder *priv = nft_expr_priv(expr);\n\tu32 *src = &regs->data[priv->sreg];\n\tu32 *dst = &regs->data[priv->dreg];\n\tu16 *s16, *d16;\n\tunsigned int i;\n\n\ts16 = (void *)src;\n\td16 = (void *)dst;\n\n\tswitch (priv->size) {\n\tcase 8: {\n\t\tu64 *dst64 = (void *)dst;\n\t\tu64 src64;\n\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 8; i++) {\n\t\t\t\tsrc64 = nft_reg_load64(&src[i]);\n\t\t\t\tnft_reg_store64(&dst64[i],\n\t\t\t\t\t\tbe64_to_cpu((__force __be64)src64));\n\t\t\t}\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 8; i++) {\n\t\t\t\tsrc64 = (__force __u64)\n\t\t\t\t\tcpu_to_be64(nft_reg_load64(&src[i]));\n\t\t\t\tnft_reg_store64(&dst64[i], src64);\n\t\t\t}\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\t}\n\tcase 4:\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 4; i++)\n\t\t\t\tdst[i] = ntohl((__force __be32)src[i]);\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 4; i++)\n\t\t\t\tdst[i] = (__force __u32)htonl(src[i]);\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\tcase 2:\n\t\tswitch (priv->op) {\n\t\tcase NFT_BYTEORDER_NTOH:\n\t\t\tfor (i = 0; i < priv->len / 2; i++)\n\t\t\t\td16[i] = ntohs((__force __be16)s16[i]);\n\t\t\tbreak;\n\t\tcase NFT_BYTEORDER_HTON:\n\t\t\tfor (i = 0; i < priv->len / 2; i++)\n\t\t\t\td16[i] = (__force __u16)htons(s16[i]);\n\t\t\tbreak;\n\t\t}\n\t\tbreak;\n\t}\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -13,13 +13,14 @@\n \n \tswitch (priv->size) {\n \tcase 8: {\n+\t\tu64 *dst64 = (void *)dst;\n \t\tu64 src64;\n \n \t\tswitch (priv->op) {\n \t\tcase NFT_BYTEORDER_NTOH:\n \t\t\tfor (i = 0; i < priv->len / 8; i++) {\n \t\t\t\tsrc64 = nft_reg_load64(&src[i]);\n-\t\t\t\tnft_reg_store64(&dst[i],\n+\t\t\t\tnft_reg_store64(&dst64[i],\n \t\t\t\t\t\tbe64_to_cpu((__force __be64)src64));\n \t\t\t}\n \t\t\tbreak;\n@@ -27,7 +28,7 @@\n \t\t\tfor (i = 0; i < priv->len / 8; i++) {\n \t\t\t\tsrc64 = (__force __u64)\n \t\t\t\t\tcpu_to_be64(nft_reg_load64(&src[i]));\n-\t\t\t\tnft_reg_store64(&dst[i], src64);\n+\t\t\t\tnft_reg_store64(&dst64[i], src64);\n \t\t\t}\n \t\t\tbreak;\n \t\t}",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\t\t\tnft_reg_store64(&dst[i],",
+                "\t\t\t\tnft_reg_store64(&dst[i], src64);"
+            ],
+            "added_lines": [
+                "\t\tu64 *dst64 = (void *)dst;",
+                "\t\t\t\tnft_reg_store64(&dst64[i],",
+                "\t\t\t\tnft_reg_store64(&dst64[i], src64);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2024-0607",
+        "func_name": "torvalds/linux/nft_meta_get_eval_time",
+        "description": "A flaw was found in the Netfilter subsystem in the Linux kernel. The issue is in the nft_byteorder_eval() function, where the code iterates through a loop and writes to the `dst` array. On each iteration, 8 bytes are written, but `dst` is an array of u32, so each element only has space for 4 bytes. That means every iteration overwrites part of the previous element corrupting this array of u32. This flaw allows a local user to cause a denial of service or potentially break NetFilter functionality.",
+        "git_url": "https://github.com/torvalds/linux/commit/c301f0981fdd3fd1ffac6836b423c4d7a8e0eb63",
+        "commit_title": "netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()",
+        "commit_text": " The problem is in nft_byteorder_eval() where we are iterating through a loop and writing to dst[0], dst[1], dst[2] and so on...  On each iteration we are writing 8 bytes.  But dst[] is an array of u32 so each element only has space for 4 bytes.  That means that every iteration overwrites part of the previous element.  I spotted this bug while reviewing commit caf3ef7468f7 (\"netfilter: nf_tables: prevent OOB access in nft_byteorder_eval\") which is a related issue.  I think that the reason we have not detected this bug in testing is that most of time we only write one element. ",
+        "func_before": "static noinline_for_stack void\nnft_meta_get_eval_time(enum nft_meta_keys key,\n\t\t       u32 *dest)\n{\n\tswitch (key) {\n\tcase NFT_META_TIME_NS:\n\t\tnft_reg_store64(dest, ktime_get_real_ns());\n\t\tbreak;\n\tcase NFT_META_TIME_DAY:\n\t\tnft_reg_store8(dest, nft_meta_weekday());\n\t\tbreak;\n\tcase NFT_META_TIME_HOUR:\n\t\t*dest = nft_meta_hour(ktime_get_real_seconds());\n\t\tbreak;\n\tdefault:\n\t\tbreak;\n\t}\n}",
+        "func": "static noinline_for_stack void\nnft_meta_get_eval_time(enum nft_meta_keys key,\n\t\t       u32 *dest)\n{\n\tswitch (key) {\n\tcase NFT_META_TIME_NS:\n\t\tnft_reg_store64((u64 *)dest, ktime_get_real_ns());\n\t\tbreak;\n\tcase NFT_META_TIME_DAY:\n\t\tnft_reg_store8(dest, nft_meta_weekday());\n\t\tbreak;\n\tcase NFT_META_TIME_HOUR:\n\t\t*dest = nft_meta_hour(ktime_get_real_seconds());\n\t\tbreak;\n\tdefault:\n\t\tbreak;\n\t}\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -4,7 +4,7 @@\n {\n \tswitch (key) {\n \tcase NFT_META_TIME_NS:\n-\t\tnft_reg_store64(dest, ktime_get_real_ns());\n+\t\tnft_reg_store64((u64 *)dest, ktime_get_real_ns());\n \t\tbreak;\n \tcase NFT_META_TIME_DAY:\n \t\tnft_reg_store8(dest, nft_meta_weekday());",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\tnft_reg_store64(dest, ktime_get_real_ns());"
+            ],
+            "added_lines": [
+                "\t\tnft_reg_store64((u64 *)dest, ktime_get_real_ns());"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2024-0607",
+        "func_name": "torvalds/linux/nft_reg_store64",
+        "description": "A flaw was found in the Netfilter subsystem in the Linux kernel. The issue is in the nft_byteorder_eval() function, where the code iterates through a loop and writes to the `dst` array. On each iteration, 8 bytes are written, but `dst` is an array of u32, so each element only has space for 4 bytes. That means every iteration overwrites part of the previous element corrupting this array of u32. This flaw allows a local user to cause a denial of service or potentially break NetFilter functionality.",
+        "git_url": "https://github.com/torvalds/linux/commit/c301f0981fdd3fd1ffac6836b423c4d7a8e0eb63",
+        "commit_title": "netfilter: nf_tables: fix pointer math issue in nft_byteorder_eval()",
+        "commit_text": " The problem is in nft_byteorder_eval() where we are iterating through a loop and writing to dst[0], dst[1], dst[2] and so on...  On each iteration we are writing 8 bytes.  But dst[] is an array of u32 so each element only has space for 4 bytes.  That means that every iteration overwrites part of the previous element.  I spotted this bug while reviewing commit caf3ef7468f7 (\"netfilter: nf_tables: prevent OOB access in nft_byteorder_eval\") which is a related issue.  I think that the reason we have not detected this bug in testing is that most of time we only write one element. ",
+        "func_before": "static inline void nft_reg_store64(u32 *dreg, u64 val)\n{\n\tput_unaligned(val, (u64 *)dreg);\n}",
+        "func": "static inline void nft_reg_store64(u64 *dreg, u64 val)\n{\n\tput_unaligned(val, dreg);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,4 +1,4 @@\n-static inline void nft_reg_store64(u32 *dreg, u64 val)\n+static inline void nft_reg_store64(u64 *dreg, u64 val)\n {\n-\tput_unaligned(val, (u64 *)dreg);\n+\tput_unaligned(val, dreg);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "static inline void nft_reg_store64(u32 *dreg, u64 val)",
+                "\tput_unaligned(val, (u64 *)dreg);"
+            ],
+            "added_lines": [
+                "static inline void nft_reg_store64(u64 *dreg, u64 val)",
+                "\tput_unaligned(val, dreg);"
+            ]
+        }
+    }
+]

@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR2);\n\tif (!FUN3(VAR6)) {\n\treturn FUN4(VAR2, VAR4, NULL, 0);\n\tFUN5(VAR2, \"\",\n\tFUN6(&VAR7, VAR2);\n\tfor (VAR8 = VAR6->VAR9; VAR8; VAR8 >>= 1, ++VAR10) {\n\tVAR11 = FUN7(VAR2, &VAR7, &VAR12, &VAR13);\n\tif (FUN8(VAR11)) {\n\tVAR14 = FUN9(VAR11);\n\tif (VAR10 >= FUN10(VAR15) ||\n\tFUN5(VAR2, \"\",\n\tVAR14 = VAR15[VAR10].FUN11(VAR2,\n\tFUN12(VAR11);\n\tFUN13(&VAR7);\n\treturn VAR14;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\treturn FUN2(VAR2, VAR4, NULL, 0);\n\tfor (VAR5 = VAR6->VAR7; VAR5; VAR5 >>= 1, ++VAR8) {\n\tVAR9 = FUN3(VAR2, &VAR10, &VAR11, &VAR12);\n\tif (FUN4(VAR9)) {\n\tVAR13 = FUN5(VAR9);\n\tif (VAR8 >= FUN6(VAR14) ||\n\tFUN7(VAR2, \"\",\n\tVAR13 = VAR14[VAR8].FUN8(VAR2,\n\tFUN9(VAR9);\n\tFUN10(&VAR10);\n\treturn VAR13;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5->VAR6 = FUN2(VAR4->VAR7.VAR6);\n\tif (VAR5->VAR6 & ~VAR8) {\n\tFUN3(VAR2, \"\",\n VAR5->VAR6 & ~VAR8);",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5->VAR6 = FUN2(VAR4->VAR7.VAR6);\n\tif (VAR5->VAR6 & ~VAR8) {\n\tfor (VAR9 = VAR5->VAR6; VAR9; VAR9 >>= 1, ++VAR10) {\n\tif (!(VAR9 & 1))",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tVAR5->VAR6 = 1 << VAR7;"
+    ],
+    "array": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tif (VAR5 >= FUN2(VAR6) ||\n !VAR6[VAR5].VAR7) {"
+    ],
+    "integer": [],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR2);\n\tFUN3(&VAR7, VAR2);\n\tVAR8 = 0;\n\tfor (VAR9 = VAR6->VAR10; VAR9; VAR9 >>= 1, ++VAR8) {\n\tVAR11 = FUN4(VAR2, &VAR7, &VAR12, &VAR13);\n\tif (FUN5(VAR11)) {\n\tif (VAR8 >= FUN6(VAR14) ||\n\tFUN7(VAR2, \"\",\n\tVAR15 = VAR14[VAR8].FUN8(VAR2,\n\tFUN9(VAR11);",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR2);\n\tFUN3(&VAR7, VAR2);\n\tVAR8 = 0;\n\tfor (VAR9 = VAR6->VAR10; VAR9; VAR9 >>= 1, ++VAR8) {\n\tVAR11 = FUN4(VAR2, &VAR7, &VAR12, &VAR13);\n\tif (FUN5(VAR11)) {\n\tVAR14 = FUN6(VAR11);\n\tif (VAR8 >= FUN7(VAR15) ||\n\tFUN8(VAR2, \"\",\n\tVAR14 = VAR15[VAR8].FUN9(VAR2,\n\tFUN10(VAR11);\n\tFUN11(&VAR7);\n\treturn VAR14;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tstruct VAR5 *VAR6 = FUN2(VAR2);\n\tFUN3(&VAR7, VAR2);\n\tVAR8 = 0;\n\tfor (VAR9 = VAR6->VAR10; VAR9; VAR9 >>= 1, ++VAR8) {\n\tVAR11 = FUN4(VAR2, &VAR7, &VAR12, &VAR13);\n\tif (FUN5(VAR11)) {\n\tVAR14 = FUN6(VAR11);\n\tif (VAR8 >= FUN7(VAR15) ||\n\tFUN8(VAR2, \"\",\n\tVAR14 = VAR15[VAR8].FUN9(VAR2,\n\tFUN10(VAR11);\n\tFUN11(&VAR7);\n\treturn VAR14;"
+    ]
+}

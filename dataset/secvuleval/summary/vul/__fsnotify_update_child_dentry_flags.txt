@@ -1,0 +1,1 @@
+ Function purpose: The function updates the child dentry flags of a directory inode to indicate whether its children should notify the inode about events, based on the presence of inode watches that monitor child events.

@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6];\n FUN2(VAR7,\n VAR8::FUN3(\"\"\n FUN2(\n VAR8::FUN3(\"\"\n auto VAR9 = VAR10->FUN4(VAR5);\n if (nullptr != VAR9) {\n FUN2(VAR11,\n if (VAR10->FUN5(VAR5)) {\n FUN2(VAR11, \"\", VAR5);",
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6];\n const size_t VAR7 = (VAR5 << 8) + VAR8;\n if ((VAR6 + VAR7 - 1) >= VAR4) {\n FUN2(\n VAR9::FUN3(\"\"\n VAR6 += VAR7;\n FUN4(VAR6 <= VAR4);",
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6 + 1];\n const size_t VAR7 = (VAR8 << 8) + VAR5;\n if ((VAR6 + VAR7 - 1) >= VAR4) {\n FUN2(\n VAR9::FUN3(\"\"\n VAR6 += VAR7;\n FUN4(VAR6 <= VAR4);"
+    ],
+    "array": [
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6];\n FUN2(VAR7,\n VAR8::FUN3(\"\"\n FUN2(\n VAR8::FUN3(\"\"\n auto VAR9 = VAR10->FUN4(VAR5);\n if (nullptr != VAR9) {\n FUN2(VAR11,\n if (VAR10->FUN5(VAR5)) {\n FUN2(VAR11, \"\", VAR5);",
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6];\n const size_t VAR7 = (VAR5 << 8) + VAR8;\n if ((VAR6 + VAR7 - 1) >= VAR4) {\n FUN2(\n VAR9::FUN3(\"\"\n VAR6 += VAR7;\n FUN4(VAR6 <= VAR4);",
+        "bool VAR1::FUN1(const VAR2* VAR3, size_t VAR4) {\n const uint8_t VAR5 = VAR3[VAR6 + 1];\n const size_t VAR7 = (VAR8 << 8) + VAR5;\n if ((VAR6 + VAR7 - 1) >= VAR4) {\n FUN2(\n VAR9::FUN3(\"\"\n VAR6 += VAR7;\n FUN4(VAR6 <= VAR4);"
+    ]
+}

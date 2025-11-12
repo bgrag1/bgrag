@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 52 / sizeof(VAR7);\n\tconst size_t VAR8 = 512 / sizeof(VAR7);\n\tsize_t VAR9 = 4 + 52 + 4 + 512 + 4;\n\tif (!FUN2(VAR3, VAR9))\n\tif (!VAR5->VAR10 || !VAR5->VAR11)\n\tVAR12 = FUN3(VAR5->VAR10, VAR6 + 1);\n\tif (VAR12 > VAR6)\n\tFUN4(VAR3, VAR12 * sizeof(VAR7));\n\tif (FUN5(VAR3, VAR6, VAR5->VAR10, VAR12, VAR13) < 0)\n\tVAR12 = FUN3(VAR5->VAR11, VAR8 + 1);\n\tif (VAR12 > VAR8)\n\tFUN4(VAR3, VAR12 * sizeof(VAR7));\n\tif (FUN5(VAR3, VAR8, VAR5->VAR11, VAR12, VAR13) < 0)\n\tFUN4(VAR3, VAR5->VAR14);",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tFUN2(VAR5);"
+    ],
+    "API": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 52 / sizeof(VAR7);\n\tif (!VAR5->VAR8 || !VAR5->VAR9)\n\tVAR10 = FUN2(VAR5->VAR8, VAR6 + 1);\n\tif (VAR10 > VAR6)\n\tFUN3(VAR3, VAR10 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR8, VAR10, VAR11) < 0)\n\tFUN3(VAR3, VAR10 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR12, VAR5->VAR9, VAR10, VAR11) < 0)\n\tFUN3(VAR3, VAR5->VAR13);\n\treturn VAR11;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 52 / sizeof(VAR7);\n\tVAR8 = FUN2(VAR5->VAR9, VAR6 + 1);\n\tif (VAR8 > VAR6)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR9, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR11, VAR5->VAR12, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR5->VAR13);\n\treturn VAR10;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 52 / sizeof(VAR7);\n\tVAR8 = FUN2(VAR5->VAR9, VAR6 + 1);\n\tif (VAR8 > VAR6)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR9, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR11, VAR5->VAR12, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR5->VAR13);\n\treturn VAR10;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 512 / sizeof(VAR7);\n\tif (!VAR5->VAR8 || !VAR5->VAR9)\n\tVAR10 = FUN2(VAR5->VAR9, VAR6 + 1);\n\tif (VAR10 > VAR6)\n\tFUN3(VAR3, VAR10 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR9, VAR10, VAR11) < 0)\n\tFUN3(VAR3, VAR5->VAR12);\n\treturn VAR11;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 512 / sizeof(VAR7);\n\tVAR8 = FUN2(VAR5->VAR9, VAR6 + 1);\n\tif (VAR8 > VAR6)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR9, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR5->VAR11);\n\treturn VAR10;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tconst size_t VAR6 = 512 / sizeof(VAR7);\n\tVAR8 = FUN2(VAR5->VAR9, VAR6 + 1);\n\tif (VAR8 > VAR6)\n\tFUN3(VAR3, VAR8 * sizeof(VAR7));\n\tif (FUN4(VAR3, VAR6, VAR5->VAR9, VAR8, VAR10) < 0)\n\tFUN3(VAR3, VAR5->VAR11);\n\treturn VAR10;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tif (!VAR5->VAR6 || !VAR5->VAR7)",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tif (!VAR5->VAR6 || !VAR5->VAR7)\n\tVAR8 = FUN2(VAR5->VAR6, VAR9 + 1);\n\tif (VAR8 > VAR9)\n\tFUN3(VAR3, VAR8 * sizeof(VAR10));\n\tif (FUN4(VAR3, VAR9, VAR5->VAR6, VAR8, VAR11) < 0)\n\tFUN3(VAR3, VAR8 * sizeof(VAR10));\n\tif (FUN4(VAR3, VAR12, VAR5->VAR7, VAR8, VAR11) < 0)\n\tFUN3(VAR3, VAR5->VAR13);\n\treturn VAR11;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tsize_t VAR6 = 4 + 52 + 4 + 512 + 4;\n\tif (!FUN2(VAR3, VAR6))",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4* VAR5)\n\tsize_t VAR6 = 4 + 52 + 4 + 512 + 4;\n\tif (!FUN2(VAR3, VAR6))\n\tFUN3(VAR3, VAR7 * sizeof(VAR8));\n\tif (FUN4(VAR3, VAR9, VAR5->VAR10, VAR7, VAR11) < 0)\n\tFUN3(VAR3, VAR7 * sizeof(VAR8));\n\tif (FUN4(VAR3, VAR12, VAR5->VAR13, VAR7, VAR11) < 0)\n\tFUN3(VAR3, VAR5->VAR14);\n\treturn VAR11;"
+    ]
+}

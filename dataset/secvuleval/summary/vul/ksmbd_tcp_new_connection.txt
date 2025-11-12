@@ -1,0 +1,1 @@
+ Function purpose: The function "ksmbd_tcp_new_connection" is responsible for initializing a new connection to a SMB server over TCP/IP, resolving the client's IP address, and starting a handler thread for the connection.

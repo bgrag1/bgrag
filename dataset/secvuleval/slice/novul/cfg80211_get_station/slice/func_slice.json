@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, const VAR3 *VAR4,\n struct VAR5 *VAR6)\n\tVAR7 = FUN2(VAR8->VAR9);\n\tmemset(VAR6, 0, sizeof(*VAR6));\n\tVAR10 = FUN3(VAR7, VAR2, VAR4, VAR6);\n\treturn VAR10;",
+        "int FUN1(struct VAR1 *VAR2, const VAR3 *VAR4,\n\tVAR5 = VAR2->VAR6;\n\tif (!VAR5)",
+        "int FUN1(struct VAR1 *VAR2, const VAR3 *VAR4,\n\tFUN2(&VAR5->VAR6);\n\tFUN3(&VAR5->VAR6);"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, const VAR3 *VAR4,\n struct VAR5 *VAR6)\n\tmemset(VAR6, 0, sizeof(*VAR6));\n\tVAR7 = FUN2(VAR8, VAR2, VAR4, VAR6);\n\treturn VAR7;"
+    ]
+}

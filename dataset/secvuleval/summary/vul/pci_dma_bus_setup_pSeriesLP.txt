@@ -1,0 +1,1 @@
+ Function purpose: The function pci_dma_bus_setup_pSeriesLP sets up the DMA configuration for a PCI bus on a pSeriesLP system, allocating and configuring an IOMMU table for the bus or its parent bus, and initializing the IOMMU table parameters.

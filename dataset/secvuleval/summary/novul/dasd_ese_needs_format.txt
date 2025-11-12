@@ -1,0 +1,1 @@
+ Function purpose: The function checks if a device needs format based on the status of the IRB and the sense information, specifically looking for errors related to no record found or invalid track format.

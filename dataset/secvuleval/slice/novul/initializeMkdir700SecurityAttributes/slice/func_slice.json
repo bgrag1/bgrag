@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "FUN1(\n if (!FUN2(&VAR1->VAR2, VAR3)\n || !FUN3(&VAR1->VAR2, NULL, VAR4)) {\n int VAR5 = FUN4(3, VAR1->VAR6, NULL, &VAR1->VAR7);\n if (!FUN5(&VAR1->VAR2, VAR4, VAR1->VAR7, VAR8)) {\n VAR1->VAR9.VAR10 = &VAR1->VAR2;",
+        "FUN1(\n VAR1 *VAR2,\n assert(VAR2);",
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));"
+    ],
+    "array": [],
+    "API": [
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));",
+        "FUN1(\n VAR1 *VAR2,\n assert(VAR2);",
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));"
+    ]
+}

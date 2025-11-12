@@ -1,0 +1,1 @@
+ Function purpose: The function initializes MSI (Message Signaled Interrupts) capabilities for a PCI device, setting up the necessary MSI descriptors and configuring the MSI capability structure, while handling optional IRQ affinity settings and error handling.

@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4 = FUN2( VAR3 );\n FUN3( VAR4 );\n VAR5->VAR6 = VAR4;",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4->VAR5 = strdup( VAR2 );",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4->VAR5 = -1;",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4 = ( VAR5 * )calloc( sizeof( VAR5 ), 1 );"
+    ],
+    "API": [
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4->VAR5 = strdup( VAR2 );",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4->VAR5 = strdup( VAR2 );",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4 = FUN2( VAR3 );\n FUN3( VAR4 );\n VAR5->VAR6 = VAR4;",
+        "void VAR1 FUN1( const char *VAR2, int VAR3 )\n VAR4 = ( VAR5 * )calloc( sizeof( VAR5 ), 1 );"
+    ]
+}

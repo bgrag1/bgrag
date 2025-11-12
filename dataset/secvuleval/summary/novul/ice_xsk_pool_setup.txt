@@ -1,0 +1,1 @@
+ Function purpose: The function "ice_xsk_pool_setup" is responsible for setting up or tearing down XDP buffer pools for both RX and TX queues in a network interface, ensuring the interface is running and XDP is enabled before performing the necessary operations.

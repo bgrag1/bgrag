@@ -1,0 +1,1 @@
+ Function purpose: The function initializes security attributes and sets up a security descriptor with specific access rights for the directories to be created with 700 permissions.

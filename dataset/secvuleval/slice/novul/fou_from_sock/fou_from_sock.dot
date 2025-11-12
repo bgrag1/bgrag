@@ -1,0 +1,15 @@
+digraph fou_from_sock {  
+"1000100" [label = "(METHOD,fou_from_sock)" ]
+"1000106" [label = "(METHOD_RETURN,static inline struct fou *)" ]
+"1000101" [label = "(PARAM,struct sock *sk)" ]
+"1000103" [label = "(RETURN,return rcu_dereference_sk_user_data(sk);,return rcu_dereference_sk_user_data(sk);)" ]
+"1000104" [label = "(rcu_dereference_sk_user_data,rcu_dereference_sk_user_data(sk))" ]
+  "1000103" -> "1000106"  [ label = "DDG: <RET>"] 
+  "1000104" -> "1000106"  [ label = "DDG: rcu_dereference_sk_user_data(sk)"] 
+  "1000104" -> "1000106"  [ label = "DDG: sk"] 
+  "1000101" -> "1000106"  [ label = "DDG: sk"] 
+  "1000100" -> "1000101"  [ label = "DDG: "] 
+  "1000104" -> "1000103"  [ label = "DDG: rcu_dereference_sk_user_data(sk)"] 
+  "1000101" -> "1000104"  [ label = "DDG: sk"] 
+  "1000100" -> "1000104"  [ label = "DDG: "] 
+}

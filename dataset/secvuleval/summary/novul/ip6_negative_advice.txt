@@ -1,0 +1,1 @@
+ Function purpose: The function "ip6_negative_advice" ensures that a socket's destination cache is updated or reset based on the state of the IPv6 route, particularly when the route is cached, and handles expired routes by removing exceptions and resetting the destination.

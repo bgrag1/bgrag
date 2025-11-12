@@ -1,0 +1,1 @@
+ Function purpose: The function prepares a QUIC packet for transmission by initializing it with appropriate headers, sequence numbers, and encryption, and handles retransmissions, congestion control, and TLS handshake stages for the server.

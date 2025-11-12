@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!FUN2(VAR2, VAR3))\n\tif (!FUN3(VAR2, sizeof(struct VAR4)))\n\tFUN4(VAR2, sizeof(struct VAR4));\n\tFUN5(VAR2);\n\treturn FUN6(VAR5, VAR6,\n\treturn FUN7(FUN8(VAR2->VAR7), NULL, VAR2);\n\tFUN9(VAR2);",
+        "static int FUN1(struct VAR1 *VAR2,\n\treturn FUN2(FUN3(VAR2->VAR3), NULL, VAR2);",
+        "static int FUN1(struct VAR1 *VAR2,\n\treturn FUN2(VAR3, VAR4,\n FUN3(VAR2->VAR5), NULL, VAR2, VAR2->VAR5,"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!FUN2(VAR2, VAR3))\n\tif (!FUN3(VAR2, sizeof(struct VAR4)))\n\tFUN4(VAR2);"
+    ]
+}

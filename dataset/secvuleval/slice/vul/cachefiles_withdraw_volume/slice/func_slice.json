@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);"
+    ],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "fscache_cookie_state_machine" manages the state transitions of a cache cookie, handling operations such as lookups, invalidations, and relinquishing or withdrawing the cookie based on its current state and flags.

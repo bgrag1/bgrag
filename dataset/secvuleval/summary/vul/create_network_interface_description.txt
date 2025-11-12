@@ -1,0 +1,1 @@
+ Function purpose: The function creates and initializes a "NETWORK_INTERFACE_DESCRIPTION" structure with the details of a network interface as specified by a "ifreq" structure, and links it to a previous network interface description if provided.

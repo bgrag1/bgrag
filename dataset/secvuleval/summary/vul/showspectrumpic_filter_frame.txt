@@ -1,0 +1,1 @@
+ Function purpose: The function writes audio samples from an input frame to a FIFO buffer and then frees the frame, returning the result of the write operation.

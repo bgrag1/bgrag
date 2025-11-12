@@ -1,0 +1,1 @@
+ Function purpose: The function allocates a contiguous block of memory for an I/O buffer ring using __get_free_pages and initializes the buffer list structure with the allocated memory.

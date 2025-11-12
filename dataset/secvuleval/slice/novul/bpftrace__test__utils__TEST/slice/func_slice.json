@@ -1,0 +1,11 @@
+{
+    "integer": [
+        "FUN1(VAR1, VAR2)\n VAR3 = open((VAR4 + VAR5).FUN2(), VAR6, VAR7);\n close(VAR3);\n FUN3(VAR3, 0);"
+    ],
+    "API": [
+        "FUN1(VAR1, VAR2)\n VAR3::string VAR4 = \"\";\n FUN2(VAR5::FUN3(VAR4), 0);",
+        "FUN1(VAR1, VAR2)\n VAR3 = open((VAR4 + VAR5).FUN2(), VAR6, VAR7);\n close(VAR3);\n FUN3(VAR3, 0);",
+        "FUN1(VAR1, VAR2)\n VAR3 = open((VAR4 + VAR5).FUN2(), VAR6, VAR7);\n close(VAR3);\n FUN3(VAR3, 0);",
+        "FUN1(VAR1, VAR2)\n VAR3 = open((VAR4 + VAR5).FUN2(), VAR6, VAR7);\n close(VAR3);\n FUN3(VAR3, 0);"
+    ]
+}

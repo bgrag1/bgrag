@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "FUN1(char *VAR1, int VAR2, int VAR3)\n if (VAR1 == NULL)\n snprintf((char *)VAR1, VAR2, FUN2(VAR4),\n return VAR1;"
+    ],
+    "API": [
+        "FUN1(char *VAR1, int VAR2, int VAR3)\n if (VAR1 == NULL)\n snprintf((char *)VAR1, VAR2, FUN2(VAR4),\n (char *)FUN3(VAR3));"
+    ]
+}

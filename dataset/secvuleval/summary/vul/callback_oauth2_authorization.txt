@@ -1,0 +1,1 @@
+ Function purpose: The function processes OAuth2 authorization requests, checking the response type and enabling appropriate authorization types, then redirects the user or returns an error based on the request parameters and enabled configurations.

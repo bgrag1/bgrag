@@ -1,0 +1,1 @@
+ Function purpose: The function "kcm_sendmsg" is responsible for sending data through a socket, managing the transmission buffer, and handling errors in the process.

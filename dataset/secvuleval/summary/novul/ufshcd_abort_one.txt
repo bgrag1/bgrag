@@ -1,0 +1,1 @@
+ Function purpose: The function "ufshcd_abort_one" is designed to abort a specific SCSI command by its tag, and if the command is in a multi-command queue (MCQ) enabled device, it releases the command in the hardware queue upon successful abortion.

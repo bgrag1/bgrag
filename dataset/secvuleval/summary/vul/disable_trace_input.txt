@@ -1,0 +1,1 @@
+ Function purpose: The function "disable_trace_input" is designed to disable the trace context for a specific input instance identified by its name within a given "flb_hs" (Heartbeat Stream) structure, returning a status code indicating success or failure.

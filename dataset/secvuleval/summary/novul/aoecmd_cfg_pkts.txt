@@ -1,0 +1,1 @@
+ Function purpose: The function "aoecmd_cfg_pkts" is designed to create and configure AOE (Asynchronous Operations Engine) packets for a specified network interface, and enqueue them into a given queue.

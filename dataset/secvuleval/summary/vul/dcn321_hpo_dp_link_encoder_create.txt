@@ -1,0 +1,1 @@
+ Function purpose: The function creates and initializes an instance of a High Performance Output (HPO) DisplayPort link encoder for a specific instance on a DC context, returning a pointer to its base structure.

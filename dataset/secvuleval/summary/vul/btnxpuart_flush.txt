@@ -1,0 +1,1 @@
+ Function purpose: The function "btnxpuart_flush" is designed to clear any pending data in the Bluetooth HCI device's transmit and receive queues, ensuring a clean state for the device before it is disabled or reconfigured.

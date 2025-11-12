@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n if (VAR7 > VAR9 || VAR7 < 4)\n for (VAR10 = 0; VAR10 <= VAR7 - 5; VAR10++)\n VAR2->VAR11 = VAR7;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n if (VAR4->VAR7[VAR8] == 0xE8 || (VAR6 && VAR4->VAR7[VAR8] == 0xE9))",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n uint32_t VAR9 = 0x1000000;\n if (VAR7 > VAR10 || VAR7 < 4)\n for (VAR11 = 0; VAR11 <= VAR7 - 5; VAR11++)\n uint32_t VAR12 = (VAR13)VAR5 + VAR11 + 1;\n int32_t VAR14 = (VAR15)FUN2(VAR4, VAR11 + 1);\n if (VAR14 < 0 && VAR12 >= (VAR13)-VAR14)\n FUN3(VAR4, VAR11 + 1, VAR14 + VAR9);\n else if (VAR14 >= 0 && (VAR13)VAR14 < VAR9)\n FUN3(VAR4, VAR11 + 1, VAR14 - VAR12);\n VAR11 += 4;"
+    ],
+    "array": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n if (VAR7 > VAR9 || VAR7 < 4)\n for (VAR10 = 0; VAR10 <= VAR7 - 5; VAR10++)\n uint32_t VAR11 = (VAR12)VAR5 + VAR10 + 1;\n int32_t VAR13 = (VAR14)FUN2(VAR4, VAR10 + 1);\n if (VAR13 < 0 && VAR11 >= (VAR12)-VAR13)\n FUN3(VAR4, VAR10 + 1, VAR13 + VAR15);\n else if (VAR13 >= 0 && (VAR12)VAR13 < VAR15)\n FUN3(VAR4, VAR10 + 1, VAR13 - VAR11);\n VAR10 += 4;\n VAR2->VAR16 = VAR7;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n if (VAR4->VAR7[VAR8] == 0xE8 || (VAR6 && VAR4->VAR7[VAR8] == 0xE9))"
+    ],
+    "integer": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n if (VAR7 > VAR9 || VAR7 < 4)\n for (VAR10 = 0; VAR10 <= VAR7 - 5; VAR10++)\n uint32_t VAR11 = (VAR12)VAR5 + VAR10 + 1;\n int32_t VAR13 = (VAR14)FUN2(VAR4, VAR10 + 1);\n if (VAR13 < 0 && VAR11 >= (VAR12)-VAR13)\n FUN3(VAR4, VAR10 + 1, VAR13 + VAR15);\n else if (VAR13 >= 0 && (VAR12)VAR13 < VAR15)\n FUN3(VAR4, VAR10 + 1, VAR13 - VAR11);\n VAR10 += 4;"
+    ],
+    "API": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n uint32_t VAR9 = 0x1000000;\n if (VAR7 > VAR10 || VAR7 < 4)\n for (VAR11 = 0; VAR11 <= VAR7 - 5; VAR11++)\n uint32_t VAR12 = (VAR13)VAR5 + VAR11 + 1;\n int32_t VAR14 = (VAR15)FUN2(VAR4, VAR11 + 1);\n if (VAR14 < 0 && VAR12 >= (VAR13)-VAR14)\n FUN3(VAR4, VAR11 + 1, VAR14 + VAR9);\n else if (VAR14 >= 0 && (VAR13)VAR14 < VAR9)\n FUN3(VAR4, VAR11 + 1, VAR14 - VAR12);\n VAR11 += 4;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n uint32_t VAR9 = 0x1000000;\n if (VAR7 > VAR10 || VAR7 < 4)\n for (VAR11 = 0; VAR11 <= VAR7 - 5; VAR11++)\n uint32_t VAR12 = (VAR13)VAR5 + VAR11 + 1;\n int32_t VAR14 = (VAR15)FUN2(VAR4, VAR11 + 1);\n if (VAR14 < 0 && VAR12 >= (VAR13)-VAR14)\n FUN3(VAR4, VAR11 + 1, VAR14 + VAR9);\n else if (VAR14 >= 0 && (VAR13)VAR14 < VAR9)\n FUN3(VAR4, VAR11 + 1, VAR14 - VAR12);\n VAR11 += 4;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4, size_t VAR5, int VAR6)\n uint32_t VAR7 = VAR2->VAR8[4];\n uint32_t VAR9 = 0x1000000;\n if (VAR7 > VAR10 || VAR7 < 4)\n for (VAR11 = 0; VAR11 <= VAR7 - 5; VAR11++)\n uint32_t VAR12 = (VAR13)VAR5 + VAR11 + 1;\n int32_t VAR14 = (VAR15)FUN2(VAR4, VAR11 + 1);\n if (VAR14 < 0 && VAR12 >= (VAR13)-VAR14)\n FUN3(VAR4, VAR11 + 1, VAR14 + VAR9);\n else if (VAR14 >= 0 && (VAR13)VAR14 < VAR9)\n FUN3(VAR4, VAR11 + 1, VAR14 - VAR12);\n VAR11 += 4;"
+    ]
+}

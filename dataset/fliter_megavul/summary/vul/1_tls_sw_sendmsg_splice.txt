@@ -1,0 +1,1 @@
+ Function purpose: The function "tls_sw_sendmsg_splice" is designed to send data from user space to the network stack in a way that efficiently handles page-based I/O, charges memory usage, and manages message buffers for socket communication.

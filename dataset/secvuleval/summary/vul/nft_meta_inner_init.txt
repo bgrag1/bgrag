@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and parses metadata from network packets based on the specified key and registers the result in a specified register.

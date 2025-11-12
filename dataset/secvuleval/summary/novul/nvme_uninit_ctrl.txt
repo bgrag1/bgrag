@@ -1,0 +1,1 @@
+ Function purpose: The function nvme_uninit_ctrl is designed to deinitialize an NVMe controller by stopping keep-alive operations, exiting hardware monitoring, finalizing fault injection, hiding latency tolerance, and removing the character device associated with the controller.

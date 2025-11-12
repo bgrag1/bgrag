@@ -1,0 +1,1 @@
+ Function purpose: The function "snd_byt_rt5651_mc_probe" is responsible for initializing and registering a sound card device for a BYTCR-RT5651 audio codec, including detecting and configuring the codec based on ACPI and DMI information.

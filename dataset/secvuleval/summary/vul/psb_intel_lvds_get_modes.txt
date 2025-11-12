@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and adds modes for an Intel LVDS connector, including modes from a fixed panel mode and DDC-sourced modes.

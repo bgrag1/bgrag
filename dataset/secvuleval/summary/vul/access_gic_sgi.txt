@@ -1,0 +1,1 @@
+ Function purpose: The function checks if a System Register access is a write operation and determines the type of SGI (Software Generated Interrupt) to be dispatched based on the register accessed, for either AArch32 or AArch64 architectures.

@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tfor (VAR3 = 0; VAR3 < VAR2->VAR4; ++VAR3) {",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]);\n\tVAR2->VAR3[VAR4] = NULL;"
+    ],
+    "array": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2->VAR3[VAR4]);\n\tVAR2->VAR3[VAR4] = NULL;"
+    ],
+    "API": []
+}

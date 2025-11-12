@@ -1,0 +1,62 @@
+[
+    {
+        "cve_id": "CVE-2018-9862",
+        "func_name": "hyperhq/hyperstart/hyper_getpwnam",
+        "description": "util.c in runV 1.0.0 for Docker mishandles a numeric username, which allows attackers to obtain root access by leveraging the presence of an initial numeric value on an /etc/passwd line, and then issuing a \"docker exec\" command with that value in the -u argument, a similar issue to CVE-2016-3697.",
+        "git_url": "https://github.com/hyperhq/hyperstart/commit/ad6e43325da7d5f8048f23451bef26fdf4c0f93d",
+        "commit_title": "Security: fix a issue (similar to  runc CVE-2016-3697)",
+        "commit_text": "",
+        "func_before": "struct passwd *hyper_getpwnam(const char *name)\n{\n\tuid_t uid = (uid_t)id_or_max(name);\n\tFILE *file = fopen(\"/etc/passwd\", \"r\");\n\tif (!file) {\n\t\tperror(\"faile to open /etc/passwd\");\n\t\treturn NULL;\n\t}\n\tfor (;;) {\n\t\tstruct passwd *pwd = fgetpwent(file);\n\t\tif (!pwd)\n\t\t\tbreak;\n\t\tif (!strcmp(pwd->pw_name, name) || pwd->pw_uid == uid) {\n\t\t\tfclose(file);\n\t\t\treturn pwd;\n\t\t}\n\t}\n\tfclose(file);\n\treturn NULL;\n}",
+        "func": "struct passwd *hyper_getpwnam(const char *name)\n{\n\tuid_t uid;\n\tFILE *file;\n\tstruct passwd *pwd;\n\n\tuid = (uid_t)id_or_max(name);\n\tfile = fopen(\"/etc/passwd\", \"r\");\n\tif (!file) {\n\t\tperror(\"faile to open /etc/passwd\");\n\t\treturn NULL;\n\t}\n\tfor (;;) {\n\t\tpwd = fgetpwent(file);\n\t\tif (!pwd)\n\t\t\tbreak;\n\t\tif (pwd->pw_uid == uid ||\n\t\t  (!strcmp(pwd->pw_name, name) && (uid_t)INVALID_UGID == uid)) {\n\t\t\tfclose(file);\n\t\t\treturn pwd;\n\t\t}\n\t}\n\tfclose(file);\n\treturn NULL;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,16 +1,21 @@\n struct passwd *hyper_getpwnam(const char *name)\n {\n-\tuid_t uid = (uid_t)id_or_max(name);\n-\tFILE *file = fopen(\"/etc/passwd\", \"r\");\n+\tuid_t uid;\n+\tFILE *file;\n+\tstruct passwd *pwd;\n+\n+\tuid = (uid_t)id_or_max(name);\n+\tfile = fopen(\"/etc/passwd\", \"r\");\n \tif (!file) {\n \t\tperror(\"faile to open /etc/passwd\");\n \t\treturn NULL;\n \t}\n \tfor (;;) {\n-\t\tstruct passwd *pwd = fgetpwent(file);\n+\t\tpwd = fgetpwent(file);\n \t\tif (!pwd)\n \t\t\tbreak;\n-\t\tif (!strcmp(pwd->pw_name, name) || pwd->pw_uid == uid) {\n+\t\tif (pwd->pw_uid == uid ||\n+\t\t  (!strcmp(pwd->pw_name, name) && (uid_t)INVALID_UGID == uid)) {\n \t\t\tfclose(file);\n \t\t\treturn pwd;\n \t\t}",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\tuid_t uid = (uid_t)id_or_max(name);",
+                "\tFILE *file = fopen(\"/etc/passwd\", \"r\");",
+                "\t\tstruct passwd *pwd = fgetpwent(file);",
+                "\t\tif (!strcmp(pwd->pw_name, name) || pwd->pw_uid == uid) {"
+            ],
+            "added_lines": [
+                "\tuid_t uid;",
+                "\tFILE *file;",
+                "\tstruct passwd *pwd;",
+                "",
+                "\tuid = (uid_t)id_or_max(name);",
+                "\tfile = fopen(\"/etc/passwd\", \"r\");",
+                "\t\tpwd = fgetpwent(file);",
+                "\t\tif (pwd->pw_uid == uid ||",
+                "\t\t  (!strcmp(pwd->pw_name, name) && (uid_t)INVALID_UGID == uid)) {"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2018-9862",
+        "func_name": "hyperhq/hyperstart/hyper_getgrnam",
+        "description": "util.c in runV 1.0.0 for Docker mishandles a numeric username, which allows attackers to obtain root access by leveraging the presence of an initial numeric value on an /etc/passwd line, and then issuing a \"docker exec\" command with that value in the -u argument, a similar issue to CVE-2016-3697.",
+        "git_url": "https://github.com/hyperhq/hyperstart/commit/ad6e43325da7d5f8048f23451bef26fdf4c0f93d",
+        "commit_title": "Security: fix a issue (similar to  runc CVE-2016-3697)",
+        "commit_text": "",
+        "func_before": "struct group *hyper_getgrnam(const char *name)\n{\n\tgid_t gid = (gid_t)id_or_max(name);\n\tFILE *file = fopen(\"/etc/group\", \"r\");\n\tif (!file) {\n\t\tperror(\"faile to open /etc/group\");\n\t\treturn NULL;\n\t}\n\tfor (;;) {\n\t\tstruct group *gr = fgetgrent(file);\n\t\tif (!gr)\n\t\t\tbreak;\n\t\tif (!strcmp(gr->gr_name, name) || gr->gr_gid == gid) {\n\t\t\tfclose(file);\n\t\t\treturn gr;\n\t\t}\n\t}\n\tfclose(file);\n\treturn NULL;\n}",
+        "func": "struct group *hyper_getgrnam(const char *name)\n{\n\tgid_t gid;\n\tFILE *file;\n\tstruct group *gr = NULL;\n\n\tgid = (gid_t)id_or_max(name);\n\tfile = fopen(\"/etc/group\", \"r\");\n\tif (!file) {\n\t\tperror(\"faile to open /etc/group\");\n\t\treturn NULL;\n\t}\n\tfor (;;) {\n\t\tgr = fgetgrent(file);\n\t\tif (!gr)\n\t\t\tbreak;\n\t\tif (gr->gr_gid == gid ||\n\t\t  (!strcmp(gr->gr_name, name) &&  (gid_t)INVALID_UGID == gid)) {\n\t\t\tfclose(file);\n\t\t\treturn gr;\n\t\t}\n\t}\n\tfclose(file);\n\treturn NULL;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,16 +1,21 @@\n struct group *hyper_getgrnam(const char *name)\n {\n-\tgid_t gid = (gid_t)id_or_max(name);\n-\tFILE *file = fopen(\"/etc/group\", \"r\");\n+\tgid_t gid;\n+\tFILE *file;\n+\tstruct group *gr = NULL;\n+\n+\tgid = (gid_t)id_or_max(name);\n+\tfile = fopen(\"/etc/group\", \"r\");\n \tif (!file) {\n \t\tperror(\"faile to open /etc/group\");\n \t\treturn NULL;\n \t}\n \tfor (;;) {\n-\t\tstruct group *gr = fgetgrent(file);\n+\t\tgr = fgetgrent(file);\n \t\tif (!gr)\n \t\t\tbreak;\n-\t\tif (!strcmp(gr->gr_name, name) || gr->gr_gid == gid) {\n+\t\tif (gr->gr_gid == gid ||\n+\t\t  (!strcmp(gr->gr_name, name) &&  (gid_t)INVALID_UGID == gid)) {\n \t\t\tfclose(file);\n \t\t\treturn gr;\n \t\t}",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\tgid_t gid = (gid_t)id_or_max(name);",
+                "\tFILE *file = fopen(\"/etc/group\", \"r\");",
+                "\t\tstruct group *gr = fgetgrent(file);",
+                "\t\tif (!strcmp(gr->gr_name, name) || gr->gr_gid == gid) {"
+            ],
+            "added_lines": [
+                "\tgid_t gid;",
+                "\tFILE *file;",
+                "\tstruct group *gr = NULL;",
+                "",
+                "\tgid = (gid_t)id_or_max(name);",
+                "\tfile = fopen(\"/etc/group\", \"r\");",
+                "\t\tgr = fgetgrent(file);",
+                "\t\tif (gr->gr_gid == gid ||",
+                "\t\t  (!strcmp(gr->gr_name, name) &&  (gid_t)INVALID_UGID == gid)) {"
+            ]
+        }
+    }
+]

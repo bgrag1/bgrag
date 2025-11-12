@@ -1,0 +1,1 @@
+ Function purpose: The function resets the signal handlers for SIGINT, SIGTERM, SIGPIPE, and optionally SIGCHLD and SIGUSR1, restoring the previous signal handlers and clearing the stored old signal actions.

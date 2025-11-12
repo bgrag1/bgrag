@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "FUN1(enum nft_meta_keys VAR1,\n VAR2 *VAR3)\n\tFUN2((VAR4 *)VAR3, FUN3());\n\tFUN4(VAR3, FUN5());",
+        "FUN1(enum nft_meta_keys VAR1,\n\t*VAR2 = FUN2(FUN3());"
+    ]
+}

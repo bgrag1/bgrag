@@ -1,0 +1,6 @@
+{
+    "API": [
+        "void VAR1::FUN1(\n auto VAR2 = VAR3.FUN2();\n VAR4 = VAR5::move(VAR2);",
+        "void VAR1::FUN1(\n auto VAR2 = VAR3.FUN2();\n VAR4 = VAR5::move(VAR2);"
+    ]
+}

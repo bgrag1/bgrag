@@ -1,0 +1,1 @@
+ Function purpose: The function removes a specified hardware queue and associated ring from an AMDGPU device, freeing resources and stopping any fallback timer associated with the ring.

@@ -1,0 +1,1 @@
+ Function purpose: The function processes BPF instructions and generates LoongArch-specific machine code in the JIT (Just-In-Time) compilation process.

@@ -1,0 +1,1 @@
+ Function purpose: The function "sip_endpoint_identifier_str2type" converts a string representation of a SIP endpoint identification method into its corresponding integer value.

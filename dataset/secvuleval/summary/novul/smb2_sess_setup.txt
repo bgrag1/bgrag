@@ -1,0 +1,1 @@
+ Function purpose: The function "smb2_sess_setup" is responsible for setting up a session in a SMB2/3 protocol environment, handling session creation, negotiation, and authentication, and returning an appropriate response based on the outcome of these processes.

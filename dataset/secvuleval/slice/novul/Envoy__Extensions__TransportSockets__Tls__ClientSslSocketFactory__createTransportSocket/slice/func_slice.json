@@ -1,0 +1,8 @@
+{
+    "API": [
+        "VAR1::TransportSocketPtr VAR2::FUN1(\n VAR3 = VAR4;\n auto VAR5 =\n VAR6::FUN2(VAR7::move(VAR3), VAR8::VAR9, VAR10,",
+        "VAR1::TransportSocketPtr VAR2::FUN1(\n return VAR3::move(VAR4.FUN2());",
+        "VAR1::TransportSocketPtr VAR2::FUN1(\n VAR1::TransportSocketOptionsConstSharedPtr VAR3,\n VAR4 = VAR5;\n auto VAR6 =\n VAR7::FUN2(VAR8::move(VAR4), VAR9::VAR10, VAR3,",
+        "VAR1::TransportSocketPtr VAR2::FUN1(\n VAR1::TransportSocketOptionsConstSharedPtr VAR3,\n VAR4 = VAR5;\n auto VAR6 =\n VAR7::FUN2(VAR8::move(VAR4), VAR9::VAR10, VAR3,"
+    ]
+}

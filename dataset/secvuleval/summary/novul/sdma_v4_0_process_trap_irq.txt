@@ -1,0 +1,1 @@
+ Function purpose: The function processes SDMA traps by identifying the instance and handling the corresponding ring based on the trap's client ID and ring ID, ensuring the processing of fence events for the respective SDMA instances.

@@ -1,0 +1,1 @@
+ Function purpose: The function "mesh_new_client" processes incoming DNS queries, manages reply states, and handles memory allocation for new states, ensuring that queries are processed and replied to appropriately while managing resource usage and timeouts.

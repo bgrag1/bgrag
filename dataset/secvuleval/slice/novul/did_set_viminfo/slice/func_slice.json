@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2)\n\tif (FUN2((VAR3 *)\"\"%'/:<@VAR4\", *VAR5) == NULL)\n VAR6 = FUN3(VAR2->VAR7, VAR2->VAR8, *VAR5);\n\tif (*VAR5 == '')\t// name is always last VAR9\n\telse if (*VAR5 == '') // skip until VAR10 ''\n while (*++VAR5 && *VAR5 != '')\n\telse if (*VAR5 == '')\n while (FUN4(*++VAR5))\n\telse if (*VAR5 == '' || *VAR5 == '' || *VAR5 == '')\n while (FUN4(*++VAR5))\n\tif (VAR2->VAR7 != NULL)\n snprintf(VAR2->VAR7, VAR2->VAR8,\n VAR6 = VAR2->VAR7;\n\tif (*VAR5 == '')\n if (VAR2->VAR7 != NULL)\n if (*VAR11 && VAR6 == NULL && FUN5(''') < 0)\n return VAR6;",
+        "FUN1(VAR1 *VAR2)\n for (VAR3 = VAR4; *VAR3;)\n while (*++VAR3 && *VAR3 != '')\n while (FUN2(*++VAR3))\n ++VAR3;\t// no extra VAR5\n while (FUN2(*++VAR3))\n if (!FUN3(*(VAR3 - 1)))\n FUN4(*(VAR3 - 1)));\n ++VAR3;",
+        "FUN1(VAR1 *VAR2)\n char\t*VAR3 = NULL;\n if (*VAR4 && VAR3 == NULL && FUN2(''') < 0)\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n\tVAR3 = \"\";\n if (*VAR4 && VAR3 == NULL && FUN2(''') < 0)\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n\tVAR3 = VAR4;\n if (*VAR5 && VAR3 == NULL && FUN2(''') < 0)\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n\tVAR3 = VAR4;\n return VAR3;",
+        "FUN1(VAR1 *VAR2)\n VAR3 = \"\";\n if (*VAR4 && VAR3 == NULL && FUN2(''') < 0)\n return VAR3;"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2)\n\tif (FUN2((VAR3 *)\"\"%'/:<@VAR4\", *VAR5) == NULL)\n\tif (*VAR5 == '')\t// name is always last VAR6\n\telse if (*VAR5 == '') // skip until VAR7 ''\n while (*++VAR5 && *VAR5 != '')\n\telse if (*VAR5 == '')\n\telse if (*VAR5 == '' || *VAR5 == '' || *VAR5 == '')\n if (!FUN3(*(VAR5 - 1)))\n\tif (VAR2->VAR8 != NULL)\n snprintf(VAR2->VAR8, VAR2->VAR9,\n FUN4(VAR10),\n FUN5(*(VAR5 - 1)));\n VAR11 = VAR2->VAR8;\n\tif (*VAR5 == '')\n if (*VAR12 && VAR11 == NULL && FUN6(''') < 0)\n return VAR11;",
+        "FUN1(VAR1 *VAR2)\n\tif (FUN2((VAR3 *)\"\"%'/:<@VAR4\", *VAR5) == NULL)\n\tif (*VAR5 == '')\t// name is always last VAR6\n\telse if (*VAR5 == '') // skip until VAR7 ''\n while (*++VAR5 && *VAR5 != '')\n\telse if (*VAR5 == '')\n\telse if (*VAR5 == '' || *VAR5 == '' || *VAR5 == '')\n\tif (VAR2->VAR8 != NULL)\n snprintf(VAR2->VAR8, VAR2->VAR9,\n VAR10 = VAR2->VAR8;\n\tif (*VAR5 == '')\n if (VAR2->VAR8 != NULL)\n if (*VAR11 && VAR10 == NULL && FUN3(''') < 0)\n return VAR10;",
+        "FUN1(VAR1 *VAR2)\n\tif (FUN2((VAR3 *)\"\"%'/:<@VAR4\", *VAR5) == NULL)\n VAR6 = FUN3(VAR2->VAR7, VAR2->VAR8, *VAR5);\n\tif (*VAR5 == '')\t// name is always last VAR9\n\telse if (*VAR5 == '') // skip until VAR10 ''\n while (*++VAR5 && *VAR5 != '')\n\telse if (*VAR5 == '')\n while (FUN4(*++VAR5))\n\telse if (*VAR5 == '' || *VAR5 == '' || *VAR5 == '')\n while (FUN4(*++VAR5))\n\tif (VAR2->VAR7 != NULL)\n snprintf(VAR2->VAR7, VAR2->VAR8,\n VAR6 = VAR2->VAR7;\n\tif (*VAR5 == '')\n if (VAR2->VAR7 != NULL)\n if (*VAR11 && VAR6 == NULL && FUN5(''') < 0)\n return VAR6;"
+    ]
+}

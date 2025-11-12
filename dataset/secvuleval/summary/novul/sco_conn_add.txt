@@ -1,0 +1,1 @@
+ Function purpose: The function "sco_conn_add" is responsible for initializing and returning a "struct sco_conn" associated with a given "struct hci_conn", allocating memory if necessary, and setting up initial parameters such as MTU and timeout work.

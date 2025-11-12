@@ -1,0 +1,22 @@
+{
+    "pointer": [
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = FUN2();\n\tsize_t VAR4 = strlen(VAR3);\n\tVAR5++;\n\tif (VAR4 == 0)\n\tVAR5 += VAR4;\n\tVAR6 = VAR7 = (char *) FUN3(VAR5, sizeof(char));\n\tFUN4(VAR6, VAR5, \"\", VAR8, (int) VAR2, VAR1, VAR9);\n\tstrcpy(VAR7, VAR3);\n\tVAR7 += VAR4;\n\t*VAR7++ = *VAR1++;\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = VAR1 + VAR2;\n\twhile (VAR1 < VAR3)\n\t*VAR4++ = *VAR1++;",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tfor (VAR3 = VAR1; VAR3 < VAR1 + VAR2; VAR3++)",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = VAR1 + VAR2;",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tif (*VAR3 == VAR4 || *VAR3 == VAR5)\n\tif (FUN2(*VAR3))\n\tFUN3(VAR6, VAR7, \"\", VAR4, (int) VAR2, VAR1, VAR5);\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tfor (VAR3 = VAR1; VAR3 < VAR1 + VAR2; VAR3++)"
+    ],
+    "integer": [
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = VAR1 + VAR2;\n\twhile (VAR1 < VAR3)\n\t*VAR4++ = *VAR1++;"
+    ],
+    "API": [
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = FUN2();\n\tsize_t VAR4 = strlen(VAR3);\n\tVAR5++;\n\tif (VAR4 == 0)\n\tVAR5 += VAR4;\n\tVAR6 = VAR7 = (char *) FUN3(VAR5, sizeof(char));\n\tFUN4(VAR6, VAR5, \"\", VAR8, (int) VAR2, VAR1, VAR9);\n\tstrcpy(VAR7, VAR3);\n\tVAR7 += VAR4;\n\t*VAR7++ = *VAR1++;\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = FUN2();\n\tsize_t VAR4 = strlen(VAR3);\n\tVAR5++;\n\tif (VAR4 == 0)\n\tVAR5 += VAR4;\n\tVAR6 = VAR7 = (char *) FUN3(VAR5, sizeof(char));\n\tFUN4(VAR6, VAR5, \"\", VAR8, (int) VAR2, VAR1, VAR9);\n\tstrcpy(VAR7, VAR3);\n\tVAR7 += VAR4;\n\t*VAR7++ = *VAR1++;\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tif (*VAR3 == VAR4 || *VAR3 == VAR5)\n\tif (FUN2(*VAR3))",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tif (*VAR3 == VAR4 || *VAR3 == VAR5)\n\tif (FUN2(*VAR3))\n\tFUN3(VAR6, VAR7, \"\", VAR4, (int) VAR2, VAR1, VAR5);\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tif (*VAR3 == VAR4 || *VAR3 == VAR5)\n\tif (FUN2(*VAR3))\n\tFUN3(VAR6, VAR7, \"\", VAR4, (int) VAR2, VAR1, VAR5);\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = FUN2();\n\tsize_t VAR4 = strlen(VAR3);\n\tVAR5++;\n\tif (VAR4 == 0)\n\tVAR5 += VAR4;\n\tVAR5 = VAR2 + 3;\n\tVAR6 = VAR7 = (char *) FUN3(VAR5, sizeof(char));\n\tFUN4(VAR6, VAR5, \"\", VAR8, (int) VAR2, VAR1, VAR9);\n\tstrcpy(VAR7, VAR3);\n\tVAR7 += VAR4;\n\t*VAR7++ = *VAR1++;\n\treturn (VAR6);",
+        "public char * FUN1(constant char *VAR1, size_t VAR2)\n\tconstant char *VAR3 = FUN2();\n\tsize_t VAR4 = strlen(VAR3);\n\tVAR5++;\n\tif (VAR4 == 0)\n\tVAR5 += VAR4;\n\tVAR5 = VAR2 + 3;\n\tVAR6 = VAR7 = (char *) FUN3(VAR5, sizeof(char));\n\tstrcpy(VAR7, VAR3);\n\tVAR7 += VAR4;\n\t*VAR7++ = *VAR1++;"
+    ]
+}

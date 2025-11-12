@@ -1,0 +1,1 @@
+ Function purpose: The function processes received data by dequeuing sk_buff from the socket's receive queue, linearizes it if necessary, and passes it to rfcomm_recv_frame for further processing, or frees it if linearization fails or the socket state is BT_CLOSED.

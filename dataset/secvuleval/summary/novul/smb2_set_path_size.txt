@@ -1,0 +1,1 @@
+ Function purpose: The function sets the end-of-file (EOF) size of a file on a server by sending a compound operation request to the SMB2 protocol.

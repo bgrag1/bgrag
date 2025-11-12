@@ -1,0 +1,1 @@
+ Function purpose: The function "__fib6_drop_pcpu_from" releases references to a given fib6_info entry from all of its cached per-CPU routes, ensuring that the memory associated with the entry is properly managed.

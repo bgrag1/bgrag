@@ -1,0 +1,1 @@
+ Function purpose: The function "infra_wait_limit_dec" decreases the wait limit for a client IP address in the infrastructure cache if the wait limit is not zero, and updates the rate data accordingly.

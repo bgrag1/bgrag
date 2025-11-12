@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 == NULL) {\n if (VAR3->VAR4.VAR6 < sizeof(VAR7)-1) {\n return FUN2(&VAR3->VAR4.VAR5[sizeof(VAR7)-1],\n VAR3->VAR4.VAR6 - sizeof(VAR7)-1);"
+    ],
+    "array": [
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 == NULL) {\n if (VAR3->VAR4.VAR6 < sizeof(VAR7)-1) {\n return FUN2(&VAR3->VAR4.VAR5[sizeof(VAR7)-1],\n VAR3->VAR4.VAR6 - sizeof(VAR7)-1);"
+    ],
+    "API": [
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 < sizeof(VAR6)-1) {\n return FUN2(&VAR3->VAR4.VAR7[sizeof(VAR6)-1],\n VAR3->VAR4.VAR5 - sizeof(VAR6)-1);",
+        "static VAR1 FUN1(VAR2 *VAR3)\n return FUN2(&VAR3->VAR4.VAR5[sizeof(VAR6)-1],\n VAR3->VAR4.VAR7 - sizeof(VAR6)-1);",
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 < sizeof(VAR6)-1) {\n return FUN2(&VAR3->VAR4.VAR7[sizeof(VAR6)-1],\n VAR3->VAR4.VAR5 - sizeof(VAR6)-1);",
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 < sizeof(VAR6)-1) {\n return FUN2(&VAR3->VAR4.VAR7[sizeof(VAR6)-1],\n VAR3->VAR4.VAR5 - sizeof(VAR6)-1);",
+        "static VAR1 FUN1(VAR2 *VAR3)\n if (VAR3->VAR4.VAR5 == NULL) {\n if (VAR3->VAR4.VAR6 < sizeof(VAR7)-1) {\n return FUN2(&VAR3->VAR4.VAR5[sizeof(VAR7)-1],\n VAR3->VAR4.VAR6 - sizeof(VAR7)-1);"
+    ]
+}

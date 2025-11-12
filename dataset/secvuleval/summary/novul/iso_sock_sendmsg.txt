@@ -1,0 +1,1 @@
+ Function purpose: The function "iso_sock_sendmsg" is responsible for sending a message through a Bluetooth socket, ensuring that the message is fragmented if necessary to fit within the maximum transmission unit (MTU) of the connection, and handling errors such as out-of-band data or disconnections.

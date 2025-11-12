@@ -1,0 +1,1 @@
+ Function purpose: The function "md_submit_flush_data" in the code snippet is responsible for handling the completion of a flush operation in amddev device, resetting the flush-related state, and ensuring that the appropriate end-of-io handling is performed.

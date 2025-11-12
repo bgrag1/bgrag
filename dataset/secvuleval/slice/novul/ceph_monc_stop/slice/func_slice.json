@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tVAR2->VAR3 = -1;",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->mutex);\n\tFUN3(&VAR2->mutex);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(!FUN3(&VAR2->VAR3));",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);"
+    ],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->mutex);\n\tFUN3(&VAR2->mutex);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->mutex);\n\tFUN3(&VAR2->mutex);"
+    ]
+}

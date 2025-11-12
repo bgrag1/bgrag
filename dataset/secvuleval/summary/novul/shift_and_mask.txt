@@ -1,0 +1,1 @@
+ Function purpose: The function "shift_and_mask" shifts a given number "v" to the right by "shift" bits and then masks it to keep only the specified number of "bits" from the least significant bits.

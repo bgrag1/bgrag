@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, unsigned VAR3,\n\tstruct VAR4 *VAR5 = FUN2(VAR2);",
+        "static int FUN1(struct VAR1 *VAR2, unsigned VAR3,\n\tstruct VAR4 *VAR5 = FUN2(VAR2);\n\tstruct VAR6 *VAR7 = FUN3(VAR2, VAR3);\n\tVAR8 = FUN4(VAR2, VAR9);\n\tif (!VAR8)\n\tFUN5(VAR5->VAR10, \"\",",
+        "static int FUN1(struct VAR1 *VAR2, unsigned VAR3,\n\t*VAR4 = VAR5->VAR6;\n\tif (!(*VAR4)) {",
+        "static int FUN1(struct VAR1 *VAR2, unsigned VAR3,\n\tVAR4 = VAR5->VAR6;\n\tif (!VAR4)",
+        "static int FUN1(struct VAR1 *VAR2, unsigned VAR3,\n\tVAR4 = VAR5->VAR6;\n\tVAR7 = FUN2(VAR2, VAR4);\n\tif (!VAR7)\n\tFUN3(VAR8->VAR9, \"\","
+    ]
+}

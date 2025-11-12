@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "static int\nFUN1 (struct VAR1 *VAR2, const VAR3 *VAR4)\n if (VAR5 - VAR6->VAR7 != VAR6->VAR8\n && (VAR6->VAR9 & (1 << (VAR5 - VAR6->VAR7)))\n && FUN2(&VAR5->VAR10, VAR4))\n FUN3(\"\"VAR11\"\",\n FUN4(VAR4));",
+        "static int\n for (VAR1 = VAR2->VAR3; VAR1 < FUN1(VAR2); ++VAR1)\n if (VAR1 - VAR2->VAR3 != VAR2->VAR4\n && (VAR2->VAR5 & (1 << (VAR1 - VAR2->VAR3)))\n if (VAR1 >= FUN1(VAR2))\n VAR2->VAR4 = VAR1 - VAR2->VAR3;",
+        "static int\n if (VAR1->VAR2 & VAR3)\n VAR1->VAR2 |= VAR3;",
+        "static int\n for (VAR1 = VAR2->VAR3; VAR1 < FUN1(VAR2); ++VAR1)\n if (VAR1 - VAR2->VAR3 != VAR2->VAR4\n && (VAR2->VAR5 & (1 << (VAR1 - VAR2->VAR3)))\n if (VAR1 >= FUN1(VAR2))\n VAR2->VAR4 = VAR1 - VAR2->VAR3;",
+        "static int\nFUN1 (struct VAR1 *VAR2, const VAR3 *VAR4)\n FUN2(VAR2);"
+    ],
+    "integer": [
+        "static int\n for (VAR1 = VAR2->VAR3; VAR1 < FUN1(VAR2); ++VAR1)\n if (VAR1 - VAR2->VAR3 != VAR2->VAR4\n && (VAR2->VAR5 & (1 << (VAR1 - VAR2->VAR3)))\n if (VAR1 >= FUN1(VAR2))\n VAR2->VAR4 = VAR1 - VAR2->VAR3;"
+    ]
+}

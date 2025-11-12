@@ -1,0 +1,1 @@
+ Function purpose: The function "msgpack_params_enable_trace" is designed to enable tracing for a specified input in a Fluent Bit context, using parameters provided in a MessagePack object, including a prefix, output name, and additional key-value pairs.

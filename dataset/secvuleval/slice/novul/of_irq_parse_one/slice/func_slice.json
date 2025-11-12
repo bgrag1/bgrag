@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR6 = FUN3(VAR2, \"\", &VAR7);\n\tVAR8 = FUN4(VAR2, \"\",\n\tif (!VAR8)\n\treturn FUN5(VAR9, VAR5);\n\tVAR10 = FUN6(VAR2);\n\tif (VAR10 == NULL)\n\tif (FUN7(VAR10, \"\", &VAR11)) {\n\tFUN2(\"\", VAR10, VAR11);\n\tVAR5->VAR12 = VAR10;\n\tVAR5->VAR13 = VAR11;\n\tfor (VAR14 = 0; VAR14 < VAR11; VAR14++) {\n\tVAR8 = FUN8(VAR2, \"\",\n (VAR3 * VAR11) + VAR14,\n VAR5->VAR15 + VAR14);\n\tVAR8 = FUN5(VAR9, VAR5);\n\tFUN9(VAR10);\n\treturn VAR8;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\treturn FUN3(VAR2, VAR3, VAR5);",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\t__be32 VAR6[3] = { 0 };\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR7 = FUN3(VAR2, \"\", &VAR8);\n\tif (VAR8 > (3 * sizeof(VAR9)))\n\tVAR8 = 3 * sizeof(VAR9);\n\tmemcpy(VAR6, VAR7, VAR8);\n\treturn FUN4(VAR6, VAR5);\n\tVAR10 = FUN4(VAR6, VAR5);\n\treturn VAR10;"
+    ],
+    "integer": [
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR6 = FUN3(VAR2, \"\", &VAR7);\n\tVAR8 = FUN4(VAR2, \"\",\n\tVAR9 = FUN5(VAR2);\n\tif (VAR9 == NULL)\n\tif (FUN6(VAR9, \"\", &VAR10)) {\n\tFUN2(\"\", VAR9, VAR10);\n\tfor (VAR11 = 0; VAR11 < VAR10; VAR11++) {\n\tVAR8 = FUN7(VAR2, \"\",\n (VAR3 * VAR10) + VAR11,\n\treturn VAR8;"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\t__be32 VAR6[3] = { 0 };\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR7 = FUN3(VAR2, \"\", &VAR8);\n\tif (VAR8 > (3 * sizeof(VAR9)))\n\tVAR8 = 3 * sizeof(VAR9);\n\tmemcpy(VAR6, VAR7, VAR8);\n\treturn FUN4(VAR6, VAR5);\n\tVAR10 = FUN4(VAR6, VAR5);\n\treturn VAR10;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tif (VAR6 > (3 * sizeof(VAR7)))\n\tmemcpy(VAR8, VAR9, VAR6);\n\treturn FUN2(VAR8, VAR5);\n\tVAR10 = FUN2(VAR8, VAR5);\n\treturn VAR10;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tVAR6 = 3 * sizeof(VAR7);\n\tmemcpy(VAR8, VAR9, VAR6);\n\treturn FUN2(VAR8, VAR5);\n\tVAR10 = FUN2(VAR8, VAR5);\n\treturn VAR10;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tVAR6 = 3 * sizeof(VAR7);\n\tmemcpy(VAR8, VAR9, VAR6);\n\treturn FUN2(VAR8, VAR5);\n\tVAR10 = FUN2(VAR8, VAR5);\n\treturn VAR10;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR6 = FUN3(VAR2, \"\", &VAR7);\n\tVAR8 = FUN4(VAR2, \"\",\n\tVAR9 = FUN5(VAR2);\n\tif (VAR9 == NULL)\n\tif (FUN6(VAR9, \"\", &VAR10)) {\n\tFUN2(\"\", VAR9, VAR10);\n\tVAR5->VAR11 = VAR9;\n\tVAR5->VAR12 = VAR10;\n\tfor (VAR13 = 0; VAR13 < VAR10; VAR13++) {\n\tVAR8 = FUN7(VAR2, \"\",\n (VAR3 * VAR10) + VAR13,\n VAR5->VAR14 + VAR13);\n\tFUN8(VAR9);\n\treturn VAR8;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR6 = FUN3(VAR2, \"\", &VAR7);\n\tVAR8 = FUN4(VAR2, \"\",\n\tVAR9 = FUN5(VAR2);\n\tif (VAR9 == NULL)\n\tif (FUN6(VAR9, \"\", &VAR10)) {\n\tFUN2(\"\", VAR9, VAR10);\n\tfor (VAR11 = 0; VAR11 < VAR10; VAR11++) {\n\tVAR8 = FUN7(VAR2, \"\",\n (VAR3 * VAR10) + VAR11,\n\treturn VAR8;",
+        "int FUN1(struct VAR1 *VAR2, int VAR3, struct VAR4 *VAR5)\n\tFUN2(\"\", VAR2, VAR3);\n\tVAR6 = FUN3(VAR2, \"\", &VAR7);\n\tVAR8 = FUN4(VAR2, \"\",\n\tVAR9 = FUN5(VAR2);\n\tif (VAR9 == NULL)\n\tif (FUN6(VAR9, \"\", &VAR10)) {\n\tFUN2(\"\", VAR9, VAR10);\n\tfor (VAR11 = 0; VAR11 < VAR10; VAR11++) {\n\tVAR8 = FUN7(VAR2, \"\",\n (VAR3 * VAR10) + VAR11,\n\treturn VAR8;"
+    ]
+}

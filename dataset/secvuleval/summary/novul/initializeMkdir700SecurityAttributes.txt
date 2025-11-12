@@ -1,0 +1,1 @@
+ Function purpose: The function initializes security attributes with specific permissions for the "CURRENT_USER", "SYSTEM", and "ADMINISTRATORS" groups, and sets up a security descriptor with an access control list (ACL) to be used by a directory creation function.

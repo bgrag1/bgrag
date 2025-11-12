@@ -1,0 +1,27 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4[VAR5->VAR6];\n\tVAR7 = FUN2(VAR8->VAR9);\n\tif (!VAR7) {\n\tFUN3(VAR2, VAR7)) {\n\tif ((VAR2->VAR10 & VAR11) && !VAR12 &&\n FUN4(VAR2, VAR3, VAR8->VAR9)) {\n\tFUN5(VAR2, VAR7);\n\tFUN6(VAR2, \"\");\n\tVAR13 = FUN7(VAR2, VAR8->VAR9);\n\tFUN8(VAR13);\n\tVAR14 = FUN9(VAR2, VAR8,\n\tVAR14 = FUN10(VAR2, VAR8,\n\tif (VAR14 < 0) {\n\tFUN5(VAR2, VAR7);\n\tFUN11(VAR2, VAR15,\n\tFUN12(VAR2);\n\tVAR14 = FUN13(VAR2, VAR5,\n\tVAR14 = FUN14(VAR2, VAR5,\n\tFUN5(VAR2, VAR7);\n\tFUN15(VAR2, VAR7);\n\treturn VAR14;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif ((VAR2->VAR3 & VAR4) &&\n\tif ((VAR2->VAR3 & VAR5) && !VAR6 &&\n\tif ((VAR2->VAR3 & VAR4))",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5);\n\tif (!VAR3) {\n\tFUN3(VAR2, VAR3)) {\n\tFUN4(VAR2, \"\"",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR4->VAR5);\n\tif (!VAR3) {\n\tFUN3(VAR2, VAR3)) {\n\tFUN4(VAR3);\n\tFUN5(VAR2, VAR3);\n\tFUN6(VAR2, VAR6,\n\tFUN5(VAR2, VAR3);\n\tFUN7(VAR2, VAR3);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif ((VAR2->VAR3 & VAR4) &&\n\tif ((VAR2->VAR3 & VAR5) && !VAR6 &&\n\tif ((VAR2->VAR3 & VAR4)) {",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR2, VAR4,\n\tVAR5 = FUN3(VAR2, VAR4,\n\tFUN4(VAR2, VAR6);\n\tFUN5(VAR2, VAR6);\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tif (!VAR4)\n\tVAR5 = FUN2(VAR2, VAR4,\n\tVAR5 = FUN3(VAR2, VAR4,\n\tif (VAR5 < 0) {\n\tFUN4(VAR2, VAR6);\n\tFUN5(VAR2, VAR7,\n\tFUN6(VAR2);\n\tVAR5 = FUN7(VAR2, VAR8,\n\tVAR5 = FUN8(VAR2, VAR8,\n\tFUN4(VAR2, VAR6);\n\tFUN9(VAR2, VAR6);\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif ((VAR2->VAR3 & VAR4) &&\n\tif ((VAR2->VAR3 & VAR5) && !VAR6 &&\n\tif ((VAR2->VAR3 & VAR4))",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR2->VAR3, VAR4);\n\tFUN3(&VAR2->VAR3, VAR4);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2, \"\","
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4[VAR5->VAR6];\n\tif ((VAR2->VAR7 & VAR8) && !VAR9 &&\n FUN2(VAR2, VAR3, VAR10->VAR11)) {\n\tFUN3(VAR2, VAR12);\n\tFUN4(VAR2, \"\");\n\tVAR13 = FUN5(VAR2, VAR10->VAR11);\n\tFUN6(VAR13);\n\tVAR14 = FUN7(VAR2, VAR10,\n\tVAR14 = FUN8(VAR2, VAR10,\n\tif (VAR14 < 0) {\n\tFUN3(VAR2, VAR12);\n\tFUN9(VAR2, VAR15,\n\tFUN10(VAR2);\n\tVAR14 = FUN11(VAR2, VAR5,\n\tVAR14 = FUN12(VAR2, VAR5,\n\tFUN3(VAR2, VAR12);\n\tFUN13(VAR2, VAR12);\n\treturn VAR14;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4[VAR5->VAR6];\n\tVAR7 = FUN2(VAR8->VAR9);\n\tif (!VAR7) {\n\tFUN3(VAR2, VAR7)) {\n FUN4(VAR2, VAR3, VAR8->VAR9)) {\n\tFUN5(VAR2, VAR7);\n\tFUN6(VAR2, \"\");",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tbool VAR5, bool VAR6)\n\tif (!VAR4)\n\tVAR7 = VAR2->VAR8[VAR9->VAR10];\n\tVAR11 = FUN2(VAR4->VAR12);\n\tif (!VAR11) {\n\tFUN3(VAR2, VAR11)) {\n FUN4(VAR2, VAR7, VAR4->VAR12)) {\n\tVAR13 = FUN5(VAR2, VAR4->VAR12);\n\tFUN6(VAR11);\n\tVAR14 = FUN7(VAR2, VAR4,\n\tVAR14 = FUN8(VAR2, VAR4,\n\tFUN9(VAR2, VAR11);\n\tFUN10(VAR2, VAR15,",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tstruct VAR5 *VAR6,\n\tbool VAR7, bool VAR8)\n\tif (!VAR6)\n\tVAR9 = VAR2->VAR10[VAR4->VAR11];\n\tVAR12 = FUN2(VAR6->VAR13);\n\tif (!VAR12) {\n\tFUN3(VAR2, VAR12)) {\n FUN4(VAR2, VAR9, VAR6->VAR13)) {\n\tVAR14 = FUN5(VAR2, VAR6->VAR13);\n\tFUN6(VAR12);\n\tVAR15 = FUN7(VAR2, VAR6,\n\tVAR15 = FUN8(VAR2, VAR6,\n\tFUN9(VAR2);\n\tVAR15 = FUN10(VAR2, VAR4,\n\tVAR15 = FUN11(VAR2, VAR4,\n\tFUN12(VAR2, VAR12);"
+    ]
+}

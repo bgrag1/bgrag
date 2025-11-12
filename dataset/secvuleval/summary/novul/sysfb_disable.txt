@@ -1,0 +1,1 @@
+ Function purpose: The function disables system framebuffer (sysfb) if the given device is the parent device of the current screen information, and then registers the unregistration of the sysfb.

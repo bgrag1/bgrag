@@ -1,0 +1,1 @@
+ Function purpose: The function "notify_handler" in the code snippet is responsible for handling ACPI events, determining the type of event (button press or switch event), and updating the input devices accordingly, including handling wakeup events and autorelease functionality.

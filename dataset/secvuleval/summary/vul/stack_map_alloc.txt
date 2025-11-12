@@ -1,0 +1,1 @@
+ Function purpose: The function allocates and initializes a stack map for BPF (Berkeley Packet Filter) programs, ensuring that the map's attributes are valid and setting up necessary resources for storing stack traces.

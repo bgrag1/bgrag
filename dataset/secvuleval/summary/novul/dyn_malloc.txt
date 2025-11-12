@@ -1,0 +1,1 @@
+ Function purpose: The function "dyn_malloc" in the code snippet is responsible for dynamically allocating memory in a custom memory allocator, managing memory chunks between free and used lists, and resizing chunks if necessary.

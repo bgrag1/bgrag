@@ -1,0 +1,14 @@
+digraph did_set_whichwrap {  
+"1000102" [label = "(METHOD,did_set_whichwrap)" ]
+"1000113" [label = "(METHOD_RETURN,int)" ]
+"1000103" [label = "(PARAM,optset_T *args)" ]
+"1000106" [label = "(<operator>.assignment,**varp = (char_u **)args->os_varp)" ]
+"1000108" [label = "(<operator>.cast,(char_u **)args->os_varp)" ]
+  "1000106" -> "1000113"  [ label = "DDG: (char_u **)args->os_varp"] 
+  "1000106" -> "1000113"  [ label = "DDG: varp"] 
+  "1000103" -> "1000113"  [ label = "DDG: args"] 
+  "1000108" -> "1000113"  [ label = "DDG: args->os_varp"] 
+  "1000102" -> "1000103"  [ label = "DDG: "] 
+  "1000108" -> "1000106"  [ label = "DDG: args->os_varp"] 
+  "1000102" -> "1000106"  [ label = "DDG: "] 
+}

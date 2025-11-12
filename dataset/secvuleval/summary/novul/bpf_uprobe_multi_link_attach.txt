@@ -1,0 +1,1 @@
+ Function purpose: The function "bpf_uprobe_multi_link_attach" is designed to attach a multi-probe event to a specific process and path using eBPF, allowing for the insertion of breakpoints at multiple offsets within the target process's code, with optional return value handling.

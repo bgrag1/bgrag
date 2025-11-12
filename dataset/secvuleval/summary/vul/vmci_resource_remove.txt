@@ -1,0 +1,1 @@
+ Function purpose: The function removes a resource from the VMCI resource table by deleting it from the hash table and waiting for the resource's completion before releasing it.

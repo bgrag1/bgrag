@@ -1,0 +1,1 @@
+ Function purpose: The function "scmi_optee_chan_free" is designed to free resources associated with a specific SCMI channel, including closing the session, freeing shared memory, and removing the channel from a list, ensuring that the channel information is properly nullified after its use.

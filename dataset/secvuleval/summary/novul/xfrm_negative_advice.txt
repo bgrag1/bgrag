@@ -1,0 +1,1 @@
+ Function purpose: The function "xfrm_negative_advice" in the code snippet resets the destination cache for a socket "sk" if the destination entry "dst" is marked as obsolete, ensuring that the socket uses the most up-to-date network information.

@@ -1,0 +1,1 @@
+ Function purpose: The function validates an authorization code, checks the code challenge, retrieves the associated scopes, and returns the result along with the user's scope list and token duration.

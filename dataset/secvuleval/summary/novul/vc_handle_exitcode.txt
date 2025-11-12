@@ -1,0 +1,1 @@
+ Function purpose: The function "vc_handle_exitcode" processes specific exit codes from a virtual CPU (VC) exception, handling various operations such as reading/writing DR7, handling exceptions, and executing VM-related instructions, and returns the appropriate result based on the exit code.

@@ -1,0 +1,1 @@
+ Function purpose: The function "cpu5wdt_exit" is designed to deregister a miscellaneous device, release a specified I/O region, and clean up resources associated with a watchdog timer when the device is being removed or deinitialized.

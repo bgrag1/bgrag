@@ -1,0 +1,1 @@
+ Function purpose: The function "_ssl__SSLContext_cert_store_stats_impl" in the provided code snippet retrieves and counts the number of X.509 certificates and CRLs in the SSL context's certificate store, and returns these counts in a dictionary format.

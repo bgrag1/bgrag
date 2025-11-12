@@ -1,0 +1,1 @@
+ Function purpose: The function "pretty_print_packet" is responsible for printing packet details, including timestamp, capture length, packet length, and raw packet data, based on the specified output format flags (e.g., hex, ASCII).

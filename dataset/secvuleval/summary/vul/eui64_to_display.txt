@@ -1,0 +1,1 @@
+ Function purpose: The function "eui64_to_display" converts an EUI-64 address to a human-readable string format, including the manufacturer name if available, using network byte order for the conversion.

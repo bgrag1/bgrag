@@ -1,0 +1,1 @@
+ Function purpose: The function "f2fs_file_open" is designed to handle the opening of a file in the F2FS filesystem, ensuring encryption, compression, verity, and disk quota support are properly managed, and allocating necessary blocks for the file if required.

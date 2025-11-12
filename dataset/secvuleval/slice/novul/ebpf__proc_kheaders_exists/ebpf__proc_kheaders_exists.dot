@@ -1,0 +1,14 @@
+digraph proc_kheaders_exists {  
+"1000100" [label = "(METHOD,proc_kheaders_exists)" ]
+"1000107" [label = "(METHOD_RETURN,static inline int)" ]
+"1000101" [label = "(PARAM,void)" ]
+"1000103" [label = "(RETURN,return file_exists_and_ownedby(PROC_KHEADERS_PATH, 0);,return file_exists_and_ownedby(PROC_KHEADERS_PATH, 0);)" ]
+"1000104" [label = "(file_exists_and_ownedby,file_exists_and_ownedby(PROC_KHEADERS_PATH, 0))" ]
+  "1000103" -> "1000107"  [ label = "DDG: <RET>"] 
+  "1000104" -> "1000107"  [ label = "DDG: file_exists_and_ownedby(PROC_KHEADERS_PATH, 0)"] 
+  "1000104" -> "1000107"  [ label = "DDG: PROC_KHEADERS_PATH"] 
+  "1000101" -> "1000107"  [ label = "DDG: <anonymous>"] 
+  "1000100" -> "1000101"  [ label = "DDG: "] 
+  "1000104" -> "1000103"  [ label = "DDG: file_exists_and_ownedby(PROC_KHEADERS_PATH, 0)"] 
+  "1000100" -> "1000104"  [ label = "DDG: "] 
+}

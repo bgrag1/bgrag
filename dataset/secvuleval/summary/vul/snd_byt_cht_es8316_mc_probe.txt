@@ -1,0 +1,1 @@
+ Function purpose: The function "snd_byt_cht_es8316_mc_probe" is responsible for initializing and registering a sound card device for the ES8316 audio codec, including setting up the device's properties, GPIOs, and sound components based on the platform and ACPI information.

@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (!VAR2->VAR3)\n\tVAR4 = FUN2(VAR2->VAR3, sizeof(int), VAR5);\n\tif (!VAR4)\n\tfor (VAR6 = VAR2->VAR3 - 1; VAR6 >= 0; VAR6--) {\n\tVAR7 = FUN2(VAR8, sizeof(int) * 2, VAR5);\n\tVAR2->VAR9 = VAR8;\n\tFUN3(VAR4, VAR7, VAR8);\n\tVAR2->VAR10 = VAR7;\n\tFUN4(VAR4);\n\tif (!VAR7)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tmemmove(&VAR3[VAR4 + 1], &VAR3[VAR4],\n\t(VAR5 - VAR4) * sizeof(int));"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tmemmove(&VAR3[VAR4 + 1], &VAR3[VAR4],\n\t(VAR5 - VAR4) * sizeof(int));"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tmemmove(&VAR3[VAR4 + 1], &VAR3[VAR4],\n\t(VAR5 - VAR4) * sizeof(int));",
+        "static int FUN1(struct VAR1 *VAR2)\n\tint *VAR3, VAR4, VAR5, VAR6 = 0, *VAR7;\n\tif (!VAR2->VAR8)\n\tVAR3 = FUN2(VAR2->VAR8, sizeof(int), VAR9);\n\tif (!VAR3)\n\tfor (VAR5 = 0; VAR5 < VAR6; VAR5++) {\n\t(VAR6 - VAR5) * sizeof(int));\n\tVAR6++;\n\tVAR7 = FUN2(VAR6, sizeof(int) * 2, VAR9);\n\tFUN3(VAR3, VAR7, VAR6);\n\tFUN4(VAR3);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tint *VAR3, VAR4, VAR5, VAR6 = 0, *VAR7;\n\tif (!VAR2->VAR8)\n\tVAR3 = FUN2(VAR2->VAR8, sizeof(int), VAR9);\n\tfor (VAR5 = 0; VAR5 < VAR6; VAR5++) {\n\t(VAR6 - VAR5) * sizeof(int));\n\tVAR6++;\n\tVAR7 = FUN2(VAR6, sizeof(int) * 2, VAR9);\n\tFUN3(VAR3, VAR7, VAR6);\n\tVAR2->VAR10 = VAR7;\n\tFUN4(VAR3);\n\tif (!VAR7)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tint *VAR3, VAR4, VAR5, VAR6 = 0, *VAR7;\n\tif (!VAR2->VAR8)\n\tVAR3 = FUN2(VAR2->VAR8, sizeof(int), VAR9);\n\tfor (VAR5 = 0; VAR5 < VAR6; VAR5++) {\n\t(VAR6 - VAR5) * sizeof(int));\n\tVAR6++;\n\tVAR7 = FUN2(VAR6, sizeof(int) * 2, VAR9);\n\tVAR2->VAR10 = VAR6;\n\tFUN3(VAR3, VAR7, VAR6);\n\tVAR2->VAR11 = VAR7;\n\tFUN4(VAR3);\n\tif (!VAR7)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (!VAR2->VAR3)\n\tVAR4 = FUN2(VAR2->VAR3, sizeof(int), VAR5);\n\tif (!VAR4)\n\tFUN3(VAR4, VAR6, VAR7);\n\tVAR2->VAR8 = VAR6;\n\tFUN4(VAR4);\n\tif (!VAR6)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tif (!VAR2->VAR3)\n\tVAR4 = FUN2(VAR2->VAR3, sizeof(int), VAR5);\n\tif (!VAR4)\n\tfor (VAR6 = VAR2->VAR3 - 1; VAR6 >= 0; VAR6--) {\n\tVAR7 = FUN2(VAR8, sizeof(int) * 2, VAR5);\n\tVAR2->VAR9 = VAR8;\n\tFUN3(VAR4, VAR7, VAR8);\n\tVAR2->VAR10 = VAR7;\n\tFUN4(VAR4);\n\tif (!VAR7)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4, sizeof(int) * 2, VAR5);\n\tVAR2->VAR6 = VAR4;\n\tFUN3(VAR7, VAR3, VAR4);\n\tVAR2->VAR8 = VAR3;\n\tFUN4(VAR7);\n\tif (!VAR3)"
+    ]
+}

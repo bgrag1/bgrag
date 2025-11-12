@@ -1,0 +1,1 @@
+ Function purpose: The function formats the fractional part of a nanosecond value into a string with a specified precision and decimal point, ensuring it fits within a given buffer.

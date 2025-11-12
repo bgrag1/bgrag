@@ -1,0 +1,39 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4 = VAR2->VAR5->VAR6;\n\tif (VAR7->FUN2(VAR4)) {\n\tFUN3(VAR4, VAR8,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\tVAR7 = VAR2->VAR8->VAR9;\n\tif (VAR10->FUN2(VAR7)) {\n\tVAR10->FUN3(VAR7, VAR5);\n\tVAR10->FUN4(VAR7, VAR5,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR2);\n\tFUN3(&VAR4->VAR2,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR2);\n\tFUN3(&VAR4->VAR2,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\tVAR7 = VAR2->VAR8->VAR9;\n\tif (VAR10->FUN2(VAR7)) {\n\tVAR10->FUN3(VAR7, VAR5,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tif (VAR4->VAR5 == VAR6) {\n\tif (VAR4->VAR5 == VAR6)",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tvoid *VAR4)\n\tVAR5 = VAR4;",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\tVAR7 = VAR2->VAR8->VAR9;\n\tif (VAR10->FUN2(VAR7)) {\n\tVAR10->FUN3(VAR7, VAR5);\n\tVAR10->FUN4(VAR7, VAR5,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\t(VAR5 < 4) ? 0x30000 : 0x40000)) {\n\tu32 VAR7 *VAR8 = VAR9->VAR10[2].VAR11\n\t+ 0x1034 + (0x4000 * (VAR5 & 3));\n\tVAR12->VAR13 = FUN2(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\tVAR7 = VAR2->VAR8->VAR9;\n\tif (VAR10->FUN2(VAR7)) {\n\tVAR10->FUN3(VAR7, VAR5);\n\tVAR10->FUN4(VAR7, VAR5,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR5, VAR6);\n\tFUN3(&VAR4->VAR5, VAR6);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4 = VAR2->VAR5->VAR6;\n\tif (VAR7->FUN2(VAR4)) {\n\tif (-1 == FUN3(VAR4,\n\tFUN3(VAR4, 0);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\t(VAR5 < 4) ? 0x30000 : 0x40000)) {\n\tu32 VAR7 *VAR8 = VAR9->VAR10[2].VAR11\n\t+ 0x1034 + (0x4000 * (VAR5 & 3));",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4 = VAR2->VAR5->VAR6;\n\tif (VAR7->FUN2(VAR4)) {\n\tFUN3(VAR4, VAR8, \"\", VAR3);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\tVAR7 = VAR2->VAR8->VAR9;\n\tif (VAR10->FUN2(VAR7)) {\n\tVAR10->FUN3(VAR7, VAR5);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR5, VAR6);\n\tFUN3(&VAR4->VAR5, VAR6);"
+    ],
+    "array": [
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\t(VAR5 < 4) ? 0x30000 : 0x40000)) {\n\tu32 VAR7 *VAR8 = VAR9->VAR10[2].VAR11\n\t+ 0x1034 + (0x4000 * (VAR5 & 3));"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR2);\n\tFUN3(&VAR4->VAR2,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tFUN2(&VAR4->VAR2);\n\tFUN3(&VAR4->VAR2,",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\t(VAR5 < 4) ? 0x30000 : 0x40000)) {\n\tu32 VAR7 *VAR8 = VAR9->VAR10[2].VAR11\n\t+ 0x1034 + (0x4000 * (VAR5 & 3));\n\tVAR12->VAR13 = FUN2(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tint VAR4 = 0, VAR5 = VAR2->VAR6;\n\t(VAR5 < 4) ? 0x30000 : 0x40000)) {\n\tu32 VAR7 *VAR8 = VAR9->VAR10[2].VAR11\n\t+ 0x1034 + (0x4000 * (VAR5 & 3));\n\tVAR12->VAR13 = FUN2(VAR8);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);",
+        "int FUN1(struct VAR1 *VAR2, enum phy_func VAR3,\n\tVAR4->VAR5 = FUN2(&VAR6[1]);\n\tVAR4->VAR7 = FUN2(&VAR6[3]);\n\tVAR4->VAR8 = FUN2(&VAR6[4]);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function processes an XDP (eXpress Data Path) packet, determining whether to pass, drop, transmit, or redirect the packet based on the XDP program's action, updating relevant statistics and freeing buffers as necessary.

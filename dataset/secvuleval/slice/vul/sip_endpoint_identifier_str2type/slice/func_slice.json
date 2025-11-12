@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static int FUN1(const char *VAR1)\n\tif (!FUN2(VAR1, \"\")) {\n\t} else if (!FUN2(VAR1, \"\")) {\n\t} else if (!FUN2(VAR1, \"\")) {\n\t} else if (!FUN2(VAR1, \"\")) {\n\t} else if (!FUN2(VAR1, \"\")) {\n\t} else if (!FUN2(VAR1, \"\")) {"
+    ]
+}

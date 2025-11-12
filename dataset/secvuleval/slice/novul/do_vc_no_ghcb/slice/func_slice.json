@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "void VAR1 FUN1(struct VAR2 *VAR3, unsigned long VAR4)\n\tVAR3->VAR5 = VAR6.VAR7;\n\tif (VAR8 == 0x80000000 && (VAR3->VAR5 < 0x8000001f))\n\telse if ((VAR8 == 0x8000001f && !(VAR3->VAR5 & FUN2(1))))",
+        "void VAR1 FUN1(struct VAR2 *VAR3, unsigned long VAR4)\n\tu16 VAR5 = *(unsigned short *)VAR3->VAR6;\n\tVAR3->VAR6 += 2;",
+        "void VAR1 FUN1(struct VAR2 *VAR3, unsigned long VAR4)\n\tunsigned int VAR5 = FUN2(VAR3->VAR6, 32);\n\tVAR7.VAR5 = VAR5;\n\tif (VAR5 == 0x80000000 && (VAR3->VAR6 < 0x8000001f))\n\telse if ((VAR5 == 0x8000001f && !(VAR3->VAR6 & FUN3(1))))",
+        "void VAR1 FUN1(struct VAR2 *VAR3, unsigned long VAR4)\n\tunsigned int VAR5 = FUN2(VAR3->VAR6, 32);\n\tVAR7.VAR5 = VAR5;"
+    ]
+}

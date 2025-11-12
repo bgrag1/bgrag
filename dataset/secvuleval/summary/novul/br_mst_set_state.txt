@@ -1,0 +1,1 @@
+ Function purpose: The function sets the state of a specified VLAN on a bridge port, and if the VLAN is part of the Multiple Spanning Tree Instance (MSTI), it also updates the state for that MSTI.

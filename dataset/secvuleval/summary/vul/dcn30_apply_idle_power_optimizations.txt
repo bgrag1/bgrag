@@ -1,0 +1,1 @@
+ Function purpose: The function "dcn30_apply_idle_power_optimizations" in the provided code snippet is designed to enable or disable memory access latency optimizations (MALL) on a display controller, based on the current state of the display and its streams, to potentially reduce power consumption during idle periods.

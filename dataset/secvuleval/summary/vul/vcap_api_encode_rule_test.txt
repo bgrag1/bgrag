@@ -1,0 +1,1 @@
+ Function purpose: The function "vcap_api_encode_rule_test" is designed to test the functionality of the VCAP (Virtual Chaining and Addressing Protocol) API for encoding and managing rules, specifically for the IS2 type in the vcap_admin structure.

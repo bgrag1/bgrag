@@ -1,0 +1,1 @@
+ Function purpose: The function "osnoise_init_top" initializes and sets up a tool for monitoring OS noise, specifically for the top component, by registering an event handler and allocating necessary data structures.

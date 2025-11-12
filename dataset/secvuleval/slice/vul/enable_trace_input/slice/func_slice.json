@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, const char *VAR4, const char *VAR5, struct VAR6 *VAR7)\n VAR8 = FUN2(VAR2, VAR3);\n if (VAR8 == NULL) {\n FUN3(VAR8, VAR5, VAR4, NULL, VAR7);\n return (VAR8->VAR9 == NULL ? 503 : 0);",
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, const char *VAR4, const char *VAR5, struct VAR6 *VAR7)\n FUN2(VAR8, VAR5, VAR4, NULL, VAR7);\n return (VAR8->VAR9 == NULL ? 503 : 0);",
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, const char *VAR4, const char *VAR5, struct VAR6 *VAR7)\n FUN2(VAR8, VAR5, VAR4, NULL, VAR7);\n return (VAR8->VAR9 == NULL ? 503 : 0);",
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, const char *VAR4, const char *VAR5, struct VAR6 *VAR7)\n FUN2(VAR8, VAR5, VAR4, NULL, VAR7);\n return (VAR8->VAR9 == NULL ? 503 : 0);"
+    ]
+}

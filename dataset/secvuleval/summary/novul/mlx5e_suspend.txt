@@ -1,0 +1,1 @@
+ Function purpose: The function "mlx5e_suspend" is designed to suspend the operation of a specific auxiliary device associated with an mlx5_core_dev, by calling the "_mlx5e_suspend" function for the actual auxiliary device and then cleaning up the suspended state.

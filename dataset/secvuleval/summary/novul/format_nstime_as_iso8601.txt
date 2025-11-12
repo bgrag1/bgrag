@@ -1,0 +1,1 @@
+ Function purpose: The function converts a given "nstime_t" structure, which contains both seconds and nanoseconds, into a string formatted as ISO 8601, optionally including fractional seconds based on the specified precision.

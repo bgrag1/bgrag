@@ -1,0 +1,1 @@
+ Function purpose: The function migrates a memory charge and reference to a new memory cgroup for a given folio, ensuring proper accounting and handling of large folios.

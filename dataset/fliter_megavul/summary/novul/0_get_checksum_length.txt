@@ -1,0 +1,1 @@
+ Function purpose: The function "get_checksum_length" determines the checksum length for QUIC encryption based on the connection's mode and available cryptographic contexts.

@@ -1,0 +1,1 @@
+ Function purpose: The function drm_dp_add_payload_part2 is responsible for completing the allocation of a payload to a remote display port in a multi-stream transmission (MST) topology, after ensuring that the initial part of the payload creation was successful.

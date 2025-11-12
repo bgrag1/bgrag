@@ -1,0 +1,1 @@
+ Function purpose: The function "rswitch_tx_free" is designed to free transmit buffers and update statistics for a network device by marking the transmit descriptors as empty.

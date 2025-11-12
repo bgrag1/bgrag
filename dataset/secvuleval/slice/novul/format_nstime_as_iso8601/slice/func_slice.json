@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tsnprintf(VAR2, VAR3, \"\");",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = VAR2;\n\tVAR7 = snprintf(VAR6, VAR8,\n\tif (VAR7 < 0) {\n\tif ((unsigned int)VAR7 >= VAR8) {\n\tVAR6 += VAR7;\n\tVAR8 -= VAR7;\n\tFUN2(VAR6, VAR8, (VAR9)VAR5->VAR10, VAR11, VAR12);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tFUN2(VAR6, VAR7, (VAR8)VAR5->VAR9, VAR10, VAR11);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = FUN2(&VAR5->VAR7, &VAR8);\n\tif (VAR6 == NULL) {",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n char *VAR6, gboolean VAR7, int VAR8)\n\tFUN2(VAR9, VAR10, (VAR11)VAR5->VAR12, VAR6, VAR8);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = FUN2(&VAR5->VAR7, &VAR8);\n\tif (VAR6 == NULL) {",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tsnprintf(VAR2, VAR3, \"\");"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tsnprintf(VAR2, VAR3, \"\");",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = VAR2;\n\tVAR7 = VAR3;\n\tVAR8 = snprintf(VAR6, VAR7,\n\tif (VAR8 < 0) {\n\tif ((unsigned int)VAR8 >= VAR7) {\n\tVAR6 += VAR8;\n\tVAR7 -= VAR8;\n\tFUN2(VAR6, VAR7, (VAR9)VAR5->VAR10, VAR11, VAR12);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = VAR2;\n\tVAR7 = VAR3;\n\tVAR8 = snprintf(VAR6, VAR7,\n\tif (VAR8 < 0) {\n\tif ((unsigned int)VAR8 >= VAR7) {\n\tVAR6 += VAR8;\n\tVAR7 -= VAR8;\n\tFUN2(VAR6, VAR7, (VAR9)VAR5->VAR10, VAR11, VAR12);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tsnprintf(VAR2, VAR3, \"\");",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = VAR3;\n\tVAR7 = snprintf(VAR8, VAR6,\n\tif (VAR7 < 0) {\n\tif ((unsigned int)VAR7 >= VAR6) {\n\tVAR8 += VAR7;\n\tVAR6 -= VAR7;\n\tFUN2(VAR8, VAR6, (VAR9)VAR5->VAR10, VAR11, VAR12);",
+        "FUN1(VAR1 *VAR2, size_t VAR3, const VAR4 *VAR5,\n\tVAR6 = VAR2;\n\tVAR7 = VAR3;\n\tVAR8 = snprintf(VAR6, VAR7,\n\tif (VAR8 < 0) {\n\tif ((unsigned int)VAR8 >= VAR7) {\n\tVAR7 -= VAR8;\n\tFUN2(VAR6, VAR7, (VAR9)VAR5->VAR10, VAR11, VAR12);"
+    ]
+}

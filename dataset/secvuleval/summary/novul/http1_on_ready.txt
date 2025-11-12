@@ -1,0 +1,1 @@
+ Function purpose: The function "http1_on_ready" is designed to resume slow clients by flipping a specific bit in the protocol state and forcing an event to occur, indicating that the protocol is ready.

@@ -1,0 +1,1 @@
+ Function purpose: The function "glutAddSubMenu" in the provided code snippet is used to add a submenu to the current menu, associating it with a given label and submenu ID.

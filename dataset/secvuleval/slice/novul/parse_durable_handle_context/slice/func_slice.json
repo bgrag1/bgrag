@@ -1,0 +1,27 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!(VAR3->VAR4.VAR5 & VAR6)) {",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = VAR2->VAR4;\n\tVAR5->VAR6->VAR4 = VAR4;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tif ((VAR4 && (VAR4->VAR5 & VAR6)) ||\n\tif ((VAR4 && (VAR4->VAR5 & VAR6)) ||",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n VAR5++) {\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (VAR9->VAR10 == VAR11 ||\n VAR9->VAR10 == VAR12) {\n\tVAR9->VAR10 = VAR5;\n\tif (VAR9->VAR10 == VAR6 ||\n VAR9->VAR10 == VAR12) {\n\tVAR9->VAR10 = VAR5;\n\tif (VAR9->VAR10 == VAR11 ||\n VAR9->VAR10 == VAR6) {\n\tVAR9->VAR10 = VAR5;\n\tif (VAR9->VAR10 == VAR11)\n\tif (VAR9->VAR10 == VAR6 ||\n VAR9->VAR10 == VAR12) {\n\tVAR9->VAR10 = VAR5;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4->VAR5.VAR6.VAR7;\n\tVAR8->VAR9 = FUN2(VAR3);\n\tif (!VAR8->VAR9) {",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (FUN4(VAR8)) {\n\tif (!VAR8)\n\tVAR9 =\n\t(struct VAR10 *)VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4->VAR5.VAR6;\n\tVAR7->VAR8 = FUN2(VAR3);\n\tif (!VAR7->VAR8) {\n\tFUN3(VAR7->VAR8);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (FUN4(VAR8)) {\n\tif (!VAR8)\n\tVAR9 = (struct VAR10 *)VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!memcmp(VAR3->VAR4, VAR5->VAR6->VAR7,",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4->VAR5;\n\tif ((VAR6 && (VAR6->VAR7 & VAR8)) ||\n VAR3 == VAR9) {\n\tif ((VAR6 && (VAR6->VAR7 & VAR8)) ||\n VAR3 == VAR9) {",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (FUN4(VAR8)) {\n\tVAR9 = FUN5(VAR8);\n\treturn VAR9;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 = FUN2(VAR5->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (FUN4(VAR8)) {\n\tif (!VAR8)\n\tVAR9 = (struct VAR10 *)VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 =\n\tFUN2(VAR5->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 = FUN2(VAR5->VAR6);\n\tVAR3->VAR6 =",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 =\n\tFUN2(VAR5->VAR6);"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tfor (VAR5 = VAR6; VAR5 <= FUN2(VAR7);\n VAR5++) {\n\tVAR8 = FUN3(VAR4, VAR7[VAR5 - 1], 4);\n\tif (FUN4(VAR8)) {\n\tVAR9 = FUN5(VAR8);\n\tif (!VAR8)\n\tif (VAR10->VAR11 == VAR12 ||\n VAR10->VAR11 == VAR13) {\n\tVAR14 = (struct VAR15 *)VAR8;\n\tVAR10->VAR11 = VAR5;\n\tif (VAR10->VAR11 == VAR6 ||\n VAR10->VAR11 == VAR13) {\n\tVAR16 = (struct VAR17 *)VAR8;\n\tVAR10->VAR11 = VAR5;\n\tif (VAR10->VAR11 == VAR12 ||\n VAR10->VAR11 == VAR6) {\n\tVAR18 =\n\t(struct VAR19 *)VAR8;\n\tVAR10->VAR11 = VAR5;\n\tif (VAR10->VAR11 == VAR12)\n\tif (VAR10->VAR11 == VAR6 ||\n VAR10->VAR11 == VAR13) {\n\tVAR10->VAR11 = VAR5;\n\treturn VAR9;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!memcmp(VAR3->VAR4, VAR5->VAR6->VAR7,",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (!memcmp(VAR3->VAR4, VAR5->VAR6->VAR7,"
+    ]
+}

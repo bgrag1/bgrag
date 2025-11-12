@@ -1,0 +1,1 @@
+ Function purpose: The function "mlx5e_suspend" is designed to suspend the operation of a specific auxiliary device associated with a Mellanox 5th generation network interface, by first identifying the correct auxiliary device and then calling the appropriate suspend function for it, followed by cleaning up the suspended state.

@@ -1,0 +1,1 @@
+ Function purpose: The function "rt6_get_pcpu_route" retrieves a per-CPU route from a fib6_result, checks its validity, and handles invalid routes by releasing the previous route and returning NULL if necessary.

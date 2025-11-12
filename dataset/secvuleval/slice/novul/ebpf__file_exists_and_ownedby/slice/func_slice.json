@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static inline int FUN1(const char *VAR1, uid_t VAR2)\n if ((VAR3 = FUN2(VAR1, &VAR4)) == 0) {\n VAR5::VAR6 << \"\" << VAR5::FUN3(VAR1) << \"\";\n return VAR3;"
+    ]
+}

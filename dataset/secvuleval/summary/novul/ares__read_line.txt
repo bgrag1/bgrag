@@ -1,0 +1,1 @@
+ Function purpose: The function "ares__read_line" reads a line of text from a file, dynamically resizing the buffer as needed to accommodate the line's length, and returns the line as a string.

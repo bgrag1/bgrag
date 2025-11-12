@@ -1,0 +1,1 @@
+ Function purpose: The function initializes HDMI audio functionality for a VC4 HDMI device by registering an ASoC component and codec device, setting up the audio link, and configuring the DMA engine for PCM operations.

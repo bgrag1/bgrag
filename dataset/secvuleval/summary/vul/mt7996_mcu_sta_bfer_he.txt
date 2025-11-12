@@ -1,0 +1,1 @@
+ Function purpose: The function "mt7996_mcu_sta_bfer_he" is designed to configure the beamforming settings for a station (STA) in a 802.11ax (HE) network, specifically for devices using the MT7996 chipset, by determining the appropriate transmission mode, beamforming capabilities, and other parameters based on the STA's HE capabilities and the PHY settings.

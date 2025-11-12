@@ -1,0 +1,19 @@
+{
+    "array": [
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (VAR4 == 4 && VAR5[0] == 0xF3 && VAR5[1] == 0x0F && VAR5[2] == 0x1E && VAR5[3] == 0xFA) {",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n size_t VAR4 = VAR5[1][0] == '' ? 1 : 0;\n size_t VAR6 = VAR5[1][0] == '' ? 1 : 0;",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (VAR4 == 4 && VAR5[0] == 0xF3 && VAR5[1] == 0x0F && VAR5[2] == 0x1E && VAR5[3] == 0xFA) {",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n uint64_t VAR4 = (VAR5)VAR6;\n size_t VAR7 = VAR8[1][0] == '' ? 1 : 0;\n size_t VAR9 = VAR8[1][0] == '' ? 1 : 0;\n VAR10::string VAR11 = VAR8[1].FUN2((VAR7 || VAR9), VAR8[1].FUN3(\"\") - (VAR7 || VAR9));\n const uint64_t VAR12 = (VAR9 ? -1 : 1) * FUN4(VAR11);\n if (VAR12 == 0)\n const uint64_t VAR13 = VAR4 + VAR12 + VAR14;\n VAR15 += VAR10::FUN5(\"\", VAR13, VAR8[2]);\n VAR16 << VAR15;",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (VAR4 == 4 && VAR5[0] == 0xF3 && VAR5[1] == 0x0F && VAR5[2] == 0x1E && VAR5[3] == 0xFA) {",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (VAR4 == 4 && VAR5[0] == 0xF3 && VAR5[1] == 0x0F && VAR5[2] == 0x1E && VAR5[3] == 0xFA) {"
+    ],
+    "integer": [
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n uint64_t VAR4 = (VAR5)VAR6;\n size_t VAR7 = VAR8[1][0] == '' ? 1 : 0;\n size_t VAR9 = VAR8[1][0] == '' ? 1 : 0;\n VAR10::string VAR11 = VAR8[1].FUN2((VAR7 || VAR9), VAR8[1].FUN3(\"\") - (VAR7 || VAR9));\n const uint64_t VAR12 = (VAR9 ? -1 : 1) * FUN4(VAR11);\n if (VAR12 == 0)\n const uint64_t VAR13 = VAR4 + VAR12 + VAR14;\n VAR15 += VAR10::FUN5(\"\", VAR13);\n VAR15 += VAR10::FUN5(\"\", VAR13, VAR8[2]);\n const bool VAR16 = VAR13 > VAR17;\n const uint64_t VAR18 = VAR16 ? VAR13 - VAR17 : VAR17 - VAR13;\n VAR15 += VAR10::FUN5(\"\", VAR19.FUN2(0, VAR20), VAR16 ? '' : '', VAR18, VAR19.FUN2(VAR21));\n VAR22 << VAR15;",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n size_t VAR4 = 0;\n const uint64_t VAR5 = (VAR6)VAR7 + VAR4 + VAR8;\n const bool VAR9 = VAR10 > VAR5;\n const uint64_t VAR11 = VAR9 ? VAR10 - VAR5 : VAR5 - VAR10;\n VAR12 += VAR13::FUN2(\"\", VAR14.FUN3(0, VAR15), VAR9 ? '' : '', VAR11, VAR14.FUN3(VAR16));\n VAR17 << VAR12;"
+    ],
+    "API": [
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (!VAR4::VAR5::FUN2(\"\")) {",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n if (!VAR4::VAR5::FUN2(\"\")) {",
+        "VAR1::SAssembly VAR1::FUN1(const VAR2& VAR3) {\n uint64_t VAR4 = (VAR5)VAR6;\n VAR7.FUN2(VAR8);\n memcpy(VAR7.FUN3(), (VAR9::VAR10*)VAR4, VAR8);\n if (VAR8 == 4 && VAR7[0] == 0xF3 && VAR7[1] == 0x0F && VAR7[2] == 0x1E && VAR7[3] == 0xFA) {\n VAR4 += VAR8;"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "static int FUN1(const struct VAR1 *VAR2, struct VAR3 *VAR4)\n\tconst struct VAR5 *VAR6 = FUN2(VAR2);\n\tif (!VAR2)",
+        "static int FUN1(const struct VAR1 *VAR2, struct VAR3 *VAR4)\n\treturn FUN2(VAR4,"
+    ]
+}

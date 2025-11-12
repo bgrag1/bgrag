@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "VAR1 FUN1(struct VAR2 *VAR3, __be32 VAR4, __be32 VAR5)\n\tVAR6 = FUN2(VAR3->VAR7);\n\tif (!VAR6)"
+    ]
+}

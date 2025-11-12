@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tVAR3 = VAR4->VAR3;\n\tif (!VAR3)",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR2->VAR4;\n\tVAR5 = FUN2(VAR6, VAR2->VAR7, VAR2->VAR8, VAR4);\n\treturn VAR5;\n\tVAR5 = FUN3(VAR6, VAR2->VAR7, VAR2->VAR8,\n\treturn VAR5;\n\tVAR5 = FUN4(VAR6, VAR2->VAR7, VAR2->VAR8,\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tVAR5 = FUN3(VAR2);\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR2->VAR4;\n\tVAR5 = FUN2(VAR4, VAR2->VAR6, VAR2->VAR7);\n\tif (VAR2->VAR7 <= 1) {\n\tVAR8 = FUN3(VAR4, VAR2->VAR6, VAR2->VAR7, VAR9);\n\treturn VAR8;\n\tVAR8 = FUN4(VAR4, VAR2->VAR6, VAR2->VAR7,\n\treturn VAR8;\n\tVAR8 = FUN5(VAR4, VAR2->VAR6, VAR2->VAR7,\n\treturn VAR8;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = &VAR2->VAR4;\n\tFUN2(VAR4, \"\");\n\tFUN2(VAR4, \"\");\n\tFUN2(VAR4, \"\");"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR2->VAR4;\n\tstruct VAR5 *VAR6 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR6, VAR2->VAR8, VAR2->VAR9);\n\tif (VAR2->VAR9 <= 1) {\n\tVAR10 = FUN3(VAR6, VAR2->VAR8, VAR2->VAR9, VAR4);\n\treturn VAR10;",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR2->VAR4;\n\tstruct VAR5 *VAR6 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR6, VAR2->VAR8, VAR2->VAR9);\n\tif (VAR2->VAR9 <= 1) {\n\tVAR10 = FUN3(VAR6, VAR2->VAR8, VAR2->VAR9, VAR4);\n\treturn VAR10;\n\tVAR10 = FUN4(VAR6, VAR2->VAR8, VAR2->VAR9,\n\treturn VAR10;\n\tVAR10 = FUN5(VAR6, VAR2->VAR8, VAR2->VAR9,\n\treturn VAR10;"
+    ]
+}

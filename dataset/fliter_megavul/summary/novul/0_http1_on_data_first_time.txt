@@ -1,0 +1,1 @@
+ Function purpose: The function "http1_on_data_first_time" processes the initial data received from a client connection, checks for HTTP/2.0 protocol sniffing, and delegates further processing to "http1_consume_data" if appropriate.

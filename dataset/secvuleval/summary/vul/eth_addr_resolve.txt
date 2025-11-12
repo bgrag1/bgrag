@@ -1,0 +1,1 @@
+ Function purpose: The function "eth_addr_resolve" is designed to resolve a hardware (Ethernet) address to a human-readable name, using various lookup tables and methods to find a match, and update the status accordingly.

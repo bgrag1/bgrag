@@ -1,0 +1,1 @@
+ Function purpose: The function "cxl_mem_probe" is responsible for initializing and setting up a CXL memory device, including creating debugfs entries, enumerating ports, and adding endpoints, while also handling potential errors and edge cases such as port topology not found or platform-specific PMEM disabling.

@@ -1,0 +1,1 @@
+ Function purpose: The function processes a list of descriptor entries associated with an IRQ entry, moving completed descriptors to a separate list and handling their completion status, including abort cases.

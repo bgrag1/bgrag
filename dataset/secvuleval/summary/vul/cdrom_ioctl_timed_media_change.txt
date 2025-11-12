@@ -1,0 +1,1 @@
+ Function purpose: The function "cdrom_ioctl_timed_media_change" checks if the CD-ROM drive supports the media change detection feature, retrieves the current media change status, updates the user-provided structure with the time of the last media change, and returns the updated information to the user.

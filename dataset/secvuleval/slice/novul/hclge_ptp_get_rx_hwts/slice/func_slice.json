@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2);",
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tif (!VAR5->VAR6 || !FUN2(VAR7, &VAR5->VAR6->VAR8))",
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tFUN2(&VAR5->VAR6->VAR7, VAR8);\n\tFUN3(&VAR5->VAR6->VAR7, VAR8);",
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tif (!VAR5->VAR6 || !FUN2(VAR7, &VAR5->VAR6->VAR8))",
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tFUN2(VAR4)->VAR5 = FUN3(VAR6);"
+    ],
+    "integer": [
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR6->VAR7->VAR8 + VAR9);\n\tVAR10 += (((VAR11)VAR5) << VAR12 | VAR13) * VAR14;\n\tFUN3(VAR4)->VAR15 = FUN4(VAR10);"
+    ],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR6->VAR7->VAR8 + VAR9);\n\tVAR10 += (((VAR11)VAR5) << VAR12 | VAR13) * VAR14;\n\tFUN3(VAR4)->VAR15 = FUN4(VAR10);",
+        "void FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR6->VAR7->VAR8 + VAR9);\n\tVAR10 += (((VAR11)VAR5) << VAR12 | VAR13) * VAR14;\n\tFUN3(VAR4)->VAR15 = FUN4(VAR10);"
+    ]
+}

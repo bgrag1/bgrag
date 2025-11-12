@@ -1,0 +1,1 @@
+ Function purpose: The function "idpf_vport_intr_rel" is designed to release and clean up resources allocated for queue vectors and their associated buffers and masks in a network interface driver, specifically for Intel's i40e Virtual Port (vPort) management.

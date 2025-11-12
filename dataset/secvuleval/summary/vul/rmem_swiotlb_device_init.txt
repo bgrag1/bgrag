@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and configures a device's I/O TLB (Translation Lookaside Buffer) memory pool for restricted DMA, ensuring that the memory is accessible within the linear mapping and setting up necessary structures for DMA operations.

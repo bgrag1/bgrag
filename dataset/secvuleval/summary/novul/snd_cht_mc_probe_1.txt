@@ -1,0 +1,1 @@
+ Function purpose: The function "snd_cht_mc_probe" is responsible for initializing and registering a sound device using the ALSA SoC (Sound Open Core) framework, based on platform data provided by an ACPI device, and handling specific configurations for Bay Trail CR devices.

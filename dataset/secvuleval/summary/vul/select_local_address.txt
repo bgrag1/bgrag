@@ -1,0 +1,1 @@
+ Function purpose: The function "select_local_address" is designed to select a local address entry from a list of addresses, ensuring that the selected address is not used by any subflows and is available for new subflows.

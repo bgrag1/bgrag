@@ -1,0 +1,9 @@
+{
+    "array": [
+        "VAR1::VAR2 FUN1(\n const VAR1::VAR2& VAR3,\n const VAR1::VAR2& VAR4,\n const VAR1::VAR2& VAR5) {\n auto VAR6 = VAR1::VAR7::FUN2(FUN3(VAR4));\n FUN4(\n auto VAR8 = VAR6.FUN5().FUN6().FUN7();\n FUN4(\n VAR1::wstring VAR9 = FUN8(FUN3(VAR3), VAR8);\n if (VAR9.FUN9() || (VAR9[0] != '' && FUN10(VAR9.FUN11(), &VAR10) != 0)) {\n return FUN12(VAR9);"
+    ],
+    "API": [
+        "VAR1::VAR2 FUN1(\n const VAR1::VAR2& VAR3,\n auto VAR4 = VAR1::VAR5::FUN2(FUN3(VAR3));",
+        "VAR1::VAR2 FUN1(\n const VAR1::VAR2& VAR3,\n auto VAR4 = VAR1::VAR5::FUN2(FUN3(VAR3));"
+    ]
+}

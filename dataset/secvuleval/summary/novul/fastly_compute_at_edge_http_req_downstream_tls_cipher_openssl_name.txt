@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves the OpenSSL cipher name of the downstream TLS connection for an HTTP request at the edge, handling buffer allocation and reallocation if necessary.

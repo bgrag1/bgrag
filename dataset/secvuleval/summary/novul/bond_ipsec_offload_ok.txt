@@ -1,0 +1,1 @@
+ Function purpose: The function checks if IPsec offloading is possible on the active slave of a bond interface, ensuring that the necessary conditions for offloading are met.

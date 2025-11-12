@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tFUN3(VAR4);",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tstruct VAR1 *VAR5 = VAR2;\n\treturn VAR5;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tFUN3(VAR4);",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\t} else if ((VAR3->VAR4 & VAR5) ||",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tVAR3 = NULL;\n\treturn VAR3;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tVAR3 = NULL;\n\treturn VAR3;"
+    ]
+}

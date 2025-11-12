@@ -1,0 +1,1 @@
+ Function purpose: The function suspends the network device driver for Mellanox devices, detaches the network device, and destroys resources for each device in the system.

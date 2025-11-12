@@ -1,0 +1,1 @@
+ Function purpose: The function initializes a payload expression for use in an nftables rule, setting the base type and offset, and registering the destination register for storing the payload data.

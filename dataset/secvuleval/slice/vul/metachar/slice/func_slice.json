@@ -1,0 +1,6 @@
+{
+    "API": [
+        "static int FUN1(char VAR1)\n\treturn (strchr(FUN2(), VAR1) != NULL);",
+        "static int FUN1(char VAR1)\n\treturn (strchr(FUN2(), VAR1) != NULL);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function ensures the existence of a working folder for a given bundle ID, optionally elevating its security permissions if necessary, and ensures the folder is not encrypted.

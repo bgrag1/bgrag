@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves the audio format for a specified input pin of a process module, or returns the base module configuration format if the module is not a process.

@@ -1,0 +1,1 @@
+ Function purpose: The function "bytcht_da7213_probe" is responsible for initializing and registering a sound card device with the system, setting up the audio device's DAI links, and handling power management operations based on the presence of a Sound Open Firmware (SOF) parent device.

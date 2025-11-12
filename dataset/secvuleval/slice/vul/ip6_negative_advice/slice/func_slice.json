@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tVAR2 = NULL;\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tif (FUN3(VAR4)) {\n\tFUN4(VAR4);",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tVAR2 = NULL;\n\treturn VAR2;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tFUN3(VAR2);"
+    ],
+    "API": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = FUN2(VAR2);\n\tif (FUN3(VAR4)) {\n\tFUN4(VAR4);"
+    ]
+}

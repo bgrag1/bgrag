@@ -1,0 +1,1 @@
+ Function purpose: The function "eventfs_find_events" in the code snippet is designed to locate and return the "eventfs_inode" structure associated with the events directory by traversing the directory hierarchy from the given "dentry" up to the root, updating the event attributes as it goes.

@@ -1,0 +1,1 @@
+ Function purpose: The function "add_adev" is responsible for initializing and registering a new auxiliary device with the system, associating it with a given GDMA device, and handling memory allocation and error management.

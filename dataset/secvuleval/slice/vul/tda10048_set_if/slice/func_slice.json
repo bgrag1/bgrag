@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tif ((VAR4[VAR5].VAR6 == VAR7->VAR6) &&\n\tVAR8->VAR9 = VAR4[VAR5].VAR6 * 1000;\n\tFUN2(1, \"\", VAR8->VAR9);\n\tVAR8->VAR10 = VAR8->VAR9 * (VAR8->VAR11 + 45);\n\tVAR8->VAR10 /= (VAR8->VAR12 + 1);\n\tVAR8->VAR10 /= (VAR8->VAR13 + 4);\n\tFUN2(1, \"\", VAR8->VAR10);\n\tFUN3(VAR2, VAR8->VAR10, VAR8->VAR14);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tVAR4 = VAR5->VAR6;\n\tif ((VAR7[VAR8].VAR9 == VAR5->VAR9) &&\n\t(VAR7[VAR8].VAR4 == VAR4)) {\n\tVAR10->VAR11 = VAR7[VAR8].VAR4 * 1000;\n\tFUN2(1, \"\", VAR10->VAR11);\n\tFUN3(VAR2, VAR10->VAR12, VAR10->VAR11);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tFUN2(1, \"\", VAR4->VAR5);\n\tVAR4->VAR6 /= (VAR4->VAR5 + 4);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tVAR4 = VAR5->VAR6;\n\tif ((VAR7[VAR8].VAR9 == VAR5->VAR9) &&\n\t(VAR7[VAR8].VAR4 == VAR4)) {\n\tVAR10->VAR11 = VAR7[VAR8].VAR4 * 1000;\n\tFUN2(1, \"\", VAR10->VAR11);\n\tFUN3(VAR2, VAR10->VAR12, VAR10->VAR11);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tFUN2(1, \"\", VAR4->VAR5);\n\tVAR4->VAR6 = VAR4->VAR7 * (VAR4->VAR5 + 45);\n\tVAR4->VAR6 /= (VAR4->VAR8 + 1);\n\tVAR4->VAR6 /= (VAR4->VAR9 + 4);\n\tFUN2(1, \"\", VAR4->VAR6);\n\tFUN3(VAR2, VAR4->VAR6, VAR4->VAR10);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tFUN2(1, \"\", VAR4->VAR5);\n\tVAR4->VAR6 /= (VAR4->VAR5 + 1);\n\tVAR4->VAR6 /= (VAR4->VAR7 + 4);\n\tFUN2(1, \"\", VAR4->VAR6);\n\tFUN3(VAR2, VAR4->VAR6, VAR4->VAR8);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tFUN2(VAR2, VAR4->VAR5, VAR4->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tVAR4 = VAR5->VAR6;\n\tif ((VAR7[VAR8].VAR9 == VAR5->VAR9) &&\n\t(VAR7[VAR8].VAR4 == VAR4)) {\n\tVAR10->VAR11 = VAR7[VAR8].VAR4 * 1000;\n\tFUN2(1, \"\", VAR10->VAR11);\n\tFUN3(VAR2, VAR10->VAR12, VAR10->VAR11);"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tif ((VAR4[VAR5].VAR6 == VAR7->VAR6) &&\n\tVAR8->VAR9 = VAR4[VAR5].VAR6 * 1000;\n\tFUN2(1, \"\", VAR8->VAR9);\n\tVAR8->VAR10 = VAR8->VAR9 * (VAR8->VAR11 + 45);\n\tVAR8->VAR10 /= (VAR8->VAR12 + 1);\n\tVAR8->VAR10 /= (VAR8->VAR13 + 4);\n\tFUN2(1, \"\", VAR8->VAR10);\n\tFUN3(VAR2, VAR8->VAR10, VAR8->VAR14);",
+        "static int FUN1(struct VAR1 *VAR2, u32 VAR3)\n\tVAR4 = VAR5->VAR6;\n\tVAR4 = VAR5->VAR7;\n\tVAR4 = VAR5->VAR8;\n\t(VAR9[VAR10].VAR4 == VAR4)) {\n\tVAR11->VAR12 = VAR9[VAR10].VAR4 * 1000;\n\tFUN2(1, \"\", VAR11->VAR12);\n\tFUN3(VAR2, VAR11->VAR13, VAR11->VAR12);"
+    ]
+}

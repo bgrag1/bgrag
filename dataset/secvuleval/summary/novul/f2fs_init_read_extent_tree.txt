@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and manages the read extent tree for an inode, ensuring that the extent information is correctly set up and maintained, and handles cases where the checkpoint might be corrupted.

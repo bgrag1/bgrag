@@ -1,0 +1,1 @@
+ Function purpose: The function "ks_pcie_quirk" in the code snippet is designed to adjust the Maximum Read Request Size (MRRS) for PCI devices connected to a Keystone or AM654x PCIe controller, ensuring compatibility with hardware limitations.

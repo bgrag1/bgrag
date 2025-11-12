@@ -1,0 +1,1 @@
+ Function purpose: The function "ftrace_location_range" is designed to find the instruction pointer (IP) of a dynamic function tracer record within a specified range of memory addresses.

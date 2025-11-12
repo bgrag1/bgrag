@@ -1,0 +1,1 @@
+ Function purpose: The function "nv50_msto_cleanup" is responsible for cleaning up the state of a Multi-Stream Transport Output (MST) port in the context of a DRM atomic update, ensuring that the port is properly disabled or removed from the topology state as needed.

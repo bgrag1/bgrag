@@ -1,0 +1,1 @@
+ Function purpose: The function "gf_text_get_utf8_line" reads a line from a file, converts it to UTF-8 if necessary, and handles different Unicode types for text processing.

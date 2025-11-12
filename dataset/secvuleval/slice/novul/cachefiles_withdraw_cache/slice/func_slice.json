@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tFUN3(VAR2);\n\tFUN4(VAR2);\n\tFUN5(VAR2);",
+        "void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR2->VAR2;\n\tFUN2(VAR4);\n\tFUN3(VAR4);\n\tFUN4(VAR4);"
+    ]
+}

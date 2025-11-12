@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "int FUN1(const char *VAR1, const char *VAR2) {\n VAR3 |= VAR1[VAR4] ^ VAR2[VAR5];\n if (VAR1[VAR4] == 0) break;\n if (VAR2[VAR5] != 0) VAR5++;\n return VAR3 == 0;",
+        "int FUN1(const char *VAR1, const char *VAR2) {\n VAR3 |= VAR1[VAR4] ^ VAR2[VAR5];\n if (VAR1[VAR4] == 0) break;\n if (VAR2[VAR5] != 0) VAR5++;\n return VAR3 == 0;"
+    ],
+    "array": [
+        "int FUN1(const char *VAR1, const char *VAR2) {\n VAR3 |= VAR1[VAR4] ^ VAR2[VAR5];\n if (VAR1[VAR4] == 0) break;\n if (VAR2[VAR5] != 0) VAR5++;\n return VAR3 == 0;"
+    ]
+}

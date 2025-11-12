@@ -1,0 +1,1 @@
+ Function purpose: The function "pmic_glink_altmode_probe" is responsible for initializing and configuring a PMIC Glink Alternate Mode device, including allocating memory, initializing data structures, and setting up Type-C muxes, retimers, and switches for each port defined in the device's firmware node.

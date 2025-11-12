@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_guioptions" sets GUI options based on the provided arguments and initializes the GUI components accordingly.

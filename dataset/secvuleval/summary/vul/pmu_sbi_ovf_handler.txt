@@ -1,0 +1,1 @@
+ Function purpose: The function "pmu_sbi_ovf_handler" is designed to handle overflow events from hardware performance counters in a RISC-V system, updating and sampling performance events, and managing the overflow status register to ensure proper handling of counter overflows.

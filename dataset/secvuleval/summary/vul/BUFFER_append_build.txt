@@ -1,0 +1,1 @@
+ Function purpose: The function "BUFFER_append_build" is designed to append data from a source buffer to an existing buffer or to initialize a new buffer with the data, handling memory allocation and reallocation as necessary.

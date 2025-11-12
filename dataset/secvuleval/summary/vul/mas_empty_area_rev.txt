@@ -1,0 +1,1 @@
+ Function purpose: The function "mas_empty_area_rev" in the code snippet is designed to find a reverse walkable area within a given range in a maple state structure, ensuring the area is empty and meets the specified size requirements.

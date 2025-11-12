@@ -1,0 +1,1 @@
+ Function purpose: The function "m2tsdmx_on_event" processes various events related to MPEG-2 transport stream (M2TS) demuxing, such as PAT, PMT, and SDT updates, and manages the state of the demuxing process, setting up programs and sending packets accordingly.

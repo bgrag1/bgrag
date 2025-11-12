@@ -1,0 +1,1 @@
+ Function purpose: The function "picoquic_implicit_handshake_ack" is designed to handle the acknowledgment of packets in the retransmission queue for a given path in a QUIC connection, updating congestion control state and removing packets from the retransmit queue.

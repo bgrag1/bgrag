@@ -1,0 +1,18 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 = VAR5->VAR4;\n\telse if (!VAR6 && (VAR3->VAR4 == VAR7))\n\telse if (VAR6 && (VAR3->VAR4 != VAR7))\n\tVAR3->VAR4 = VAR7;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tconst struct VAR3 *VAR4 =\n\tFUN2(&VAR5->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2, false, false);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct PP_Clocks VAR3 = {0, 0, 0, 0};\n\tVAR3.VAR4 = VAR2->VAR5->VAR6 != 0 ?\n\tVAR3.VAR4 = VAR2->VAR7.VAR8.VAR9;\n\tVAR10 = (VAR3.VAR4 > VAR11->VAR12.VAR13[VAR14 - 1])\n\telse if (!VAR10 && (VAR15->VAR16 == VAR17))\n\telse if (VAR10 && (VAR15->VAR16 != VAR17))",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 =\n\tFUN2(&VAR5->VAR6);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3.VAR4 = VAR2->VAR5->VAR6 != 0 ?",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = (VAR4.VAR5 > VAR6->VAR7.VAR8[VAR9 - 1])\n\t|| (VAR2->VAR10->VAR11 >= 3);\n\telse if (!VAR3 && (VAR12->VAR13 == VAR14))\n\telse if (VAR3 && (VAR12->VAR13 != VAR14))",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3->VAR4 = (VAR5 == VAR6->VAR7.VAR8);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (VAR2->VAR3 == VAR4)\n\telse if (VAR2->VAR3 == VAR5)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2, false, true);"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3.VAR4 = VAR2->VAR5->VAR6 != 0 ?",
+        "static int FUN1(struct VAR1 *VAR2,\n\tstruct PP_Clocks VAR3 = {0, 0, 0, 0};\n\tVAR3.VAR4 = VAR2->VAR5->VAR6 != 0 ?\n\tVAR3.VAR4 = VAR2->VAR7.VAR8.VAR9;\n\tVAR10 = (VAR3.VAR4 > VAR11->VAR12.VAR13[VAR14 - 1])\n\telse if (!VAR10 && (VAR15->VAR16 == VAR17))\n\telse if (VAR10 && (VAR15->VAR16 != VAR17))"
+    ]
+}

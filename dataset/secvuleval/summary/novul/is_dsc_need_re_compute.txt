@@ -1,0 +1,1 @@
+ Function purpose: The function checks if the DSC (Dynamic Stream Compression) needs to be recomputed for a given DC link in an atomic state, considering MST (Multi-Stream Transport) scenarios and potential mode changes.

@@ -1,0 +1,1 @@
+ Function purpose: The function disables the system framebuffer (sysfb) by locking a mutex, unregistering the sysfb, setting a flag to indicate that it is disabled, and then unlocking the mutex.

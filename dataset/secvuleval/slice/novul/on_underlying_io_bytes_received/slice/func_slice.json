@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n if (VAR1 != NULL)\n VAR4 *VAR5 = (VAR4 *)VAR1;\n FUN2(VAR5);\n FUN2(VAR5);",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n (void)memcpy(VAR4->VAR5 + VAR4->VAR6, VAR2, VAR3);\n VAR4->VAR6 += VAR3;"
+    ],
+    "API": [
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);",
+        "static void FUN1(void *VAR1, const unsigned char *VAR2, size_t VAR3)\n size_t VAR4 = FUN2(VAR5->VAR6, VAR3);\n if (VAR4 == VAR7)\n else if ((VAR8 = (unsigned char*)realloc(VAR5->VAR9, VAR4)) == NULL)\n VAR5->VAR9 = VAR8;\n (void)memcpy(VAR5->VAR9 + VAR5->VAR6, VAR2, VAR3);\n VAR5->VAR6 += VAR3;"
+    ]
+}

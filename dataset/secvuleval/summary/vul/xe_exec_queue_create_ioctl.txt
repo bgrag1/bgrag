@@ -1,0 +1,1 @@
+ Function purpose: The function "xe_exec_queue_create_ioctl" is responsible for creating an execution queue for a hardware engine on a display device, handling both VM binding and direct engine binding scenarios, and managing the creation and allocation of execution queues within the device's file structure.

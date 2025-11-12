@@ -1,0 +1,1 @@
+ Function purpose: The function "nft_reg_store64" is designed to store a 64-bit value into a register, using "put_unaligned" to ensure the value is stored correctly regardless of the endianness of the system.

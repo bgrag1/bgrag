@@ -1,0 +1,1 @@
+ Function purpose: The function converts an enum representing the type of SIP endpoint identifier to a human-readable string for debugging or logging purposes.

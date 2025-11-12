@@ -1,0 +1,1 @@
+ Function purpose: The function prepares and sends a QUIC packet from the server's perspective, handling initial, handshake, and retransmission packets, and ensuring proper encryption and acknowledgment mechanisms are applied.

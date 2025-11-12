@@ -1,0 +1,1 @@
+ Function purpose: The function "bond_ipsec_del_sa_all" is designed to delete all IPsec security associations (SAs) associated with a bonding interface, ensuring that the current active slave's IPsec configuration is properly managed and removed.

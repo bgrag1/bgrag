@@ -1,0 +1,26 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n int VAR5, void *VAR6)\n\tVAR7 = FUN2(3, sizeof(*VAR7), VAR8);\n\tif (!VAR7)\n\tVAR9 = FUN3(VAR2->VAR10, VAR4->VAR11);\n\tFUN4(VAR2->VAR12,\n\tVAR13 = FUN5((void *)VAR2->VAR12, VAR4, VAR5, VAR2->VAR10, &VAR14, VAR7,\n\tVAR13 = FUN6((void *)VAR2->VAR12, VAR6, VAR4->VAR15 / 8, VAR4, VAR5,\n\treturn VAR13;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR2->VAR6, VAR4->VAR7);\n\tVAR8 = FUN3(VAR2, VAR4->VAR7);\n\tif (FUN4(VAR8)) {\n\tVAR9 = FUN5(VAR8);\n\treturn VAR9;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR2->VAR6, VAR4->VAR7);\n\tVAR8 = FUN3(VAR2, VAR4->VAR7);\n\tFUN4(VAR2->VAR9, \"\",\n\tFUN5(VAR2->VAR9);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tVAR7.VAR7 = FUN2(VAR8->VAR9, sizeof(*VAR7.VAR7), VAR6);\n\tfor (VAR10 = 0; VAR10 < VAR8->VAR9; VAR10++) {\n\tVAR7.VAR11 = VAR8->VAR9;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR2->VAR6, VAR4->VAR7);\n\tif (!VAR5) {",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n int VAR5, void *VAR6)\n\tVAR7 = FUN2(VAR2->VAR8, VAR4->VAR9);\n\tFUN3(VAR2->VAR10, \"\",",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tFUN2(VAR2->VAR5,\n\tVAR6.VAR6[VAR7].VAR8 = VAR9->VAR6[VAR7].VAR8;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tbool VAR5 = VAR4->VAR6 != VAR7;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n int VAR5, void *VAR6)\n\tVAR7 = FUN2(3, sizeof(*VAR7), VAR8);\n\tif (!VAR7)\n\tVAR9 = FUN3(VAR2->VAR10, VAR4->VAR11);\n\tFUN4(VAR2->VAR12,\n\tVAR13 = FUN5((void *)VAR2->VAR12, VAR4, VAR5, VAR2->VAR10, &VAR14, VAR7,\n\tFUN6(VAR7);"
+    ],
+    "array": [
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tFUN2(VAR2->VAR5,\n\tVAR6.VAR6[VAR7].VAR8 = VAR9->VAR6[VAR7].VAR8;\n\tVAR10 = FUN3((void *)VAR2->VAR5, VAR4, VAR11, VAR2->VAR12, &VAR6, VAR13,\n\tVAR10 = FUN4((void *)VAR2->VAR5, VAR14, VAR4->VAR15 / 8, VAR4, VAR11,\n\tFUN5(VAR13);\n\tFUN6(VAR2->VAR5);\n\treturn VAR10;"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n int VAR5, void *VAR6)\n\tVAR7 = FUN2(3, sizeof(*VAR7), VAR8);\n\tif (!VAR7)\n\tVAR9 = FUN3(VAR2->VAR10, VAR4->VAR11);\n\tFUN4(VAR2->VAR12,\n\tVAR13 = FUN5((void *)VAR2->VAR12, VAR4, VAR5, VAR2->VAR10, &VAR14, VAR7,\n\tFUN6(VAR7);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tVAR7.VAR7 = FUN2(VAR8->VAR9, sizeof(*VAR7.VAR7), VAR6);\n\tif (!VAR7.VAR7) {\n\tFUN3(VAR7.VAR7);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tFUN2(&VAR5);\n\tFUN3(&VAR5);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tFUN2(&VAR5);\n\tFUN3(&VAR5);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tif (!VAR5)\n\tVAR7 = FUN3((void *)VAR2->VAR8, VAR4, VAR9, VAR2->VAR10, &VAR11, VAR5,\n\tVAR7 = FUN4((void *)VAR2->VAR8, VAR12, VAR4->VAR13 / 8, VAR4, VAR9,\n\tFUN5(VAR5);\n\treturn VAR7;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tif (!VAR5)\n\tVAR7.VAR7 = FUN2(VAR8->VAR9, sizeof(*VAR7.VAR7), VAR6);\n\tif (!VAR7.VAR7) {\n\tfor (VAR10 = 0; VAR10 < VAR8->VAR9; VAR10++) {\n\tVAR7.VAR11 = VAR8->VAR9;\n\tVAR12 = FUN3((void *)VAR2->VAR13, VAR4, VAR14, VAR2->VAR15, &VAR7, VAR5,\n\tVAR12 = FUN4((void *)VAR2->VAR13, VAR16, VAR4->VAR17 / 8, VAR4, VAR14,\n\tFUN5(VAR5);\n\tFUN5(VAR7.VAR7);\n\treturn VAR12;",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tVAR7.VAR7 = FUN2(VAR8->VAR9, sizeof(*VAR7.VAR7), VAR6);\n\tif (!VAR7.VAR7) {\n\tfor (VAR10 = 0; VAR10 < VAR8->VAR9; VAR10++) {\n\tVAR7.VAR11 = VAR8->VAR9;\n\tFUN3(VAR7.VAR7);",
+        "int FUN1(struct VAR1 *VAR2, const struct VAR3 *VAR4,\n\tVAR5 = FUN2(3, sizeof(*VAR5), VAR6);\n\tVAR7.VAR7 = FUN2(VAR8->VAR9, sizeof(*VAR7.VAR7), VAR6);\n\tif (!VAR7.VAR7) {\n\tFUN3(VAR7.VAR7);"
+    ]
+}

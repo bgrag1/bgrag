@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n return VAR6;",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (strlen(VAR6->VAR4) != VAR5) {\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n return VAR6;"
+    ],
+    "API": [
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (strlen(VAR6->VAR4) != VAR5) {\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (strlen(VAR6->VAR4) != VAR5) {\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (strlen(VAR6->VAR4) != VAR5) {\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {",
+        "static struct VAR1 *FUN1(struct VAR2 *VAR3, const char *VAR4, size_t VAR5)\n if (strlen(VAR6->VAR4) != VAR5) {\n if (FUN2(VAR4, VAR6->VAR4, VAR5) == 0) {\n if (strcmp(VAR4, VAR6->VAR7) == 0) {"
+    ]
+}

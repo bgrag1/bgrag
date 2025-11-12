@@ -1,0 +1,1 @@
+ Function purpose: The function is designed to handle the reception of bytes over a TLS connection, storing them in a dynamically allocated buffer for further processing.

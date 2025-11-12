@@ -1,0 +1,1 @@
+ Function purpose: The function processes routing rules for IPv6 traffic, determining the appropriate route based on the rule's action and table, and handling unreachable, blackhole, or prohibit actions by setting the result route accordingly.

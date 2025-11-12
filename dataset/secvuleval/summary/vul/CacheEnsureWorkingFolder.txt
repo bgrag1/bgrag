@@ -1,0 +1,1 @@
+ Function purpose: The function ensures that a working folder exists for a given bundle ID, calculates its path, and optionally returns it for further use.

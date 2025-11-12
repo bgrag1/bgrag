@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tVAR3 = FUN3(VAR2);\n\tVAR3 = FUN4(VAR2);\n\tVAR3 = FUN5(VAR2);\n\tVAR3 = FUN6(VAR2);\n\tFUN7(VAR2);\n\tif (FUN8(VAR2)) {\n\tVAR3 = FUN9(VAR2);\n\treturn VAR3;\n\tVAR3 = FUN10(VAR2->VAR4.VAR5, VAR6, VAR2);\n\treturn VAR3;\n\tVAR3 = FUN11(VAR2);\n\treturn VAR3;\n\tVAR3 = FUN12(VAR2);\n\tVAR3 = FUN13(VAR2);\n\tVAR3 = FUN14(VAR2);\n\tFUN15(VAR2);\n\tVAR3 = FUN16(VAR2);\n\tFUN17(VAR2);\n\tVAR3 = FUN18(VAR2);\n\tFUN19(VAR2);\n\tFUN20(VAR2);\n\tFUN21(VAR2);\n\treturn FUN10(VAR2->VAR4.VAR5, VAR7, VAR2);\n\tFUN22(VAR2);\n\tFUN23(VAR2);\n\tFUN24(VAR2);\n\treturn VAR3;",
+        "int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(&VAR4->VAR5.VAR6.VAR7);\n\treturn VAR3;",
+        "int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(&VAR2->VAR4, 0);\n\treturn VAR3;",
+        "int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4);\n\tVAR3 = FUN3(VAR4);\n\treturn VAR3;\n\tVAR3 = FUN4(VAR4);\n\treturn VAR3;",
+        "int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4->VAR5.VAR6);\n\treturn VAR3;",
+        "int FUN1(struct VAR1 *VAR2)\n\tVAR3 = FUN2(VAR4);\n\treturn VAR3;"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2)\n\tFUN2(VAR2);\n\tVAR3 = FUN3(VAR2);\n\tVAR3 = FUN4(VAR2);\n\tVAR3 = FUN5(VAR2);\n\tVAR3 = FUN6(VAR2);\n\tFUN7(VAR2);\n\tif (FUN8(VAR2)) {\n\tVAR3 = FUN9(VAR2);\n\tVAR3 = FUN10(VAR2->VAR4.VAR5, VAR6, VAR2);\n\tVAR3 = FUN11(VAR2);\n\tVAR3 = FUN12(VAR2);\n\tVAR3 = FUN13(VAR2);\n\tVAR3 = FUN14(VAR2);\n\tFUN15(VAR2);\n\tVAR3 = FUN16(VAR2);\n\tFUN17(VAR2);\n\tVAR3 = FUN18(VAR2);\n\tFUN19(VAR2);\n\tFUN20(VAR2);\n\tFUN21(VAR2);"
+    ]
+}

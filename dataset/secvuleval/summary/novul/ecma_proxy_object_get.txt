@@ -1,0 +1,1 @@
+ Function purpose: The function "ecma_proxy_object_get" is designed to handle the retrieval of properties from a proxy object, invoking the appropriate trap function if the property is defined in the handler, or falling back to the target object if not.

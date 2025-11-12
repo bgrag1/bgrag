@@ -1,0 +1,1 @@
+ Function purpose: The function "gguf_init_from_file" is designed to initialize a "gguf_context" structure from a file, which contains metadata and tensor data in the GGUF format, and optionally loads the tensor data into a provided GGML context if requested.

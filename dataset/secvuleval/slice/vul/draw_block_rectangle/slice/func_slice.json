@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static void FUN1(VAR1 *VAR2, int VAR3, int VAR4, int VAR5, int VAR6, ptrdiff_t VAR7, int VAR8)\n VAR2[VAR9] = VAR8;\n VAR2[VAR3] = VAR8;\n VAR2[VAR3 + VAR5 - 1] = VAR8;\n VAR2 += VAR7;\n VAR2[VAR9] = VAR8;"
+    ],
+    "array": [
+        "static void FUN1(VAR1 *VAR2, int VAR3, int VAR4, int VAR5, int VAR6, ptrdiff_t VAR7, int VAR8)\n VAR2[VAR3] = VAR8;\n VAR2 += VAR7;",
+        "static void FUN1(VAR1 *VAR2, int VAR3, int VAR4, int VAR5, int VAR6, ptrdiff_t VAR7, int VAR8)\n VAR2[VAR9] = VAR8;",
+        "static void FUN1(VAR1 *VAR2, int VAR3, int VAR4, int VAR5, int VAR6, ptrdiff_t VAR7, int VAR8)\n VAR2[VAR9] = VAR8;\n VAR2 += VAR7;",
+        "static void FUN1(VAR1 *VAR2, int VAR3, int VAR4, int VAR5, int VAR6, ptrdiff_t VAR7, int VAR8)\n VAR2[VAR3 + VAR5 - 1] = VAR8;\n VAR2 += VAR7;"
+    ]
+}

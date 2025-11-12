@@ -1,0 +1,1 @@
+ Function purpose: The function merges a JSON patch into an original JSON object, preserving original values not modified by the patch and applying modifications specified in the patch.

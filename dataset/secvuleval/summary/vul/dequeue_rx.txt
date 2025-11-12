@@ -1,0 +1,1 @@
+ Function purpose: The function "dequeue_rx" processes received SDU packets for a specific virtual circuit (VC) on an IDT77252 device, handling different AAL types and managing buffer pools for sk_buff objects.

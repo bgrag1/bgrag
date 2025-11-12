@@ -1,0 +1,101 @@
+[
+    {
+        "cve_id": "CVE-2023-4720",
+        "func_name": "gpac/swf_get_32",
+        "description": "Floating Point Comparison with Incorrect Operator in GitHub repository gpac/gpac prior to 2.3-DEV.",
+        "git_url": "https://github.com/gpac/gpac/commit/e396648e48c57e2d53988d3fd4465b068b96c89a",
+        "commit_title": "Fixed #2581",
+        "commit_text": "",
+        "func_before": "static u32 swf_get_32(SWFReader *read)\n{\n\tu32 val, res;\n\tval = swf_read_int(read, 32);\n\tres = (val&0xFF);\n\tres <<=8;\n\tres |= ((val>>8)&0xFF);\n\tres<<=8;\n\tres |= ((val>>16)&0xFF);\n\tres<<=8;\n\tres|= ((val>>24)&0xFF);\n\treturn res;\n}",
+        "func": "static u32 swf_get_32(SWFReader *read)\n{\n\treturn gf_bs_read_u32_le(read->bs);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,13 +1,4 @@\n static u32 swf_get_32(SWFReader *read)\n {\n-\tu32 val, res;\n-\tval = swf_read_int(read, 32);\n-\tres = (val&0xFF);\n-\tres <<=8;\n-\tres |= ((val>>8)&0xFF);\n-\tres<<=8;\n-\tres |= ((val>>16)&0xFF);\n-\tres<<=8;\n-\tres|= ((val>>24)&0xFF);\n-\treturn res;\n+\treturn gf_bs_read_u32_le(read->bs);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\tu32 val, res;",
+                "\tval = swf_read_int(read, 32);",
+                "\tres = (val&0xFF);",
+                "\tres <<=8;",
+                "\tres |= ((val>>8)&0xFF);",
+                "\tres<<=8;",
+                "\tres |= ((val>>16)&0xFF);",
+                "\tres<<=8;",
+                "\tres|= ((val>>24)&0xFF);",
+                "\treturn res;"
+            ],
+            "added_lines": [
+                "\treturn gf_bs_read_u32_le(read->bs);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2023-4720",
+        "func_name": "gpac/swf_get_s16",
+        "description": "Floating Point Comparison with Incorrect Operator in GitHub repository gpac/gpac prior to 2.3-DEV.",
+        "git_url": "https://github.com/gpac/gpac/commit/e396648e48c57e2d53988d3fd4465b068b96c89a",
+        "commit_title": "Fixed #2581",
+        "commit_text": "",
+        "func_before": "static s16 swf_get_s16(SWFReader *read)\n{\n\ts16 val;\n\tu8 v1;\n\tv1 = swf_read_int(read, 8);\n\tval = swf_read_sint(read, 8);\n\tval = (val<<8)&0xFF00;\n\tval |= (v1&0xFF);\n\treturn val;\n}",
+        "func": "static s16 swf_get_s16(SWFReader *read)\n{\n\treturn (s16) gf_bs_read_u16_le(read->bs);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,10 +1,4 @@\n static s16 swf_get_s16(SWFReader *read)\n {\n-\ts16 val;\n-\tu8 v1;\n-\tv1 = swf_read_int(read, 8);\n-\tval = swf_read_sint(read, 8);\n-\tval = (val<<8)&0xFF00;\n-\tval |= (v1&0xFF);\n-\treturn val;\n+\treturn (s16) gf_bs_read_u16_le(read->bs);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\ts16 val;",
+                "\tu8 v1;",
+                "\tv1 = swf_read_int(read, 8);",
+                "\tval = swf_read_sint(read, 8);",
+                "\tval = (val<<8)&0xFF00;",
+                "\tval |= (v1&0xFF);",
+                "\treturn val;"
+            ],
+            "added_lines": [
+                "\treturn (s16) gf_bs_read_u16_le(read->bs);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2023-4720",
+        "func_name": "gpac/swf_get_16",
+        "description": "Floating Point Comparison with Incorrect Operator in GitHub repository gpac/gpac prior to 2.3-DEV.",
+        "git_url": "https://github.com/gpac/gpac/commit/e396648e48c57e2d53988d3fd4465b068b96c89a",
+        "commit_title": "Fixed #2581",
+        "commit_text": "",
+        "func_before": "static u16 swf_get_16(SWFReader *read)\n{\n\tu16 val, res;\n\tval = swf_read_int(read, 16);\n\tres = (val&0xFF);\n\tres <<=8;\n\tres |= ((val>>8)&0xFF);\n\treturn res;\n}",
+        "func": "static u16 swf_get_16(SWFReader *read)\n{\n\treturn gf_bs_read_u16_le(read->bs);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,9 +1,4 @@\n static u16 swf_get_16(SWFReader *read)\n {\n-\tu16 val, res;\n-\tval = swf_read_int(read, 16);\n-\tres = (val&0xFF);\n-\tres <<=8;\n-\tres |= ((val>>8)&0xFF);\n-\treturn res;\n+\treturn gf_bs_read_u16_le(read->bs);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\tu16 val, res;",
+                "\tval = swf_read_int(read, 16);",
+                "\tres = (val&0xFF);",
+                "\tres <<=8;",
+                "\tres |= ((val>>8)&0xFF);",
+                "\treturn res;"
+            ],
+            "added_lines": [
+                "\treturn gf_bs_read_u16_le(read->bs);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2022-4293",
+        "func_name": "vim/num_divide",
+        "description": "Floating Point Comparison with Incorrect Operator in GitHub repository vim/vim prior to 9.0.0804.",
+        "git_url": "https://github.com/vim/vim/commit/cdef1cefa2a440911c727558562f83ed9b00e16b",
+        "commit_title": "patch 9.0.0804: crash when trying to divide a number by -1",
+        "commit_text": " Problem:    Crash when trying to divice the largest negative number by -1. Solution:   Handle this case specifically.",
+        "func_before": "varnumber_T\nnum_divide(varnumber_T n1, varnumber_T n2, int *failed)\n{\n    varnumber_T\tresult;\n\n    if (n2 == 0)\n    {\n\tif (in_vim9script())\n\t{\n\t    emsg(_(e_divide_by_zero));\n\t    if (failed != NULL)\n\t\t*failed = TRUE;\n\t}\n\tif (n1 == 0)\n\t    result = VARNUM_MIN; // similar to NaN\n\telse if (n1 < 0)\n\t    result = -VARNUM_MAX;\n\telse\n\t    result = VARNUM_MAX;\n    }\n    else\n\tresult = n1 / n2;\n\n    return result;\n}",
+        "func": "varnumber_T\nnum_divide(varnumber_T n1, varnumber_T n2, int *failed)\n{\n    varnumber_T\tresult;\n\n    if (n2 == 0)\n    {\n\tif (in_vim9script())\n\t{\n\t    emsg(_(e_divide_by_zero));\n\t    if (failed != NULL)\n\t\t*failed = TRUE;\n\t}\n\tif (n1 == 0)\n\t    result = VARNUM_MIN; // similar to NaN\n\telse if (n1 < 0)\n\t    result = -VARNUM_MAX;\n\telse\n\t    result = VARNUM_MAX;\n    }\n    else if (n1 == VARNUM_MIN && n2 == -1)\n    {\n\t// specific case: trying to do VARNUM_MIN / -1 results in a positive\n\t// number that doesn't fit in varnumber_T and causes an FPE\n\tresult = VARNUM_MAX;\n    }\n    else\n\tresult = n1 / n2;\n\n    return result;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -18,6 +18,12 @@\n \telse\n \t    result = VARNUM_MAX;\n     }\n+    else if (n1 == VARNUM_MIN && n2 == -1)\n+    {\n+\t// specific case: trying to do VARNUM_MIN / -1 results in a positive\n+\t// number that doesn't fit in varnumber_T and causes an FPE\n+\tresult = VARNUM_MAX;\n+    }\n     else\n \tresult = n1 / n2;\n ",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "    else if (n1 == VARNUM_MIN && n2 == -1)",
+                "    {",
+                "\t// specific case: trying to do VARNUM_MIN / -1 results in a positive",
+                "\t// number that doesn't fit in varnumber_T and causes an FPE",
+                "\tresult = VARNUM_MAX;",
+                "    }"
+            ]
+        }
+    }
+]

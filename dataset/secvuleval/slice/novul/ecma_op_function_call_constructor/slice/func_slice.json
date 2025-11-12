@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        " VAR1 *VAR2 = (VAR1 *) VAR3->VAR4.VAR5;\n FUN1 (VAR6, VAR7, VAR3->VAR4.VAR5);\n VAR8 = FUN2 (&VAR3->VAR4, VAR7, VAR6);\n if (FUN3 (VAR7 == VAR9))\n if (!FUN4 (VAR8) && !FUN5 (VAR8))\n if (!FUN6 (VAR8))\n FUN7 (VAR8);\n VAR8 = FUN8 (VAR6);\n FUN9 (VAR6);\n return VAR8;",
+        " VAR1->VAR2.VAR3 |= VAR4;\n if (FUN1 (VAR1->VAR2.VAR3 & VAR5))",
+        " VAR1 *VAR2 = FUN1 (VAR3);\n FUN1 (VAR3) = VAR2;",
+        " FUN1 (VAR1, VAR2, VAR3->VAR4.VAR5);\n VAR6 = FUN2 (&VAR3->VAR4, VAR2, VAR1);\n if (FUN3 (VAR2 == VAR7))\n if (!FUN4 (VAR6) && !FUN5 (VAR6))\n if (!FUN6 (VAR6))\n FUN7 (VAR6);\n VAR6 = FUN8 (VAR1);\n FUN9 (VAR1);\n return VAR6;",
+        " FUN1 (VAR1) = FUN2 (VAR2->VAR3.VAR4);"
+    ],
+    "API": [
+        " VAR1 *VAR2 = (VAR1 *) VAR3->VAR4.VAR5;\n VAR6 = VAR7;\n FUN1 (VAR8, VAR6, VAR3->VAR4.VAR5);\n VAR9 = FUN2 (&VAR3->VAR4, VAR6, VAR8);\n if (!FUN3 (VAR9) && !FUN4 (VAR9))\n if (!FUN5 (VAR9))\n FUN6 (VAR9);",
+        " VAR1 *VAR2 = (VAR1 *) VAR3->VAR4.VAR5;\n VAR6 = VAR7;\n FUN1 (VAR8, VAR6, VAR3->VAR4.VAR5);\n VAR9 = FUN2 (&VAR3->VAR4, VAR6, VAR8);\n if (FUN3 (VAR6 == VAR7))\n if (!FUN4 (VAR9) && !FUN5 (VAR9))\n if (!FUN6 (VAR9))\n FUN7 (VAR9);\n VAR9 = FUN8 (VAR8);\n FUN9 (VAR8);\n return VAR9;"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "add_adev" is responsible for initializing and registering a RDMA auxiliary device, allocating an index for it, and managing its memory allocation and cleanup.

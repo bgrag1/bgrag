@@ -1,0 +1,1 @@
+ Function purpose: The function "lock_vma_under_rcu" is designed to locate and lock a memory area (VMA) under RCU (Read-Copy-Update) protection, ensuring thread safety and proper handling of userfault handlers, for anonymous and TCP VMA's only.

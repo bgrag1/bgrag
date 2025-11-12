@@ -1,0 +1,1 @@
+ Function purpose: The function "cmd_comp_notifier" is designed to handle command completion notifications for a device, specifically for a device managed by the MLX5 driver, and it invokes a command completion handler upon receiving an event.

@@ -1,0 +1,1 @@
+ Function purpose: The function "xmt_node_end" processes the end of an XML or X3D node, managing the stack of nodes, updating the scene graph, and handling descriptor updates within the XMT-O parser.

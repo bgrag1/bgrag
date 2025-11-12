@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "VAR1::FUN1(const VAR2::VAR3& VAR4) {\n VAR5* VAR6 = VAR7.FUN2().FUN3();\n FUN4(VAR8.FUN3(), VAR6);",
+        "VAR1::FUN1(const VAR2::VAR3& VAR4) {\n VAR5* VAR6 = VAR7.FUN2().FUN3();\n FUN4(VAR8.FUN3(), VAR6);\n if (FUN5(VAR6)) {"
+    ],
+    "API": [
+        "VAR1::FUN1(const VAR2::VAR3& VAR4) {\n VAR5::VAR6<VAR7> VAR8 = VAR9::move(VAR10.FUN2());\n return VAR8;",
+        "VAR1::FUN1(const VAR2::VAR3& VAR4) {\n VAR5::VAR6<VAR7> VAR8 = VAR9::move(VAR10.FUN2());\n return VAR8;",
+        "VAR1::FUN1(const VAR2::VAR3& VAR4) {\n return VAR5::FUN2(\n VAR5::StrCat(\"\",\n VAR6::FUN3().FUN4(\"\")));"
+    ]
+}

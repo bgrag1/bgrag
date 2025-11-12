@@ -1,0 +1,1 @@
+ Function purpose: The function initializes the application by setting up threads for various components based on the command line arguments and default configurations, and then waits for the sockets to be ready.

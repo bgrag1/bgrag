@@ -1,0 +1,1 @@
+ Function purpose: The function "die_upon_dubious_ownership" is designed to detect and report dubious ownership in a Git repository, prompting the user to add the directory to the safe.directory configuration to avoid future warnings.

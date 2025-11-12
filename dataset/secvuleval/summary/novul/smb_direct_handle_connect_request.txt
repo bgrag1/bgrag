@@ -1,0 +1,1 @@
+ Function purpose: The function "smb_direct_handle_connect_request" is responsible for handling the connection request of an RDMA device, checking for Fast Registration Work Requests support, establishing a transport layer connection, and starting a handler thread for managing the connection.

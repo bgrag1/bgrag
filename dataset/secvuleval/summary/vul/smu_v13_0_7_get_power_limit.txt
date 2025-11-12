@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and adjusts power limits for a specific power limit type based on the current power limit, default power limit, maximum power limit, and minimum power limit values, considering overdrive settings if enabled.

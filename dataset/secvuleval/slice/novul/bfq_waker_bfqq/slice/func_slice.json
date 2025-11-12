@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR1 *VAR3 = VAR2->VAR3;\n\tif (!VAR3)\n\tif (VAR4 == VAR3) {\n\tif (FUN2(VAR3) == 1)\n\treturn VAR3;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tif (VAR3 == VAR4) {\n\tif (FUN2(VAR4) == 1)\n\tVAR3 = VAR3->VAR3;\n\treturn VAR4;",
+        "static struct VAR1 *FUN1(struct VAR1 *VAR2)\n\tstruct VAR1 *VAR3 = VAR2->VAR3;\n\tif (VAR3 == VAR4) {\n\tif (FUN2(VAR4) == 1)\n\treturn VAR4;"
+    ]
+}

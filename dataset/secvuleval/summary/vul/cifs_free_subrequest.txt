@@ -1,0 +1,1 @@
+ Function purpose: The function "cifs_free_subrequest" is responsible for freeing resources associated with a CIFS (Client for Microsoft Windows) I/O subrequest, including deregistering memory registration (if applicable), adjusting credits, and freeing an XID if it exists.

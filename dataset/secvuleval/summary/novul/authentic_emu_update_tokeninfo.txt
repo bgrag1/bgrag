@@ -1,0 +1,1 @@
+ Function purpose: The function "authentic_emu_update_tokeninfo" updates the token information on a PKCS#15 card by retrieving a challenge and updating a specific file with the challenge response.

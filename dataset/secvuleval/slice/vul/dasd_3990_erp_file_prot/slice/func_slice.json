@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "static struct VAR1 *\nFUN1(struct VAR1 * VAR2)\n\treturn FUN2(VAR2, VAR3);",
+        "static struct VAR1 *\n\tif (!FUN1(VAR2, &VAR3->VAR4))"
+    ]
+}

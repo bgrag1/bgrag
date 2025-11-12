@@ -1,0 +1,1 @@
+ Function purpose: The function allocates and initializes a hash table map for use in eBPF programs, taking into account various map types, flags, and memory allocation requirements.

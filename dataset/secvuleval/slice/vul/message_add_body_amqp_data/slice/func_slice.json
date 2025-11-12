@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n VAR3* VAR4 = (VAR3*)realloc(VAR1->VAR5, sizeof(VAR3) * (VAR1->VAR6 + 1));\n if (VAR4 == NULL)\n VAR1->VAR5 = VAR4;\n VAR1->VAR5[VAR1->VAR6].VAR7 = NULL;\n if (VAR1->VAR5[VAR1->VAR6].VAR7 == NULL)\n (void)memcpy(VAR1->VAR5[VAR1->VAR6].VAR7, VAR2.VAR8, VAR2.VAR9);"
+    ],
+    "array": [
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n if ((VAR1 == NULL) ||\n ((VAR2.VAR3 == NULL) &&\n (VAR2.VAR4 != 0)))\n VAR5* VAR6 = (VAR5*)realloc(VAR1->VAR7, sizeof(VAR5) * (VAR1->VAR8 + 1));\n if (VAR6 == NULL)\n if (VAR2.VAR4 == 0)\n VAR1->VAR7[VAR1->VAR8].VAR9 = (unsigned char*)malloc(VAR2.VAR4);\n if (VAR1->VAR7[VAR1->VAR8].VAR9 == NULL)\n (void)memcpy(VAR1->VAR7[VAR1->VAR8].VAR9, VAR2.VAR3, VAR2.VAR4);",
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n (VAR2.VAR3 != 0)))\n if (VAR2.VAR3 == 0)\n VAR1->VAR4[VAR1->VAR5].VAR6 = (unsigned char*)malloc(VAR2.VAR3);\n VAR1->VAR4[VAR1->VAR5].VAR7 = VAR2.VAR3;",
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n if ((VAR1 == NULL) ||\n ((VAR2.VAR3 == NULL) &&\n VAR4* VAR5 = (VAR4*)realloc(VAR1->VAR6, sizeof(VAR4) * (VAR1->VAR7 + 1));\n if (VAR5 == NULL)\n VAR1->VAR6[VAR1->VAR7].VAR8 = NULL;"
+    ],
+    "API": [
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n VAR3* VAR4 = (VAR3*)realloc(VAR1->VAR5, sizeof(VAR3) * (VAR1->VAR6 + 1));\n if (VAR4 == NULL)\n VAR1->VAR5 = VAR4;\n VAR1->VAR5[VAR1->VAR6].VAR7 = NULL;\n if (VAR1->VAR5[VAR1->VAR6].VAR7 == NULL)\n (void)memcpy(VAR1->VAR5[VAR1->VAR6].VAR7, VAR2.VAR8, VAR2.VAR9);",
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n if ((VAR1 == NULL) ||\n ((VAR2.VAR3 == NULL) &&\n (VAR2.VAR4 != 0)))\n VAR5* VAR6 = (VAR5*)realloc(VAR1->VAR7, sizeof(VAR5) * (VAR1->VAR8 + 1));\n if (VAR6 == NULL)\n if (VAR2.VAR4 == 0)\n VAR1->VAR7[VAR1->VAR8].VAR9 = (unsigned char*)malloc(VAR2.VAR4);\n if (VAR1->VAR7[VAR1->VAR8].VAR9 == NULL)\n (void)memcpy(VAR1->VAR7[VAR1->VAR8].VAR9, VAR2.VAR3, VAR2.VAR4);",
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n (VAR2.VAR3 != 0)))\n if (VAR2.VAR3 == 0)\n VAR1->VAR4[VAR1->VAR5].VAR6 = (unsigned char*)malloc(VAR2.VAR3);\n if (VAR1->VAR4[VAR1->VAR5].VAR6 == NULL)\n VAR1->VAR4[VAR1->VAR5].VAR7 = VAR2.VAR3;\n (void)memcpy(VAR1->VAR4[VAR1->VAR5].VAR6, VAR2.VAR8, VAR2.VAR3);",
+        "int FUN1(MESSAGE_HANDLE VAR1, BINARY_DATA VAR2)\n VAR3* VAR4 = (VAR3*)realloc(VAR1->VAR5, sizeof(VAR3) * (VAR1->VAR6 + 1));\n if (VAR4 == NULL)\n VAR1->VAR5 = VAR4;\n VAR1->VAR5[VAR1->VAR6].VAR7 = NULL;\n if (VAR1->VAR5[VAR1->VAR6].VAR7 == NULL)\n (void)memcpy(VAR1->VAR5[VAR1->VAR6].VAR7, VAR2.VAR8, VAR2.VAR9);"
+    ]
+}

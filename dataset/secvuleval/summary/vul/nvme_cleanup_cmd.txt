@@ -1,0 +1,1 @@
+ Function purpose: The function "nvme_cleanup_cmd" is designed to free the memory allocated for a special payload in an NVMe command, specifically handling the case of discard commands to avoid freeing the wrong memory.

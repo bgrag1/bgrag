@@ -1,0 +1,7 @@
+digraph scoped_done {  
+"1000115" [label = "(METHOD,scoped_done)" ]
+"1000118" [label = "(METHOD_RETURN,ScopedVideoFrameDone)" ]
+"1000116" [label = "(PARAM,std::move(callbacks))" ]
+  "1000116" -> "1000118"  [ label = "DDG: callbacks"] 
+  "1000115" -> "1000116"  [ label = "DDG: "] 
+}

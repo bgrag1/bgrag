@@ -1,0 +1,1 @@
+ Function purpose: The function "mlx5_eswitch_set_vepa" is designed to set the VEPA (Virtual Ethernet Port Aggregator) mode for a given Ethernet switch entity in a Mellanox 5 series network device, ensuring it is only performed in allowed and supported modes.

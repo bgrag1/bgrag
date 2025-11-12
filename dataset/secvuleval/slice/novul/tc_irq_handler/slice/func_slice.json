@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tstruct VAR4 *VAR5 = VAR3;",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tif (VAR4->VAR5 >= 0 && VAR4->VAR6.VAR7 && VAR4->VAR8.VAR9) {\n\tFUN2(VAR4->VAR6.VAR7);",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tu32 VAR4 = 0;\n\tFUN2(VAR5->VAR6, \"\", VAR4);\n\tif (VAR5->VAR7 >= 0 && VAR5->VAR8.VAR6 && VAR5->VAR9.VAR10) {\n\tbool VAR11 = VAR12 & FUN3(VAR5->VAR7);\n\tbool VAR13 = VAR12 & FUN4(VAR5->VAR7);\n\tFUN5(VAR5->VAR6, \"\", VAR5->VAR7,",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tVAR4 = FUN2(VAR5->VAR6, VAR7, &VAR8);\n\tif (!VAR8)\n\tif (VAR8 & VAR9) {\n\tFUN2(VAR5->VAR6, VAR10, &VAR11);\n\tif (VAR5->VAR12 >= 0 && VAR5->VAR13.VAR14 && VAR5->VAR15.VAR16) {\n\tbool VAR17 = VAR8 & FUN3(VAR5->VAR12);\n\tbool VAR18 = VAR8 & FUN4(VAR5->VAR12);\n\tFUN5(VAR5->VAR6, VAR7, VAR8);"
+    ],
+    "API": [
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tVAR4 = FUN2(VAR5->VAR6, VAR7, &VAR8);\n\tif (!VAR8)\n\tif (VAR8 & VAR9) {\n\tFUN2(VAR5->VAR6, VAR10, &VAR11);\n\tif (VAR5->VAR12 >= 0 && VAR5->VAR13.VAR14 && VAR5->VAR15.VAR16) {\n\tbool VAR17 = VAR8 & FUN3(VAR5->VAR12);\n\tbool VAR18 = VAR8 & FUN4(VAR5->VAR12);\n\tFUN5(VAR5->VAR6, VAR7, VAR8);",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tVAR4 = FUN2(VAR5->VAR6, VAR7, &VAR8);\n\tFUN2(VAR5->VAR6, VAR9, &VAR10);\n\tFUN3(VAR5->VAR6, VAR7, VAR8);",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tVAR4 = FUN2(VAR5->VAR6, VAR7, &VAR8);",
+        "static VAR1 FUN1(int VAR2, void *VAR3)\n\tVAR4 = FUN2(VAR5->VAR6, VAR7, &VAR8);\n\tFUN2(VAR5->VAR6, VAR9, &VAR10);\n\tFUN3(VAR5->VAR6, VAR7, VAR8);"
+    ]
+}

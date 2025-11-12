@@ -1,0 +1,1 @@
+ Function purpose: The function adjusts the address and size of a data range in the DPCD (Display Port Configuration Data) based on the presence of mandatory address ranges, allocating memory for the data if necessary.

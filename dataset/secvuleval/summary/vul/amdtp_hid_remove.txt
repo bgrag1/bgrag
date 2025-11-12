@@ -1,0 +1,1 @@
+ Function purpose: The function "amdtp_hid_remove" is designed to free the memory allocated for the driver data of all HID sensor hubs associated with a given amdtp_cl_data structure and then destroy the HID devices.

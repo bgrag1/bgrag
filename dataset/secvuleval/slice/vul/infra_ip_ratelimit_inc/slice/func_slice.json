@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1* VAR2,\n\tstruct VAR3* VAR4, socklen_t VAR5, time_t VAR6,\n\tint VAR7, int VAR8, struct VAR9* VAR10)\n\tVAR11 = FUN2(VAR2, VAR4, VAR5, 1);\n\tint VAR12 = FUN3(VAR11->VAR13, VAR6, VAR8);\n\tint* VAR14 = FUN4(VAR11->VAR13, VAR6);\n\tVAR15 = FUN3(VAR11->VAR13, VAR6, VAR8);\n\treturn FUN5(VAR4, VAR5, VAR10, VAR12, VAR15,",
+        "int FUN1(struct VAR1* VAR2,\n\tstruct VAR3* VAR4, socklen_t VAR5, time_t VAR6,\n\tint VAR7, int VAR8, struct VAR9* VAR10)\n\tint VAR11 = FUN2(VAR12->VAR13, VAR6, VAR8);\n\tint* VAR14 = FUN3(VAR12->VAR13, VAR6);",
+        "int FUN1(struct VAR1* VAR2,\n\tstruct VAR3* VAR4, socklen_t VAR5, time_t VAR6,\n\tVAR7 = FUN2(VAR2, VAR4, VAR5, 1);\n\tFUN3(VAR2, VAR4, VAR5, VAR6);",
+        "int FUN1(struct VAR1* VAR2,\n\tstruct VAR3* VAR4, socklen_t VAR5, time_t VAR6,\n\tVAR7 = FUN2(VAR2, VAR4, VAR5, 1);"
+    ],
+    "API": [
+        "int FUN1(struct VAR1* VAR2,\n\tstruct VAR3* VAR4, socklen_t VAR5, time_t VAR6,\n\tVAR7 = FUN2(VAR2, VAR4, VAR5, 1);\n\tFUN3(VAR2, VAR4, VAR5, VAR6);"
+    ]
+}

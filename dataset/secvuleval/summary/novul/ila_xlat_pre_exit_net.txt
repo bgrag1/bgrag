@@ -1,0 +1,1 @@
+ Function purpose: The function "ila_xlat_pre_exit_net" is designed to unregister the ILA (Intermediate Language Architecture) network hooks from the specified network, ensuring that the network's translation functionalities are properly deactivated upon exiting.

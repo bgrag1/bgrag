@@ -1,0 +1,1 @@
+ Function purpose: The function "am65_cpsw_ndo_xdp_xmit" is designed to transmit XDP frames using the Am65 CPSW network device, distributing the frames across multiple transmit channels based on the CPU ID.

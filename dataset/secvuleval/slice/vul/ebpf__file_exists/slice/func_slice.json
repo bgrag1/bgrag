@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static inline int FUN1(const char *VAR1)\n return (FUN2(VAR1, &VAR2) == 0);"
+    ]
+}

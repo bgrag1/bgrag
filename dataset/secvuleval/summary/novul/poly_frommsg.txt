@@ -1,0 +1,1 @@
+ Function purpose: The function "poly_frommsg" converts a byte array into a polynomial representation by setting coefficients based on the binary value of each bit in the byte array.

@@ -1,0 +1,1 @@
+ Function purpose: The function creates a new QUIC connection with the specified parameters and initializes its state, paths, and transport parameters, setting it up for communication with a remote peer.

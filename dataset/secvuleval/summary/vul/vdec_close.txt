@@ -1,0 +1,1 @@
+ Function purpose: The function "vdec_close" is designed to gracefully close and release resources associated with a video decoder instance, including deinitializing control structures, releasing memory, and terminating sessions.

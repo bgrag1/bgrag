@@ -1,0 +1,1 @@
+ Function purpose: The function "f2fs_defragment_range" aims to defragment a range of pages within a file on a Flash-Friendly File System (F2FS) by moving fragmented blocks to contiguous locations, ensuring better performance.

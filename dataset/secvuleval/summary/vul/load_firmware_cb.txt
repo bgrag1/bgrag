@@ -1,0 +1,1 @@
+ Function purpose: The function "load_firmware_cb" is responsible for loading firmware for a DVB frontend and updating the state of the tuner accordingly.

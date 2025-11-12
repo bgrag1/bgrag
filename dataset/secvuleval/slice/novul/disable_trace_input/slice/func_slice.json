@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, size_t VAR4)\n VAR5 = FUN2(VAR2, VAR3, VAR4);\n if (VAR5 == NULL) {\n if (VAR5->VAR6 != NULL) {\n FUN3(VAR5);",
+        "static int FUN1(struct VAR1 *VAR2, const char *VAR3, size_t VAR4)\n VAR5 = FUN2(VAR2, VAR3, VAR4);\n if (VAR5 == NULL) {\n if (VAR5->VAR6 != NULL) {\n FUN3(VAR5);"
+    ]
+}

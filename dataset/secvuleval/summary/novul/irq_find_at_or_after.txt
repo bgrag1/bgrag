@@ -1,0 +1,1 @@
+ Function purpose: The function "irq_find_at_or_after" is designed to find the next available IRQ descriptor starting from a given offset, using a sparse IRQ index, and returns the IRQ number if found, or the total number of IRQs if not found.

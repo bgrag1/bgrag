@@ -1,0 +1,1 @@
+ Function purpose: The function "qxl_add_mode" is designed to add a new display mode to a DRM connector, checking the mode's validity and marking it as preferred if specified, before adding it to the connector's list of probed modes.

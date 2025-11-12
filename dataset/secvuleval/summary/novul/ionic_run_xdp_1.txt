@@ -1,0 +1,1 @@
+ Function purpose: The function processes an XDP (eXpress Data Path) packet received by an ionic network device, applying the XDP program to determine the action to take (pass, drop, TX, or redirect), updating statistics accordingly, and managing buffer handling and freeing as necessary.

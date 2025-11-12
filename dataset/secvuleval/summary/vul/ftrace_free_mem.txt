@@ -1,0 +1,1 @@
+ Function purpose: The function "ftrace_free_mem" is responsible for freeing memory allocated for dynamic function tracing in a module, by searching and removing the corresponding function records from the ftrace data structures and freeing the associated memory.

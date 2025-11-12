@@ -1,0 +1,1 @@
+ Function purpose: The function creates and initializes a preemptible fence object, which is used to manage GPU execution and synchronization, allowing for the interruption of ongoing tasks by higher priority ones.

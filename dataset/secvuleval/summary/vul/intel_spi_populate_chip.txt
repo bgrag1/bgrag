@@ -1,0 +1,1 @@
+ Function purpose: The function populates an Intel SPI controller with a primary and optional secondary SPI NOR flash chip, configuring their partitions and registering them as SPI devices.

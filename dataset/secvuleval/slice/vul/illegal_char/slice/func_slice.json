@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "FUN1(char *VAR1, int VAR2)\n if (VAR1 == NULL)\n sprintf((char *)VAR1, FUN2(VAR3), (char *)FUN3(VAR2));\n return VAR1;"
+    ],
+    "API": [
+        "FUN1(char *VAR1, int VAR2)\n if (VAR1 == NULL)\n sprintf((char *)VAR1, FUN2(VAR3), (char *)FUN3(VAR2));"
+    ]
+}

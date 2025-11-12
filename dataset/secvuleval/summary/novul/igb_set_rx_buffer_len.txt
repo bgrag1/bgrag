@@ -1,0 +1,1 @@
+ Function purpose: The function sets the build_skb and buffer size flags for a given RX ring in an Ethernet adapter, based on the adapter's flags and hardware registers, to optimize the handling of large or legacy configurations.

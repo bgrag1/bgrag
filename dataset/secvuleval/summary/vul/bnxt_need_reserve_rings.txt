@@ -1,0 +1,1 @@
+ Function purpose: The function "bnxt_need_reserve_rings" determines whether specific network interface controller (NIC) resources need to be reserved for a Broadcom network adapter, based on the current configuration and hardware specifications.

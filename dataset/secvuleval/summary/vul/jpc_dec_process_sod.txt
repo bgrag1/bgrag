@@ -1,0 +1,1 @@
+ Function purpose: The function processes the decoding of a single tile part in a JPEG 2000 image, handling packet headers, decoding packets, and preparing for the next tile part.

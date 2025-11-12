@@ -1,0 +1,1 @@
+ Function purpose: The function "submit_flushes" in the code snippet is responsible for initiating a flush operation on amddev, submitting flush data to all healthy raid devices, and scheduling a work item to complete the flush process.

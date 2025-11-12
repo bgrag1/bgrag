@@ -1,0 +1,1 @@
+ Function purpose: The function processes SDMA traps by identifying the specific instance and ring ID from the interrupt vector entry, and then processes the associated fence for the corresponding ring.

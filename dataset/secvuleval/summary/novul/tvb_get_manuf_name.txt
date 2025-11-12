@@ -1,0 +1,1 @@
+ Function purpose: The function "tvb_get_manuf_name" extracts and processes a manufacturer name from a byte array within a TVB (Tree-Walk Byte Array) structure, starting from a specified offset.

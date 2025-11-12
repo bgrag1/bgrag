@@ -1,0 +1,1 @@
+ Function purpose: The function constructs a wide-character string from HTTP headers retrieved from an HTTP_HEADERS_HANDLE, converting them from ASCII to wide characters, and returns the result as an HTTPAPI_RESULT.

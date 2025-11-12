@@ -1,0 +1,1 @@
+ Function purpose: The function "manuf_name_lookup" is designed to look up and return the manufacturer information associated with a given Ethernet address by first checking a precomputed hash table and then attempting to find a match in global manufacturer tables, creating a new entry if no match is found.

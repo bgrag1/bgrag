@@ -1,0 +1,1 @@
+ Function purpose: The function "brcmf_pmksa_v3_op" is designed to manage IEEE 802.11 PMKSA (Pairwise Master Key SA) operations, either by flushing the entire list or by adding/updating a single PMK entry, and then sets the PMKSA information via a firmware interface.

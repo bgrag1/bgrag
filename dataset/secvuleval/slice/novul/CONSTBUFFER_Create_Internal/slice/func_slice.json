@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(const unsigned char* VAR2, size_t VAR3)\n size_t VAR4 = sizeof(VAR5) + VAR3;\n if (VAR4 < VAR3)\n VAR6 = NULL;\n VAR6 = (VAR1)calloc(1, VAR4);\n if (VAR6 == NULL)\n if (VAR3 == 0)\n unsigned char* VAR7 = (unsigned char*)(VAR6 + 1);\n (void)memcpy(VAR7, VAR2, VAR3);\n VAR6->VAR8.VAR9 = VAR7;"
+    ],
+    "API": [
+        "static VAR1 FUN1(const unsigned char* VAR2, size_t VAR3)\n size_t VAR4 = sizeof(VAR5) + VAR3;\n if (VAR4 < VAR3)\n VAR6 = NULL;\n VAR6 = (VAR1)calloc(1, VAR4);\n if (VAR6 == NULL)\n if (VAR3 == 0)\n unsigned char* VAR7 = (unsigned char*)(VAR6 + 1);\n (void)memcpy(VAR7, VAR2, VAR3);\n VAR6->VAR8.VAR9 = VAR7;",
+        "static VAR1 FUN1(const unsigned char* VAR2, size_t VAR3)\n size_t VAR4 = sizeof(VAR5) + VAR3;\n if (VAR4 < VAR3)\n VAR6 = (VAR1)calloc(1, VAR4);\n if (VAR6 == NULL)\n VAR6->VAR7.VAR3 = VAR3;\n if (VAR3 == 0)\n VAR6->VAR7.VAR8 = NULL;\n unsigned char* VAR9 = (unsigned char*)(VAR6 + 1);\n (void)memcpy(VAR9, VAR2, VAR3);\n VAR6->VAR7.VAR8 = VAR9;\n return VAR6;",
+        "static VAR1 FUN1(const unsigned char* VAR2, size_t VAR3)\n size_t VAR4 = sizeof(VAR5) + VAR3;\n if (VAR4 < VAR3)\n VAR6 = (VAR1)calloc(1, VAR4);\n if (VAR6 == NULL)\n VAR6->VAR7.VAR3 = VAR3;\n if (VAR3 == 0)\n VAR6->VAR7.VAR8 = NULL;\n unsigned char* VAR9 = (unsigned char*)(VAR6 + 1);\n (void)memcpy(VAR9, VAR2, VAR3);\n VAR6->VAR7.VAR8 = VAR9;\n return VAR6;",
+        "static VAR1 FUN1(const unsigned char* VAR2, size_t VAR3)\n size_t VAR4 = sizeof(VAR5) + VAR3;\n if (VAR4 < VAR3)\n VAR6 = (VAR1)calloc(1, VAR4);\n if (VAR6 == NULL)\n VAR6->VAR7.VAR8 = NULL;\n unsigned char* VAR9 = (unsigned char*)(VAR6 + 1);\n (void)memcpy(VAR9, VAR2, VAR3);\n VAR6->VAR7.VAR8 = VAR9;\n return VAR6;"
+    ]
+}

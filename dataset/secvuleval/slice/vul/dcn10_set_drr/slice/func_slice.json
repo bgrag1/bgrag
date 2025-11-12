@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 **VAR1,\n\tunsigned int VAR2 = 0x800;\n\tunsigned int VAR3 = 2;\n\tif ((VAR1[VAR4]->VAR5.VAR6 != NULL) && VAR1[VAR4]->VAR5.VAR6->VAR7) {\n\tVAR1[VAR4]->VAR5.VAR6->VAR7->FUN2(\n\tVAR1[VAR4]->VAR5.VAR6->VAR7->FUN3("
+    ],
+    "array": [
+        "void FUN1(struct VAR1 **VAR1,\n\tunsigned int VAR2 = 0x800;\n\tunsigned int VAR3 = 2;\n\tif ((VAR1[VAR4]->VAR5.VAR6 != NULL) && VAR1[VAR4]->VAR5.VAR6->VAR7) {\n\tVAR1[VAR4]->VAR5.VAR6->VAR7->FUN2(\n\tVAR1[VAR4]->VAR5.VAR6->VAR7->FUN3("
+    ]
+}

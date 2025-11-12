@@ -1,0 +1,1 @@
+ Function purpose: The function "tls_ctx_create" is designed to initialize and allocate memory for a TLS context, associating it with an existing socket, and then assign it to the "icsk_ulp_data" field of the "inet_connection_sock" structure associated with that socket.

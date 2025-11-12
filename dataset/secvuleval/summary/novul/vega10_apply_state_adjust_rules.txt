@@ -1,0 +1,1 @@
+ Function purpose: The function adjusts the requested power state of a Vega10-based GPU to meet certain conditions such as minimum clock speeds, stability requirements, and display configuration constraints.

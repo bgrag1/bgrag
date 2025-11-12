@@ -1,0 +1,1 @@
+ Function purpose: The function "f2fs_move_file_range" in the code snippet is designed to move a range of data from one file to another within the same filesystem, ensuring that the data is correctly transferred and the file sizes are updated accordingly.

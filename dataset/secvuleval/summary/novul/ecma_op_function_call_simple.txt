@@ -1,0 +1,1 @@
+ Function purpose: The function "ecma_op_function_call_simple" is designed to execute a function call, handling the creation of the appropriate lexical environment and 'this' binding as specified by the ECMA-262 standard.

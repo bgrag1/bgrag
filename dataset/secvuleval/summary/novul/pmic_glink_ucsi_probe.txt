@@ -1,0 +1,1 @@
+ Function purpose: The function "pmic_glink_ucsi_probe" is responsible for initializing and setting up a UCSI (USB Type-C Connector System Interface) device, including allocating memory, initializing components, and registering the device with the system.

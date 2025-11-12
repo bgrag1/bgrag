@@ -1,0 +1,1 @@
+ Function purpose: The function "z_erofs_do_map_blocks" is responsible for mapping file blocks in an erofs filesystem, determining the type of compression used, and handling special cases like tail packing and fragmentation.

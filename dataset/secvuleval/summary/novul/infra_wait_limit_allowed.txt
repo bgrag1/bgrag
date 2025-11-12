@@ -1,0 +1,1 @@
+ Function purpose: The function checks if the wait limit for a given client address is allowed based on the configuration and the content of the infrastructure cache.

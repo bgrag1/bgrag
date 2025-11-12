@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "void FUN1(const char *VAR1, const char *VAR2,\n\tconst char *VAR3)\n\tif (FUN2(VAR1, VAR2, VAR3, &VAR4))\n\tFUN3(&VAR4, '');\n\tVAR5 = VAR1 ? VAR1 : VAR3;\n\tFUN4(&VAR6, VAR5);\n\tFUN5(FUN6(\"\"",
+        "void FUN1(const char *VAR1, const char *VAR2,\n\tif (FUN2(VAR1, VAR2, VAR3, &VAR4))\n\tFUN3(&VAR4, '');\n\tVAR5 = VAR1 ? VAR1 : VAR3;\n\tFUN4(&VAR6, VAR5);\n\tFUN5(FUN6(\"\"",
+        "void FUN1(const char *VAR1, const char *VAR2,\n\tif (FUN2(VAR1, VAR2, VAR3, &VAR4))\n\tFUN3(&VAR4, '');\n\tVAR5 = VAR1 ? VAR1 : VAR3;\n\tFUN4(&VAR6, VAR5);\n\tFUN5(FUN6(\"\""
+    ]
+}

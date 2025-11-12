@@ -1,0 +1,1 @@
+ Function purpose: The function checks if a given character is a metacharacter by searching for it in a predefined list of metacharacters.

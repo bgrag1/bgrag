@@ -1,0 +1,1 @@
+ Function purpose: The function "ice_rebuild" is designed to rebuild and reconfigure the network interface card (NIC) after a reset, ensuring that the device is fully operational again.

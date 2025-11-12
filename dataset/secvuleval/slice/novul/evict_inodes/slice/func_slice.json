@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR3->VAR4, &VAR5);\n\tFUN3(&VAR5);\n\tFUN3(&VAR5);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR3->VAR4);\n\tFUN3(&VAR3->VAR4);\n\tFUN3(&VAR3->VAR4);\n\tFUN3(&VAR3->VAR4);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR2->VAR3);\n\tFUN3(&VAR2->VAR3);\n\tFUN3(&VAR2->VAR3);",
+        "void FUN1(struct VAR1 *VAR2)\n\tif (FUN2(&VAR3->VAR4))\n\tif (FUN2(&VAR3->VAR4)) {",
+        "void FUN1(struct VAR1 *VAR2)\n\tif (VAR3->VAR4 & (VAR5 | VAR6 | VAR7)) {\n\tVAR3->VAR4 |= VAR6;"
+    ],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2)\n\tif (FUN2(&VAR3->VAR4))\n\tif (FUN2(&VAR3->VAR4)) {",
+        "void FUN1(struct VAR1 *VAR2)\n\tif (FUN2(&VAR3->VAR4))\n\tif (FUN2(&VAR3->VAR4)) {"
+    ]
+}

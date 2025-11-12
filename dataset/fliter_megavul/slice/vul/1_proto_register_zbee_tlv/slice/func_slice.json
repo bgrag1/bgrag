@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "void FUN1(void)\n static VAR1 *VAR2[] =\n FUN2(VAR2, FUN3(VAR2));"
+    ]
+}

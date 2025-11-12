@@ -1,0 +1,1 @@
+ Function purpose: The function "bfq_waker_bfqq" in the code snippet determines if the bfq_queue associated with the process being woken up is the only process in its merge chain, and returns the waker_bfqq if it is not, or NULL if it is.

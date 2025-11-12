@@ -1,0 +1,1 @@
+ Function purpose: The function "ice_vsi_rebuild" is responsible for rebuilding a virtual switch interface (VSI) with specified flags, configuring traffic classes, and managing queue vectors, ensuring proper operation and recovery in case of errors.

@@ -1,0 +1,1 @@
+ Function purpose: The function dissect_readreg_ack processes a GVCP (General Video Control Protocol) READREG_ACK telegram, decoding and displaying the register values and their corresponding addresses, and optionally visualizing them in a protocol tree.

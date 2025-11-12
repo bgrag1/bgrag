@@ -1,0 +1,1 @@
+ Function purpose: The function reads and parses a single JSON value from a byte stream, allocating memory for the JSON document and handling various error conditions.

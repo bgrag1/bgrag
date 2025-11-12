@@ -1,0 +1,21 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3->VAR4, VAR5->VAR6);\n\tFUN3(&VAR3->VAR4, \"\",",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 =\n\tFUN2(&VAR2->VAR5, &VAR6->VAR7);\n\tFUN3(&VAR6->VAR7,\n FUN4(VAR4, VAR8->VAR9));",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR4);\n\tFUN3(VAR4, VAR7);\n\tFUN4(VAR4, VAR7);\n\tFUN5(VAR4, VAR7);\n\tFUN6(VAR4, VAR7, true);\n\tFUN7(VAR7);\n\tFUN8(VAR7);\n\tFUN9(VAR2, VAR4, VAR7, VAR8);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6.VAR7);\n\tu64 VAR8 = FUN3(VAR9->VAR10);\n\tFUN4(VAR4, FUN5(VAR11->VAR12),\n FUN6(VAR8 >> 24));\n\tFUN4(VAR4, FUN7(VAR11->VAR12),\n FUN6(VAR8 & 0xffffff));\n\tFUN8(VAR4, FUN9(VAR13), 0,\n\tif (FUN10(VAR4) >= 12)\n\tFUN8(VAR4, FUN11(VAR4, VAR13),",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR4);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tconst struct VAR3 *VAR4 =\n\tFUN2(VAR2, VAR5);\n\tFUN3(VAR4);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tbool VAR3 = VAR4->VAR5 == 1;\n\tFUN2(&VAR6->VAR7, \"\",",
+        "static void FUN1(struct VAR1 *VAR2,\n\tconst struct VAR3 *VAR4,\n\tif (FUN2(VAR4)) {\n\tFUN3(VAR4);\n\tFUN4(VAR5, VAR4);\n\tFUN5(VAR5, VAR4);\n\tFUN6(VAR5, VAR4);\n\tFUN7(VAR5, VAR4, true);\n\tFUN8(VAR4);\n\tFUN9(VAR4);\n\tFUN10(VAR2, VAR5, VAR4, VAR6);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tconst struct VAR3 *VAR4)\n\tFUN2(VAR2, VAR5, VAR6, VAR4);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tenum transcoder VAR3 = VAR4->VAR5;\n\tFUN2(VAR6, FUN3(VAR3), 0,\n\tif (FUN4(VAR6) >= 12)\n\tFUN2(VAR6, FUN5(VAR6, VAR3),"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6.VAR7);\n\tu64 VAR8 = FUN3(VAR9->VAR10);\n\tFUN4(VAR4, FUN5(VAR11->VAR12),\n FUN6(VAR8 >> 24));\n\tFUN4(VAR4, FUN7(VAR11->VAR12),\n\tFUN8(VAR4, FUN9(VAR13), 0,\n\tif (FUN10(VAR4) >= 12)\n\tFUN8(VAR4, FUN11(VAR4, VAR13),",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR6.VAR7);\n\tu64 VAR8 = FUN3(VAR9->VAR10);\n\tFUN4(VAR4, FUN5(VAR11->VAR12),\n FUN6(VAR8 >> 24));\n\tFUN4(VAR4, FUN7(VAR11->VAR12),\n FUN6(VAR8 & 0xffffff));\n\tFUN8(VAR4, FUN9(VAR13), 0,\n\tif (FUN10(VAR4) >= 12)\n\tFUN8(VAR4, FUN11(VAR4, VAR13),",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR4);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4 = FUN2(VAR5->VAR4);",
+        "static void FUN1(struct VAR1 *VAR2,\n\tstruct VAR3 *VAR4,\n\tconst struct VAR5 *VAR6,\n\tstruct VAR7 *VAR8 = FUN2(VAR4);\n\tif (FUN3(VAR6)) {\n\tFUN4(VAR6);\n\tFUN5(VAR4, VAR6);\n\tFUN6(VAR4, VAR6);\n\tFUN7(VAR4, VAR6);\n\tFUN8(VAR4, VAR6, true);\n\tFUN9(VAR6);\n\tFUN10(VAR6);\n\tFUN11(VAR2, VAR4, VAR6, VAR9);"
+    ]
+}

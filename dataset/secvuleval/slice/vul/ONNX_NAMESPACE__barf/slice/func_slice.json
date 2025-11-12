@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "VAR1::VAR2 FUN1(const char* VAR3, ...) {\n FUN2(VAR4, VAR3);\n vsnprintf(VAR5, 2048, VAR3, VAR4);\n FUN3(VAR4);\n return VAR1::FUN4(VAR5);"
+    ],
+    "API": [
+        "VAR1::VAR2 FUN1(const char* VAR3, ...) {\n FUN2(VAR4, VAR3);\n vsnprintf(VAR5, 2048, VAR3, VAR4);\n FUN3(VAR4);\n return VAR1::FUN4(VAR5);"
+    ]
+}

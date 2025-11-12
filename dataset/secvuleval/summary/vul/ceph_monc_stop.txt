@@ -1,0 +1,1 @@
+ Function purpose: The function "ceph_monc_stop" is designed to gracefully shut down a Ceph monitor client, ensuring all associated work is completed and resources are properly released.

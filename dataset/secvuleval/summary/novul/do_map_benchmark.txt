@@ -1,0 +1,1 @@
+ Function purpose: The function "do_map_benchmark" is designed to benchmark the memory mapping operations of a device by creating and managing multiple kernel threads to perform mapping and unmapping tasks, and then analyzing the results to provide performance metrics such as average latency and standard deviation.

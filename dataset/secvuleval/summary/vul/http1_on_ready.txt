@@ -1,0 +1,1 @@
+ Function purpose: The function "http1_on_ready" is designed to resume slow clients by checking if they are suspended and then forcing an event to handle data if necessary.

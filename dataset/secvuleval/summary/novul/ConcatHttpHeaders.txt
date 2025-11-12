@@ -1,0 +1,1 @@
+ Function purpose: The function ConcatHttpHeaders concatenates HTTP headers from a given handle into a single string, separated by "\r\n", and returns the concatenated string.

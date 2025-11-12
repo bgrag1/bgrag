@@ -1,0 +1,1 @@
+ Function purpose: The function "gb_interface_release" is designed to release resources associated with a GB (GadgetBridge) interface device, including canceling any pending work and freeing the memory allocated for the interface structure.

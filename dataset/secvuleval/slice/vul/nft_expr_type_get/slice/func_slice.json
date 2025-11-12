@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static const struct VAR1 *FUN1(struct VAR2 *VAR2,\n u8 VAR3,\n struct VAR4 *VAR5)\n\tif (VAR5 == NULL)\n\tVAR6 = FUN2(VAR3, VAR5);\n\tif (VAR6 != NULL && FUN3(VAR6->VAR7))\n\treturn VAR6;\n\tif (VAR6 == NULL) {",
+        "static const struct VAR1 *FUN1(struct VAR2 *VAR2,\n u8 VAR3,\n struct VAR4 *VAR5)\n\tif (VAR5 == NULL)\n\tVAR6 = FUN2(VAR3, VAR5);\n\tif (FUN3(VAR2, VAR3, VAR5) == -VAR7)\n\tif (FUN4(VAR2, \"\",\n FUN5(VAR5),\n (char *)FUN6(VAR5)) == -VAR7)",
+        "static const struct VAR1 *FUN1(struct VAR2 *VAR2,\n\tif (VAR3 != NULL && FUN2(VAR3->VAR4))"
+    ],
+    "API": []
+}

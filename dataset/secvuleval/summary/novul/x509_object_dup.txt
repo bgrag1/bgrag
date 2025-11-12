@@ -1,0 +1,1 @@
+ Function purpose: The function "x509_object_dup" duplicates an "X509_OBJECT" structure, creating a new "X509_OBJECT" with the same type and content as the original.

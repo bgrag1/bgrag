@@ -1,0 +1,1 @@
+ Function purpose: The function adds a TDM loopback link to a sound card's DAI links, extending the links array and configuring the new loopback link with appropriate settings and references.

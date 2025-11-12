@@ -1,0 +1,1 @@
+ Function purpose: The function allocates memory for a mechanism token using the provided value and size, and stores it in the connection context.

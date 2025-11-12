@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n } else if (VAR8->FUN2() > (VAR9)VAR5) {\n VAR10 = VAR8->FUN1(VAR11);\n strncpy(VAR4, VAR11, VAR5);\n size_t VAR12 = strlen(VAR4);\n if ((VAR12 > 0)&&(VAR4[VAR12-1] == '')) *VAR7 = VAR13; else *VAR7 = VAR14;\n FUN3(VAR4);",
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n VAR8 = (VAR9*)VAR10.FUN2();\n if (VAR11 == VAR12 && VAR8 != NULL) {",
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n VAR4[0] = '';"
+    ],
+    "array": [
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n VAR4[0] = '';",
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n } else if (VAR8->FUN2() > (VAR9)VAR5) {\n VAR10 = VAR8->FUN1(VAR11);\n strncpy(VAR4, VAR11, VAR5);\n size_t VAR12 = strlen(VAR4);\n if ((VAR12 > 0)&&(VAR4[VAR12-1] == '')) *VAR7 = VAR13; else *VAR7 = VAR14;\n FUN3(VAR4);"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n } else if (VAR8->FUN2() > (VAR9)VAR5) {\n VAR10 = VAR8->FUN1(VAR11);\n strncpy(VAR4, VAR11, VAR5);\n size_t VAR12 = strlen(VAR4);\n if ((VAR12 > 0)&&(VAR4[VAR12-1] == '')) *VAR7 = VAR13; else *VAR7 = VAR14;",
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n } else if (VAR8->FUN2() > (VAR9)VAR5) {\n VAR10 = VAR8->FUN1(VAR11);\n strncpy(VAR4, VAR11, VAR5);\n size_t VAR12 = strlen(VAR4);\n if ((VAR12 > 0)&&(VAR4[VAR12-1] == '')) *VAR7 = VAR13; else *VAR7 = VAR14;\n FUN3(VAR4);",
+        "FUN1(VAR1 *VAR2, DcmTagKey VAR3, char *VAR4, int VAR5, VAR6 *VAR7)\n } else if (VAR8->FUN2() > (VAR9)VAR5) {\n VAR10 = VAR8->FUN1(VAR11);\n strncpy(VAR4, VAR11, VAR5);\n size_t VAR12 = strlen(VAR4);\n if ((VAR12 > 0)&&(VAR4[VAR12-1] == '')) *VAR7 = VAR13; else *VAR7 = VAR14;\n FUN3(VAR4);"
+    ]
+}

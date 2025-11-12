@@ -1,0 +1,1 @@
+ Function purpose: The function "max310x_i2c_probe" is responsible for initializing and probing a MAX310x device connected via I2C, configuring its registers, and invoking the main probe function for the device.

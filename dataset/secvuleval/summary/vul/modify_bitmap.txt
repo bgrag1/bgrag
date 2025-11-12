@@ -1,0 +1,1 @@
+ Function purpose: The function "modify_bitmap" processes a string to set or clear bits in a bitmap array based on the specified ranges and signs, returning 0 on success or an error code on failure.

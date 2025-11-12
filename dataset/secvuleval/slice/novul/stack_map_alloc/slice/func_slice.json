@@ -1,0 +1,25 @@
+{
+    "pointer": [
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);\n\treturn FUN7(VAR10);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tu32 VAR4 = VAR3->VAR4;\n\tif (VAR3->VAR5 == 0 || VAR3->VAR6 != 4 ||\n VAR4 < 8 || VAR4 % 8)\n\tif (VAR4 % sizeof(struct VAR7) ||\n VAR4 / sizeof(struct VAR7)\n\t} else if (VAR4 / 8 > VAR8)\n\tVAR9 = FUN2(VAR8);\n\treturn FUN3(VAR9);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tVAR4 = FUN2(VAR5, FUN3(VAR3));\n\tFUN4(&VAR4->VAR6, VAR3);\n\treturn &VAR4->VAR6;",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 & ~VAR5)\n\tif (VAR3->VAR4 & VAR6) {",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9->VAR6 = VAR6;"
+    ],
+    "integer": [
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);\n\treturn FUN7(VAR10);"
+    ],
+    "API": [
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\treturn FUN6(VAR10);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);\n\treturn FUN7(VAR10);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tu32 VAR4 = VAR3->VAR4;\n VAR4 < 8 || VAR4 % 8)\n\tif (VAR4 % sizeof(struct VAR5) ||\n VAR4 / sizeof(struct VAR5)",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tu32 VAR4 = VAR3->VAR4;\n VAR4 < 8 || VAR4 % 8)\n\tif (VAR4 % sizeof(struct VAR5) ||\n VAR4 / sizeof(struct VAR5)\n\tVAR6 = FUN2(VAR7);\n\treturn FUN3(VAR6);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tu32 VAR4 = VAR3->VAR4;\n VAR4 < 8 || VAR4 % 8)\n\tif (VAR4 % sizeof(struct VAR5) ||\n VAR4 / sizeof(struct VAR5)\n\tVAR6 = FUN2(VAR7);\n\treturn FUN3(VAR6);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tu32 VAR4 = VAR3->VAR4;\n VAR4 < 8 || VAR4 % 8)\n\tif (VAR4 % sizeof(struct VAR5) ||\n VAR4 / sizeof(struct VAR5)\n\tVAR6 = FUN2(VAR7);\n\treturn FUN3(VAR6);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);\n\treturn FUN7(VAR10);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);",
+        "static struct VAR1 *FUN1(union VAR2 *VAR3)\n\tif (VAR3->VAR4 == 0 || VAR3->VAR5 != 4 ||\n\tif (VAR3->VAR4 > 1UL << 31)\n\tVAR6 = FUN2(VAR3->VAR4);\n\tVAR7 = VAR6 * sizeof(struct VAR8 *) + sizeof(*VAR9);\n\tVAR9 = FUN3(VAR7, FUN4(VAR3));\n\tif (!VAR9)\n\tVAR9->VAR6 = VAR6;\n\tVAR10 = FUN5(VAR9);\n\tFUN6(VAR9);\n\treturn FUN7(VAR10);"
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "API": [
+        "void\n FUN1(VAR1 != nullptr);\n VAR1 = nullptr;",
+        "void\n FUN1(VAR1 != nullptr);\n VAR1 = nullptr;"
+    ]
+}

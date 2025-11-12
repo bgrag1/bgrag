@@ -1,0 +1,1 @@
+ Function purpose: The function "flatpak_dir_run_triggers" is responsible for running triggers located in a specified directory, either by using a system helper or by directly enumerating and executing triggers in the directory, and handling errors during the process.

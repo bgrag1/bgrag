@@ -1,0 +1,1 @@
+ Function purpose: The function "efc_nport_vport_del" deletes a vport and an associated nport from the respective lists and releases the resources associated with them.

@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static void FUN1(\n\tconst VAR1 *VAR2)\n\tif (!VAR2)\n\tVAR3 = VAR2[VAR4 * VAR5 + 2 * VAR6];\n\tVAR7 = VAR2[VAR4 * VAR5 + 2 * VAR6 + 1];\n\tFUN2(VAR8, 0,"
+    ],
+    "array": [
+        "static void FUN1(\n\tconst VAR1 *VAR2)\n\tif (!VAR2)\n\tVAR3 = VAR2[VAR4 * VAR5 + 2 * VAR6 + 1];\n\tFUN2(VAR7, 0,",
+        "static void FUN1(\n\tconst VAR1 *VAR2)\n\tif (!VAR2)\n\tVAR3 = VAR2[VAR4 * VAR5 + 2 * VAR6];\n\tFUN2(VAR7, 0,"
+    ],
+    "integer": [
+        "static void FUN1(\n\tconst VAR1 *VAR2)\n\tif (!VAR2)\n\tVAR3 = VAR2[VAR4 * VAR5 + 2 * VAR6];\n\tFUN2(VAR7, 0,",
+        "static void FUN1(\n\tconst VAR1 *VAR2)\n\tif (!VAR2)\n\tVAR3 = VAR2[VAR4 * VAR5 + 2 * VAR6 + 1];\n\tFUN2(VAR7, 0,"
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2, gint VAR3)\n guint8 VAR4[6] = { 0 };\n FUN2(VAR2, VAR4, VAR3, 3);"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2, gint VAR3)\n guint8 VAR4[6] = { 0 };\n FUN2(VAR2, VAR4, VAR3, 3);"
+    ]
+}

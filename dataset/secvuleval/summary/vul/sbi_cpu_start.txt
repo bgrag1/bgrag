@@ -1,0 +1,1 @@
+ Function purpose: The function "sbi_cpu_start" is responsible for starting a secondary CPU by setting up its boot data and invoking the SBI HSM to begin execution at the specified address.

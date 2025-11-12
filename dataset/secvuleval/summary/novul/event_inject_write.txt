@@ -1,0 +1,1 @@
+ Function purpose: The function "event_inject_write" is designed to inject a custom trace event entry into a trace system, handling user-provided data and managing necessary resources.

@@ -1,0 +1,1 @@
+ Function purpose: The function "config_set_option" sets various configuration options for a DNS resolver by parsing and updating the configuration file structure based on the provided options and values.

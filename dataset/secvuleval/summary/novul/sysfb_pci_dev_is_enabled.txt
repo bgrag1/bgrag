@@ -1,0 +1,1 @@
+ Function purpose: The function "sysfb_pci_dev_is_enabled" is intended to check if a PCI device is enabled, but it currently always returns "false" and does not perform any actual checking.

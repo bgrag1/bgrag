@@ -1,0 +1,1 @@
+ Function purpose: The function reads and prints detailed information about an Xe device's coredump, including snapshot time, uptime, GuC CT, job, and hardware engines, and writes this information to a buffer.

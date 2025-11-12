@@ -1,0 +1,1 @@
+ Function purpose: The function establishes a connection by setting up the necessary parameters for an endpoint, allocating a transmit information identifier (TID), and initiating MPA negotiation.

@@ -1,0 +1,1 @@
+ Function purpose: The function sets an option value based on the provided name, number, string, and opt_flags, handling various types of options and error checking, including secure sandbox restrictions and type validation.

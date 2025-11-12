@@ -1,0 +1,1 @@
+ Function purpose: The function "smb2_get_data_area_len" in the provided code snippet is designed to extract the offset and length of the data buffer for various SMB2 commands, ensuring that the extracted values are within valid ranges and handling special cases for certain commands.

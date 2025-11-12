@@ -1,0 +1,1 @@
+ Function purpose: The function "pm8001_phy_control" manages the control and configuration of SAS physical layers on a PM8001-based storage controller, handling various operations such as setting link rates, performing hard resets, and disabling PHYs.

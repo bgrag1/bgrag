@@ -1,0 +1,30 @@
+{
+    "pointer": [
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tif(!VAR6->VAR9) {",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tVAR6->VAR11 = FUN2(VAR2->VAR12,\n\tif(!VAR6->VAR11) {",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tif(!FUN3(VAR4, VAR2)) {\n\treturn VAR4;",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tFUN2(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tif(!FUN3(VAR4, VAR2)) {\n\tFUN4(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tif(!VAR6->VAR7) {",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tfree(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tFUN3(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tif(!FUN3(VAR4, VAR2)) {\n\tFUN4(VAR4);"
+    ],
+    "API": [
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tfree(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tfree(VAR4);\n\tFUN2(VAR4);\n\tif(!FUN3(VAR4, VAR2)) {\n\tFUN2(VAR4);\n\tif(!FUN4(VAR4, VAR2)) {\n\tFUN2(VAR4);\n\tFUN2(VAR4);\n\treturn VAR4;",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tFUN2(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tFUN3(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tif(!FUN3(VAR4, VAR2)) {\n\tFUN4(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tif(!FUN3(VAR4, VAR2)) {\n\tFUN4(VAR4);",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tif(!VAR6->VAR7) {",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tif(!VAR6->VAR7) {\n\treturn NULL;\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tif(!VAR6->VAR9) {\n\treturn NULL;\n\treturn NULL;\n\treturn NULL;\n\tVAR6->VAR11 = FUN2(VAR2->VAR12,\n\tif(!VAR6->VAR11) {\n\treturn NULL;",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tif(!VAR6->VAR9) {",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tif(!VAR6->VAR9) {\n\treturn NULL;\n\treturn NULL;\n\treturn NULL;\n\tVAR6->VAR11 = FUN2(VAR2->VAR12,\n\tif(!VAR6->VAR11) {\n\treturn NULL;",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tVAR6->VAR11 = FUN2(VAR2->VAR12,\n\tif(!VAR6->VAR11) {",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tVAR6->VAR11 = FUN2(VAR2->VAR12,\n\tif(!VAR6->VAR11) {\n\treturn NULL;",
+        "FUN1(struct VAR1* VAR2)\n\tsize_t VAR3 = VAR2->VAR4 * (sizeof(struct VAR5)+\n\tVAR6->VAR7 = FUN2(VAR2->VAR8,\n\tVAR6->VAR9 = FUN2(VAR2->VAR10,\n\tif(!VAR6->VAR9) {",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {",
+        "FUN1(struct VAR1* VAR2)\n\tstruct VAR3* VAR4 = (struct VAR3*)calloc(1, \n\tif(!VAR4) {\n\tif(!FUN2(VAR4, VAR2)) {\n\tFUN3(VAR4);\n\tif(!FUN4(VAR4, VAR2)) {\n\tFUN3(VAR4);\n\tFUN3(VAR4);\n\treturn VAR4;"
+    ]
+}

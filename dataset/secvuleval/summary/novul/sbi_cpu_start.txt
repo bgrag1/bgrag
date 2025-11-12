@@ -1,0 +1,1 @@
+ Function purpose: The function "sbi_cpu_start" is responsible for starting a secondary CPU by setting up its boot data and invoking the SBI (Supervisor Binary Interface) to start the CPU with the specified boot address and hart ID.

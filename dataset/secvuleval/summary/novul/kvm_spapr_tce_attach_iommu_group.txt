@@ -1,0 +1,1 @@
+ Function purpose: The function attaches an IOMMU table to a KVM instance and manages its reference count, ensuring compatibility with existing IOMMU groups and tables.

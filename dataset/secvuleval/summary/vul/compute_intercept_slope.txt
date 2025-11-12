@@ -1,0 +1,1 @@
+ Function purpose: The function computes the slope and offset for each sensor in a temperature sensing device, based on the provided data points and calibration mode.

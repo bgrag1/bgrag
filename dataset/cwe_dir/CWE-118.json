@@ -1,0 +1,59 @@
+[
+    {
+        "cve_id": "CVE-2019-6130",
+        "func_name": "ArtifexSoftware/mupdf/cbz_load_page",
+        "description": "Artifex MuPDF 1.14.0 has a SEGV in the function fz_load_page of the fitz/document.c file, as demonstrated by mutool. This is related to page-number mishandling in cbz/mucbz.c, cbz/muimg.c, and svg/svg-doc.c.",
+        "git_url": "https://github.com/ArtifexSoftware/mupdf/commit/faf47b94e24314d74907f3f6bc874105f2c962ed",
+        "commit_title": "Throw when page number is out of range.",
+        "commit_text": " Other code depends on this and does not handle a page pointer being NULL well.",
+        "func_before": "static fz_page *\ncbz_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\tcbz_document *doc = (cbz_document*)doc_;\n\tcbz_page *page = NULL;\n\tfz_buffer *buf = NULL;\n\n\tif (number < 0 || number >= doc->page_count)\n\t\treturn NULL;\n\n\tfz_var(page);\n\n\tif (doc->arch)\n\t\tbuf = fz_read_archive_entry(ctx, doc->arch, doc->page[number]);\n\tif (!buf)\n\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load cbz page\");\n\n\tfz_try(ctx)\n\t{\n\t\tpage = fz_new_derived_page(ctx, cbz_page);\n\t\tpage->super.bound_page = cbz_bound_page;\n\t\tpage->super.run_page_contents = cbz_run_page;\n\t\tpage->super.drop_page = cbz_drop_page;\n\t\tpage->image = fz_new_image_from_buffer(ctx, buf);\n\t}\n\tfz_always(ctx)\n\t{\n\t\tfz_drop_buffer(ctx, buf);\n\t}\n\tfz_catch(ctx)\n\t{\n\t\tfz_drop_page(ctx, (fz_page*)page);\n\t\tfz_rethrow(ctx);\n\t}\n\n\treturn (fz_page*)page;\n}",
+        "func": "static fz_page *\ncbz_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\tcbz_document *doc = (cbz_document*)doc_;\n\tcbz_page *page = NULL;\n\tfz_buffer *buf = NULL;\n\n\tif (number < 0 || number >= doc->page_count)\n\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);\n\n\tfz_var(page);\n\n\tif (doc->arch)\n\t\tbuf = fz_read_archive_entry(ctx, doc->arch, doc->page[number]);\n\tif (!buf)\n\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load cbz page\");\n\n\tfz_try(ctx)\n\t{\n\t\tpage = fz_new_derived_page(ctx, cbz_page);\n\t\tpage->super.bound_page = cbz_bound_page;\n\t\tpage->super.run_page_contents = cbz_run_page;\n\t\tpage->super.drop_page = cbz_drop_page;\n\t\tpage->image = fz_new_image_from_buffer(ctx, buf);\n\t}\n\tfz_always(ctx)\n\t{\n\t\tfz_drop_buffer(ctx, buf);\n\t}\n\tfz_catch(ctx)\n\t{\n\t\tfz_drop_page(ctx, (fz_page*)page);\n\t\tfz_rethrow(ctx);\n\t}\n\n\treturn (fz_page*)page;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -6,7 +6,7 @@\n \tfz_buffer *buf = NULL;\n \n \tif (number < 0 || number >= doc->page_count)\n-\t\treturn NULL;\n+\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);\n \n \tfz_var(page);\n ",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\treturn NULL;"
+            ],
+            "added_lines": [
+                "\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2019-6130",
+        "func_name": "ArtifexSoftware/mupdf/svg_load_page",
+        "description": "Artifex MuPDF 1.14.0 has a SEGV in the function fz_load_page of the fitz/document.c file, as demonstrated by mutool. This is related to page-number mishandling in cbz/mucbz.c, cbz/muimg.c, and svg/svg-doc.c.",
+        "git_url": "https://github.com/ArtifexSoftware/mupdf/commit/faf47b94e24314d74907f3f6bc874105f2c962ed",
+        "commit_title": "Throw when page number is out of range.",
+        "commit_text": " Other code depends on this and does not handle a page pointer being NULL well.",
+        "func_before": "static fz_page *\nsvg_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\tsvg_document *doc = (svg_document*)doc_;\n\tsvg_page *page;\n\n\tif (number != 0)\n\t\treturn NULL;\n\n\tpage = fz_new_derived_page(ctx, svg_page);\n\tpage->super.bound_page = svg_bound_page;\n\tpage->super.run_page_contents = svg_run_page;\n\tpage->super.drop_page = svg_drop_page;\n\tpage->doc = doc;\n\n\treturn (fz_page*)page;\n}",
+        "func": "static fz_page *\nsvg_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\tsvg_document *doc = (svg_document*)doc_;\n\tsvg_page *page;\n\n\tif (number != 0)\n\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot find page %d\", number);\n\n\tpage = fz_new_derived_page(ctx, svg_page);\n\tpage->super.bound_page = svg_bound_page;\n\tpage->super.run_page_contents = svg_run_page;\n\tpage->super.drop_page = svg_drop_page;\n\tpage->doc = doc;\n\n\treturn (fz_page*)page;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -5,7 +5,7 @@\n \tsvg_page *page;\n \n \tif (number != 0)\n-\t\treturn NULL;\n+\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot find page %d\", number);\n \n \tpage = fz_new_derived_page(ctx, svg_page);\n \tpage->super.bound_page = svg_bound_page;",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\treturn NULL;"
+            ],
+            "added_lines": [
+                "\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot find page %d\", number);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2019-6130",
+        "func_name": "ArtifexSoftware/mupdf/img_load_page",
+        "description": "Artifex MuPDF 1.14.0 has a SEGV in the function fz_load_page of the fitz/document.c file, as demonstrated by mutool. This is related to page-number mishandling in cbz/mucbz.c, cbz/muimg.c, and svg/svg-doc.c.",
+        "git_url": "https://github.com/ArtifexSoftware/mupdf/commit/faf47b94e24314d74907f3f6bc874105f2c962ed",
+        "commit_title": "Throw when page number is out of range.",
+        "commit_text": " Other code depends on this and does not handle a page pointer being NULL well.",
+        "func_before": "static fz_page *\nimg_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\timg_document *doc = (img_document*)doc_;\n\tfz_pixmap *pixmap = NULL;\n\tfz_image *image = NULL;\n\timg_page *page = NULL;\n\n\tif (number < 0 || number >= doc->page_count)\n\t\treturn NULL;\n\n\tfz_var(pixmap);\n\tfz_var(image);\n\tfz_var(page);\n\n\tfz_try(ctx)\n\t{\n\t\tif (doc->load_subimage)\n\t\t{\n\t\t\tsize_t len;\n\t\t\tunsigned char *data;\n\t\t\tlen = fz_buffer_storage(ctx, doc->buffer, &data);\n\t\t\tpixmap = doc->load_subimage(ctx, data, len, number);\n\t\t\timage = fz_new_image_from_pixmap(ctx, pixmap, NULL);\n\t\t}\n\t\telse\n\t\t{\n\t\t\timage = fz_new_image_from_buffer(ctx, doc->buffer);\n\t\t}\n\n\t\tpage = fz_new_derived_page(ctx, img_page);\n\t\tpage->super.bound_page = img_bound_page;\n\t\tpage->super.run_page_contents = img_run_page;\n\t\tpage->super.drop_page = img_drop_page;\n\t\tpage->image = fz_keep_image(ctx, image);\n\t}\n\tfz_always(ctx)\n\t{\n\t\tfz_drop_image(ctx, image);\n\t\tfz_drop_pixmap(ctx, pixmap);\n\t}\n\tfz_catch(ctx)\n\t{\n\t\tfz_free(ctx, page);\n\t\tfz_rethrow(ctx);\n\t}\n\n\treturn (fz_page*)page;\n}",
+        "func": "static fz_page *\nimg_load_page(fz_context *ctx, fz_document *doc_, int number)\n{\n\timg_document *doc = (img_document*)doc_;\n\tfz_pixmap *pixmap = NULL;\n\tfz_image *image = NULL;\n\timg_page *page = NULL;\n\n\tif (number < 0 || number >= doc->page_count)\n\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);\n\n\tfz_var(pixmap);\n\tfz_var(image);\n\tfz_var(page);\n\n\tfz_try(ctx)\n\t{\n\t\tif (doc->load_subimage)\n\t\t{\n\t\t\tsize_t len;\n\t\t\tunsigned char *data;\n\t\t\tlen = fz_buffer_storage(ctx, doc->buffer, &data);\n\t\t\tpixmap = doc->load_subimage(ctx, data, len, number);\n\t\t\timage = fz_new_image_from_pixmap(ctx, pixmap, NULL);\n\t\t}\n\t\telse\n\t\t{\n\t\t\timage = fz_new_image_from_buffer(ctx, doc->buffer);\n\t\t}\n\n\t\tpage = fz_new_derived_page(ctx, img_page);\n\t\tpage->super.bound_page = img_bound_page;\n\t\tpage->super.run_page_contents = img_run_page;\n\t\tpage->super.drop_page = img_drop_page;\n\t\tpage->image = fz_keep_image(ctx, image);\n\t}\n\tfz_always(ctx)\n\t{\n\t\tfz_drop_image(ctx, image);\n\t\tfz_drop_pixmap(ctx, pixmap);\n\t}\n\tfz_catch(ctx)\n\t{\n\t\tfz_free(ctx, page);\n\t\tfz_rethrow(ctx);\n\t}\n\n\treturn (fz_page*)page;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -7,7 +7,7 @@\n \timg_page *page = NULL;\n \n \tif (number < 0 || number >= doc->page_count)\n-\t\treturn NULL;\n+\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);\n \n \tfz_var(pixmap);\n \tfz_var(image);",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\treturn NULL;"
+            ],
+            "added_lines": [
+                "\t\tfz_throw(ctx, FZ_ERROR_GENERIC, \"cannot load page %d\", number);"
+            ]
+        }
+    }
+]

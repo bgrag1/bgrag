@@ -1,0 +1,1 @@
+ Function purpose: The function processes and validates the Picture Parameter Set (PPS) parameters in a video codec, ensuring they comply with the specified standards and are correctly interpreted by the system.

@@ -1,0 +1,1 @@
+ Function purpose: The function "HTTPAPI_CreateConnection" is designed to establish a connection to a specified HTTP server using the WinHTTP API, ensuring that the global HTTPAPI state is initialized before proceeding.

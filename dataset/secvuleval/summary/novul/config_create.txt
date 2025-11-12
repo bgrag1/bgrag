@@ -1,0 +1,1 @@
+ Function purpose: The function "config_create()" initializes and returns a default configuration structure for the Unbound DNS resolver, setting various parameters to their default values or initial states.

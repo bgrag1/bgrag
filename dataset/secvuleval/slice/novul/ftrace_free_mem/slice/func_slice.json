@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tstruct VAR7 *VAR8 = NULL;\n\tif (VAR2 && VAR9 != &VAR10)\n\tVAR8 = FUN2(VAR2, VAR5, VAR6);\n VAR5 >= (VAR11->VAR12[VAR11->VAR13 - 1].VAR14 + VAR15))\n\tVAR16 = FUN3(&VAR17, VAR11->VAR12, VAR11->VAR13,\n\tif (!VAR16)\n\tFUN4(&VAR18, VAR16);\n\tFUN5(VAR8, VAR16);\n\tVAR11->VAR13--;\n\tif (!VAR11->VAR13) {\n\tmemmove(VAR16, VAR16 + 1,\n\t(VAR11->VAR13 - (VAR16 - VAR11->VAR12)) * sizeof(*VAR16));",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tFUN2(VAR5);\n\tFUN3(VAR5);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tstruct VAR5 *VAR6 = NULL;\n\tfor (VAR7 = VAR8; VAR7; VAR9 = &VAR7->VAR10, VAR7 = *VAR9) {\n\t*VAR9 = VAR7->VAR10;\n\tVAR7->VAR10 = VAR6;\n\tVAR6 = VAR7;\n\tif (!(*VAR9))\n\tVAR11 = VAR7;\n\tFUN2(VAR6);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tif (VAR2 && VAR7 != &VAR8)\n\tVAR9 = FUN2(VAR2, VAR5, VAR6);\n\tif (VAR6 < VAR10->VAR11[0].VAR12 ||"
+    ],
+    "array": [
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tif (VAR2 && VAR7 != &VAR8)\n\tVAR9 = FUN2(VAR2, VAR5, VAR6);\n\tif (VAR6 < VAR10->VAR11[0].VAR12 ||"
+    ],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tstruct VAR7 *VAR8 = NULL;\n\tif (VAR2 && VAR9 != &VAR10)\n\tVAR8 = FUN2(VAR2, VAR5, VAR6);\n VAR5 >= (VAR11->VAR12[VAR11->VAR13 - 1].VAR14 + VAR15))\n\tVAR16 = FUN3(&VAR17, VAR11->VAR12, VAR11->VAR13,\n\tif (!VAR16)\n\tFUN4(&VAR18, VAR16);\n\tFUN5(VAR8, VAR16);\n\tVAR11->VAR13--;\n\tif (!VAR11->VAR13) {\n\tmemmove(VAR16, VAR16 + 1,\n\t(VAR11->VAR13 - (VAR16 - VAR11->VAR12)) * sizeof(*VAR16));",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tFUN2(VAR5);\n\tFUN3(VAR5);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tstruct VAR5 *VAR6 = NULL;\n\tfor (VAR7 = VAR8; VAR7; VAR9 = &VAR7->VAR10, VAR7 = *VAR9) {\n\t*VAR9 = VAR7->VAR10;\n\tVAR7->VAR10 = VAR6;\n\tVAR6 = VAR7;\n\tif (!(*VAR9))\n\tFUN2(VAR6);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tFUN2(&VAR5);\n\tFUN3(&VAR5);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tFUN2(&VAR5);\n\tFUN3(&VAR5);",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tif (VAR2 && VAR7 != &VAR8)\n\tVAR9 = FUN2(VAR2, VAR5, VAR6);\n\tif (VAR6 < VAR10->VAR11[0].VAR12 ||\n VAR5 >= (VAR10->VAR11[VAR10->VAR13 - 1].VAR12 + VAR14))\n\tVAR15 = FUN3(&VAR16, VAR10->VAR11, VAR10->VAR13,\n\tif (!VAR15)\n\tFUN4(&VAR17, VAR15);\n\tFUN5(VAR9, VAR15);\n\tVAR10->VAR13--;\n\tif (!VAR10->VAR13) {\n\tmemmove(VAR15, VAR15 + 1,\n\t(VAR10->VAR13 - (VAR15 - VAR10->VAR11)) * sizeof(*VAR15));",
+        "void FUN1(struct VAR1 *VAR2, void *VAR3, void *VAR4)\n\tunsigned long VAR5 = (unsigned long)(VAR3);\n\tunsigned long VAR6 = (unsigned long)(VAR4);\n\tif (VAR2 && VAR7 != &VAR8)\n\tVAR9 = FUN2(VAR2, VAR5, VAR6);\n VAR5 >= (VAR10->VAR11[VAR10->VAR12 - 1].VAR13 + VAR14))\n\tVAR15 = FUN3(&VAR16, VAR10->VAR11, VAR10->VAR12,\n\tif (!VAR15)\n\tFUN4(&VAR17, VAR15);\n\tFUN5(VAR9, VAR15);\n\tVAR10->VAR12--;\n\tif (!VAR10->VAR12) {\n\tmemmove(VAR15, VAR15 + 1,\n\t(VAR10->VAR12 - (VAR15 - VAR10->VAR11)) * sizeof(*VAR15));"
+    ]
+}

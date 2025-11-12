@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "VAR1 FUN1(VAR2 *VAR3)\n int VAR4 = (int) VAR3->VAR5[0];\n if (VAR4 || VAR3->VAR6[2].VAR7 == NULL) {",
+        "VAR1 FUN1(VAR2 *VAR3)\n VAR4 = FUN2(VAR3->VAR5[0].VAR6);\n return (VAR1) VAR4;",
+        "VAR1 FUN1(VAR2 *VAR3)\n if (VAR4 || VAR3->VAR5[2].VAR6 == NULL) {\n VAR7 = FUN2(VAR3->VAR5[2].VAR6);\n return (VAR1) VAR7;"
+    ],
+    "array": [
+        "VAR1 FUN1(VAR2 *VAR3)\n if (VAR4 || VAR3->VAR5[2].VAR6 == NULL) {\n VAR7 = FUN2(VAR3->VAR5[2].VAR6);\n return (VAR1) VAR7;",
+        "VAR1 FUN1(VAR2 *VAR3)\n VAR4 = FUN2(VAR3->VAR5[0].VAR6);\n return (VAR1) VAR4;",
+        "VAR1 FUN1(VAR2 *VAR3)\n int VAR4 = (int) VAR3->VAR5[0];\n if (VAR4 || VAR3->VAR6[2].VAR7 == NULL) {"
+    ],
+    "API": [
+        "VAR1 FUN1(VAR2 *VAR3)\n if (VAR4 || VAR3->VAR5[2].VAR6 == NULL) {\n VAR7 = FUN2(VAR3->VAR5[2].VAR6);\n return (VAR1) VAR7;",
+        "VAR1 FUN1(VAR2 *VAR3)\n int VAR4 = (int) VAR3->VAR5[0];\n if (VAR4 || VAR3->VAR6[2].VAR7 == NULL) {"
+    ]
+}

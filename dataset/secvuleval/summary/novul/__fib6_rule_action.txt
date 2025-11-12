@@ -1,0 +1,1 @@
+ Function purpose: The function processes a routing rule based on its action type, performs a lookup in the IPv6 routing table, and sets the result in the fib6_result structure.

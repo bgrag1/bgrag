@@ -1,0 +1,1 @@
+ Function purpose: The function "ata_host_release" is designed to release resources associated with an ATA host, including freeing memory allocated for each port's private data structures, and ultimately freeing the memory allocated for the host itself.

@@ -1,0 +1,1 @@
+ Function purpose: The function "WixRemoveFoldersEx" is designed to remove folders specified in the "WixRemoveFolderEx" table during the installation process, handling both standard and recursive folder deletion modes.

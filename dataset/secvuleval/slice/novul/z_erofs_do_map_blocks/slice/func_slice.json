@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR1,\n\tstruct VAR2 *const VAR3 = FUN2(VAR1);\n\tVAR4 = VAR3->VAR5;\n\tVAR6 = VAR7 & VAR8 ? VAR1->VAR9 - 1 : VAR10->VAR11;\n\tVAR12 = VAR6 >> VAR4;\n\tVAR13 = VAR6 & ((1 << VAR4) - 1);\n\tif (VAR13 >= VAR14.VAR15) {\n\tVAR10->VAR11 = (VAR14.VAR16 << VAR4) | VAR14.VAR15;\n\tif (VAR17 && VAR18 > VAR1->VAR9)\n\tVAR18 = VAR1->VAR9;\n\tif (!VAR14.VAR16) {\n\tVAR18 = (VAR14.VAR16 << VAR4) | VAR14.VAR15;\n\tVAR10->VAR19 = VAR18 - VAR10->VAR11;\n\tVAR10->VAR20 = VAR3->VAR21;\n\tif (VAR10->VAR19 > VAR10->VAR20) {\n\tif (!(FUN3(VAR1)->VAR22 & (1 << VAR23))) {\n\tif ((VAR7 & VAR24) ||\n ((VAR7 & VAR25) &&\n (VAR10->VAR26 == VAR27 ||\n VAR10->VAR19 >= FUN4(VAR1))) {",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2 = VAR3->VAR4;\n\tVAR5 = VAR6 & VAR7 ? VAR1->VAR8 - 1 : VAR9->VAR10;\n\tVAR11 = VAR5 >> VAR2;\n\tVAR12 = VAR5 & ((1 << VAR2) - 1);\n\tFUN2(VAR1->VAR13,",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2->VAR3 = VAR4 | VAR5;\n\tVAR2->VAR3 |= VAR6;\n\tVAR2->VAR3 |= VAR7;\n\tVAR2->VAR3 |= VAR8;\n\tVAR2->VAR3 |= VAR6;",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2 = VAR3 & VAR4 ? VAR1->VAR5 - 1 : VAR6->VAR7;",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2->VAR3 = VAR4.VAR5;\n\tVAR6->VAR7 = VAR2->VAR3;",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2 = VAR3->VAR4 & VAR5 ?\n\tVAR2 = VAR6.VAR7 == VAR8 ?\n\tif (!(FUN2(VAR1)->VAR9 & (1 << VAR2))) {\n\tVAR10->VAR11 = VAR2;\n\tif ((VAR12 & VAR13) ||\n ((VAR12 & VAR14) &&\n (VAR10->VAR11 == VAR15 ||\n VAR10->VAR11 == VAR16) &&",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2->VAR3 |= (VAR4)VAR5.VAR6 << 32;\n\tVAR7->VAR8 = FUN2(VAR1->VAR9, VAR5.VAR6);\n\tVAR10 = VAR5.VAR11 == VAR12 ?\n\tif (!(FUN3(VAR1)->VAR13 & (1 << VAR10))) {\n\tFUN4(VAR1->VAR9, \"\",",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2->VAR3 |= (VAR4)VAR5.VAR6 << 32;\n\tVAR7->VAR8 = FUN2(VAR1->VAR9, VAR5.VAR6);",
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2->VAR3 = VAR4 | VAR5;\n\tVAR2->VAR3 |= VAR6;\n\tVAR2->VAR3 |= VAR7;\n\tVAR2->VAR3 |= VAR8;\n\tVAR2->VAR3 |= VAR6;"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2.VAR3[0] = 1;\n\tVAR4 = FUN2(&VAR2, VAR2.VAR3[0]);\n\tVAR4 = FUN3(&VAR2, VAR5);\n\tVAR4 = FUN4(&VAR2);\n\tif (!VAR4)\n\treturn VAR4;"
+    ],
+    "integer": [
+        "static int FUN1(struct VAR1 *VAR1,\n\tVAR2 = VAR3->VAR4;\n\tVAR5 = VAR6 & VAR7 ? VAR1->VAR8 - 1 : VAR9->VAR10;\n\tVAR11 = VAR5 >> VAR2;\n\tVAR12 = VAR5 & ((1 << VAR2) - 1);\n\tif (VAR12 >= VAR13.VAR14) {\n\tVAR9->VAR10 = (VAR13.VAR15 << VAR2) | VAR13.VAR14;\n\tif (VAR16 && VAR17 > VAR1->VAR8)\n\tVAR17 = VAR1->VAR8;\n\tif (!VAR13.VAR15) {\n\tVAR17 = (VAR13.VAR15 << VAR2) | VAR13.VAR14;\n\tVAR9->VAR18 = VAR17 - VAR9->VAR10;\n\tif (VAR9->VAR18 > VAR9->VAR19) {\n\tif ((VAR6 & VAR20) ||\n ((VAR6 & VAR21) &&\n (VAR9->VAR22 == VAR23 ||\n VAR9->VAR18 >= FUN2(VAR1))) {"
+    ]
+}

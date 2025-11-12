@@ -1,0 +1,1 @@
+ Function purpose: The function "enter_repo" determines the correct Git repository directory for a given path, either by validating a path with specific suffixes or by reading a ".git" file if the path is not strict, and then changes the current working directory to the validated repository directory.

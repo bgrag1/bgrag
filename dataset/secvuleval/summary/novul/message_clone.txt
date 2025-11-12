@@ -1,0 +1,1 @@
+ Function purpose: The function "message_clone" is designed to create a deep copy of a message object, including all its components such as headers, delivery annotations, message annotations, properties, application properties, footer, body data sections, AMQP sequences, and the main body AMQP value, and return a new message handle representing the cloned message.

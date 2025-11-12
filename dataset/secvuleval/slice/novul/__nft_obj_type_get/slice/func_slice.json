@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "static const struct VAR1 *FUN1(u32 VAR2, u8 VAR3)\n\tif (VAR4->VAR3 != VAR5 &&\n VAR4->VAR3 != VAR3)",
+        "static const struct VAR1 *FUN1(u32 VAR2, u8 VAR3)\n\tif (VAR2 == VAR4->VAR4)",
+        "static const struct VAR1 *FUN1(u32 VAR2, u8 VAR3)\n\treturn VAR4;"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "fsnotify_recalc_mask" recalculates the mask for a file system event notification mark connector and updates the children's directory entry flags if the parent started watching.

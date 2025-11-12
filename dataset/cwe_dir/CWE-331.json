@@ -1,0 +1,214 @@
+[
+    {
+        "cve_id": "CVE-2016-2858",
+        "func_name": "qemu/rng_egd_request_entropy",
+        "description": "QEMU, when built with the Pseudo Random Number Generator (PRNG) back-end support, allows local guest OS users to cause a denial of service (process crash) via an entropy request, which triggers arbitrary stack based allocation and memory corruption.",
+        "git_url": "https://github.com/qemu/qemu/commit/60253ed1e6ec6d8e5ef2efe7bf755f475dce9956",
+        "commit_title": "rng: add request queue support to rng-random",
+        "commit_text": " Requests are now created in the RngBackend parent class and the code path is shared by both rng-egd and rng-random.  This commit fixes the rng-random implementation which processed only one request at a time and simply discarded all but the most recent one. In the guest this manifested as delayed completion of reads from virtio-rng, i.e. a read was completed only after another read was issued.  By switching rng-random to use the same request queue as rng-egd, the unsafe stack-based allocation of the entropy buffer is eliminated and replaced with g_malloc.  Message-Id: <1456994238-9585-5-git-send-email-lprosek@redhat.com>",
+        "func_before": "static void rng_egd_request_entropy(RngBackend *b, size_t size,\n                                    EntropyReceiveFunc *receive_entropy,\n                                    void *opaque)\n{\n    RngEgd *s = RNG_EGD(b);\n    RngRequest *req;\n\n    req = g_malloc(sizeof(*req));\n\n    req->offset = 0;\n    req->size = size;\n    req->receive_entropy = receive_entropy;\n    req->opaque = opaque;\n    req->data = g_malloc(req->size);\n\n    while (size > 0) {\n        uint8_t header[2];\n        uint8_t len = MIN(size, 255);\n\n        /* synchronous entropy request */\n        header[0] = 0x02;\n        header[1] = len;\n\n        qemu_chr_fe_write(s->chr, header, sizeof(header));\n\n        size -= len;\n    }\n\n    s->parent.requests = g_slist_append(s->parent.requests, req);\n}",
+        "func": "static void rng_egd_request_entropy(RngBackend *b, RngRequest *req)\n{\n    RngEgd *s = RNG_EGD(b);\n    size_t size = req->size;\n\n    while (size > 0) {\n        uint8_t header[2];\n        uint8_t len = MIN(size, 255);\n\n        /* synchronous entropy request */\n        header[0] = 0x02;\n        header[1] = len;\n\n        qemu_chr_fe_write(s->chr, header, sizeof(header));\n\n        size -= len;\n    }\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,17 +1,7 @@\n-static void rng_egd_request_entropy(RngBackend *b, size_t size,\n-                                    EntropyReceiveFunc *receive_entropy,\n-                                    void *opaque)\n+static void rng_egd_request_entropy(RngBackend *b, RngRequest *req)\n {\n     RngEgd *s = RNG_EGD(b);\n-    RngRequest *req;\n-\n-    req = g_malloc(sizeof(*req));\n-\n-    req->offset = 0;\n-    req->size = size;\n-    req->receive_entropy = receive_entropy;\n-    req->opaque = opaque;\n-    req->data = g_malloc(req->size);\n+    size_t size = req->size;\n \n     while (size > 0) {\n         uint8_t header[2];\n@@ -25,6 +15,4 @@\n \n         size -= len;\n     }\n-\n-    s->parent.requests = g_slist_append(s->parent.requests, req);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "static void rng_egd_request_entropy(RngBackend *b, size_t size,",
+                "                                    EntropyReceiveFunc *receive_entropy,",
+                "                                    void *opaque)",
+                "    RngRequest *req;",
+                "",
+                "    req = g_malloc(sizeof(*req));",
+                "",
+                "    req->offset = 0;",
+                "    req->size = size;",
+                "    req->receive_entropy = receive_entropy;",
+                "    req->opaque = opaque;",
+                "    req->data = g_malloc(req->size);",
+                "",
+                "    s->parent.requests = g_slist_append(s->parent.requests, req);"
+            ],
+            "added_lines": [
+                "static void rng_egd_request_entropy(RngBackend *b, RngRequest *req)",
+                "    size_t size = req->size;"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-2858",
+        "func_name": "qemu/entropy_available",
+        "description": "QEMU, when built with the Pseudo Random Number Generator (PRNG) back-end support, allows local guest OS users to cause a denial of service (process crash) via an entropy request, which triggers arbitrary stack based allocation and memory corruption.",
+        "git_url": "https://github.com/qemu/qemu/commit/60253ed1e6ec6d8e5ef2efe7bf755f475dce9956",
+        "commit_title": "rng: add request queue support to rng-random",
+        "commit_text": " Requests are now created in the RngBackend parent class and the code path is shared by both rng-egd and rng-random.  This commit fixes the rng-random implementation which processed only one request at a time and simply discarded all but the most recent one. In the guest this manifested as delayed completion of reads from virtio-rng, i.e. a read was completed only after another read was issued.  By switching rng-random to use the same request queue as rng-egd, the unsafe stack-based allocation of the entropy buffer is eliminated and replaced with g_malloc.  Message-Id: <1456994238-9585-5-git-send-email-lprosek@redhat.com>",
+        "func_before": "static void entropy_available(void *opaque)\n{\n    RndRandom *s = RNG_RANDOM(opaque);\n    uint8_t buffer[s->size];\n    ssize_t len;\n\n    len = read(s->fd, buffer, s->size);\n    if (len < 0 && errno == EAGAIN) {\n        return;\n    }\n    g_assert(len != -1);\n\n    s->receive_func(s->opaque, buffer, len);\n    s->receive_func = NULL;\n\n    qemu_set_fd_handler(s->fd, NULL, NULL, NULL);\n}",
+        "func": "static void entropy_available(void *opaque)\n{\n    RndRandom *s = RNG_RANDOM(opaque);\n\n    while (s->parent.requests != NULL) {\n        RngRequest *req = s->parent.requests->data;\n        ssize_t len;\n\n        len = read(s->fd, req->data, req->size);\n        if (len < 0 && errno == EAGAIN) {\n            return;\n        }\n        g_assert(len != -1);\n\n        req->receive_entropy(req->opaque, req->data, len);\n\n        rng_backend_finalize_request(&s->parent, req);\n    }\n\n    /* We've drained all requests, the fd handler can be reset. */\n    qemu_set_fd_handler(s->fd, NULL, NULL, NULL);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,17 +1,22 @@\n static void entropy_available(void *opaque)\n {\n     RndRandom *s = RNG_RANDOM(opaque);\n-    uint8_t buffer[s->size];\n-    ssize_t len;\n \n-    len = read(s->fd, buffer, s->size);\n-    if (len < 0 && errno == EAGAIN) {\n-        return;\n+    while (s->parent.requests != NULL) {\n+        RngRequest *req = s->parent.requests->data;\n+        ssize_t len;\n+\n+        len = read(s->fd, req->data, req->size);\n+        if (len < 0 && errno == EAGAIN) {\n+            return;\n+        }\n+        g_assert(len != -1);\n+\n+        req->receive_entropy(req->opaque, req->data, len);\n+\n+        rng_backend_finalize_request(&s->parent, req);\n     }\n-    g_assert(len != -1);\n \n-    s->receive_func(s->opaque, buffer, len);\n-    s->receive_func = NULL;\n-\n+    /* We've drained all requests, the fd handler can be reset. */\n     qemu_set_fd_handler(s->fd, NULL, NULL, NULL);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    uint8_t buffer[s->size];",
+                "    ssize_t len;",
+                "    len = read(s->fd, buffer, s->size);",
+                "    if (len < 0 && errno == EAGAIN) {",
+                "        return;",
+                "    g_assert(len != -1);",
+                "    s->receive_func(s->opaque, buffer, len);",
+                "    s->receive_func = NULL;",
+                ""
+            ],
+            "added_lines": [
+                "    while (s->parent.requests != NULL) {",
+                "        RngRequest *req = s->parent.requests->data;",
+                "        ssize_t len;",
+                "",
+                "        len = read(s->fd, req->data, req->size);",
+                "        if (len < 0 && errno == EAGAIN) {",
+                "            return;",
+                "        }",
+                "        g_assert(len != -1);",
+                "",
+                "        req->receive_entropy(req->opaque, req->data, len);",
+                "",
+                "        rng_backend_finalize_request(&s->parent, req);",
+                "    /* We've drained all requests, the fd handler can be reset. */"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-2858",
+        "func_name": "qemu/rng_random_request_entropy",
+        "description": "QEMU, when built with the Pseudo Random Number Generator (PRNG) back-end support, allows local guest OS users to cause a denial of service (process crash) via an entropy request, which triggers arbitrary stack based allocation and memory corruption.",
+        "git_url": "https://github.com/qemu/qemu/commit/60253ed1e6ec6d8e5ef2efe7bf755f475dce9956",
+        "commit_title": "rng: add request queue support to rng-random",
+        "commit_text": " Requests are now created in the RngBackend parent class and the code path is shared by both rng-egd and rng-random.  This commit fixes the rng-random implementation which processed only one request at a time and simply discarded all but the most recent one. In the guest this manifested as delayed completion of reads from virtio-rng, i.e. a read was completed only after another read was issued.  By switching rng-random to use the same request queue as rng-egd, the unsafe stack-based allocation of the entropy buffer is eliminated and replaced with g_malloc.  Message-Id: <1456994238-9585-5-git-send-email-lprosek@redhat.com>",
+        "func_before": "static void rng_random_request_entropy(RngBackend *b, size_t size,\n                                        EntropyReceiveFunc *receive_entropy,\n                                        void *opaque)\n{\n    RndRandom *s = RNG_RANDOM(b);\n\n    if (s->receive_func) {\n        s->receive_func(s->opaque, NULL, 0);\n    }\n\n    s->receive_func = receive_entropy;\n    s->opaque = opaque;\n    s->size = size;\n\n    qemu_set_fd_handler(s->fd, entropy_available, NULL, s);\n}",
+        "func": "static void rng_random_request_entropy(RngBackend *b, RngRequest *req)\n{\n    RndRandom *s = RNG_RANDOM(b);\n\n    if (s->parent.requests == NULL) {\n        /* If there are no pending requests yet, we need to\n         * install our fd handler. */\n        qemu_set_fd_handler(s->fd, entropy_available, NULL, s);\n    }\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,16 +1,10 @@\n-static void rng_random_request_entropy(RngBackend *b, size_t size,\n-                                        EntropyReceiveFunc *receive_entropy,\n-                                        void *opaque)\n+static void rng_random_request_entropy(RngBackend *b, RngRequest *req)\n {\n     RndRandom *s = RNG_RANDOM(b);\n \n-    if (s->receive_func) {\n-        s->receive_func(s->opaque, NULL, 0);\n+    if (s->parent.requests == NULL) {\n+        /* If there are no pending requests yet, we need to\n+         * install our fd handler. */\n+        qemu_set_fd_handler(s->fd, entropy_available, NULL, s);\n     }\n-\n-    s->receive_func = receive_entropy;\n-    s->opaque = opaque;\n-    s->size = size;\n-\n-    qemu_set_fd_handler(s->fd, entropy_available, NULL, s);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "static void rng_random_request_entropy(RngBackend *b, size_t size,",
+                "                                        EntropyReceiveFunc *receive_entropy,",
+                "                                        void *opaque)",
+                "    if (s->receive_func) {",
+                "        s->receive_func(s->opaque, NULL, 0);",
+                "",
+                "    s->receive_func = receive_entropy;",
+                "    s->opaque = opaque;",
+                "    s->size = size;",
+                "",
+                "    qemu_set_fd_handler(s->fd, entropy_available, NULL, s);"
+            ],
+            "added_lines": [
+                "static void rng_random_request_entropy(RngBackend *b, RngRequest *req)",
+                "    if (s->parent.requests == NULL) {",
+                "        /* If there are no pending requests yet, we need to",
+                "         * install our fd handler. */",
+                "        qemu_set_fd_handler(s->fd, entropy_available, NULL, s);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2016-2858",
+        "func_name": "qemu/rng_backend_request_entropy",
+        "description": "QEMU, when built with the Pseudo Random Number Generator (PRNG) back-end support, allows local guest OS users to cause a denial of service (process crash) via an entropy request, which triggers arbitrary stack based allocation and memory corruption.",
+        "git_url": "https://github.com/qemu/qemu/commit/60253ed1e6ec6d8e5ef2efe7bf755f475dce9956",
+        "commit_title": "rng: add request queue support to rng-random",
+        "commit_text": " Requests are now created in the RngBackend parent class and the code path is shared by both rng-egd and rng-random.  This commit fixes the rng-random implementation which processed only one request at a time and simply discarded all but the most recent one. In the guest this manifested as delayed completion of reads from virtio-rng, i.e. a read was completed only after another read was issued.  By switching rng-random to use the same request queue as rng-egd, the unsafe stack-based allocation of the entropy buffer is eliminated and replaced with g_malloc.  Message-Id: <1456994238-9585-5-git-send-email-lprosek@redhat.com>",
+        "func_before": "void rng_backend_request_entropy(RngBackend *s, size_t size,\n                                 EntropyReceiveFunc *receive_entropy,\n                                 void *opaque)\n{\n    RngBackendClass *k = RNG_BACKEND_GET_CLASS(s);\n\n    if (k->request_entropy) {\n        k->request_entropy(s, size, receive_entropy, opaque);\n    }\n}",
+        "func": "void rng_backend_request_entropy(RngBackend *s, size_t size,\n                                 EntropyReceiveFunc *receive_entropy,\n                                 void *opaque)\n{\n    RngBackendClass *k = RNG_BACKEND_GET_CLASS(s);\n    RngRequest *req;\n\n    if (k->request_entropy) {\n        req = g_malloc(sizeof(*req));\n\n        req->offset = 0;\n        req->size = size;\n        req->receive_entropy = receive_entropy;\n        req->opaque = opaque;\n        req->data = g_malloc(req->size);\n\n        k->request_entropy(s, req);\n\n        s->requests = g_slist_append(s->requests, req);\n    }\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -3,8 +3,19 @@\n                                  void *opaque)\n {\n     RngBackendClass *k = RNG_BACKEND_GET_CLASS(s);\n+    RngRequest *req;\n \n     if (k->request_entropy) {\n-        k->request_entropy(s, size, receive_entropy, opaque);\n+        req = g_malloc(sizeof(*req));\n+\n+        req->offset = 0;\n+        req->size = size;\n+        req->receive_entropy = receive_entropy;\n+        req->opaque = opaque;\n+        req->data = g_malloc(req->size);\n+\n+        k->request_entropy(s, req);\n+\n+        s->requests = g_slist_append(s->requests, req);\n     }\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "        k->request_entropy(s, size, receive_entropy, opaque);"
+            ],
+            "added_lines": [
+                "    RngRequest *req;",
+                "        req = g_malloc(sizeof(*req));",
+                "",
+                "        req->offset = 0;",
+                "        req->size = size;",
+                "        req->receive_entropy = receive_entropy;",
+                "        req->opaque = opaque;",
+                "        req->data = g_malloc(req->size);",
+                "",
+                "        k->request_entropy(s, req);",
+                "",
+                "        s->requests = g_slist_append(s->requests, req);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2017-2625",
+        "func_name": "xorg/lib/libXdmcp/XdmcpGenerateKey",
+        "description": "It was discovered that libXdmcp before 1.1.2 including used weak entropy to generate session keys. On a multi-user system using xdmcp, a local attacker could potentially use information available from the process list to brute force the key, allowing them to hijack other users' sessions.",
+        "git_url": "https://cgit.freedesktop.org/xorg/lib/libXdmcp/commit/?id=0554324ec6bbc2071f5d1f8ad211a1643e29eb1f",
+        "commit_title": "This allows to fix CVE-2017-2625 on Linux platforms without pulling in",
+        "commit_text": "libbsd. The libc getentropy() is available since glibc 2.25 but also on OpenBSD. For Linux, we need at least a v3.17 kernel. If the recommended arc4random_buf() function is not available, emulate it by first trying to use getentropy() on a supported glibc and kernel. If the call fails, fall back to the current (vulnerable) code.  ",
+        "func_before": "void\nXdmcpGenerateKey (XdmAuthKeyPtr key)\n{\n#ifndef HAVE_ARC4RANDOM_BUF\n    long    lowbits, highbits;\n\n    srandom ((int)getpid() ^ time((Time_t *)0));\n    lowbits = random ();\n    highbits = random ();\n    getbits (lowbits, key->data);\n    getbits (highbits, key->data + 4);\n#else\n    arc4random_buf(key->data, 8);\n#endif\n}",
+        "func": "void\nXdmcpGenerateKey (XdmAuthKeyPtr key)\n{\n    arc4random_buf(key->data, 8);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,15 +1,5 @@\n void\n XdmcpGenerateKey (XdmAuthKeyPtr key)\n {\n-#ifndef HAVE_ARC4RANDOM_BUF\n-    long    lowbits, highbits;\n-\n-    srandom ((int)getpid() ^ time((Time_t *)0));\n-    lowbits = random ();\n-    highbits = random ();\n-    getbits (lowbits, key->data);\n-    getbits (highbits, key->data + 4);\n-#else\n     arc4random_buf(key->data, 8);\n-#endif\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "#ifndef HAVE_ARC4RANDOM_BUF",
+                "    long    lowbits, highbits;",
+                "",
+                "    srandom ((int)getpid() ^ time((Time_t *)0));",
+                "    lowbits = random ();",
+                "    highbits = random ();",
+                "    getbits (lowbits, key->data);",
+                "    getbits (highbits, key->data + 4);",
+                "#else",
+                "#endif"
+            ],
+            "added_lines": []
+        }
+    },
+    {
+        "cve_id": "CVE-2017-2626",
+        "func_name": "xorg/lib/libICE/IceGenerateMagicCookie",
+        "description": "It was discovered that libICE before 1.0.9-8 used a weak entropy to generate keys. A local attacker could potentially use this flaw for session hijacking using the information available from the process list.",
+        "git_url": "https://cgit.freedesktop.org/xorg/lib/libICE/commit/?id=ff5e59f32255913bb1cdf51441b98c9107ae165b",
+        "commit_title": "This allows to fix CVE-2017-2626 on Linux platforms without pulling in",
+        "commit_text": "libbsd. The libc getentropy() is available since glibc 2.25 but also on OpenBSD. For Linux, we need at least a v3.17 kernel. If the recommended arc4random_buf() function is not available, emulate it by first trying to use getentropy() on a supported glibc and kernel. If the call fails, fall back to the current (partly vulnerable) code.  ",
+        "func_before": "char *\nIceGenerateMagicCookie (\n\tint len\n)\n{\n    char    *auth;\n#ifndef HAVE_ARC4RANDOM_BUF\n    long    ldata[2];\n    int\t    seed;\n    int\t    value;\n    int\t    i;\n#endif\n\n    if ((auth = malloc (len + 1)) == NULL)\n\treturn (NULL);\n\n#ifdef HAVE_ARC4RANDOM_BUF\n    arc4random_buf(auth, len);\n#else\n#ifdef ITIMER_REAL\n    {\n\tstruct timeval  now;\n\tX_GETTIMEOFDAY (&now);\n\tldata[0] = now.tv_sec;\n\tldata[1] = now.tv_usec;\n    }\n#else\n    {\n\tlong    time ();\n\tldata[0] = time ((long *) 0);\n\tldata[1] = getpid ();\n    }\n#endif\n    seed = (ldata[0]) + (ldata[1] << 16);\n    srand (seed);\n    for (i = 0; i < len; i++)\n    {\n\tvalue = rand ();\n\tauth[i] = value & 0xff;\n    }\n#endif\n    auth[len] = '\\0';\n    return (auth);\n}",
+        "func": "char *\nIceGenerateMagicCookie (\n\tint len\n)\n{\n    char    *auth;\n\n    if ((auth = malloc (len + 1)) == NULL)\n\treturn (NULL);\n\n    arc4random_buf (auth, len);\n\n    auth[len] = '\\0';\n    return (auth);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -4,41 +4,12 @@\n )\n {\n     char    *auth;\n-#ifndef HAVE_ARC4RANDOM_BUF\n-    long    ldata[2];\n-    int\t    seed;\n-    int\t    value;\n-    int\t    i;\n-#endif\n \n     if ((auth = malloc (len + 1)) == NULL)\n \treturn (NULL);\n \n-#ifdef HAVE_ARC4RANDOM_BUF\n-    arc4random_buf(auth, len);\n-#else\n-#ifdef ITIMER_REAL\n-    {\n-\tstruct timeval  now;\n-\tX_GETTIMEOFDAY (&now);\n-\tldata[0] = now.tv_sec;\n-\tldata[1] = now.tv_usec;\n-    }\n-#else\n-    {\n-\tlong    time ();\n-\tldata[0] = time ((long *) 0);\n-\tldata[1] = getpid ();\n-    }\n-#endif\n-    seed = (ldata[0]) + (ldata[1] << 16);\n-    srand (seed);\n-    for (i = 0; i < len; i++)\n-    {\n-\tvalue = rand ();\n-\tauth[i] = value & 0xff;\n-    }\n-#endif\n+    arc4random_buf (auth, len);\n+\n     auth[len] = '\\0';\n     return (auth);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "#ifndef HAVE_ARC4RANDOM_BUF",
+                "    long    ldata[2];",
+                "    int\t    seed;",
+                "    int\t    value;",
+                "    int\t    i;",
+                "#endif",
+                "#ifdef HAVE_ARC4RANDOM_BUF",
+                "    arc4random_buf(auth, len);",
+                "#else",
+                "#ifdef ITIMER_REAL",
+                "    {",
+                "\tstruct timeval  now;",
+                "\tX_GETTIMEOFDAY (&now);",
+                "\tldata[0] = now.tv_sec;",
+                "\tldata[1] = now.tv_usec;",
+                "    }",
+                "#else",
+                "    {",
+                "\tlong    time ();",
+                "\tldata[0] = time ((long *) 0);",
+                "\tldata[1] = getpid ();",
+                "    }",
+                "#endif",
+                "    seed = (ldata[0]) + (ldata[1] << 16);",
+                "    srand (seed);",
+                "    for (i = 0; i < len; i++)",
+                "    {",
+                "\tvalue = rand ();",
+                "\tauth[i] = value & 0xff;",
+                "    }",
+                "#endif"
+            ],
+            "added_lines": [
+                "    arc4random_buf (auth, len);",
+                ""
+            ]
+        }
+    }
+]

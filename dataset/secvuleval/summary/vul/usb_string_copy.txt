@@ -1,0 +1,1 @@
+ Function purpose: The function copies a string from source to a dynamically allocated buffer, ensuring the string does not exceed a specified maximum length, and returns a pointer to the copied string.

@@ -1,0 +1,1 @@
+ Function purpose: The function "ecma_op_function_call_constructor" is responsible for calling a constructor function, creating a new environment record, and handling the return value according to the ECMAScript specification.

@@ -1,0 +1,1 @@
+ Function purpose: The function "nilfs_check_folio" checks the consistency of a directory entry in a Nilfs2 filesystem by verifying the integrity of directory entries within a given folio, and logs errors if any inconsistencies are found.

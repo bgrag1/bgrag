@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and returns a firmware handle for either an encoder or decoder device, using the SCP (Secure Co-processor) for the specified use case.

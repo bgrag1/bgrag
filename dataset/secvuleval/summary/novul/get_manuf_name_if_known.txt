@@ -1,0 +1,1 @@
+ Function purpose: The function "get_manuf_name_if_known" is designed to retrieve the manufacturer name of an Ethernet device based on its MAC address, by first checking a local hash table and then falling back to global manufacturer tables if necessary.

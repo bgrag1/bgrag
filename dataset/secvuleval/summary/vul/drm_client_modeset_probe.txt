@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the "drm_client_modeset_probe" function is to probe and configure the display modes for a set of connectors in a DRM client device, ensuring that the modes are properly set on the appropriate CRTCs.

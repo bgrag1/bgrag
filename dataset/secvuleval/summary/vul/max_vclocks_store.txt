@@ -1,0 +1,1 @@
+ Function purpose: The function "max_vclocks_store" updates the maximum number of virtual clocks ("max_vclocks") for a PTP (Precision Time Protocol) clock device, allocating or freeing memory as needed to accommodate the new maximum number of virtual clocks.

@@ -1,0 +1,1 @@
+ Function purpose: The function checks the opcode bytes of the executed instruction in a virtual machine context and returns the appropriate result based on the exit code indicating the reason for the exit, handling specific cases and printing an error message for unsupported or unhandled opcodes.

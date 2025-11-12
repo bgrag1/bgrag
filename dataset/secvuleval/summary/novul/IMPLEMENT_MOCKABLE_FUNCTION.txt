@@ -1,0 +1,1 @@
+ Function purpose: The function "vsprintf_wchar" is designed to format a wide string using a format string and a variable argument list, allocating memory for the resulting string and handling potential errors during the process.

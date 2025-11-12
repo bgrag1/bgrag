@@ -1,0 +1,1 @@
+ Function purpose: The function converts data between host and network byte order based on the specified byte size and operation (NTOH or HTON) for a given range of registers in a network filter table.

@@ -1,0 +1,1 @@
+ Function purpose: The function "jspeFactorFunctionCall()" is designed to handle the parsing and execution of function calls, including constructor calls, within a JavaScript interpreter, managing the creation of new objects and the handling of method calls, including those involving the "super" keyword.

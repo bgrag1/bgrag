@@ -1,0 +1,1 @@
+ Function purpose: The function "http_sendfile2" is designed to handle HTTP requests for file transmission, including support for range requests, content encoding (e.g., gzip), and response headers such as ETag and Last-Modified.

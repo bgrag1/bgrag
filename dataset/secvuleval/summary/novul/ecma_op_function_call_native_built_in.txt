@@ -1,0 +1,1 @@
+ Function purpose: The function in the code snippet is designed to call a native built-in function, handling the necessary context switching for built-in realms if applicable, and returning the result of the function call.

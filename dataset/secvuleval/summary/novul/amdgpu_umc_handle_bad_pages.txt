@@ -1,0 +1,1 @@
+ Function purpose: The purpose of the amdgpu_umc_handle_bad_pages function is to handle and manage bad pages in the Unified Memory Controller (UMC) of an AMDGPU device, including querying and clearing error status, and potentially triggering a GPU reset if uncorrectable errors are detected.

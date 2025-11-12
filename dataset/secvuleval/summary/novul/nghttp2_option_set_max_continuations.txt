@@ -1,0 +1,1 @@
+ Function purpose: The function sets the maximum number of continuations allowed in an HTTP/2 stream, updating the option's mask and storing the value.

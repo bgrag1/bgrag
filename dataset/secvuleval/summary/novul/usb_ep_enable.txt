@@ -1,0 +1,1 @@
+ Function purpose: The function "usb_ep_enable" is designed to enable a USB endpoint by checking its descriptor and calling the appropriate driver operations to activate it, returning an error code if the endpoint is invalid or unable to be enabled.

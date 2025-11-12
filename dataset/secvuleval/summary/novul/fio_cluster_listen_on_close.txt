@@ -1,0 +1,1 @@
+ Function purpose: The function "fio_cluster_listen_on_close" releases the allocated memory for the protocol and updates the cluster's UUID to -1, signaling the stopping of cluster connection listening, and if the process is the parent, it sends an interrupt signal to stop the cluster connections.

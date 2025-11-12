@@ -1,0 +1,1 @@
+ Function purpose: The function "dtInsert" is responsible for inserting a new entry into a B+-tree index page in a JFS filesystem, handling cases where the leaf page needs to be extended or split to accommodate the new entry.

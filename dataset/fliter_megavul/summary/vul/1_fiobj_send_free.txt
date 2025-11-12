@@ -1,0 +1,1 @@
+ Function purpose: The function "fiobj_send_free" is designed to send an object's content to a specified UUID and deallocate the object after sending, using a custom deallocation function.

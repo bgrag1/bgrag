@@ -1,0 +1,1 @@
+ Function purpose: The function "memcg_write_event_control" is designed to handle writing to event control files in a memory cgroup, setting up event notifications for memory usage, OOM control, and memory pressure events, and managing event file descriptors and callbacks.

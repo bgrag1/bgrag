@@ -1,0 +1,1 @@
+ Function purpose: The function "list_set_cancel_gc" is designed to stop the garbage collection timer for a given IP set if it has a timeout feature enabled.

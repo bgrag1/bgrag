@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and processes the TLS client hello message from the downstream request, handling buffer allocation and reallocation if necessary, and returns the result along with any errors encountered.

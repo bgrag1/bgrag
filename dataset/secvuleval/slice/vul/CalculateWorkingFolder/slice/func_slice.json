@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(\n __deref_out_z VAR2* VAR3\n if (!VAR4)\n VAR5 = FUN2(VAR3, VAR4, 0);\n FUN3(VAR5, \"\");\n return VAR5;"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "cougar_report_fixup" in the code snippet adjusts the report descriptor of a HID device if the usage count exceeds the maximum allowed value, ensuring compliance with the HID specification.

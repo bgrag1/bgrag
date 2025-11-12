@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = VAR6->VAR7 > sizeof(VAR8) ? sizeof(VAR8) : VAR6->VAR7;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = NULL;\n\tFUN2(VAR6);\n\tFUN2(VAR6);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tFUN2(VAR5, &VAR6);\n\tVAR7 = FUN3(VAR4->VAR8, &VAR6, &VAR9);\n\tif (!VAR7) {\n\tVAR7 = FUN4(VAR4->VAR8, VAR10, sizeof(VAR10));\n\tif (VAR7 < 0) {\n\tFUN5(VAR11, VAR7, \"\");\n\tVAR7 = FUN6(VAR4->VAR8, 0, VAR10, VAR12, 0);\n\tFUN5(VAR11, VAR7, \"\");\n\tFUN7(VAR11, VAR13);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = VAR4->VAR7->VAR6;\n\tFUN2(VAR6, VAR8, \"\");\n\tFUN2(VAR6, VAR8, \"\");\n\tFUN3(VAR6, VAR9);"
+    ],
+    "API": [
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = NULL;\n\tFUN2(VAR6);\n\tFUN2(VAR6);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tstruct VAR5 *VAR6 = NULL;\n\tFUN2(VAR6);\n\tFUN2(VAR6);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = VAR6->VAR7 > sizeof(VAR8) ? sizeof(VAR8) : VAR6->VAR7;\n\tVAR9 = FUN2(VAR4->VAR10, 0, VAR8, VAR5, 0);\n\tFUN3(VAR11, VAR9, \"\");\n\tFUN4(VAR11, VAR12);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = VAR6->VAR7 > sizeof(VAR8) ? sizeof(VAR8) : VAR6->VAR7;",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tVAR5 = VAR6->VAR7 > sizeof(VAR8) ? sizeof(VAR8) : VAR6->VAR7;\n\tVAR9 = FUN2(VAR4->VAR10, 0, VAR8, VAR5, 0);\n\tFUN3(VAR11, VAR9, \"\");\n\tFUN4(VAR11, VAR12);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tFUN2(VAR5, &VAR6);\n\tVAR7 = FUN3(VAR4->VAR8, &VAR6, &VAR9);\n\tVAR7 = FUN4(VAR4->VAR8, VAR10, sizeof(VAR10));\n\tVAR11 = VAR9->VAR12 > sizeof(VAR10) ? sizeof(VAR10) : VAR9->VAR12;\n\tVAR7 = FUN5(VAR4->VAR8, 0, VAR10, VAR11, 0);\n\tFUN6(VAR13, VAR7, \"\");\n\tFUN7(VAR13, VAR14);",
+        "FUN1(struct VAR1 *VAR2, struct VAR3 *VAR4,\n\tFUN2(VAR5, &VAR6);\n\tVAR7 = FUN3(VAR4->VAR8, &VAR6, &VAR9);\n\tVAR7 = FUN4(VAR4->VAR8, VAR10, sizeof(VAR10));\n\tVAR11 = VAR9->VAR12 > sizeof(VAR10) ? sizeof(VAR10) : VAR9->VAR12;\n\tVAR7 = FUN5(VAR4->VAR8, 0, VAR10, VAR11, 0);\n\tFUN6(VAR13, VAR7, \"\");\n\tFUN7(VAR13, VAR14);"
+    ]
+}

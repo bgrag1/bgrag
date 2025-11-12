@@ -1,0 +1,1 @@
+ Function purpose: The function "__cxl_dpa_to_region" is designed to map a given device physical address (DPA) to a corresponding CXL region or endpoint decoder, providing debug information about the mapping.

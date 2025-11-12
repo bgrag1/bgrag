@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = NULL;\n\tVAR5 = &VAR6;\n\tfor (VAR7 = VAR6; VAR7; VAR7 = *VAR5) {\n\tif (FUN2(VAR7 == VAR6))\n\tif (VAR7 == VAR8)\n\tVAR8 = FUN3(VAR5);\n\t*VAR5 = VAR7->VAR9;\n\tVAR7->VAR9 = VAR4;\n\tVAR4 = VAR7;\n\tVAR5 = &VAR7->VAR9;\n\tfor (VAR7 = VAR4; VAR7; VAR7 = VAR4) {\n\tFUN4(VAR7);\n\tVAR4 = VAR7->VAR9;\n\tFUN5(VAR7);",
+        "void FUN1(struct VAR1 *VAR2)\n\tif (VAR3->VAR2 == VAR2) {\n\tif (FUN2(VAR4->VAR5, VAR2)) {",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2((unsigned long)VAR3->VAR4, VAR3->VAR5);\n\tVAR6 -= 1 << VAR3->VAR5;"
+    ],
+    "array": [],
+    "API": [
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2((unsigned long)VAR3->VAR4, VAR3->VAR5);\n\tVAR6 -= 1 << VAR3->VAR5;",
+        "void FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = NULL;\n\tVAR5 = &VAR6;\n\tfor (VAR7 = VAR6; VAR7; VAR7 = *VAR5) {\n\tif (FUN2(VAR7 == VAR6))\n\tif (VAR7 == VAR8)\n\tVAR8 = FUN3(VAR5);\n\t*VAR5 = VAR7->VAR9;\n\tVAR7->VAR9 = VAR4;\n\tVAR4 = VAR7;\n\tVAR5 = &VAR7->VAR9;\n\tfor (VAR7 = VAR4; VAR7; VAR7 = VAR4) {\n\tFUN4(VAR7);\n\tVAR4 = VAR7->VAR9;\n\tFUN5(VAR7);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR3);\n\tFUN3(&VAR3);",
+        "void FUN1(struct VAR1 *VAR2)\n\tFUN2(&VAR3);\n\tFUN3(&VAR3);"
+    ]
+}

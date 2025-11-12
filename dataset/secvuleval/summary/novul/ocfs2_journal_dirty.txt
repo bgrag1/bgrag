@@ -1,0 +1,1 @@
+ Function purpose: The function "ocfs2_journal_dirty" is designed to mark a buffer head as dirty in the journal, and if the operation fails, it handles the error by aborting the transaction and journal.

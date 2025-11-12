@@ -1,0 +1,1 @@
+ Function purpose: The function initializes a fib6_nh structure with necessary parameters and validates the nexthop configuration, ensuring it meets the required conditions for creating a route.

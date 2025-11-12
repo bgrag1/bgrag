@@ -1,0 +1,1 @@
+ Function purpose: The function evict_inodes is designed to free unused inodes from the superblock's inode list, marking them for eventual removal from the system, to free up memory when the filesystem is unmounted or memory pressure is high.

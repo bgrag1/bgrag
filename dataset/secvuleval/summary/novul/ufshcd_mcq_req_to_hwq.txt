@@ -1,0 +1,1 @@
+ Function purpose: The function "ufshcd_mcq_req_to_hwq" in the code snippet maps a request to its corresponding hardware queue in a UFS (Universal Flash Storage) host controller based on the request's multiqueue context.

@@ -1,0 +1,1 @@
+ Function purpose: The function initializes the stolen memory manager for a GPU device, allocating and configuring stolen memory based on the device's capabilities and requirements.

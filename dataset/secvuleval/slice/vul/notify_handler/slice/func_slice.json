@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "static void FUN1(acpi_handle VAR1, u32 VAR2, void *VAR3)\n\tstruct VAR4 *VAR5 = FUN2(&VAR6->VAR7);\n\tFUN3(&VAR6->VAR7, \"\",\n\tFUN4(&VAR6->VAR7, \"\");\n\tFUN5(&VAR6->VAR7, \"\", VAR2);\n\tFUN6(&VAR6->VAR7);",
+        "static void FUN1(acpi_handle VAR1, u32 VAR2, void *VAR3)\n\tif ((VAR4 = FUN2(VAR5->VAR6, VAR2))) {\n\tFUN3(&VAR7->VAR8, \"\",\n\tVAR9 = VAR5->VAR6;\n\t} else if ((VAR4 = FUN2(VAR5->VAR10, VAR2))) {\n\tVAR11 = FUN4(VAR5->VAR10);\n\tVAR9 = VAR5->VAR10;\n\tFUN5(&VAR7->VAR8, \"\", VAR2);\n\tVAR12 = FUN2(VAR9, VAR2 | 1);\n\tVAR13 = VAR14 && (!VAR12 || VAR12->VAR15 == VAR16);\n\tFUN6(VAR9, VAR2, VAR14, VAR13);",
+        "static void FUN1(acpi_handle VAR1, u32 VAR2, void *VAR3)\n\tstruct VAR4 *VAR5 = VAR3;",
+        "static void FUN1(acpi_handle VAR1, u32 VAR2, void *VAR3)\n\tVAR4 = VAR5 && (!VAR6 || VAR6->VAR7 == VAR8);\n\tFUN2(VAR9, VAR2, VAR5, VAR4);"
+    ]
+}

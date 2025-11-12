@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7->VAR8 = VAR3->VAR8 & VAR9;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7->VAR8 = VAR3->VAR9 & ~VAR10;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7->VAR4 = VAR4;\n\tif (VAR7->VAR4 != VAR8 && VAR7->VAR4 != VAR9) {",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tVAR9->VAR3 = VAR3;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7->VAR8 = (VAR3->VAR9 & VAR10) |\n\t(VAR3->VAR9 & VAR11);",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7 = FUN2(sizeof(*VAR7), VAR8);\n\tif (!VAR7)\n\tFUN3(VAR3, VAR7);\n\tVAR3->FUN4(VAR3, VAR9);\n\tFUN5(VAR7);\n\treturn VAR7;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tVAR9->VAR8 = VAR8;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tFUN2(&VAR7->VAR8, &VAR3->VAR9);\n\tFUN3(VAR3, &VAR7->VAR8, &VAR7->VAR10);\n\tFUN3(VAR3, &VAR7->VAR8, &VAR7->VAR10);\n\tFUN4(VAR3);\n\tFUN5(VAR3, VAR7);\n\tVAR3->FUN6(VAR3, VAR11);\n\tFUN7(VAR7);\n\treturn VAR7;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n\tVAR7->VAR8 = VAR3->VAR8 & VAR9;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tFUN3(&VAR9->VAR6, VAR6);\n\tif (!FUN4(VAR6, VAR10))",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tVAR9->VAR7 = VAR7;\n\tif (VAR9->VAR7 == VAR10)\n\telse if (VAR9->VAR7 == VAR10)",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tif (FUN3(VAR3))\n\tFUN4(VAR3);\n\tFUN5(VAR3, VAR9);\n\tVAR3->FUN6(VAR3, VAR10);\n\tFUN7(VAR9);\n\treturn VAR9;"
+    ],
+    "API": [
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tFUN3(&VAR9->VAR10, &VAR3->VAR11);\n\tFUN4(VAR3, &VAR9->VAR10, &VAR9->VAR12);\n\tFUN5(VAR3);\n\tFUN6(VAR3, VAR9);\n\tVAR3->FUN7(VAR3, VAR13);\n\tFUN8(VAR9);\n\treturn VAR9;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3, int VAR4, VAR5 *VAR6,\n u8 VAR7, u16 VAR8)\n\tFUN2(VAR3, \"\", VAR6, VAR8);\n\tFUN3(&VAR9->VAR10, &VAR3->VAR11);\n\tFUN4(VAR3, &VAR9->VAR10, &VAR9->VAR12);\n\tFUN5(VAR3);\n\tFUN6(VAR3, VAR9);\n\tVAR3->FUN7(VAR3, VAR13);\n\tFUN8(VAR9);\n\treturn VAR9;"
+    ]
+}

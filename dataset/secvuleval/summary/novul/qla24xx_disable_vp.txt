@@ -1,0 +1,1 @@
+ Function purpose: The function disables a virtual port (VP) on a QLA24XX host adapter, including disabling VP sessions, marking VP devices as dead, and updating the VP map, while also setting the VP state and port state accordingly.

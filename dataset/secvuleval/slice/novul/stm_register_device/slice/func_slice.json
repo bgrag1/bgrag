@@ -1,0 +1,23 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tFUN2(&VAR4->VAR5);\n\tVAR6 = FUN3(&VAR4->VAR5);\n\tFUN4(&VAR4->VAR5);\n\tFUN5(&VAR4->VAR5);\n\tFUN6(&VAR4->VAR5, 2000);\n\tFUN7(&VAR4->VAR5);\n\tFUN8(&VAR4->VAR5);\n\tFUN9(&VAR4->VAR5);\n\treturn VAR6;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tif (!VAR3->VAR4 || !VAR3->VAR5)",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4->VAR5 = FUN2(0, VAR3->VAR6, &VAR7);\n\tif (VAR4->VAR5 < 0) {\n\tVAR4->VAR8.VAR9 = FUN3(VAR4->VAR5, 0);\n\tVAR10 = FUN4(&VAR4->VAR8.VAR11, \"\", VAR3->VAR6);\n\tFUN5(VAR4->VAR5, VAR3->VAR6);",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tstruct VAR4 *VAR5)\n\tVAR6->VAR5 = VAR5;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4->VAR5.VAR2 = VAR2;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4->VAR5 = VAR3;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));\n\tVAR7->VAR8 = VAR4;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4->VAR5 = FUN2(0, VAR3->VAR6, &VAR7);\n\tif (VAR4->VAR5 < 0) {\n\tVAR4->VAR8.VAR9 = FUN3(VAR4->VAR5, 0);",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));\n\tif (!VAR7)\n\tFUN3(VAR7);\n\tVAR3->VAR7 = VAR7;",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tif (!VAR3->VAR4 || !VAR3->VAR5)",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4->VAR5 = FUN2(0, VAR3->VAR6, &VAR7);\n\tif (VAR4->VAR5 < 0) {\n\tVAR8 = VAR4->VAR5;\n\treturn VAR8;"
+    ],
+    "integer": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));\n\tif (!VAR7)\n\tFUN3(VAR7);\n\tVAR7->VAR8 = VAR4;\n\tVAR3->VAR7 = VAR7;"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));\n\tif (!VAR7)\n\tFUN3(VAR7);",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));",
+        "int FUN1(struct VAR1 *VAR2, struct VAR3 *VAR3,\n\tVAR4 = VAR3->VAR5 - VAR3->VAR6 + 1;\n\tVAR7 = FUN2(sizeof(*VAR7) + VAR4 * sizeof(void *));\n\tif (!VAR7)\n\tFUN3(VAR7);\n\tVAR7->VAR8 = VAR4;\n\tVAR3->VAR7 = VAR7;"
+    ]
+}

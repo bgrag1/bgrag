@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "static void FUN1(intptr_t VAR1, VAR2 *VAR3) {\n VAR4 *VAR5 = (VAR4 *)VAR3;",
+        "static void FUN1(intptr_t VAR1, VAR2 *VAR3) {\n if (VAR4->VAR5 & 4) {",
+        "static void FUN1(intptr_t VAR1, VAR2 *VAR3) {\n VAR4 *VAR5 = (VAR4 *)VAR3;\n (void)VAR3;"
+    ]
+}

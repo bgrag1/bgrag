@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tgfp_t VAR3 = VAR4 | VAR5 | VAR6 | VAR7;\n\tVAR8 = VAR2->VAR9 * sizeof(struct VAR10);\n\tVAR11 = (void *) FUN2(VAR3, FUN3(VAR8));\n\tif (!VAR11)\n\tVAR12->VAR13 = VAR11;"
+    ],
+    "integer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4 * sizeof(struct VAR5);\n\tVAR6 = (void *) FUN2(VAR7, FUN3(VAR3));\n\tif (!VAR6)\n\tVAR8->VAR9 = VAR6;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tgfp_t VAR3 = VAR4 | VAR5 | VAR6 | VAR7;\n\tVAR8 = VAR2->VAR9 * sizeof(struct VAR10);\n\tVAR11 = (void *) FUN2(VAR3, FUN3(VAR8));\n\tif (!VAR11)\n\tVAR12->VAR13 = VAR11;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4 * sizeof(struct VAR5);\n\tVAR6 = (void *) FUN2(VAR7, FUN3(VAR3));\n\tif (!VAR6)\n\tVAR8->VAR9 = VAR6;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR2->VAR4 * sizeof(struct VAR5);\n\tVAR6 = (void *) FUN2(VAR7, FUN3(VAR3));\n\tif (!VAR6)\n\tVAR8->VAR9 = VAR6;"
+    ]
+}

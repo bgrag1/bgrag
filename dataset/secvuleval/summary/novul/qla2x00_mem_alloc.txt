@@ -1,0 +1,1 @@
+ Function purpose: The function allocates and initializes various memory pools and structures required for the operation of a QLA2x00 storage controller, handling memory allocation and initialization for request and response queues, target memory, and other necessary components.

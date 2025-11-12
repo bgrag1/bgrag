@@ -1,0 +1,1 @@
+ Function purpose: The function tests the UDP datagram injection functionality of the Fast DDS library by initializing a publisher and adding a custom transport, then delivering multiple datagram files to the transport's receivers.

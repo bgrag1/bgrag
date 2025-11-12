@@ -1,0 +1,1 @@
+ Function purpose: The function unregisters and frees resources associated with power delivery capabilities and PD controllers in a Type-C port management system.

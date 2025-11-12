@@ -1,0 +1,1 @@
+ Function purpose: The function "ip_identify_match_check" checks if a given IP address matches any of the patterns defined in an "ip_identify_match" object and returns a match status based on the result of the matching process.

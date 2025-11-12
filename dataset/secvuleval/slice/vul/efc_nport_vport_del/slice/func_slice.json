@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "int\n\tunsigned long VAR1 = 0;\n\tFUN1(&VAR2->VAR3, VAR1);\n\tFUN2(&VAR2->VAR3, VAR1);\n\tFUN1(&VAR2->VAR4, VAR1);\n\tFUN2(&VAR2->VAR4, VAR1);",
+        "int\n u64 VAR1, uint64_t VAR2)\n\tif (VAR3->VAR1 == VAR1 && VAR3->VAR2 == VAR2) {\n\tif (VAR4->VAR1 == VAR1 && VAR4->VAR2 == VAR2) {",
+        "int\nFUN1(struct VAR1 *VAR1, struct VAR2 *VAR3,\n\tif (!VAR3) {",
+        "int\n u64 VAR1, uint64_t VAR2)\n\tif (VAR3->VAR1 == VAR1 && VAR3->VAR2 == VAR2) {\n\tif (VAR4->VAR1 == VAR1 && VAR4->VAR2 == VAR2) {"
+    ],
+    "API": [
+        "int\nFUN1(struct VAR1 *VAR1, struct VAR2 *VAR3,\n\tif (!VAR3) {"
+    ]
+}

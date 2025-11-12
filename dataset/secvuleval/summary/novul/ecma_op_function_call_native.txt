@@ -1,0 +1,1 @@
+ Function purpose: The function "ecma_op_function_call_native" is designed to call a native function object, handling the necessary context switching and exception management as required by the ECMA standard.

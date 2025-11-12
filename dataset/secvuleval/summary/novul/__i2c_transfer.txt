@@ -1,0 +1,1 @@
+ Function purpose: The function "__i2c_transfer" facilitates the transfer of I2C messages between a master device and a slave device, handling retries on arbitration loss and tracing the messages for debugging purposes.

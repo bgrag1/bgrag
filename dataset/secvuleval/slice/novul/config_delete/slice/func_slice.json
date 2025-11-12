@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "FUN1(struct VAR1* VAR2)\n\tif(!VAR2) return;\n\tfree(VAR2);"
+    ],
+    "API": [
+        "FUN1(struct VAR1* VAR2)\n\tif(!VAR2) return;\n\tfree(VAR2);"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "amdgpu_device_gpu_recover" is designed to handle the recovery of an AMDGPU device by stopping jobs, resetting the device, and managing the state of the device and its associated components during the reset process.

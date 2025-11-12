@@ -1,0 +1,1 @@
+ Function purpose: The function "nullb_apply_submit_queues" updates the number of hardware queues for a nullb device, ensuring that the number of submit queues does not exceed the number of hardware queues, and then returns the result of the update operation.

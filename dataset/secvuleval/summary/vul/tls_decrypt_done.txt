@@ -1,0 +1,1 @@
+ Function purpose: The function "tls_decrypt_done" is responsible for handling the completion of a TLS decryption operation, managing error handling, and cleaning up resources after decryption is done.

@@ -1,0 +1,42 @@
+static irqreturn_t tc_irq_handler(int irq, void *arg)
+{
+	struct tc_data *tc = arg;
+	u32 val;
+	int r;
+
+	r = regmap_read(tc->regmap, INTSTS_G, &val);
+	if (r)
+		return IRQ_NONE;
+
+	if (!val)
+		return IRQ_NONE;
+
+	if (val & INT_SYSERR) {
+		u32 stat = 0;
+
+		regmap_read(tc->regmap, SYSSTAT, &stat);
+
+		dev_err(tc->dev, "syserr %x\n", stat);
+	}
+
+	if (tc->hpd_pin >= 0 && tc->bridge.dev) {
+		/*
+		 * H is triggered when the GPIO goes high.
+		 *
+		 * LC is triggered when the GPIO goes low and stays low for
+		 * the duration of LCNT
+		 */
+		bool h = val & INT_GPIO_H(tc->hpd_pin);
+		bool lc = val & INT_GPIO_LC(tc->hpd_pin);
+
+		dev_dbg(tc->dev, "GPIO%d: %s %s\n", tc->hpd_pin,
+			h ? "H" : "", lc ? "LC" : "");
+
+		if (h || lc)
+			drm_kms_helper_hotplug_event(tc->bridge.dev);
+	}
+
+	regmap_write(tc->regmap, INTSTS_G, val);
+
+	return IRQ_HANDLED;
+}

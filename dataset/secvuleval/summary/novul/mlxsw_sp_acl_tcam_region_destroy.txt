@@ -1,0 +1,1 @@
+ Function purpose: The function "mlxsw_sp_acl_tcam_region_destroy" is responsible for deallocating and cleaning up a TCAM region in a Mellanox switch processor, including disabling the region, freeing its resources, and releasing the region ID back to the pool.

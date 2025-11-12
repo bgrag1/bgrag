@@ -1,0 +1,1 @@
+ Function purpose: The function "cougar_report_fixup" in the code snippet adjusts the report descriptor to ensure that the usage count does not exceed the maximum allowed value, and logs a message if necessary.

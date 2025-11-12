@@ -1,0 +1,1 @@
+ Function purpose: The function "v3d_csd_job_run" submits a Compute Shader Dispatch (CSD) job to a V3D (Video3D) GPU, creates a fence to track the job's completion, and configures the job's parameters in the GPU's registers before starting the job.

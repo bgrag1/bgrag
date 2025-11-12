@@ -1,0 +1,26 @@
+{
+    "array": [
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 3]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);"
+    ],
+    "API": [
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n VAR2.FUN2() = VAR4::VAR5::VAR6::FUN3(VAR7::move(VAR2.FUN2()));",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 3]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 3]),\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n VAR2.FUN2() = VAR4::VAR5::VAR6::FUN3(VAR7::move(VAR8));",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n VAR2.FUN2() = VAR4::VAR5::VAR6::FUN3(VAR7::move(VAR2.FUN2()));",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 3]),\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n auto VAR4 = VAR5::VAR6::VAR7::FUN2(\n VAR8::move(VAR2[VAR2.FUN3() - 3]),\n VAR8::move(VAR2[VAR2.FUN3() - 2]),\n VAR8::move(VAR2[VAR2.FUN3() - 1]));\n VAR2.FUN4() = VAR8::move(VAR4);",
+        "void FUN1(VAR1& VAR2, size_t VAR3) {\n VAR2.FUN2() = VAR4::VAR5::VAR6::FUN3(VAR7::move(VAR8));"
+    ]
+}

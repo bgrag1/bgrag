@@ -1,0 +1,10 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, u8 VAR3)\n\tif (!VAR2)\n\tif (!FUN2(VAR2))\n\tVAR4 = FUN3(VAR2, VAR3);\n\treturn VAR4;",
+        "int FUN1(struct VAR1 *VAR2, u8 VAR3)\n\tFUN2(&VAR2->VAR4);\n\tFUN3(&VAR2->VAR4);"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, u8 VAR3)\n\tFUN2(&VAR2->VAR4);\n\tFUN3(&VAR2->VAR4);",
+        "int FUN1(struct VAR1 *VAR2, u8 VAR3)\n\tFUN2(&VAR2->VAR4);\n\tFUN3(&VAR2->VAR4);"
+    ]
+}

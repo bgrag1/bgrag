@@ -1,0 +1,1 @@
+ Function purpose: The function is designed to send a GTP2-U (GPRS Tunneling Protocol version 2 User-plane) data packet indirectly, forwarding it through a specified bearer and updating the tunnel endpoint identifier (TEID) based on the bearer's QFI or EBI.

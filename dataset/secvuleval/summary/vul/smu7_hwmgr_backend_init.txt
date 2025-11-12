@@ -1,0 +1,1 @@
+ Function purpose: The function initializes the hardware management for a specific hardware manager in a driver, allocating memory, initializing default settings, and handling voltage and leakage data based on the platform capabilities and power table version.

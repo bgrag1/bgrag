@@ -1,0 +1,5 @@
+{
+    "API": [
+        "VAR1::TransportSocketPtr VAR2::FUN1(\n VAR3 = VAR4;\n return VAR5::VAR6<VAR7>(VAR5::move(VAR3), VAR8::VAR9,"
+    ]
+}

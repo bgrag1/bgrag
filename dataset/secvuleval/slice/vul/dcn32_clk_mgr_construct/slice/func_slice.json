@@ -1,0 +1,17 @@
+{
+    "pointer": [
+        "void FUN1(\n\tVAR1->VAR2.VAR3.VAR4 = 477800;\n\tVAR1->VAR2.VAR3.VAR4 = 268750;\n\tif (VAR5->VAR6->VAR7.VAR8 &&\n\tVAR1->VAR2.VAR3.VAR4 != VAR1->VAR2.VAR9.VAR10) {",
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR2->VAR3.VAR4 = FUN2(VAR2);\n\tif (VAR2->VAR3.VAR4 == 0)",
+        "void FUN1(\n\tVAR1->VAR2.VAR3.VAR4 = 477800;\n\tVAR1->VAR2.VAR3.VAR4 = 268750;\n\tVAR1->VAR2.VAR3.VAR4 != VAR1->VAR2.VAR5.VAR6) {\n\tVAR1->VAR2.VAR3.VAR4 = VAR1->VAR2.VAR5.VAR6;",
+        "void FUN1(\n\tif (VAR1->VAR2.VAR3.VAR4 != 0) {\n\tVAR1->VAR2.VAR5 = VAR1->VAR2.VAR3.VAR4;",
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR2->VAR3.VAR4 = FUN2(VAR2);\n\tFUN3(VAR2);",
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3->VAR4.VAR2 = VAR2;\n\tVAR3->VAR5 = FUN2(VAR3->VAR4.VAR2,",
+        "void FUN1(\n\tstruct VAR1 *VAR1)\n\tVAR2->VAR1 = VAR1;",
+        "void FUN1(\n\tVAR1->VAR2.VAR3 = FUN2(sizeof(*VAR1->VAR2.VAR3), VAR4);"
+    ],
+    "API": [
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3->VAR4.VAR2 = VAR2;\n\tVAR3->VAR5 = FUN2(VAR3->VAR4.VAR2,",
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR3->VAR4.VAR2 = VAR2;\n\tVAR3->VAR5 = FUN2(VAR3->VAR4.VAR2,",
+        "void FUN1(\n\tstruct VAR1 *VAR2,\n\tVAR2->VAR3.VAR4 = FUN2(VAR2);\n\tFUN3(VAR2);"
+    ]
+}

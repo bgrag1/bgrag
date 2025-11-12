@@ -1,0 +1,1 @@
+ Function purpose: The function in the code snippet is designed to apply specific quirks to PCIe devices, particularly to limit the Maximum Read Request Size (MRRS) based on the device's PCI ID and the hardware version of the AM654 PCIe controller.

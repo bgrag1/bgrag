@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "bool FUN1(const struct VAR1 *VAR1,\n\tconst struct VAR2 *VAR3,\n\tstruct VAR4 *VAR5)\n\treturn VAR1->VAR6->VAR7->VAR8->FUN2("
+    ]
+}

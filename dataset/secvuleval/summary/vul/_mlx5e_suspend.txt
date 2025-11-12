@@ -1,0 +1,1 @@
+ Function purpose: The function suspends the network device associated with the given auxiliary device by detaching it from the driver, destroying resources for all related Multi-OS (MLX5) devices, and returns -ENODEV if the network device is not present.

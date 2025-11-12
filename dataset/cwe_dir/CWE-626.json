@@ -1,0 +1,114 @@
+[
+    {
+        "cve_id": "CVE-2020-10773",
+        "func_name": "torvalds/linux/cmm_timeout_handler",
+        "description": "A stack information leak flaw was found in s390/s390x in the Linux kernel’s memory manager functionality, where it incorrectly writes to the /proc/sys/vm/cmm_timeout file. This flaw allows a local user to see the kernel data.",
+        "git_url": "https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?h=b8e51a6a9db94bc1fb18ae831b3dab106b5a4b5f",
+        "commit_title": "The problem is that we were putting the NUL terminator too far:",
+        "commit_text": " \tbuf[sizeof(buf) - 1] = '\\0';  If the user input isn't NUL terminated and they haven't initialized the whole buffer then it leads to an info leak.  The NUL terminator should be:  \tbuf[len - 1] = '\\0';  Cc: stable@vger.kernel.org [heiko.carstens@de.ibm.com: keep semantics of how *lenp and *ppos are handled] ",
+        "func_before": "static int cmm_timeout_handler(struct ctl_table *ctl, int write,\n\t\t\t       void __user *buffer, size_t *lenp, loff_t *ppos)\n{\n\tchar buf[64], *p;\n\tlong nr, seconds;\n\tunsigned int len;\n\n\tif (!*lenp || (*ppos && !write)) {\n\t\t*lenp = 0;\n\t\treturn 0;\n\t}\n\n\tif (write) {\n\t\tlen = *lenp;\n\t\tif (copy_from_user(buf, buffer,\n\t\t\t\t   len > sizeof(buf) ? sizeof(buf) : len))\n\t\t\treturn -EFAULT;\n\t\tbuf[sizeof(buf) - 1] = '\\0';\n\t\tcmm_skip_blanks(buf, &p);\n\t\tnr = simple_strtoul(p, &p, 0);\n\t\tcmm_skip_blanks(p, &p);\n\t\tseconds = simple_strtoul(p, &p, 0);\n\t\tcmm_set_timeout(nr, seconds);\n\t} else {\n\t\tlen = sprintf(buf, \"%ld %ld\\n\",\n\t\t\t      cmm_timeout_pages, cmm_timeout_seconds);\n\t\tif (len > *lenp)\n\t\t\tlen = *lenp;\n\t\tif (copy_to_user(buffer, buf, len))\n\t\t\treturn -EFAULT;\n\t}\n\t*lenp = len;\n\t*ppos += len;\n\treturn 0;\n}",
+        "func": "static int cmm_timeout_handler(struct ctl_table *ctl, int write,\n\t\t\t       void __user *buffer, size_t *lenp, loff_t *ppos)\n{\n\tchar buf[64], *p;\n\tlong nr, seconds;\n\tunsigned int len;\n\n\tif (!*lenp || (*ppos && !write)) {\n\t\t*lenp = 0;\n\t\treturn 0;\n\t}\n\n\tif (write) {\n\t\tlen = min(*lenp, sizeof(buf));\n\t\tif (copy_from_user(buf, buffer, len))\n\t\t\treturn -EFAULT;\n\t\tbuf[len - 1] = '\\0';\n\t\tcmm_skip_blanks(buf, &p);\n\t\tnr = simple_strtoul(p, &p, 0);\n\t\tcmm_skip_blanks(p, &p);\n\t\tseconds = simple_strtoul(p, &p, 0);\n\t\tcmm_set_timeout(nr, seconds);\n\t\t*ppos += *lenp;\n\t} else {\n\t\tlen = sprintf(buf, \"%ld %ld\\n\",\n\t\t\t      cmm_timeout_pages, cmm_timeout_seconds);\n\t\tif (len > *lenp)\n\t\t\tlen = *lenp;\n\t\tif (copy_to_user(buffer, buf, len))\n\t\t\treturn -EFAULT;\n\t\t*lenp = len;\n\t\t*ppos += len;\n\t}\n\treturn 0;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -11,16 +11,16 @@\n \t}\n \n \tif (write) {\n-\t\tlen = *lenp;\n-\t\tif (copy_from_user(buf, buffer,\n-\t\t\t\t   len > sizeof(buf) ? sizeof(buf) : len))\n+\t\tlen = min(*lenp, sizeof(buf));\n+\t\tif (copy_from_user(buf, buffer, len))\n \t\t\treturn -EFAULT;\n-\t\tbuf[sizeof(buf) - 1] = '\\0';\n+\t\tbuf[len - 1] = '\\0';\n \t\tcmm_skip_blanks(buf, &p);\n \t\tnr = simple_strtoul(p, &p, 0);\n \t\tcmm_skip_blanks(p, &p);\n \t\tseconds = simple_strtoul(p, &p, 0);\n \t\tcmm_set_timeout(nr, seconds);\n+\t\t*ppos += *lenp;\n \t} else {\n \t\tlen = sprintf(buf, \"%ld %ld\\n\",\n \t\t\t      cmm_timeout_pages, cmm_timeout_seconds);\n@@ -28,8 +28,8 @@\n \t\t\tlen = *lenp;\n \t\tif (copy_to_user(buffer, buf, len))\n \t\t\treturn -EFAULT;\n+\t\t*lenp = len;\n+\t\t*ppos += len;\n \t}\n-\t*lenp = len;\n-\t*ppos += len;\n \treturn 0;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t\tlen = *lenp;",
+                "\t\tif (copy_from_user(buf, buffer,",
+                "\t\t\t\t   len > sizeof(buf) ? sizeof(buf) : len))",
+                "\t\tbuf[sizeof(buf) - 1] = '\\0';",
+                "\t*lenp = len;",
+                "\t*ppos += len;"
+            ],
+            "added_lines": [
+                "\t\tlen = min(*lenp, sizeof(buf));",
+                "\t\tif (copy_from_user(buf, buffer, len))",
+                "\t\tbuf[len - 1] = '\\0';",
+                "\t\t*ppos += *lenp;",
+                "\t\t*lenp = len;",
+                "\t\t*ppos += len;"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2019-11936",
+        "func_name": "facebook/hhvm/HHVM_FUNCTION",
+        "description": "Various APC functions accept keys containing null bytes as input, leading to premature truncation of input. This issue affects HHVM versions prior to 3.30.12, all versions between 4.0.0 and 4.8.5, all versions between 4.9.0 and 4.23.1, as well as 4.24.0, 4.25.0, 4.26.0, 4.27.0, 4.28.0, and 4.28.1.",
+        "git_url": "https://github.com/facebook/hhvm/commit/f57df6d8cf33cb14c40f52287da29360e7003373",
+        "commit_title": "Prevent APC keys with nulls",
+        "commit_text": " Summary: This diff prevents storing APC keys that contain the null byte. APC uses a backing data structure ConcurrentTableSharedStore that uses const char* as its key type. This leads to situations where inserting APC keys with null bytes will cause key truncation, like so... localhost> p apc_clear_cache(); true localhost> p apc_fetch(\"test\") false localhost> p apc_fetch(\"test\\x00suffix\") false localhost> p apc_add(\"test\\x00suffix\", 5) true localhost> p apc_fetch(\"test\") 5 localhost> p apc_fetch(\"test\\x00suffix\") false This change will make APC throw an error if a key containing a null byte is passed to the store/add methods.  Reviewed By: markw65  Differential Revision: D17608626  fbshipit-source-id: 915e179f41e66c99c718364ec4a8639d204c4ea2",
+        "func_before": "Variant HHVM_FUNCTION(apc_store,\n                      const Variant& key_or_array,\n                      const Variant& var /* = null */,\n                      int64_t ttl /* = 0 */) {\n  if (!apcExtension::Enable) return Variant(false);\n\n  if (key_or_array.isArray()) {\n    Array valuesArr = key_or_array.toArray();\n\n    for (ArrayIter iter(valuesArr); iter; ++iter) {\n      Variant key = iter.first();\n      if (!key.isString()) {\n        throw_invalid_argument(\"apc key: (not a string)\");\n        return Variant(false);\n      }\n      Variant v = iter.second();\n      apc_store().set(key.toString(), v, ttl);\n    }\n\n    return Variant(ArrayData::Create());\n  }\n\n  if (!key_or_array.isString()) {\n    throw_invalid_argument(\"apc key: (not a string)\");\n    return Variant(false);\n  }\n  String strKey = key_or_array.toString();\n  apc_store().set(strKey, var, ttl);\n  return Variant(true);\n}",
+        "func": "Variant HHVM_FUNCTION(apc_store,\n                      const Variant& key_or_array,\n                      const Variant& var /* = null */,\n                      int64_t ttl /* = 0 */) {\n  if (!apcExtension::Enable) return Variant(false);\n\n  if (key_or_array.isArray()) {\n    Array valuesArr = key_or_array.toArray();\n\n    for (ArrayIter iter(valuesArr); iter; ++iter) {\n      Variant key = iter.first();\n      if (!key.isString()) {\n        throw_invalid_argument(\"apc key: (not a string)\");\n        return Variant(false);\n      }\n      Variant v = iter.second();\n\n      auto const& strKey = key.toCStrRef();\n      if (isKeyInvalid(strKey)) {\n        throw_invalid_argument(\"apc key: (contains invalid characters)\");\n        return Variant(false);\n      }\n      apc_store().set(strKey, v, ttl);\n    }\n    return Variant(ArrayData::Create());\n  }\n\n  if (!key_or_array.isString()) {\n    throw_invalid_argument(\"apc key: (not a string)\");\n    return Variant(false);\n  }\n  String strKey = key_or_array.toString();\n\n  if (isKeyInvalid(strKey)) {\n    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n    return Variant(false);\n  }\n  apc_store().set(strKey, var, ttl);\n  return Variant(true);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -14,9 +14,14 @@\n         return Variant(false);\n       }\n       Variant v = iter.second();\n-      apc_store().set(key.toString(), v, ttl);\n+\n+      auto const& strKey = key.toCStrRef();\n+      if (isKeyInvalid(strKey)) {\n+        throw_invalid_argument(\"apc key: (contains invalid characters)\");\n+        return Variant(false);\n+      }\n+      apc_store().set(strKey, v, ttl);\n     }\n-\n     return Variant(ArrayData::Create());\n   }\n \n@@ -25,6 +30,11 @@\n     return Variant(false);\n   }\n   String strKey = key_or_array.toString();\n+\n+  if (isKeyInvalid(strKey)) {\n+    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n+    return Variant(false);\n+  }\n   apc_store().set(strKey, var, ttl);\n   return Variant(true);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "      apc_store().set(key.toString(), v, ttl);",
+                ""
+            ],
+            "added_lines": [
+                "",
+                "      auto const& strKey = key.toCStrRef();",
+                "      if (isKeyInvalid(strKey)) {",
+                "        throw_invalid_argument(\"apc key: (contains invalid characters)\");",
+                "        return Variant(false);",
+                "      }",
+                "      apc_store().set(strKey, v, ttl);",
+                "",
+                "  if (isKeyInvalid(strKey)) {",
+                "    throw_invalid_argument(\"apc key: (contains invalid characters)\");",
+                "    return Variant(false);",
+                "  }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2019-11936",
+        "func_name": "facebook/hhvm/HHVM_FUNCTION",
+        "description": "Various APC functions accept keys containing null bytes as input, leading to premature truncation of input. This issue affects HHVM versions prior to 3.30.12, all versions between 4.0.0 and 4.8.5, all versions between 4.9.0 and 4.23.1, as well as 4.24.0, 4.25.0, 4.26.0, 4.27.0, 4.28.0, and 4.28.1.",
+        "git_url": "https://github.com/facebook/hhvm/commit/f57df6d8cf33cb14c40f52287da29360e7003373",
+        "commit_title": "Prevent APC keys with nulls",
+        "commit_text": " Summary: This diff prevents storing APC keys that contain the null byte. APC uses a backing data structure ConcurrentTableSharedStore that uses const char* as its key type. This leads to situations where inserting APC keys with null bytes will cause key truncation, like so... localhost> p apc_clear_cache(); true localhost> p apc_fetch(\"test\") false localhost> p apc_fetch(\"test\\x00suffix\") false localhost> p apc_add(\"test\\x00suffix\", 5) true localhost> p apc_fetch(\"test\") 5 localhost> p apc_fetch(\"test\\x00suffix\") false This change will make APC throw an error if a key containing a null byte is passed to the store/add methods.  Reviewed By: markw65  Differential Revision: D17608626  fbshipit-source-id: 915e179f41e66c99c718364ec4a8639d204c4ea2",
+        "func_before": "bool HHVM_FUNCTION(apc_store_as_primed_do_not_use,\n                   const String& key,\n                   const Variant& var) {\n  if (!apcExtension::Enable) return false;\n  apc_store().setWithoutTTL(key, var);\n  return true;\n}",
+        "func": "bool HHVM_FUNCTION(apc_store_as_primed_do_not_use,\n                   const String& key,\n                   const Variant& var) {\n  if (!apcExtension::Enable) return false;\n  if (isKeyInvalid(key)) {\n    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n    return false;\n  }\n  apc_store().setWithoutTTL(key, var);\n  return true;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -2,6 +2,10 @@\n                    const String& key,\n                    const Variant& var) {\n   if (!apcExtension::Enable) return false;\n+  if (isKeyInvalid(key)) {\n+    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n+    return false;\n+  }\n   apc_store().setWithoutTTL(key, var);\n   return true;\n }",
+        "diff_line_info": {
+            "deleted_lines": [],
+            "added_lines": [
+                "  if (isKeyInvalid(key)) {",
+                "    throw_invalid_argument(\"apc key: (contains invalid characters)\");",
+                "    return false;",
+                "  }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2019-11936",
+        "func_name": "facebook/hhvm/HHVM_FUNCTION",
+        "description": "Various APC functions accept keys containing null bytes as input, leading to premature truncation of input. This issue affects HHVM versions prior to 3.30.12, all versions between 4.0.0 and 4.8.5, all versions between 4.9.0 and 4.23.1, as well as 4.24.0, 4.25.0, 4.26.0, 4.27.0, 4.28.0, and 4.28.1.",
+        "git_url": "https://github.com/facebook/hhvm/commit/f57df6d8cf33cb14c40f52287da29360e7003373",
+        "commit_title": "Prevent APC keys with nulls",
+        "commit_text": " Summary: This diff prevents storing APC keys that contain the null byte. APC uses a backing data structure ConcurrentTableSharedStore that uses const char* as its key type. This leads to situations where inserting APC keys with null bytes will cause key truncation, like so... localhost> p apc_clear_cache(); true localhost> p apc_fetch(\"test\") false localhost> p apc_fetch(\"test\\x00suffix\") false localhost> p apc_add(\"test\\x00suffix\", 5) true localhost> p apc_fetch(\"test\") 5 localhost> p apc_fetch(\"test\\x00suffix\") false This change will make APC throw an error if a key containing a null byte is passed to the store/add methods.  Reviewed By: markw65  Differential Revision: D17608626  fbshipit-source-id: 915e179f41e66c99c718364ec4a8639d204c4ea2",
+        "func_before": "Variant HHVM_FUNCTION(apc_add,\n                      const Variant& key_or_array,\n                      const Variant& var /* = null */,\n                      int64_t ttl /* = 0 */) {\n  if (!apcExtension::Enable) return false;\n\n  if (key_or_array.isArray()) {\n    Array valuesArr = key_or_array.toArray();\n\n    // errors stores all keys corresponding to entries that could not be cached\n    ArrayInit errors(valuesArr.size(), ArrayInit::Map{});\n\n    for (ArrayIter iter(valuesArr); iter; ++iter) {\n      Variant key = iter.first();\n      if (!key.isString()) {\n        throw_invalid_argument(\"apc key: (not a string)\");\n        return false;\n      }\n      Variant v = iter.second();\n      if (!apc_store().add(key.toString(), v, ttl)) {\n        errors.add(key, -1);\n      }\n    }\n    return errors.toVariant();\n  }\n\n  if (!key_or_array.isString()) {\n    throw_invalid_argument(\"apc key: (not a string)\");\n    return false;\n  }\n  String strKey = key_or_array.toString();\n  return apc_store().add(strKey, var, ttl);\n}",
+        "func": "Variant HHVM_FUNCTION(apc_add,\n                      const Variant& key_or_array,\n                      const Variant& var /* = null */,\n                      int64_t ttl /* = 0 */) {\n  if (!apcExtension::Enable) return false;\n\n  if (key_or_array.isArray()) {\n    Array valuesArr = key_or_array.toArray();\n\n    // errors stores all keys corresponding to entries that could not be cached\n    ArrayInit errors(valuesArr.size(), ArrayInit::Map{});\n\n    for (ArrayIter iter(valuesArr); iter; ++iter) {\n      Variant key = iter.first();\n      if (!key.isString()) {\n        throw_invalid_argument(\"apc key: (not a string)\");\n        return false;\n      }\n      Variant v = iter.second();\n\n      auto const& strKey = key.toCStrRef();\n      if (isKeyInvalid(strKey)) {\n        throw_invalid_argument(\"apc key: (contains invalid characters)\");\n        return false;\n      }\n\n      if (!apc_store().add(strKey, v, ttl)) {\n        errors.add(strKey, -1);\n      }\n    }\n    return errors.toVariant();\n  }\n\n  if (!key_or_array.isString()) {\n    throw_invalid_argument(\"apc key: (not a string)\");\n    return false;\n  }\n  String strKey = key_or_array.toString();\n  if (isKeyInvalid(strKey)) {\n    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n    return false;\n  }\n  return apc_store().add(strKey, var, ttl);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -17,8 +17,15 @@\n         return false;\n       }\n       Variant v = iter.second();\n-      if (!apc_store().add(key.toString(), v, ttl)) {\n-        errors.add(key, -1);\n+\n+      auto const& strKey = key.toCStrRef();\n+      if (isKeyInvalid(strKey)) {\n+        throw_invalid_argument(\"apc key: (contains invalid characters)\");\n+        return false;\n+      }\n+\n+      if (!apc_store().add(strKey, v, ttl)) {\n+        errors.add(strKey, -1);\n       }\n     }\n     return errors.toVariant();\n@@ -29,5 +36,9 @@\n     return false;\n   }\n   String strKey = key_or_array.toString();\n+  if (isKeyInvalid(strKey)) {\n+    throw_invalid_argument(\"apc key: (contains invalid characters)\");\n+    return false;\n+  }\n   return apc_store().add(strKey, var, ttl);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "      if (!apc_store().add(key.toString(), v, ttl)) {",
+                "        errors.add(key, -1);"
+            ],
+            "added_lines": [
+                "",
+                "      auto const& strKey = key.toCStrRef();",
+                "      if (isKeyInvalid(strKey)) {",
+                "        throw_invalid_argument(\"apc key: (contains invalid characters)\");",
+                "        return false;",
+                "      }",
+                "",
+                "      if (!apc_store().add(strKey, v, ttl)) {",
+                "        errors.add(strKey, -1);",
+                "  if (isKeyInvalid(strKey)) {",
+                "    throw_invalid_argument(\"apc key: (contains invalid characters)\");",
+                "    return false;",
+                "  }"
+            ]
+        }
+    }
+]

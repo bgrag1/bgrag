@@ -1,0 +1,1 @@
+ Function purpose: The function "of_pwm_single_xlate" translates device tree phandle arguments into a PWM device, setting the period and polarity based on the arguments provided.

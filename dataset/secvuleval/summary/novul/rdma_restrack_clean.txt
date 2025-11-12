@@ -1,0 +1,1 @@
+ Function purpose: The function "rdma_restrack_clean" is designed to clean up and deallocate the resources tracked by the RDMA device, ensuring that all allocated data structures are properly freed.

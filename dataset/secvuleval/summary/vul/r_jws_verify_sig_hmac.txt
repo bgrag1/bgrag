@@ -1,0 +1,1 @@
+ Function purpose: The function "r_jws_verify_sig_hmac" verifies the HMAC signature of a JWS (JSON Web Signature) object against a given JWK (JSON Web Key) and returns a result indicating whether the signature is valid or not.

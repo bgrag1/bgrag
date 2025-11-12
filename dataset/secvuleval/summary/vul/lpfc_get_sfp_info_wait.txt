@@ -1,0 +1,1 @@
+ Function purpose: The function "lpfc_get_sfp_info_wait" is designed to retrieve SFP (Small Form-factor Pluggable) information from a storage device by sending mailbox commands and waiting for the responses, which are then stored in the provided "rdp_context" structure.

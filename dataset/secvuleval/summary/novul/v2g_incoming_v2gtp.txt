@@ -1,0 +1,1 @@
+ Function purpose: The function "v2g_incoming_v2gtp" processes incoming V2GTP (Vehicle-to-Grid Telecommunications Protocol) messages by reading the header and payload, validating the header, and ensuring the payload size does not cause integer overflow, handling connection read errors, and adjusting buffer positions for further processing.

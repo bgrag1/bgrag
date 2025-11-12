@@ -1,0 +1,1 @@
+ Function purpose: The function "f2fs_iget" retrieves or creates an inode for a given inode number in a F2FS filesystem, initializing it with the appropriate operations and setting its mode based on the inode type.

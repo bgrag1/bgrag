@@ -1,0 +1,1 @@
+ Function purpose: The function "smb2_get_data_area_len" in the provided code snippet is designed to determine the offset and length of the data area for various SMB2 commands, ensuring that the request size does not exceed the maximum stream protocol length.

@@ -1,0 +1,1 @@
+ Function purpose: The function "ima_eventname_init_common" is designed to initialize the event name for an IMA (Integrity Measurement Architecture) event, ensuring that the filename or file descriptor is within the specified size limit before writing it to a template field.

@@ -1,0 +1,1 @@
+ Function purpose: The function processes the ESP-IDF application descriptor data to extract and validate the secure version, compute a checksum, and optionally perform a SHA-256 hash verification, ensuring the integrity and security of the application descriptor.

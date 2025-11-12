@@ -1,0 +1,6 @@
+{
+    "pointer": [],
+    "API": [
+        "static_inline VAR1 *FUN1(const VAR2 *VAR3,\n yyjson_alc VAR4,\n if (VAR5) VAR4.free(VAR4.VAR6, VAR5); \\"
+    ]
+}

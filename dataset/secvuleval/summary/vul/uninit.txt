@@ -1,0 +1,1 @@
+ Function purpose: The function uninit(AVFilterContext *ctx) in the code snippet is designed to deallocate and clean up resources used by the ShowSpectrumContext structure, including buffers, transforms, and other allocated data, when the filter is being uninitialized.

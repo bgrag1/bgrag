@@ -1,0 +1,1 @@
+ Function purpose: The function "nft_expr_type_get" is designed to retrieve and manage expression types for Netfilter, handling module management and error checking for invalid inputs.

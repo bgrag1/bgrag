@@ -1,0 +1,113 @@
+[
+    {
+        "cve_id": "CVE-2017-18021",
+        "func_name": "IJHack/QtPass/Pass::boundedRandom",
+        "description": "It was discovered that QtPass before 1.2.1, when using the built-in password generator, generates possibly predictable and enumerable passwords. This only applies to the QtPass GUI.",
+        "git_url": "https://github.com/IJHack/QtPass/commit/2c72ed4f9809fc781aa97af43767ee0b7c8ca3b0",
+        "commit_title": "Qt 5.9 fallback (unix) from #338",
+        "commit_text": "",
+        "func_before": "quint32 Pass::boundedRandom(quint32 bound) {\n  if (bound < 2)\n    return 0;\n\n  quint32 randval;\n  const quint32 max_mod_bound = (1 + ~bound) % bound;\n\n  do\n    randval = QRandomGenerator::system()->generate();\n  while (randval < max_mod_bound);\n\n  return randval % bound;\n}",
+        "func": "quint32 Pass::boundedRandom(quint32 bound) {\n  if (bound < 2) {\n    return 0;\n  }\n\n  quint32 randval;\n  const quint32 max_mod_bound = (1 + ~bound) % bound;\n\n#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)\n  if (fd == -1) {\n    assert((fd = open(\"/dev/urandom\", O_RDONLY)) >= 0);\n  }\n#endif\n\n  do {\n#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)\n    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));\n#else\n    randval = QRandomGenerator::system()->generate();\n#endif\n  } while (randval < max_mod_bound);\n\n  return randval % bound;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,13 +1,24 @@\n quint32 Pass::boundedRandom(quint32 bound) {\n-  if (bound < 2)\n+  if (bound < 2) {\n     return 0;\n+  }\n \n   quint32 randval;\n   const quint32 max_mod_bound = (1 + ~bound) % bound;\n \n-  do\n+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)\n+  if (fd == -1) {\n+    assert((fd = open(\"/dev/urandom\", O_RDONLY)) >= 0);\n+  }\n+#endif\n+\n+  do {\n+#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)\n+    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));\n+#else\n     randval = QRandomGenerator::system()->generate();\n-  while (randval < max_mod_bound);\n+#endif\n+  } while (randval < max_mod_bound);\n \n   return randval % bound;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "  if (bound < 2)",
+                "  do",
+                "  while (randval < max_mod_bound);"
+            ],
+            "added_lines": [
+                "  if (bound < 2) {",
+                "  }",
+                "#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)",
+                "  if (fd == -1) {",
+                "    assert((fd = open(\"/dev/urandom\", O_RDONLY)) >= 0);",
+                "  }",
+                "#endif",
+                "",
+                "  do {",
+                "#if QT_VERSION < QT_VERSION_CHECK(5, 10, 0)",
+                "    assert(read(fd, &randval, sizeof(randval)) == sizeof(randval));",
+                "#else",
+                "#endif",
+                "  } while (randval < max_mod_bound);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2017-18021",
+        "func_name": "IJHack/QtPass/Pass::generateRandomPassword",
+        "description": "It was discovered that QtPass before 1.2.1, when using the built-in password generator, generates possibly predictable and enumerable passwords. This only applies to the QtPass GUI.",
+        "git_url": "https://github.com/IJHack/QtPass/commit/2c72ed4f9809fc781aa97af43767ee0b7c8ca3b0",
+        "commit_title": "Qt 5.9 fallback (unix) from #338",
+        "commit_text": "",
+        "func_before": "QString Pass::generateRandomPassword(const QString &charset,\n                                     unsigned int length) {\n  QString out;\n  for (unsigned int i = 0; i < length; ++i)\n    out.append(charset.at(boundedRandom(charset.length())));\n  return out;\n}",
+        "func": "QString Pass::generateRandomPassword(const QString &charset,\n                                     unsigned int length) {\n  QString out;\n  for (unsigned int i = 0; i < length; ++i) {\n    out.append(charset.at(static_cast<int>(\n        boundedRandom(static_cast<quint32>(charset.length())))));\n  }\n  return out;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,7 +1,9 @@\n QString Pass::generateRandomPassword(const QString &charset,\n                                      unsigned int length) {\n   QString out;\n-  for (unsigned int i = 0; i < length; ++i)\n-    out.append(charset.at(boundedRandom(charset.length())));\n+  for (unsigned int i = 0; i < length; ++i) {\n+    out.append(charset.at(static_cast<int>(\n+        boundedRandom(static_cast<quint32>(charset.length())))));\n+  }\n   return out;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "  for (unsigned int i = 0; i < length; ++i)",
+                "    out.append(charset.at(boundedRandom(charset.length())));"
+            ],
+            "added_lines": [
+                "  for (unsigned int i = 0; i < length; ++i) {",
+                "    out.append(charset.at(static_cast<int>(",
+                "        boundedRandom(static_cast<quint32>(charset.length())))));",
+                "  }"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2017-18021",
+        "func_name": "IJHack/QtPass/Pass::Generate_b",
+        "description": "It was discovered that QtPass before 1.2.1, when using the built-in password generator, generates possibly predictable and enumerable passwords. This only applies to the QtPass GUI.",
+        "git_url": "https://github.com/IJHack/QtPass/commit/f14282412b8a82888b71a3268c985709ba9364d3",
+        "commit_title": "Generate Password code from #338 placed",
+        "commit_text": "",
+        "func_before": "QString Pass::Generate_b(unsigned int length, const QString &charset) {\n  QString passwd;\n  if (QtPassSettings::isUsePwgen()) {\n    // --secure goes first as it overrides --no-* otherwise\n    QStringList args;\n    args.append(\"-1\");\n    if (QtPassSettings::isLessRandom())\n      args.append(\"--secure\");\n    args.append(QtPassSettings::isAvoidCapitals() ? \"--no-capitalize\"\n                                                  : \"--capitalize\");\n    args.append(QtPassSettings::isAvoidNumbers() ? \"--no-numerals\"\n                                                 : \"--numerals\");\n    if (QtPassSettings::isUseSymbols())\n      args.append(\"--symbols\");\n    args.append(QString::number(length));\n    QString p_out;\n    //  TODO(bezet): try-catch here(2 statuses to merge o_O)\n    if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,\n                             &passwd) == 0)\n      passwd.remove(QRegExp(\"[\\\\n\\\\r]\"));\n    else {\n      passwd.clear();\n      qDebug() << __FILE__ << \":\" << __LINE__ << \"\\t\"\n               << \"pwgen fail\";\n      //    TODO(bezet): emit critical ?\n    }\n  } else {\n    if (charset.length() > 0) {\n      passwd = Util::generateRandomPassword(charset, length);\n    } else {\n      emit critical(\n          tr(\"No characters chosen\"),\n          tr(\"Can't generate password, there are no characters to choose from \"\n             \"set in the configuration!\"));\n    }\n  }\n  return passwd;\n}",
+        "func": "QString Pass::Generate_b(unsigned int length, const QString &charset) {\n  QString passwd;\n  if (QtPassSettings::isUsePwgen()) {\n    // --secure goes first as it overrides --no-* otherwise\n    QStringList args;\n    args.append(\"-1\");\n    if (QtPassSettings::isLessRandom())\n      args.append(\"--secure\");\n    args.append(QtPassSettings::isAvoidCapitals() ? \"--no-capitalize\"\n                                                  : \"--capitalize\");\n    args.append(QtPassSettings::isAvoidNumbers() ? \"--no-numerals\"\n                                                 : \"--numerals\");\n    if (QtPassSettings::isUseSymbols())\n      args.append(\"--symbols\");\n    args.append(QString::number(length));\n    QString p_out;\n    //  TODO(bezet): try-catch here(2 statuses to merge o_O)\n    if (exec.executeBlocking(QtPassSettings::getPwgenExecutable(), args,\n                             &passwd) == 0)\n      passwd.remove(QRegExp(\"[\\\\n\\\\r]\"));\n    else {\n      passwd.clear();\n      qDebug() << __FILE__ << \":\" << __LINE__ << \"\\t\"\n               << \"pwgen fail\";\n      //    TODO(bezet): emit critical ?\n    }\n  } else {\n    if (charset.length() > 0) {\n      passwd = generateRandomPassword(charset, length);\n    } else {\n      emit critical(\n          tr(\"No characters chosen\"),\n          tr(\"Can't generate password, there are no characters to choose from \"\n             \"set in the configuration!\"));\n    }\n  }\n  return passwd;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -26,7 +26,7 @@\n     }\n   } else {\n     if (charset.length() > 0) {\n-      passwd = Util::generateRandomPassword(charset, length);\n+      passwd = generateRandomPassword(charset, length);\n     } else {\n       emit critical(\n           tr(\"No characters chosen\"),",
+        "diff_line_info": {
+            "deleted_lines": [
+                "      passwd = Util::generateRandomPassword(charset, length);"
+            ],
+            "added_lines": [
+                "      passwd = generateRandomPassword(charset, length);"
+            ]
+        }
+    },
+    {
+        "cve_id": "CVE-2009-3238",
+        "func_name": "torvalds/linux/get_random_int",
+        "description": "The get_random_int function in drivers/char/random.c in the Linux kernel before 2.6.30 produces insufficiently random numbers, which allows attackers to predict the return value, and possibly defeat protection mechanisms based on randomization, via vectors that leverage the function's tendency to \"return the same value over and over again for long stretches of time.\"",
+        "git_url": "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux.git;a=commit;h=8a0a9bd4db63bc45e3017bedeafbd88d0eb84d02",
+        "commit_title": "It's a really simple patch that basically just open-codes the current",
+        "commit_text": "\"secure_ip_id()\" call, but when open-coding it we now use a _static_ hashing area, so that it gets updated every time.  And to make sure somebody can't just start from the same original seed of all-zeroes, and then do the \"half_md4_transform()\" over and over until they get the same sequence as the kernel has, each iteration also mixes in the same old \"current->pid + jiffies\" we used - so we should now have a regular strong pseudo-number generator, but we also have one that doesn't have a single seed.  Note: the \"pid + jiffies\" is just meant to be a tiny tiny bit of noise. It has no real meaning. It could be anything. I just picked the previous seed, it's just that now we keep the state in between calls and that will feed into the next result, and that should make all the difference.  I made that hash be a per-cpu data just to avoid cache-line ping-pong: having multiple CPU's write to the same data would be fine for randomness, and add yet another layer of chaos to it, but since get_random_int() is supposed to be a fast interface I did it that way instead. I considered using \"__raw_get_cpu_var()\" to avoid any preemption overhead while still getting the hash be _mostly_ ping-pong free, but in the end good taste won out.  ",
+        "func_before": "unsigned int get_random_int(void)\n{\n\t/*\n\t * Use IP's RNG. It suits our purpose perfectly: it re-keys itself\n\t * every second, from the entropy pool (and thus creates a limited\n\t * drain on it), and uses halfMD4Transform within the second. We\n\t * also mix it with jiffies and the PID:\n\t */\n\treturn secure_ip_id((__force __be32)(current->pid + jiffies));\n}",
+        "func": "unsigned int get_random_int(void)\n{\n\tstruct keydata *keyptr;\n\t__u32 *hash = get_cpu_var(get_random_int_hash);\n\tint ret;\n\n\tkeyptr = get_keyptr();\n\thash[0] += current->pid + jiffies + get_cycles() + (int)(long)&ret;\n\n\tret = half_md4_transform(hash, keyptr->secret);\n\tput_cpu_var(get_random_int_hash);\n\n\treturn ret;\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -1,10 +1,14 @@\n unsigned int get_random_int(void)\n {\n-\t/*\n-\t * Use IP's RNG. It suits our purpose perfectly: it re-keys itself\n-\t * every second, from the entropy pool (and thus creates a limited\n-\t * drain on it), and uses halfMD4Transform within the second. We\n-\t * also mix it with jiffies and the PID:\n-\t */\n-\treturn secure_ip_id((__force __be32)(current->pid + jiffies));\n+\tstruct keydata *keyptr;\n+\t__u32 *hash = get_cpu_var(get_random_int_hash);\n+\tint ret;\n+\n+\tkeyptr = get_keyptr();\n+\thash[0] += current->pid + jiffies + get_cycles() + (int)(long)&ret;\n+\n+\tret = half_md4_transform(hash, keyptr->secret);\n+\tput_cpu_var(get_random_int_hash);\n+\n+\treturn ret;\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "\t/*",
+                "\t * Use IP's RNG. It suits our purpose perfectly: it re-keys itself",
+                "\t * every second, from the entropy pool (and thus creates a limited",
+                "\t * drain on it), and uses halfMD4Transform within the second. We",
+                "\t * also mix it with jiffies and the PID:",
+                "\t */",
+                "\treturn secure_ip_id((__force __be32)(current->pid + jiffies));"
+            ],
+            "added_lines": [
+                "\tstruct keydata *keyptr;",
+                "\t__u32 *hash = get_cpu_var(get_random_int_hash);",
+                "\tint ret;",
+                "",
+                "\tkeyptr = get_keyptr();",
+                "\thash[0] += current->pid + jiffies + get_cycles() + (int)(long)&ret;",
+                "",
+                "\tret = half_md4_transform(hash, keyptr->secret);",
+                "\tput_cpu_var(get_random_int_hash);",
+                "",
+                "\treturn ret;"
+            ]
+        }
+    }
+]

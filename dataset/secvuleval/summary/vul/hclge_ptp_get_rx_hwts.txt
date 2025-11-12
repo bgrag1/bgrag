@@ -1,0 +1,1 @@
+ Function purpose: The function updates the hardware timestamp of an incoming packet in a network device, using the PTP (Precision Time Protocol) hardware capabilities, and keeps track of the number of received packets with timestamps.

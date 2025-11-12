@@ -1,0 +1,1 @@
+ Function purpose: The function stops all active SMB sessions by shutting down each connection's transport layer and periodically checking if there are any remaining connections to continue the process until all sessions are terminated.

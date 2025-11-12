@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "void FUN1(\n\tVAR1->VAR2->VAR3 *\n\t(VAR4->VAR5[VAR6].VAR7 / 1000.0)\n\t* VAR8 / 1000.0;\n\tVAR1->VAR2->VAR9 =\n\tVAR1->VAR2->VAR3 *\n\t(VAR4->VAR5[VAR10].VAR7 / 1000.0)\n\t* VAR8 / 1000.0;",
+        "void FUN1(\n\tFUN2(VAR1->VAR2);\n\tVAR3 = VAR1->VAR2 > 2 ? VAR1->VAR2 - 3 : 0;\n\tVAR4 = VAR1->VAR2 > 1 ? VAR1->VAR2 - 2 : 0;\n\tVAR5 = VAR1->VAR2 > 0 ? VAR1->VAR2 - 1 : 0;",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 *\n\t(VAR4->VAR5[VAR6].VAR7 / 1000.0)\n\t* VAR8 / 1000.0;\n\tVAR1->VAR2->VAR3 *\n\t(VAR4->VAR5[VAR9].VAR7 / 1000.0)\n\t* VAR8 / 1000.0;\n\tVAR1->VAR2->VAR10 =\n\tVAR1->VAR2->VAR3 *\n\t(VAR4->VAR5[VAR11].VAR7 / 1000.0)\n\t* VAR8 / 1000.0;",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\t32 * (VAR4->VAR5[VAR6].VAR7 / 1000.0) / 1000.0;",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\tVAR1->VAR2->VAR4 *\n\t(VAR5->VAR6[VAR7].VAR8 / 1000.0)\n\t* VAR9 / 1000.0;"
+    ],
+    "array": [
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\tVAR1->VAR2->VAR4 *\n\t(VAR5->VAR6[VAR7].VAR8 / 1000.0)\n\tVAR1->VAR2->VAR9 =\n\tVAR1->VAR2->VAR4 *",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\tVAR1->VAR2->VAR4 *\n\t(VAR5->VAR6[VAR7].VAR8 / 1000.0)\n\tVAR1->VAR2->VAR9 =\n\tVAR1->VAR2->VAR4 *\n\tVAR1->VAR2->VAR10 =\n\tVAR1->VAR2->VAR4 *",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\tVAR1->VAR2->VAR4 *\n\t(VAR5->VAR6[VAR7].VAR8 / 1000.0)",
+        "void FUN1(\n\tVAR1->VAR2->VAR3 =\n\t32 * (VAR4->VAR5[VAR6].VAR7 / 1000.0) / 1000.0;"
+    ]
+}

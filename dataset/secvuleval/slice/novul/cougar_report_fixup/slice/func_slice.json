@@ -1,0 +1,14 @@
+{
+    "pointer": [
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n\treturn VAR4;",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n (VAR4[115] | VAR4[116] << 8) >= VAR6) {\n\tVAR4[115] = ((VAR6-1) & 0xff);\n\tVAR4[116] = ((VAR6-1) >> 8);\n\treturn VAR4;",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tFUN2(VAR3,",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n\treturn VAR4;"
+    ],
+    "array": [
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n (VAR4[115] | VAR4[116] << 8) >= VAR6) {\n\tVAR4[115] = ((VAR6-1) & 0xff);\n\tVAR4[116] = ((VAR6-1) >> 8);\n\treturn VAR4;",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n\treturn VAR4;",
+        "static VAR1 *FUN1(struct VAR2 *VAR3, VAR1 *VAR4,\n\tif (*VAR5 >= 117 && VAR4[2] == 0x09 && VAR4[3] == 0x02 &&\n\treturn VAR4;"
+    ]
+}

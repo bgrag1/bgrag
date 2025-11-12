@@ -1,0 +1,1 @@
+ Function purpose: The function sets the Dynamic Rate Reduction (DRR) parameters and static screen control for multiple pipes, adjusting their vertical total values and triggering events as specified.

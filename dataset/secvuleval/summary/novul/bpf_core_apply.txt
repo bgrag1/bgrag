@@ -1,0 +1,1 @@
+ Function purpose: The function "bpf_core_apply" is responsible for applying CO-RE (Compile Once, Run Everywhere) relocations to BPF instructions by finding and applying target candidates for specific type IDs, and then patching the instructions accordingly.

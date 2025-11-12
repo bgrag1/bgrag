@@ -1,0 +1,1 @@
+ Function purpose: The function sets up the beamforming parameters for a station (STA) in a 802.11ax (HE) network, based on the STA's capabilities and the PHY configuration.

@@ -1,0 +1,1 @@
+ Function purpose: The function "rt6_probe" is designed to perform router reachability probing on a network interface, ensuring that such probes are rate-limited to no more than one per minute, and it handles the scheduling of deferred work for these probes.

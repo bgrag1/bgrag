@@ -1,0 +1,1 @@
+ Function purpose: The function updates the maximum number of virtual clocks ("max_vclocks") that a PTP (Precision Time Protocol) clock can handle, reallocating memory for the "vclock_index" array if necessary, and ensuring thread safety with a mutex lock.

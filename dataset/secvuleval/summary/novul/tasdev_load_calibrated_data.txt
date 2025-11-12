@@ -1,0 +1,1 @@
+ Function purpose: The function "tasdev_load_calibrated_data" is designed to load calibrated device data for a specific device in a TasDevice structure, if available, and proceed with firmware playback if no calibrated data is present.

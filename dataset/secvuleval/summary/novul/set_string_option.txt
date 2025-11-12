@@ -1,0 +1,1 @@
+ Function purpose: The function sets a string option with the given index and value, updating both local and global scopes if specified, and handles error checking and autocommand triggering.

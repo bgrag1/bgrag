@@ -1,0 +1,1 @@
+ Function purpose: The function "CacheCalculateContainerWorkingPath" is designed to determine and cache the working path for a container based on its bundle ID and SHA1 hash, which is used when the container's integrity is not yet verified.

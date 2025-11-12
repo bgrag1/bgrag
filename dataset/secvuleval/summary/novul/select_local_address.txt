@@ -1,0 +1,1 @@
+ Function purpose: The function "select_local_address" is designed to find an existing MPTCP local address entry that is not a subflow and is available in the given MPTCP socket's ID availability bitmap, for use in creating a new MPTCP address entry.

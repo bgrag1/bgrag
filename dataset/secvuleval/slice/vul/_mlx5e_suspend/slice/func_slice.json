@@ -1,0 +1,7 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR5->VAR4;\n\tFUN2(VAR4);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR3 = FUN2(VAR2);",
+        "static int FUN1(struct VAR1 *VAR2)\n\tstruct VAR3 *VAR4 = VAR5->VAR4;\n\tif (!FUN2(VAR4)) {"
+    ]
+}

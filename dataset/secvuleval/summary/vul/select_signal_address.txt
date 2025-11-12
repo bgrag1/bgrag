@@ -1,0 +1,1 @@
+ Function purpose: The function "select_signal_address" is designed to select a signal address from the local address list of a "mptcp_sock" structure, ensuring that only addresses not marked as unavailable in the "id_avail_bitmap" and with the "SIGNAL" flag set are considered.

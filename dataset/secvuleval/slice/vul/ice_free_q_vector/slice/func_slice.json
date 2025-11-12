@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tif (!VAR2->VAR4[VAR3]) {\n\tVAR5 = VAR2->VAR4[VAR3];\n\tFUN2(VAR5);",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tstruct VAR4 *VAR5 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR5);\n\tFUN3(VAR2, VAR8->VAR9, VAR10,\n\tFUN3(VAR2, VAR11->VAR9, VAR12,\n\tif (VAR13->VAR14.VAR15 < 0)\n FUN4(VAR5, VAR2))\n\tFUN5(VAR5, VAR13->VAR14);",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tFUN2(VAR2, VAR4->VAR5, VAR6,\n\tFUN2(VAR2, VAR7->VAR5, VAR8,\n\tVAR2->VAR9[VAR3] = NULL;",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tif (VAR2->VAR4 == VAR5 && VAR2->VAR6 &&",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tstruct VAR4 *VAR5 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR5);\n\tFUN3(VAR7, \"\", VAR3);",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tFUN2(VAR2, VAR4->VAR5, VAR6,\n\tVAR4->VAR7 = NULL;",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tstruct VAR4 *VAR5 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR5);\n\tFUN3(VAR2, VAR8->VAR9, VAR10,\n\tFUN3(VAR2, VAR11->VAR9, VAR12,\n\tif (VAR2->VAR13 == VAR14 && VAR2->VAR15 &&\n FUN4(VAR5, VAR2))",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tFUN2(VAR2, VAR4->VAR5, VAR6,\n\tFUN2(VAR2, VAR7->VAR5, VAR8,\n\tVAR7->VAR9 = NULL;"
+    ],
+    "array": [
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tif (!VAR2->VAR4[VAR3]) {\n\tVAR5 = VAR2->VAR4[VAR3];\n\tFUN2(VAR5);",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tFUN2(VAR2, VAR4->VAR5, VAR6,\n\tFUN2(VAR2, VAR7->VAR5, VAR8,\n\tVAR2->VAR9[VAR3] = NULL;"
+    ],
+    "API": [
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tstruct VAR4 *VAR5 = VAR2->VAR6;\n\tVAR7 = FUN2(VAR5);\n\tFUN3(VAR2, VAR8->VAR9, VAR10,\n\tFUN3(VAR2, VAR11->VAR9, VAR12,\n\tif (VAR13->VAR14.VAR15 < 0)\n FUN4(VAR5, VAR2))\n\tFUN5(VAR5, VAR13->VAR14);",
+        "static void FUN1(struct VAR1 *VAR2, int VAR3)\n\tif (!VAR2->VAR4[VAR3]) {\n\tVAR5 = VAR2->VAR4[VAR3];\n\tFUN2(VAR5);"
+    ]
+}

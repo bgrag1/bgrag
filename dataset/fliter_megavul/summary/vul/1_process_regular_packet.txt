@@ -1,0 +1,1 @@
+ Function purpose: The function processes incoming QUIC packets, decrypts them if necessary, updates the receive history, and handles packet validation, duplication, and error scenarios.

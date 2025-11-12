@@ -1,0 +1,1 @@
+ Function purpose: The function "v4l2_async_create_ancillary_links" is designed to create ancillary links between a subdevice and a notifier's subdevice in a Linux media stack, specifically when the CONFIG_MEDIA_CONTROLLER option is enabled.

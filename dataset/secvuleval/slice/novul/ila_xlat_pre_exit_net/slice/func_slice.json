@@ -1,0 +1,5 @@
+{
+    "pointer": [
+        "void FUN1(struct VAR1 *VAR1)\n\tstruct VAR2 *VAR3 = FUN2(VAR1, VAR4);\n\tFUN3(VAR1, VAR5,"
+    ]
+}

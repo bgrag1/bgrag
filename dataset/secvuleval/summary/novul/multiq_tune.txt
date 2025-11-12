@@ -1,0 +1,1 @@
+ Function purpose: The function "multiq_tune" adjusts the number of bands in a multiq scheduler based on the provided options, creating or deleting queues as necessary to match the new configuration.

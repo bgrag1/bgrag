@@ -1,0 +1,1 @@
+ Function purpose: The function "mesh_serve_expired_callback" is responsible for serving expired DNS cache entries by iterating through a list of cached replies, applying any necessary response policy zone (RPZ) actions, and sending the replies back to the clients.

@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves the raw client certificate from the downstream TLS connection and handles dynamic memory allocation if the initial buffer size is insufficient.

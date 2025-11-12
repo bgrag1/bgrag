@@ -1,0 +1,1 @@
+ Function purpose: The function "cs_amp_get_efi_variable" is designed to retrieve an EFI variable by its name and GUID, and it returns the status of the operation.

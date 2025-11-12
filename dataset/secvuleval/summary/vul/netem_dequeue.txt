@@ -1,0 +1,1 @@
+ Function purpose: The function "netem_dequeue" is responsible for dequeuing a packet from a netem scheduler, handling any network emulation delays or drops, and passing the packet to the next queue if available.

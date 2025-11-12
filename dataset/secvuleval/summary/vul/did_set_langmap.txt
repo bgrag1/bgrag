@@ -1,0 +1,1 @@
+ Function purpose: The function sets up a language mapping based on a given string, updating the "langmap_mapga" and "langmap_init" accordingly, and handling errors if characters are missing or extra characters are present in the mapping string.

@@ -1,0 +1,1 @@
+ Function purpose: The function enables trace input for a specified input instance in Fluent Bit, creating a new trace context with the provided properties and associating it with the specified output name and prefix.

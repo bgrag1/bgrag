@@ -1,0 +1,13 @@
+{
+    "API": [
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n VAR4.FUN2(VAR5);\n return VAR5;",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (!VAR4::FUN2(VAR5, VAR6)) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (!VAR4::FUN2(VAR5, VAR6)) {\n if (!VAR4::FUN2(VAR5, VAR6)) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (!VAR4::FUN2(VAR5, VAR6)) {\n if (!VAR4::FUN2(VAR5, VAR6)) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (!VAR4::FUN2(VAR5, VAR6)) {\n if (!VAR4::FUN2(VAR5, VAR6)) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (VAR4 == nullptr || FUN2(VAR4) != 0) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (VAR4 == nullptr || FUN2(VAR4) != 0) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (VAR4 == nullptr || FUN2(VAR4) != 0) {",
+        "VAR1::VAR2 FUN1(const struct VAR3 &VAR3)\n if (!VAR4) {\n int VAR5 = ::FUN2(VAR4);"
+    ]
+}

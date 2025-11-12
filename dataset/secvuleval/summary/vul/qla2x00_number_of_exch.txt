@@ -1,0 +1,1 @@
+ Function purpose: The function "qla2x00_number_of_exch" sets the number of exchanges for a QLA2xxx host adapter based on the current mode (initiator, target, or dual) and ensures it does not exceed a maximum limit.

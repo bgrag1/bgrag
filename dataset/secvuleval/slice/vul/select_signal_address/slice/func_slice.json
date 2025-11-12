@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "static struct VAR1 *\n\treturn VAR2;"
+    ],
+    "API": []
+}

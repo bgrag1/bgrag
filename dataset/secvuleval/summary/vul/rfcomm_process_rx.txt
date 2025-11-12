@@ -1,0 +1,1 @@
+ Function purpose: The function "rfcomm_process_rx" processes incoming data for an RFCOMM session by dequeuing and processing each packet from the socket's receive queue, and handles the session closure when the underlying socket is closed.

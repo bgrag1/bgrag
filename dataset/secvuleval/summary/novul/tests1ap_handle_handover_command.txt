@@ -1,0 +1,1 @@
+ Function purpose: The function processes a S1AP Handover Command message, extracting relevant information such as MME and eNB UE IDs, and handling data forwarding details for E-RABs, updating the test_ue structure accordingly.

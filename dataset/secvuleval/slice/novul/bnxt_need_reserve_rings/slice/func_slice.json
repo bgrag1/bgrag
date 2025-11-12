@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static bool FUN1(struct VAR1 *VAR2)\n\tint VAR3 = FUN2(VAR2);\n\tint VAR4 = FUN3(VAR2);\n\tint VAR5 = VAR2->VAR6, VAR7;\n\tif (!FUN4(VAR2))\n\tFUN5(VAR2);\n\tif (!FUN4(VAR2))\n\tVAR8 = FUN6(VAR2, VAR5);\n\tVAR5 <<= 1;\n\tVAR7 = FUN7(VAR2);\n\tif (VAR9->VAR10 != VAR5 || VAR9->VAR11 != VAR3 ||\n VAR9->VAR12 != VAR8 || VAR9->VAR13 != VAR7 ||\n\tif ((VAR2->VAR14 & VAR15) && FUN8(VAR2) &&",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tif (VAR2->VAR3 & VAR4)\n\tif (VAR5->VAR6 != VAR7 || VAR5->VAR8 != VAR9 ||\n VAR5->VAR10 != VAR11 || VAR5->VAR12 != VAR13 ||\n (VAR5->VAR14 != VAR15 &&\n !(VAR2->VAR3 & VAR16)))\n\tif ((VAR2->VAR3 & VAR16) && FUN2(VAR2) &&",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tif (VAR3->VAR4 != VAR2->VAR5 &&\n VAR2->VAR6 >= 0x10601)",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tif (VAR3->VAR4 != VAR2->VAR5 &&",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tint VAR3 = FUN2(VAR2);\n\tif (VAR4->VAR5 != VAR6 || VAR4->VAR7 != VAR3 ||",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tint VAR3 = VAR2->VAR4, VAR5;\n\tint VAR6, VAR7 = VAR3;\n\tif (VAR8->VAR9 != VAR3 || VAR8->VAR10 != VAR11 ||\n VAR8->VAR12 != VAR6 || VAR8->VAR13 != VAR5 ||\n (VAR8->VAR14 != VAR7 &&",
+        "static bool FUN1(struct VAR1 *VAR2)\n\tint VAR3 = FUN2(VAR2);\n\tint VAR4 = FUN3(VAR2);\n\tif ((VAR2->VAR5 & VAR6) && FUN4(VAR2) &&\n VAR7->VAR8 != VAR4)"
+    ]
+}

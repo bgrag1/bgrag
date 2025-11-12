@@ -1,0 +1,1 @@
+ Function purpose: The function processes an HTTP request, unpacks the incoming message pack data, and responds with the status of trace operations on specified inputs.

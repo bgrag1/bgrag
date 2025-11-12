@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR5[0], VAR5[1], VAR5[2], VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR7->VAR9, VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n if (!VAR4.VAR5 || (VAR6->VAR7 == VAR8)) {"
+    ],
+    "array": [
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR5[0], VAR5[1], VAR5[2], VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR7->VAR9, VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR5[0], VAR5[1], VAR5[2], VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR5[0], VAR5[1], VAR5[2], VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR7->VAR9, VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR7->VAR9, VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n return VAR8;",
+        "FUN1(VAR1 *VAR2, const guint64 VAR3)\n VAR4 *VAR5 = (VAR4 *)FUN2(NULL, 8);\n *(VAR6 *)(void *)(VAR5) = FUN3(&(VAR3));\n VAR7 = FUN4(VAR5, 8);\n VAR8 = FUN5(VAR2, \"\", VAR5[0], VAR5[1], VAR5[2], VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n VAR8 = FUN5(VAR2, \"\", VAR7->VAR9, VAR5[3], VAR5[4], VAR5[5], VAR5[6], VAR5[7]);\n FUN6(NULL, VAR5);"
+    ]
+}

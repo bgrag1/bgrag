@@ -1,0 +1,1 @@
+ Function purpose: The function is designed to handle on-demand reads from a cache files system, selecting requests cyclically to prevent repetition, and managing the distribution of request messages to userspace.

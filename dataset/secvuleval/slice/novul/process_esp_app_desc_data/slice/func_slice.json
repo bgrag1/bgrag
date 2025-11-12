@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n VAR7->VAR9 = VAR8[1];\n FUN2(memcmp(&VAR7->VAR9, &VAR3[1], sizeof(VAR2)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n if (VAR5 != NULL) {\n if (VAR4 != NULL) {\n FUN2(VAR4, VAR8, sizeof(VAR8));",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n *VAR5 ^= VAR8[0] ^ VAR8[1];\n FUN2(memcmp(VAR8, VAR3, sizeof(VAR8)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n *VAR5 ^= VAR8[0] ^ VAR8[1];"
+    ],
+    "array": [
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n *VAR5 ^= VAR8[0] ^ VAR8[1];\n FUN2(VAR4, VAR8, sizeof(VAR8));\n FUN3(memcmp(VAR8, VAR3, sizeof(VAR8)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n VAR7->VAR9 = VAR8[1];\n FUN2(memcmp(&VAR7->VAR9, &VAR3[1], sizeof(VAR2)) == 0);"
+    ],
+    "API": [
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n *VAR5 ^= VAR8[0] ^ VAR8[1];\n FUN2(memcmp(VAR8, VAR3, sizeof(VAR8)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n *VAR5 ^= VAR8[0] ^ VAR8[1];\n FUN2(memcmp(VAR8, VAR3, sizeof(VAR8)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n VAR7->VAR9 = VAR8[1];\n FUN2(memcmp(&VAR7->VAR9, &VAR3[1], sizeof(VAR2)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n VAR7->VAR9 = VAR8[1];\n FUN2(memcmp(&VAR7->VAR9, &VAR3[1], sizeof(VAR2)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);\n VAR7->VAR10 = VAR8[1];\n *VAR5 ^= VAR8[0] ^ VAR8[1];\n FUN2(VAR4, VAR8, sizeof(VAR8));\n FUN3(memcmp(VAR8, VAR3, sizeof(VAR8)) == 0);\n FUN3(memcmp(&VAR7->VAR10, &VAR3[1], sizeof(VAR2)) == 0);",
+        "static VAR1 FUN1(const VAR2 *VAR3, bootloader_sha256_handle_t VAR4, VAR2 *VAR5, VAR6 *VAR7)\n memcpy(VAR8, VAR3, sizeof(VAR8));\n assert(VAR8[0] == VAR9);"
+    ]
+}

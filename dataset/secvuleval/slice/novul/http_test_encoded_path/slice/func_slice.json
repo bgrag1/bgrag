@@ -1,0 +1,16 @@
+{
+    "pointer": [
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = NULL;\n const char *VAR4 = VAR1 + VAR2;\n while (VAR1 < VAR4 && (VAR3 = memchr(VAR1, '', (VAR5)VAR2))) {\n VAR2 = VAR4 - VAR3;\n VAR1 = VAR3 + 1;\n if (VAR3[1] == '')\n if (VAR2 > 3 && VAR3[1] == '' && VAR3[2] == '' && VAR3[3] == '')",
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = VAR1 + VAR2;"
+    ],
+    "array": [
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = NULL;\n const char *VAR4 = VAR1 + VAR2;\n while (VAR1 < VAR4 && (VAR3 = memchr(VAR1, '', (VAR5)VAR2))) {\n VAR2 = VAR4 - VAR3;\n VAR1 = VAR3 + 1;\n if (VAR3[1] == '')\n if (VAR2 > 3 && VAR3[1] == '' && VAR3[2] == '' && VAR3[3] == '')"
+    ],
+    "integer": [
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = VAR1 + VAR2;\n while (VAR1 < VAR3 && (VAR4 = memchr(VAR1, '', (VAR5)VAR2))) {\n VAR2 = VAR3 - VAR4;\n VAR1 = VAR4 + 1;\n if (VAR4[1] == '')\n if (VAR2 > 3 && VAR4[1] == '' && VAR4[2] == '' && VAR4[3] == '')"
+    ],
+    "API": [
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = NULL;\n const char *VAR4 = VAR1 + VAR2;\n while (VAR1 < VAR4 && (VAR3 = memchr(VAR1, '', (VAR5)VAR2))) {\n VAR2 = VAR4 - VAR3;\n VAR1 = VAR3 + 1;\n if (VAR3[1] == '')\n if (VAR2 > 3 && VAR3[1] == '' && VAR3[2] == '' && VAR3[3] == '')",
+        "static inline int FUN1(const char *VAR1, size_t VAR2) {\n const char *VAR3 = NULL;\n const char *VAR4 = VAR1 + VAR2;\n while (VAR1 < VAR4 && (VAR3 = memchr(VAR1, '', (VAR5)VAR2))) {\n VAR2 = VAR4 - VAR3;\n VAR1 = VAR3 + 1;\n if (VAR3[1] == '')\n if (VAR2 > 3 && VAR3[1] == '' && VAR3[2] == '' && VAR3[3] == '')"
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(VAR1 *VAR2) {\n if (VAR3->VAR4.VAR5 && !VAR3->VAR6)",
+        "static int FUN1(VAR1 *VAR2) {\n VAR3 *VAR4 = FUN2(VAR2);\n FUN3(&FUN4(VAR4), VAR4->VAR4.VAR5);\n FUN5(VAR4);",
+        "static int FUN1(VAR1 *VAR2) {\n return !VAR3->close && FUN2(VAR3->VAR3.VAR4);",
+        "static int FUN1(VAR1 *VAR2) {\n return !VAR3->close && FUN2(VAR3->VAR3.VAR4);"
+    ],
+    "API": [
+        "static int FUN1(VAR1 *VAR2) {\n return !VAR3->close && FUN2(VAR3->VAR3.VAR4);",
+        "static int FUN1(VAR1 *VAR2) {\n return !VAR3->close && FUN2(VAR3->VAR3.VAR4);",
+        "static int FUN1(VAR1 *VAR2) {\n return !VAR3->close && FUN2(VAR3->VAR3.VAR4);"
+    ]
+}

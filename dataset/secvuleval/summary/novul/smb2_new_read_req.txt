@@ -1,0 +1,1 @@
+ Function purpose: The function "smb2_new_read_req" initializes and prepares a SMB2 READ request, optionally configuring it for RDMA offloading if applicable, and returns the request structure and its total length.

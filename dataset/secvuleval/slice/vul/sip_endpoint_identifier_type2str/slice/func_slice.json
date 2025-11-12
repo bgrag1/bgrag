@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tconst char *VAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;",
+        "static const char *FUN1(enum ast_sip_endpoint_identifier_type VAR1)\n\tVAR2 = \"\";\n\treturn VAR2;"
+    ]
+}

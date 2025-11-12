@@ -1,0 +1,42 @@
+{
+    "pointer": [
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\tFUN2(((struct VAR5 *)VAR4)->VAR6);\n\tFUN2(((struct VAR5 *)VAR4)->VAR7);\n\tif (((struct VAR5 *)VAR4)->VAR8) {\n\t*VAR1 = FUN3(((struct VAR5 *)\n\t*VAR2 = FUN3(((struct VAR5 *)",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\tif (((struct VAR5 *)VAR4)->VAR6 ||\n ((struct VAR5 *)VAR4)->VAR7) {\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);\n\t*VAR1 = FUN3(((struct VAR5 *)VAR4)->VAR8);\n\t*VAR2 = FUN3(((struct VAR5 *)VAR4)->VAR9);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)\n\tif (VAR4 + VAR5 < (VAR6)*VAR1 + *VAR2)\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR7, \"\", *VAR1);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR7, \"\",\n VAR8, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = 0;\n\t} else if ((VAR3)*VAR1 + *VAR2 > VAR4) {\n\tFUN2(VAR5, \"\",\n VAR4, (VAR3)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = 0;\n\tif (*VAR1 > 4096) {\n\tFUN2(VAR3, \"\", *VAR1);\n\t} else if ((VAR4)*VAR1 + *VAR2 > VAR5) {\n\tFUN2(VAR3, \"\",\n VAR5, (VAR4)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN3(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN3(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\t*VAR1 = FUN2(((struct VAR5 *)VAR4)->VAR6);\n\t*VAR2 = FUN2(((struct VAR5 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tunsigned short int VAR3 =\n\tFUN2(((struct VAR4 *)VAR5)->VAR6);\n\t*VAR1 = VAR3;\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR7, \"\", *VAR1);\n\t} else if ((VAR8)*VAR1 + *VAR2 > VAR9) {\n\tFUN3(VAR7, \"\",\n VAR9, (VAR8)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tif (((struct VAR3 *)VAR4)->VAR5 ||\n\t*VAR2 = FUN2(((struct VAR3 *)VAR4)->VAR6);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR9, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tunsigned short int VAR3 =\n\tFUN2(((struct VAR4 *)VAR5)->VAR6);\n\tif (!VAR3)\n\t*VAR2 = VAR3;\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR9, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n struct VAR3 *VAR4)\n\tVAR5 = FUN2(((struct VAR6 *)VAR4)->VAR7);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tVAR3 = FUN2(((struct VAR4 *)VAR5)->VAR6);\n\tif (VAR3 > 0) {\n\t*VAR2 = sizeof(struct VAR7) * VAR3;\n\t} else if ((VAR8)*VAR1 + *VAR2 > VAR9) {\n\tFUN3(VAR10, \"\",\n VAR9, (VAR8)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR1 = FUN2(((struct VAR3 *)VAR4)->VAR5);\n\tif (*VAR1 > 4096) {\n\tFUN3(VAR6, \"\", *VAR1);\n\t} else if ((VAR7)*VAR1 + *VAR2 > VAR8) {\n\tFUN3(VAR6, \"\",\n VAR8, (VAR7)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\t*VAR2 = FUN2(((struct VAR3 *)\n\tif (VAR4 + VAR5 < (VAR6)*VAR1 + *VAR2)\n\t} else if ((VAR6)*VAR1 + *VAR2 > VAR7) {\n\tFUN3(VAR8, \"\",\n VAR7, (VAR6)*VAR1 + *VAR2);"
+    ],
+    "API": [
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tVAR3 = FUN2(((struct VAR4 *)VAR5)->VAR6);\n\tif (VAR3 > 0) {\n\t*VAR2 = sizeof(struct VAR7) * VAR3;\n\t} else if ((VAR8)*VAR1 + *VAR2 > VAR9) {\n\tFUN3(VAR10, \"\",\n VAR9, (VAR8)*VAR1 + *VAR2);",
+        "static int FUN1(unsigned int *VAR1, unsigned int *VAR2,\n\tVAR3 = FUN2(((struct VAR4 *)VAR5)->VAR6);\n\tif (VAR3 > 0) {\n\t*VAR2 = sizeof(struct VAR7) * VAR3;\n\t} else if ((VAR8)*VAR1 + *VAR2 > VAR9) {\n\tFUN3(VAR10, \"\",\n VAR9, (VAR8)*VAR1 + *VAR2);"
+    ]
+}

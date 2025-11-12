@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tunsigned long VAR3)\n\tVAR4 = (struct cdrom_timed_media_change_info VAR5 *)VAR3;\n\tif (FUN2(&VAR6, VAR4, sizeof(VAR6)) != 0)\n\tif (FUN3(VAR4, &VAR6, sizeof(*VAR4)) != 0)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = FUN2(VAR2, VAR4);\n\tif (VAR3 < 0)\n\treturn VAR3;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tif (VAR3.VAR4 - VAR2->VAR5 < 0)\n\tVAR3.VAR4 = VAR2->VAR5;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tunsigned long VAR3)\n\tVAR4 = (struct cdrom_timed_media_change_info VAR5 *)VAR3;\n\tif (FUN2(&VAR6, VAR4, sizeof(VAR6)) != 0)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tunsigned long VAR3)\n\tVAR4 = (struct cdrom_timed_media_change_info VAR5 *)VAR3;\n\tif (FUN2(&VAR6, VAR4, sizeof(VAR6)) != 0)\n\tif (FUN3(VAR4, &VAR6, sizeof(*VAR4)) != 0)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tunsigned long VAR3)\n\tVAR4 = (struct cdrom_timed_media_change_info VAR5 *)VAR3;\n\tif (FUN2(&VAR6, VAR4, sizeof(VAR6)) != 0)\n\tif (FUN3(VAR4, &VAR6, sizeof(*VAR4)) != 0)",
+        "static int FUN1(struct VAR1 *VAR2,\n\tunsigned long VAR3)\n\tVAR4 = (struct cdrom_timed_media_change_info VAR5 *)VAR3;\n\tif (FUN2(&VAR6, VAR4, sizeof(VAR6)) != 0)\n\tif (FUN3(VAR4, &VAR6, sizeof(*VAR4)) != 0)"
+    ]
+}

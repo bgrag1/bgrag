@@ -1,0 +1,21 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (VAR5->VAR6 || !FUN2(&VAR5->VAR7))",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (FUN2(&VAR5, VAR4, sizeof(VAR5)))\n\tVAR6 = FUN3(&VAR5, VAR7);\n\tVAR6 = FUN4(VAR2, &VAR5, VAR7);\n\tif (!VAR6) {\n\tFUN5(VAR2, VAR7, VAR5.VAR8);\n\treturn VAR6;",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (FUN2(VAR5.VAR6 < VAR7 && !VAR2->VAR8)) {\n\tint VAR9 = FUN3(VAR2);\n\tVAR10 = FUN4(VAR2, VAR5.VAR6);\n\tVAR9 = FUN5(&VAR5, VAR10);\n\tVAR9 = FUN6(VAR2, &VAR5, VAR10);\n\tif (!VAR9) {\n\tFUN7(VAR2, VAR10, VAR5.VAR6);\n\treturn VAR9;",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (!FUN2(VAR5.VAR6))\n\tif (VAR5.VAR6 >= 65536)\n\tVAR7->VAR8 = VAR5.VAR6;",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tVAR5 = VAR6 = FUN2(sizeof(*VAR6), VAR7);\n\tif (!VAR6)\n\tVAR8 = FUN3(&VAR9, VAR6);\n\tVAR8 = FUN4(VAR2, &VAR9, VAR6);\n\tif (!VAR8) {\n\tFUN5(VAR2, VAR6, VAR9.VAR10);\n\treturn VAR8;",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tstruct VAR5 *VAR6, *VAR7 = NULL;\n\tVAR7 = VAR6 = FUN2(sizeof(*VAR6), VAR8);\n\tFUN3(VAR7);",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (!FUN2(VAR5.VAR6))\n\tif (VAR5.VAR6 >= 65536)\n\tVAR7->VAR8 = VAR5.VAR6 - 1;",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (FUN2(VAR5.VAR6 < VAR7 && !VAR2->VAR8)) {"
+    ],
+    "array": [
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (VAR5.VAR6[0] || VAR5.VAR6[1] || VAR5.VAR6[2])"
+    ],
+    "API": [
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tstruct VAR5 *VAR6, *VAR7 = NULL;\n\tFUN2(VAR7);",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tVAR5 = VAR6 = FUN2(sizeof(*VAR6), VAR7);\n\tFUN3(VAR5);",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tstruct VAR5 *VAR6, *VAR7 = NULL;\n\tVAR7 = VAR6 = FUN2(sizeof(*VAR6), VAR8);\n\tFUN3(VAR7);",
+        "int FUN1(struct VAR1 *VAR2, void VAR3 *VAR4)\n\tif (FUN2(&VAR5, VAR4, sizeof(VAR5)))\n\tVAR6 = FUN3(&VAR5, VAR7);\n\tVAR6 = FUN4(VAR2, &VAR5, VAR7);\n\tif (!VAR6) {\n\tFUN5(VAR2, VAR7, VAR5.VAR8);\n\treturn VAR6;"
+    ]
+}

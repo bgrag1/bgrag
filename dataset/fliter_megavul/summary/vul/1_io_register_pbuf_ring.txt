@@ -1,0 +1,1 @@
+ Function purpose: The function registers a buffer ring for I/O operations in an I/O ring context, handling both memory-mapped and non-memory-mapped buffer registration scenarios.

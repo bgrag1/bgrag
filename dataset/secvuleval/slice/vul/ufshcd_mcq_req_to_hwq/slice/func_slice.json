@@ -1,0 +1,6 @@
+{
+    "pointer": [
+        "struct VAR1 *FUN1(struct VAR2 *VAR3,\n struct VAR4 *VAR5)\n\tu32 VAR6 = FUN2(VAR5);\n\tu32 VAR7 = FUN3(VAR6);"
+    ],
+    "array": []
+}

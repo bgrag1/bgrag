@@ -1,0 +1,1 @@
+ Function purpose: The function "ble_hs_conn_timer" checks for connection timeouts in BLE connections, specifically for L2CAP RX fragment and queued write timeouts, and returns the time until the next timeout or forever if no timeouts are configured.

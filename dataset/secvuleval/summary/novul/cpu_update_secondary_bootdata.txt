@@ -1,0 +1,1 @@
+ Function purpose: The function updates the boot data for a secondary CPU by setting its spinwait stack pointer and task pointer in the respective arrays based on the CPU ID.

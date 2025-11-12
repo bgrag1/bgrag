@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and provides information about the firmware for a specific type, such as SMU or SMU_SK, for a given AMDGPU device, including its version, memory address, and size.

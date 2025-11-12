@@ -1,0 +1,1 @@
+ Function purpose: The function logs a debug message indicating an HTTP/1.1 parser error, closes the associated file, and returns -1 to indicate an error.

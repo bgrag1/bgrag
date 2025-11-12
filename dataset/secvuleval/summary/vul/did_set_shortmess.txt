@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_shortmess" checks if a given option is set and returns a flag indicating whether it was set or not, using a list of all possible options and an error buffer for reporting errors.

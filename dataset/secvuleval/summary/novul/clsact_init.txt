@@ -1,0 +1,1 @@
+ Function purpose: The function initializes a classifier and action scheduling queue (clsact) for a network device, setting up ingress and egress blocks for traffic control.

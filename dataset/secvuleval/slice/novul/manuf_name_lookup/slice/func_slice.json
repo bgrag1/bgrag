@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = FUN2(VAR2, &VAR5);\n if (VAR4 != NULL) {\n return FUN3(VAR2, VAR4, VAR5);\n return FUN3(VAR2, NULL, NULL);",
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[0];\n VAR4 = VAR4<<8;\n VAR4 = VAR4 | VAR5;\n VAR4 = VAR4<<8;\n VAR4 = VAR4 | VAR5;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR4));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR4 & 0x00010000) != 0) {\n VAR4 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR4));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);",
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[1];\n VAR5 = VAR5 | VAR4;\n VAR5 = VAR5<<8;\n VAR5 = VAR5 | VAR4;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR5 & 0x00010000) != 0) {\n VAR5 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);",
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[2];\n VAR5 = VAR5 | VAR4;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR5 & 0x00010000) != 0) {\n VAR5 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);"
+    ],
+    "array": [
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[1];\n VAR5 = VAR5 | VAR4;\n VAR5 = VAR5<<8;\n VAR5 = VAR5 | VAR4;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR5 & 0x00010000) != 0) {\n VAR5 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);",
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[0];\n VAR4 = VAR4<<8;\n VAR4 = VAR4 | VAR5;\n VAR4 = VAR4<<8;\n VAR4 = VAR4 | VAR5;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR4));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR4 & 0x00010000) != 0) {\n VAR4 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR4));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);",
+        "FUN1(const VAR1 *VAR2, size_t VAR3)\n VAR4 = VAR2[2];\n VAR5 = VAR5 | VAR4;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if ((VAR5 & 0x00010000) != 0) {\n VAR5 &= 0x00FEFFFF;\n VAR6 = (VAR7*)FUN2(VAR8, FUN3(VAR5));\n if (VAR6 != NULL) {\n return VAR6;\n if (VAR9 != NULL) {\n return FUN4(VAR2, VAR9, VAR10);\n return FUN4(VAR2, NULL, NULL);"
+    ]
+}

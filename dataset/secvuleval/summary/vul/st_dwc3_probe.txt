@@ -1,0 +1,1 @@
+ Function purpose: The function "st_dwc3_probe" is responsible for initializing and configuring a DesignWare USB3 IP core in a device driver, handling resource management, and setting up the device's USB mode (device or host) based on the static configuration provided in the device tree.

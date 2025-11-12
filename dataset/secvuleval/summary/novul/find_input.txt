@@ -1,0 +1,1 @@
+ Function purpose: The function "find_input" is designed to search through a list of input instances in a Fluent Bit configuration to find a specific input by name or alias, and return the corresponding input instance if found.

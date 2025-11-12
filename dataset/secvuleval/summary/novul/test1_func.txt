@@ -1,0 +1,1 @@
+ Function purpose: The function "test1_func" is designed to simulate a series of S1AP and GTPU interactions between an eNB and MME, including UE attach, authentication, and bearer establishment, as well as handling handover and TAU procedures, ultimately verifying the functionality of the S1AP and GTPU protocols in a test environment.

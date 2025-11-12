@@ -1,0 +1,1 @@
+ Function purpose: The function "CacheCleanup" is designed to clean up cache files and directories, either per machine or per user, based on the provided bundle ID, and it ensures that only non-directory files are deleted, excluding files ending with ".R".

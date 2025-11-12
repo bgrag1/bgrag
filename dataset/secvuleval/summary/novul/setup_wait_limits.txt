@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and inserts network block wait limits into the infrastructure cache, ensuring that the necessary data structures are properly set up and ready for use.

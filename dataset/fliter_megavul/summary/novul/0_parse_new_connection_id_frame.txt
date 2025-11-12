@@ -1,0 +1,1 @@
+ Function purpose: The function parses a New Connection ID frame from the input buffer, validates its fields, and updates the connection's active connection ID count and state.

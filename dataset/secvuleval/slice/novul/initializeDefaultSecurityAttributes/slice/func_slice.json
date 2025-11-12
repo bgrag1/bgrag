@@ -1,0 +1,11 @@
+{
+    "pointer": [
+        "FUN1(\n VAR1 *VAR2,\n assert(VAR2);",
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));"
+    ],
+    "API": [
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));",
+        "FUN1(\n VAR1 *VAR2,\n assert(VAR2);",
+        "FUN1(\n struct VAR1 *VAR2\n assert(VAR2);\n memset(VAR2, 0, sizeof(*VAR2));"
+    ]
+}

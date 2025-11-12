@@ -1,0 +1,1 @@
+ Function purpose: The function "nv17_tv_get_hd_modes" retrieves and processes available HD display modes for a given encoder and connector, adding suitable modes to the connector's mode list.

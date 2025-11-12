@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tconst size_t VAR7 = *VAR8;\n\tif (VAR3->VAR9 > VAR10 - VAR7)\n\tCopyMemory(&VAR11[VAR7], VAR3->VAR12, VAR3->VAR9);\n\t*VAR8 = VAR7 + VAR3->VAR9;",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tconst size_t VAR7 = *VAR8;\n\tif (VAR3->VAR9 > VAR10 - VAR7)\n\tif (VAR7 + VAR3->VAR9 > VAR6)",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n VAR7* VAR8)\n\tFUN2(VAR8);",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tFUN2(VAR3);",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tFUN2(VAR5);",
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tif (!VAR7)\n\t*VAR5 = VAR7;"
+    ],
+    "array": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tconst size_t VAR7 = *VAR8;\n\tif (VAR3->VAR9 > VAR10 - VAR7)\n\tCopyMemory(&VAR11[VAR7], VAR3->VAR12, VAR3->VAR9);\n\t*VAR8 = VAR7 + VAR3->VAR9;"
+    ],
+    "integer": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tconst size_t VAR7 = *VAR8;\n\tif (VAR3->VAR9 > VAR10 - VAR7)\n\tCopyMemory(&VAR11[VAR7], VAR3->VAR12, VAR3->VAR9);\n\t*VAR8 = VAR7 + VAR3->VAR9;"
+    ],
+    "API": [
+        "static VAR1 FUN1(VAR2* VAR3, VAR4** VAR5, size_t VAR6,\n\tconst size_t VAR7 = *VAR8;\n\tif (VAR3->VAR9 > VAR10 - VAR7)\n\tCopyMemory(&VAR11[VAR7], VAR3->VAR12, VAR3->VAR9);\n\t*VAR8 = VAR7 + VAR3->VAR9;"
+    ]
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "pci_bridge_wait_for_secondary_bus" is designed to wait for a secondary bus to become ready after a PCI or PCIe device reset, ensuring that the device is accessible and the link is active.

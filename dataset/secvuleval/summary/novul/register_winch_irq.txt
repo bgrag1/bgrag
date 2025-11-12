@@ -1,0 +1,1 @@
+ Function purpose: The function registers a window size change interrupt handler for a specified process and file descriptor, associating it with a specific terminal and managing memory allocation and deallocation.

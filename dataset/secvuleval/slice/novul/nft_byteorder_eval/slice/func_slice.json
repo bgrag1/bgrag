@@ -1,0 +1,25 @@
+{
+    "pointer": [
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 4; VAR3++)",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10[VAR11] = FUN2((__force VAR12)VAR4[VAR11]);\n\tVAR10[VAR11] = (__force VAR13)FUN3(VAR4[VAR11]);\n\tVAR14[VAR11] = FUN4((__force VAR15)VAR9[VAR11]);\n\tVAR14[VAR11] = (__force VAR16)FUN5(VAR9[VAR11]);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tconst struct VAR3 *VAR4 = FUN2(VAR2);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 = FUN2(&VAR4[VAR5]);\n\tFUN3(&VAR6[VAR5],\n\tFUN4((__force VAR7)VAR3));",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10 *VAR11 = (void *)VAR4;",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 = (__force VAR4)\n\tFUN2(FUN3(&VAR5[VAR6]));\n\tFUN4(&VAR7[VAR6], VAR3);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 4; VAR3++)",
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 2; VAR3++)",
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 8; VAR3++) {",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;",
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 8; VAR3++) {",
+        "void FUN1(const struct VAR1 *VAR2,\n\tfor (VAR3 = 0; VAR3 < VAR4->VAR5 / 2; VAR3++)"
+    ],
+    "array": [
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10[VAR11] = FUN2((__force VAR12)VAR9[VAR11]);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10[VAR11] = (__force VAR12)FUN2(VAR9[VAR11]);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 = FUN2(&VAR4[VAR5]);\n\tFUN3(&VAR6[VAR5],\n\tFUN4((__force VAR7)VAR3));",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10[VAR11] = FUN2((__force VAR12)VAR4[VAR11]);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10[VAR11] = (__force VAR12)FUN2(VAR4[VAR11]);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 = (__force VAR4)\n\tFUN2(FUN3(&VAR5[VAR6]));\n\tFUN4(&VAR7[VAR6], VAR3);",
+        "void FUN1(const struct VAR1 *VAR2,\n\tVAR3 *VAR4 = &VAR5->VAR6[VAR7->VAR8];\n\tVAR9 = (void *)VAR4;\n\tVAR10 *VAR11 = (void *)VAR4;"
+    ]
+}

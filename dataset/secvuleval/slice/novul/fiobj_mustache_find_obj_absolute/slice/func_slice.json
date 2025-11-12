@@ -1,0 +1,12 @@
+{
+    "pointer": [
+        "static inline VAR1 FUN1(VALUE VAR2,\n const char *VAR3,\n if (VAR4 == 1 && VAR3[0] == '')\n ID VAR5 = FUN2(VAR3, VAR4);\n if (FUN3(VAR2, VAR5)) {\n return VAR6.FUN4(VAR2, VAR5);",
+        "static inline VAR1 FUN1(VALUE VAR2,\n const char *VAR3,\n uint32_t VAR4) {\n ID VAR5 = FUN2(VAR3, VAR4);\n VALUE VAR6 = FUN3(VAR5);\n VAR7 = FUN4(VAR2, VAR6, VAR8);\n if (VAR7 != VAR8)\n return VAR7;\n VAR6 = FUN5(VAR6);\n VAR7 = FUN4(VAR2, VAR6, VAR8);\n FUN6(VAR6);\n if (VAR7 != VAR8)\n return VAR7;\n if (FUN7(VAR2, VAR5)) {\n VAR7 = VAR9.FUN8(VAR2, VAR5);\n return VAR7;"
+    ],
+    "array": [
+        "static inline VAR1 FUN1(VALUE VAR2,\n const char *VAR3,\n if (VAR4 == 1 && VAR3[0] == '')\n ID VAR5 = FUN2(VAR3, VAR4);\n if (FUN3(VAR2, VAR5)) {\n return VAR6.FUN4(VAR2, VAR5);"
+    ],
+    "API": [
+        "static inline VAR1 FUN1(VALUE VAR2,\n const char *VAR3,\n uint32_t VAR4) {\n if (!FUN2(VAR2, VAR5)) {\n ID VAR6 = FUN3(VAR3, VAR4);\n VALUE VAR7 = FUN4(VAR6);\n VAR8 = FUN5(VAR2, VAR7, VAR9);\n if (VAR8 != VAR9)\n VAR7 = FUN6(VAR7);\n VAR8 = FUN5(VAR2, VAR7, VAR9);\n FUN7(VAR7);"
+    ]
+}

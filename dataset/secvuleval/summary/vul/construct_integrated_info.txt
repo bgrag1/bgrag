@@ -1,0 +1,1 @@
+ Function purpose: The function constructs and logs integrated information from a BIOS table, including display configurations and external display paths, and handles forced voltage swing settings if specified.

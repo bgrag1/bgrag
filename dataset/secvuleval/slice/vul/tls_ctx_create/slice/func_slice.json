@@ -1,0 +1,9 @@
+{
+    "pointer": [
+        "struct VAR1 *FUN1(struct VAR2 *VAR3)\n\tVAR4->VAR5 = FUN2(VAR3->VAR6);",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3)\n\tVAR4 = FUN2(sizeof(*VAR4), VAR5);\n\tif (!VAR4)\n\tFUN3(VAR6->VAR7, VAR4);\n\treturn VAR4;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3)\n\tstruct VAR4 *VAR5 = FUN2(VAR3);\n\tVAR6->VAR3 = VAR3;",
+        "struct VAR1 *FUN1(struct VAR2 *VAR3)\n\tstruct VAR4 *VAR5 = FUN2(VAR3);"
+    ],
+    "API": []
+}

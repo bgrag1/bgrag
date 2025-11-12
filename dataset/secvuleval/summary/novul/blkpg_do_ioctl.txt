@@ -1,0 +1,1 @@
+ Function purpose: The function blkpg_do_ioctl manages the creation, deletion, and resizing of partitions on a block device by handling ioctl operations, ensuring proper alignment and bounds checking.

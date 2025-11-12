@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4.VAR5.VAR5;\n\tVAR6 = strlen(VAR3);\n\tVAR7 = FUN2(VAR3, VAR6,\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2->VAR3 == NULL && VAR2->VAR4 == NULL);",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2->VAR3 == NULL && VAR2->VAR4 == NULL);\n\tVAR5 = VAR2->VAR3;\n\tVAR6 = FUN3(VAR5, VAR7,\n\treturn VAR6;",
+        "static int FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4,\n\tVAR5 = FUN2(VAR6, VAR7,\n\treturn VAR5;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tconst char *VAR3 = NULL;\n\tVAR4 = FUN2(VAR3, VAR5,\n\treturn VAR4;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2->VAR3 == NULL && VAR2->VAR4 == NULL);\n\tVAR5 = strlen(VAR2->VAR3);\n\tif (!VAR6 || VAR5 <= VAR7)\n\tVAR5 = VAR7;\n\tVAR8 = FUN3(VAR9, VAR5,\n\treturn VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(&VAR3,\n\tFUN3(&VAR3);"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2->VAR3 == NULL && VAR2->VAR4 == NULL);\n\tVAR5 = strlen(VAR2->VAR3);\n\tif (!VAR6 || VAR5 <= VAR7)\n\tVAR5 = VAR7;\n\tVAR8 = FUN3(VAR9, VAR5,\n\treturn VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tFUN2(VAR2->VAR3 == NULL && VAR2->VAR4 == NULL);\n\tVAR5 = strlen(VAR2->VAR3);\n\tif (!VAR6 || VAR5 <= VAR7)\n\tVAR5 = VAR7;\n\tVAR8 = FUN3(VAR9, VAR5,\n\treturn VAR8;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4.VAR5.VAR5;\n\tVAR6 = strlen(VAR3);\n\tVAR7 = FUN2(VAR3, VAR6,\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2,\n\tVAR3 = VAR4.VAR5.VAR5;\n\tVAR6 = strlen(VAR3);\n\tVAR7 = FUN2(VAR3, VAR6,\n\treturn VAR7;",
+        "static int FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4,\n\tconst char *VAR5 = NULL;\n\tFUN2(VAR2->VAR6 == NULL && VAR2->VAR7 == NULL);\n\tVAR5 = VAR2->VAR6;\n\tVAR8 = strlen(VAR2->VAR6);\n\tif (!VAR9 || VAR8 <= VAR10)\n\tVAR5 = VAR6.VAR11.VAR11;\n\tVAR8 = strlen(VAR5);\n\tVAR8 = VAR10;\n\tVAR12 = FUN3(VAR5, VAR8,\n\treturn VAR12;",
+        "static int FUN1(struct VAR1 *VAR2,\n struct VAR3 *VAR4,\n\tconst char *VAR5 = NULL;\n\tFUN2(VAR2->VAR6 == NULL && VAR2->VAR7 == NULL);\n\tVAR5 = VAR2->VAR6;\n\tVAR8 = strlen(VAR2->VAR6);\n\tif (!VAR9 || VAR8 <= VAR10)\n\tVAR5 = VAR6.VAR11.VAR11;\n\tVAR8 = strlen(VAR5);\n\tVAR8 = VAR10;\n\tVAR12 = FUN3(VAR5, VAR8,\n\treturn VAR12;"
+    ]
+}

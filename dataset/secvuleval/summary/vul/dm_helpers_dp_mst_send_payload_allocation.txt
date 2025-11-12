@@ -1,0 +1,1 @@
+ Function purpose: The function sends a payload allocation for a specified stream state on an AMDGPU display connector, updating the MST status accordingly.

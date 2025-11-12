@@ -1,0 +1,9 @@
+{
+    "API": [
+        "bool VAR1::FUN1(VAR2 &VAR3) {\n VAR4 &VAR5 = VAR6.FUN2(VAR6.FUN3() - 1);",
+        "bool VAR1::FUN1(VAR2 &VAR3) {\n VAR4 &VAR5 = VAR6.FUN2(VAR6.FUN3() - 1);",
+        "bool VAR1::FUN1(VAR2 &VAR3) {\n VAR4 &VAR5 = VAR6.FUN2(VAR6.FUN3() - 1);",
+        "bool VAR1::FUN1(VAR2 &VAR3) {\n unsigned VAR4 = VAR5.FUN2();\n if (VAR4 == VAR6::VAR7 || VAR4 == VAR6::VAR8 ||\n VAR4 == VAR6::VAR9 || VAR4 == VAR6::VAR10 ||\n VAR4 == VAR6::VAR11 || VAR4 == VAR6::VAR12) {\n assert(((VAR13 && VAR4 == VAR6::VAR11) ||\n VAR4 == VAR6::VAR7) && \"\");",
+        "bool VAR1::FUN1(VAR2 &VAR3) {\n assert(VAR4.FUN2() && \"\");"
+    ]
+}

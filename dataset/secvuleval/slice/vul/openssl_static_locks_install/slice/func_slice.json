@@ -1,0 +1,14 @@
+{
+    "array": [
+        "static int FUN1(void)\n if (VAR1 != NULL)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n FUN3(VAR1[VAR3]);",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n VAR1[VAR3] = FUN3();\n if (VAR1[VAR3] == NULL)"
+    ],
+    "API": [
+        "static int FUN1(void)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n if (VAR1[VAR3] == NULL)\n FUN3(VAR1[VAR4]);",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n if (VAR1[VAR3] == NULL)\n FUN3(VAR1[VAR4]);",
+        "static int FUN1(void)\n VAR1[VAR2] = FUN2();\n if (VAR1[VAR2] == NULL)",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n VAR1[VAR3] = FUN3();\n if (VAR1[VAR3] == NULL)",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n if (VAR1 == NULL)\n if (VAR1[VAR2] == NULL)\n FUN2(VAR1[VAR3]);",
+        "static int FUN1(void)\n VAR1 = malloc(FUN2() * sizeof(VAR2));\n if (VAR1 == NULL)\n if (VAR1[VAR3] == NULL)\n FUN3(VAR1[VAR4]);"
+    ]
+}

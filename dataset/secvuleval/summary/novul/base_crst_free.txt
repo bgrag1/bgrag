@@ -1,0 +1,1 @@
+ Function purpose: The function "base_crst_free" is designed to free a page table descriptor (PTDesc) associated with a given table, which is typically a page table, by converting the virtual address of the table to a PTDesc and then freeing it using the "pagetable_free" function.

@@ -1,0 +1,1 @@
+ Function purpose: The function "i2c_transfer" is designed to facilitate the transfer of multiple I2C messages between a master device and one or more slave devices, handling the necessary locking and unlocking of the I2C bus as well as error checking.

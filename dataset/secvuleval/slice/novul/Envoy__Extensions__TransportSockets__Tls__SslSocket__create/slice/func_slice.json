@@ -1,0 +1,6 @@
+{
+    "API": [
+        "VAR1::FUN1(VAR2::VAR3::ContextSharedPtr VAR4, InitialState VAR5,\n VAR3::HandshakerFactoryCb VAR6) {\n auto VAR7 = socket->FUN2(VAR5, VAR6);\n return VAR7;",
+        "VAR1::FUN1(VAR2::VAR3::ContextSharedPtr VAR4, InitialState VAR5,\n VAR3::HandshakerFactoryCb VAR6) {\n auto VAR7 = socket->FUN2(VAR5, VAR6);\n return VAR7;"
+    ]
+}

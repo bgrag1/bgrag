@@ -1,0 +1,1 @@
+ Function purpose: The function "do_read_inode" reads and initializes the metadata of an inode from the file system, including its mode, ownership, size, and other attributes, and updates the inode's metadata accordingly.

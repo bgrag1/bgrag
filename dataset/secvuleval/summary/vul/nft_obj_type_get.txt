@@ -1,0 +1,1 @@
+ Function purpose: The function "nft_obj_type_get" retrieves the object type structure for a given object type and family, and optionally loads the necessary module if the type is not found.

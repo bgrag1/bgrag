@@ -1,0 +1,1 @@
+ Function purpose: The function "HTTPAPI_CloneOption" is designed to clone and save specific HTTP API options, such as trusted certificates, X.509 certificates and keys, HTTP proxy settings, and TLS renegotiation settings, based on the provided option name and value, and return the result of the operation.

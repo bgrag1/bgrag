@@ -1,0 +1,1 @@
+ Function purpose: The function "did_set_cpoptions" checks if a given set of options includes all possible code point options and returns a result indicating whether the options were successfully set, using an error buffer for reporting any issues.

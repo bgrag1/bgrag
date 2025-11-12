@@ -1,0 +1,5 @@
+{
+    "API": [
+        "VAR1::Status VAR2::FUN1(InitialState VAR3,\n VAR4 = VAR5::VAR6<VAR7>(FUN2(\n VAR5::move(VAR8.FUN3()), VAR9->FUN4(), this));"
+    ]
+}

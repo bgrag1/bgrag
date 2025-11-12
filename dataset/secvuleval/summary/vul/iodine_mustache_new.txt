@@ -1,0 +1,1 @@
+ Function purpose: The function initializes and loads a Mustache template either from a file or a string, and raises errors if the template is not found, too big, or contains errors.

@@ -1,0 +1,20 @@
+{
+    "pointer": [
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n enum bpf_arg_type VAR5, int VAR6)\n\tstruct VAR7 *VAR8 = FUN2(VAR2), *VAR9 = &VAR8[VAR3];\n\tif ((VAR5 & (VAR10 | VAR11)) == (VAR10 | VAR11)) {\n\tif (VAR5 & VAR10) {\n\tif (VAR9->VAR12 == VAR13 && !(VAR5 & VAR11)) {\n\tif (!FUN3(VAR2, VAR9)) {\n\tif (!FUN4(VAR2, VAR9, VAR5 & ~VAR11)) {\n\tFUN5(VAR2,\n\tVAR14 = FUN6(VAR2, VAR9);\n\treturn VAR14;",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tif (VAR5->VAR6 != VAR7 && VAR5->VAR6 != VAR8) {\n\tif (VAR5->VAR6 == VAR8 && !(VAR9 & VAR10)) {",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tif (!FUN3(VAR2, VAR7)) {\n\tfor (VAR8 = 0; VAR8 < VAR9; VAR8 += 8) {\n\tVAR10 = FUN4(VAR2, VAR4, VAR3,\n VAR8, VAR11, VAR12, -1, false, false);\n\treturn VAR10;\n\tVAR10 = FUN5(VAR2, VAR7, VAR13, VAR4, VAR14);\n\treturn VAR10;",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tif (!FUN3(VAR2, VAR7)) {\n\tFUN4(VAR2, \"\");",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tFUN3(VAR2,",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tif (!FUN3(VAR2, VAR7)) {\n\tFUN4(VAR2,",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tFUN3(VAR2, \"\");",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tFUN3(VAR2, \"\");"
+    ],
+    "array": [
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n\tstruct VAR5 *VAR6 = FUN2(VAR2), *VAR7 = &VAR6[VAR3];\n\tif (!FUN3(VAR2, VAR7)) {\n\tFUN4(VAR2, \"\");\n\tfor (VAR8 = 0; VAR8 < VAR9; VAR8 += 8) {\n\tVAR10 = FUN5(VAR2, VAR4, VAR3,\n\treturn VAR10;\n\tVAR10 = FUN6(VAR2, VAR7, VAR11, VAR4, VAR12);\n\tif (!FUN7(VAR2, VAR7)) {\n\tFUN4(VAR2,\n\tif (!FUN8(VAR2, VAR7, VAR11 & ~VAR13)) {\n\tFUN4(VAR2,\n\tVAR10 = FUN9(VAR2, VAR7);\n\treturn VAR10;"
+    ],
+    "API": [
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n enum bpf_arg_type VAR5, int VAR6)\n\tstruct VAR7 *VAR8 = FUN2(VAR2), *VAR9 = &VAR8[VAR3];\n\tif ((VAR5 & (VAR10 | VAR11)) == (VAR10 | VAR11)) {\n\tif (VAR5 & VAR10) {\n\tif (VAR9->VAR12 == VAR13 && !(VAR5 & VAR11)) {\n\tif (!FUN3(VAR2, VAR9)) {\n\tif (!FUN4(VAR2, VAR9, VAR5 & ~VAR11)) {\n\tVAR14 = FUN5(VAR2, VAR9);\n\treturn VAR14;",
+        "static int FUN1(struct VAR1 *VAR2, int VAR3, int VAR4,\n enum bpf_arg_type VAR5, int VAR6)\n\tstruct VAR7 *VAR8 = FUN2(VAR2), *VAR9 = &VAR8[VAR3];\n\tif ((VAR5 & (VAR10 | VAR11)) == (VAR10 | VAR11)) {\n\tif (VAR5 & VAR10) {\n\tif (VAR9->VAR12 == VAR13 && !(VAR5 & VAR11)) {\n\tif (!FUN3(VAR2, VAR9)) {\n\tif (!FUN4(VAR2, VAR9, VAR5 & ~VAR11)) {\n\tVAR14 = FUN5(VAR2, VAR9);\n\treturn VAR14;"
+    ]
+}

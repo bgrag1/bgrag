@@ -1,0 +1,1 @@
+ Function purpose: The function "__spi_sync" is designed to synchronize the execution of SPI messages by either immediately processing them if the queue is empty or enqueuing them for asynchronous processing and waiting for their completion if the queue is not empty.

@@ -1,0 +1,15 @@
+{
+    "pointer": [
+        "VAR1 FUN1(VAR2 *VAR3) {\n if (VAR3->VAR4 > VAR3->VAR5 + VAR6) {\n while (VAR7 < VAR3->VAR4) {\n VAR7++;",
+        "VAR1 FUN1(VAR2 *VAR3) {\n if (!FUN2(VAR3->VAR4[VAR5])) {",
+        "VAR1 FUN1(VAR2 *VAR3) {\n FUN2(VAR3, VAR4, VAR5, 0, \"\");\n FUN2(VAR3, VAR4, VAR5, 0, \"\");",
+        "VAR1 FUN1(VAR2 *VAR3) {\n int64_t VAR4 = VAR3->VAR5;\n while (VAR4 < VAR3->VAR6) {\n VAR4++;"
+    ],
+    "array": [
+        "VAR1 FUN1(VAR2 *VAR3) {\n if (!FUN2(VAR3->VAR4[VAR5])) {"
+    ],
+    "API": [
+        "VAR1 FUN1(VAR2 *VAR3) {\n int64_t VAR4 = VAR3->VAR5;\n while (VAR4 < VAR3->VAR6) {\n VAR4++;",
+        "VAR1 FUN1(VAR2 *VAR3) {\n if (VAR3->VAR4 > VAR3->VAR5 + VAR6) {\n while (VAR7 < VAR3->VAR4) {\n VAR7++;"
+    ]
+}

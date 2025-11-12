@@ -1,0 +1,1 @@
+ Function purpose: The function "PKCS12_unpack_authsafes" in the provided code snippet is designed to unpack and process PKCS7 structures from a PKCS12 structure, ensuring that the content type is data and propagating context properties from the PKCS12 structure to the unpacked PKCS7 structures.

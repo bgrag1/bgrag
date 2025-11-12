@@ -1,0 +1,1 @@
+ Function purpose: The function "unsafe_yyjson_equals" compares two "yyjson_val" objects to determine if they are equal in type and value, handling different JSON types such as objects, arrays, numbers, strings, and booleans.

@@ -1,0 +1,1 @@
+ Function purpose: The function initializes the memory mapping for an i.MX remote processor by remapping required and optional addresses as specified in the device configuration, handling both standard and optional memory regions.

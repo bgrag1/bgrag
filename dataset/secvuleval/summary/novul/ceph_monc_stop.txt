@@ -1,0 +1,1 @@
+ Function purpose: The function "ceph_monc_stop" is designed to gracefully stop the Ceph monitor client, closing any active sessions, canceling delayed work, flushing the messenger queue, and destroying the authentication subsystem before freeing allocated memory and ensuring all references are cleaned up.

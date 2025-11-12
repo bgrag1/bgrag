@@ -1,0 +1,1 @@
+ Function purpose: The function is designed to handle the reception of hardware timestamps in a network device, specifically for Precision Time Protocol (PTP) functionality, and updates the timestamp and counters accordingly.

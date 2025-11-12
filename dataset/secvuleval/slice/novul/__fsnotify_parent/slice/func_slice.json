@@ -1,0 +1,13 @@
+{
+    "pointer": [
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tstruct VAR4 *VAR4 = FUN2(VAR1);\n\tVAR5 = FUN3(VAR1);\n\tVAR6 = VAR5->VAR7;\n\tVAR8 = FUN4(VAR6);\n\tFUN5(VAR6, VAR1);\n\tFUN6(&VAR9, VAR1);\n\tFUN7(&VAR9);",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tVAR4 = NULL;\n\tFUN2(VAR4);",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tVAR4 = &VAR5.VAR5;\n\tVAR6 = FUN2(VAR2, VAR3, VAR7, VAR8, VAR4, VAR9, 0);\n\treturn VAR6;",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tstruct VAR4 *VAR4 = FUN2(VAR1);\n\tVAR5 = FUN3(VAR1);\n\tFUN4(VAR5);",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n int VAR4)\n\tconst struct VAR5 *VAR5 = FUN2(VAR3, VAR4);\n\t__u32 VAR6 = VAR5 ? FUN3(VAR5->VAR7)->VAR8 : 0;\n\tstruct VAR9 *VAR9 = FUN4(VAR1);\n !FUN5(VAR9, VAR6, VAR2)))\n\tVAR10 = FUN6(VAR9, VAR6, VAR2);\n\tFUN7(VAR9 != FUN8(VAR3, VAR4));\n\tVAR11 = FUN9(VAR2, VAR3, VAR4, VAR12, VAR13, VAR9, 0);\n\treturn VAR11;",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tstruct VAR4 *VAR5 = NULL;\n\tVAR6 = FUN2(VAR2, VAR3, VAR7, VAR8, VAR5, VAR9, 0);\n\treturn VAR6;",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tstruct VAR4 *VAR5 = NULL;\n\tVAR6 = FUN2(VAR2, VAR3, VAR7, VAR5, VAR8, VAR4, 0);\n\treturn VAR6;",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n int VAR4)\n\tconst struct VAR5 *VAR5 = FUN2(VAR3, VAR4);",
+        "int FUN1(struct VAR1 *VAR1, __u32 VAR2, const void *VAR3,\n\tbool VAR4 = VAR1->VAR5 & VAR6;\n\tif (FUN2(!VAR4 &&\n\tif (!VAR4 && !VAR7)\n\tif (FUN3(VAR4 && !VAR8))"
+    ]
+}

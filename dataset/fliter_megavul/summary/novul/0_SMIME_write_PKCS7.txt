@@ -1,0 +1,1 @@
+ Function purpose: The function SMIME_write_PKCS7 is designed to write a PKCS7 structure to a BIO in S/MIME format, handling both signed and enveloped messages, and allows specifying additional flags for the output format.

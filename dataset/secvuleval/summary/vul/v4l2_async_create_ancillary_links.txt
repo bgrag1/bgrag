@@ -1,0 +1,1 @@
+ Function purpose: The function "v4l2_async_create_ancillary_links" is designed to create ancillary links between a subdevice and a notifier in a V4L2 (Video4Linux2) system, specifically for lens and flash media entities, when the CONFIG_MEDIA_CONTROLLER kernel configuration option is enabled.

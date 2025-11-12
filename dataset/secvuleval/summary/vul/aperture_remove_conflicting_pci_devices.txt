@@ -1,0 +1,1 @@
+ Function purpose: The function aims to remove conflicting PCI devices, particularly legacy VGA devices, from a given PCI device, ensuring that the primary adapter's resources are not shared with other devices.

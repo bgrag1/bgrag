@@ -1,0 +1,1 @@
+ Function purpose: The function "tipc_crypto_key_revoke" in the code snippet is designed to revoke the currently active cryptographic key in a TIPC (Transparent Inter-Process Communication) network, marking the previous active key as passive and detaching the old active key from the network.

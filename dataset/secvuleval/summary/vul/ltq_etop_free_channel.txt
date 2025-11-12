@@ -1,0 +1,1 @@
+ Function purpose: The function "ltq_etop_free_channel" is designed to free resources allocated for a specific network channel, including deallocating DMA memory, freeing IRQ resources, and releasing skb buffers if the channel is associated with RX descriptors.

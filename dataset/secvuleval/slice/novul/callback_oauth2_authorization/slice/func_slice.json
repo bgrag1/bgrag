@@ -1,0 +1,25 @@
+{
+    "pointer": [
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n VAR9 = FUN5(\"\");\n FUN6(VAR9);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n VAR6 = FUN2(VAR2, VAR4, VAR5);\n VAR6 = FUN3(VAR2, VAR4, VAR5);\n return VAR6;",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n VAR6 = FUN2(VAR2, VAR4, VAR5);\n VAR6 = FUN3(VAR2, VAR4, VAR5);\n return VAR6;",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n if (FUN2((struct VAR6 *)VAR5, VAR7) && FUN3(VAR2->VAR8, \"\") != NULL) {\n VAR9 = FUN4(VAR2, VAR4, VAR5);\n if (FUN2((struct VAR6 *)VAR5, VAR10) && FUN3(VAR2->VAR8, \"\") != NULL) {\n VAR9 = FUN5(VAR2, VAR4, VAR5);\n return VAR9;",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (0 == FUN3(\"\", VAR6)) {\n } else if (0 == FUN3(\"\", VAR6)) {",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n FUN2(VAR4->VAR6, \"\", \"\");\n FUN2(VAR4->VAR6, \"\", \"\");\n FUN2(VAR4->VAR6, \"\", \"\");",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n FUN5(VAR8);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n if (FUN4((struct VAR9 *)VAR5, VAR10) && FUN2(VAR2->VAR7, \"\") != NULL) {",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n if (FUN4((struct VAR9 *)VAR5, VAR10) && FUN2(VAR2->VAR7, \"\") != NULL) {"
+    ],
+    "API": [
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n VAR6 = FUN2(\"\");\n FUN3(VAR6);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n VAR6 = FUN2(\"\");\n FUN3(VAR6);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n FUN5(VAR8);\n FUN5(VAR9);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n FUN5(VAR9);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n FUN5(VAR8);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (FUN2(VAR2->VAR7, \"\") != NULL) {\n VAR8 = FUN3(FUN2(VAR2->VAR7, \"\"));\n VAR9 = FUN4(\"\", VAR8);\n VAR9 = FUN5(\"\");\n FUN6(VAR9);",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (0 == FUN3(\"\", VAR6)) {\n } else if (0 == FUN3(\"\", VAR6)) {",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (0 == FUN3(\"\", VAR6)) {",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (0 == FUN3(\"\", VAR6)) {\n } else if (0 == FUN3(\"\", VAR6)) {",
+        "static int FUN1(const struct VAR1 * VAR2, struct VAR3 * VAR4, void * VAR5) {\n const char * VAR6 = FUN2(VAR2->VAR7, \"\");\n if (0 == FUN3(\"\", VAR6)) {\n } else if (0 == FUN3(\"\", VAR6)) {"
+    ]
+}

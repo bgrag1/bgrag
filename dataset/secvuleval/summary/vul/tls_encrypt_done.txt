@@ -1,0 +1,1 @@
+ Function purpose: The function "tls_encrypt_done" is responsible for handling the completion of TLS encryption, updating the state of the transmission, and scheduling the transmission of encrypted records if necessary.

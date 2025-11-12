@@ -1,0 +1,8 @@
+{
+    "pointer": [
+        "FUN1(VAR1 *VAR2)\n VAR3 = FUN2(VAR2->VAR4);\n VAR5 = FUN3(VAR3);\n if (VAR5 == NULL) {\n return NULL;\n for (VAR6 = 0; VAR6 < FUN4(VAR5); VAR6++) {\n VAR7 = FUN5(VAR5, VAR6);\n switch (FUN6(VAR7)) {\n if (FUN7(FUN8(VAR7))) {\n FUN9(VAR5, VAR8);"
+    ],
+    "API": [
+        "FUN1(VAR1 *VAR2)\n VAR3 = FUN2(VAR2->VAR4);\n VAR5 = FUN3(VAR3);\n if (VAR5 == NULL) {\n for (VAR6 = 0; VAR6 < FUN4(VAR5); VAR6++) {\n VAR7 = FUN5(VAR5, VAR6);\n FUN6(VAR5, VAR8);"
+    ]
+}

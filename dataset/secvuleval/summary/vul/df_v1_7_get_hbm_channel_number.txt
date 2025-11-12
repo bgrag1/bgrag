@@ -1,0 +1,1 @@
+ Function purpose: The function "df_v1_7_get_hbm_channel_number" in the code snippet retrieves the framebuffer channel number from the amdgpu_device structure and uses it to index into a predefined array to return the corresponding HBM channel number.

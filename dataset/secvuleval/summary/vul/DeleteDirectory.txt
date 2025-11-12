@@ -1,0 +1,1 @@
+ Function purpose: The function aims to delete a directory and all its contents, including subdirectories, by recursively deleting files and further directories within the specified directory.

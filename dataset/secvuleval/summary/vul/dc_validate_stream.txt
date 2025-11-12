@@ -1,0 +1,1 @@
+ Function purpose: The function "dc_validate_stream" validates the timing and output capabilities of a display stream, ensuring it meets the requirements of the connected display and its associated hardware components.

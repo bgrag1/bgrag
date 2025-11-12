@@ -1,0 +1,21 @@
+[
+    {
+        "cve_id": "CVE-2013-10006",
+        "func_name": "Ziftr/primecoin/HTTPAuthorized",
+        "description": "A vulnerability classified as problematic was found in Ziftr primecoin up to 0.8.4rc1. Affected by this vulnerability is the function HTTPAuthorized of the file src/bitcoinrpc.cpp. The manipulation of the argument strUserPass/strRPCUserColonPass leads to observable timing discrepancy. The complexity of an attack is rather high. The exploitation appears to be difficult. Upgrading to version 0.8.4rc2 is able to address this issue. The patch is named cdb3441b5cd2c1bae49fae671dc4a496f7c96322. It is recommended to upgrade the affected component. The associated identifier of this vulnerability is VDB-217171.",
+        "git_url": "https://github.com/Ziftr/primecoin/commit/cdb3441b5cd2c1bae49fae671dc4a496f7c96322",
+        "commit_title": "Make RPC password resistant to timing attacks",
+        "commit_text": " Fixes issue#2838; this is a tweaked version of pull#2845 that should not leak the length of the password and is more generic, in case we run into other situations where we need timing-attack-resistant comparisons.",
+        "func_before": "bool HTTPAuthorized(map<string, string>& mapHeaders)\n{\n    string strAuth = mapHeaders[\"authorization\"];\n    if (strAuth.substr(0,6) != \"Basic \")\n        return false;\n    string strUserPass64 = strAuth.substr(6); boost::trim(strUserPass64);\n    string strUserPass = DecodeBase64(strUserPass64);\n    return strUserPass == strRPCUserColonPass;\n}",
+        "func": "bool HTTPAuthorized(map<string, string>& mapHeaders)\n{\n    string strAuth = mapHeaders[\"authorization\"];\n    if (strAuth.substr(0,6) != \"Basic \")\n        return false;\n    string strUserPass64 = strAuth.substr(6); boost::trim(strUserPass64);\n    string strUserPass = DecodeBase64(strUserPass64);\n    return TimingResistantEqual(strUserPass, strRPCUserColonPass);\n}",
+        "diff_func": "--- func_before\n+++ func_after\n@@ -5,5 +5,5 @@\n         return false;\n     string strUserPass64 = strAuth.substr(6); boost::trim(strUserPass64);\n     string strUserPass = DecodeBase64(strUserPass64);\n-    return strUserPass == strRPCUserColonPass;\n+    return TimingResistantEqual(strUserPass, strRPCUserColonPass);\n }",
+        "diff_line_info": {
+            "deleted_lines": [
+                "    return strUserPass == strRPCUserColonPass;"
+            ],
+            "added_lines": [
+                "    return TimingResistantEqual(strUserPass, strRPCUserColonPass);"
+            ]
+        }
+    }
+]

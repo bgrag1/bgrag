@@ -1,0 +1,19 @@
+{
+    "pointer": [
+        "FUN1(\n VAR1\t*VAR2,\n long\tVAR3,\n int\tVAR4)\t// OPT_LOCAL or 0 (VAR5)\n VAR6 = FUN2(VAR2);\n if (VAR6 < 0)\n\tVAR7 = FUN3(&(VAR8[VAR6]), VAR4);\n\tif (VAR7 != NULL)\t// hidden option is not VAR9\n if (VAR3 == 0 && VAR10 != NULL)\n\treturn FUN4(VAR6, VAR7, VAR3,",
+        "FUN1(\n VAR1\t*VAR2,\n VAR3 = FUN2(VAR2);\n\tif (FUN3(VAR2) == 4 && VAR2[0] == '' && VAR2[1] == ''\n\t&& (VAR4 = FUN4(VAR2, VAR5)) != 0)\n\tFUN5(FUN6(VAR6), VAR2);",
+        "FUN1(\n VAR1\t*VAR2,\n int\tVAR3)\t// OPT_LOCAL or 0 (VAR4)\n\tVAR5 = FUN2(&(VAR6[VAR7]), VAR3);\n\tif (VAR5 != NULL)\t// hidden option is not VAR8\n if (VAR9 == 0 && VAR2 != NULL)\n\tfor (VAR10 = 0; VAR2[VAR10] == ''; ++VAR10)\n\tif (VAR2[VAR10] != VAR11 || VAR10 == 0)\n FUN3(FUN4(VAR12),",
+        "FUN1(\n VAR1\t*VAR2,\n long\tVAR3,\n int\tVAR4)\t// OPT_LOCAL or 0 (VAR5)\n VAR6 = FUN2(VAR2);\n if (VAR6 < 0)\n\tVAR7 = FUN3(&(VAR8[VAR6]), VAR4);\n\tif (VAR7 != NULL)\t// hidden option is not VAR9\n if (VAR3 == 0 && VAR10 != NULL)\n\treturn FUN4(VAR6, VAR7, (int)VAR3, VAR4);",
+        "FUN1(\n VAR1\t*VAR2,\n VAR1\t*VAR3,\n VAR4 = FUN2(VAR2);\n\tif (FUN3(VAR2) == 4 && VAR2[0] == '' && VAR2[1] == ''\n\t&& (VAR5 = FUN4(VAR2, VAR6)) != 0)\n if (VAR5 < 0)\n\tVAR7[0] = FUN5(VAR5);\n\tVAR7[1] = FUN6(VAR5);\n\tVAR7[0] = VAR8;\n\tVAR7[1] = (VAR5 & 0xff);\n FUN7(VAR7, VAR3, VAR6);\n\tFUN8(VAR6);",
+        "FUN1(\n VAR1\t*VAR2,\n VAR1\t*VAR3,\n int\tVAR4)\t// OPT_LOCAL or 0 (VAR5)\n int\tVAR6 = VAR7;\n VAR8 = FUN2(VAR2);\n if (VAR8 < 0)\n return FUN3(VAR8, VAR3, VAR4, VAR9, VAR6);"
+    ],
+    "array": [
+        "FUN1(\n\tVAR1 = VAR2[VAR3].VAR1;\n\tif (VAR4 > 0 && (VAR1 & VAR5))\n\tif (VAR1 & VAR6)\n if (VAR1 & VAR7)",
+        "FUN1(\n VAR1\t*VAR2,\n VAR3 = FUN2(VAR2);\n\tif (FUN3(VAR2) == 4 && VAR2[0] == '' && VAR2[1] == ''\n\t&& (VAR4 = FUN4(VAR2, VAR5)) != 0)\n if (VAR4 < 0)\n\tVAR6[1] = (VAR4 & 0xff);\n FUN5(VAR6, VAR7, VAR5);\n\tFUN6(VAR5);",
+        "FUN1(\n\tVAR1[0] = VAR2;\n FUN2(VAR1, VAR3, VAR4);\n\tFUN3(VAR4);",
+        "FUN1(\n VAR1\t*VAR2,\n VAR3 = FUN2(VAR2);\n\tif (FUN3(VAR2) == 4 && VAR2[0] == '' && VAR2[1] == ''\n\t&& (VAR4 = FUN4(VAR2, VAR5)) != 0)\n if (VAR4 < 0)\n\tVAR6[0] = FUN5(VAR4);\n FUN6(VAR6, VAR7, VAR5);\n\tFUN7(VAR5);",
+        "FUN1(\n int\tVAR1)\t// OPT_LOCAL or 0 (VAR2)\n\tVAR3 = FUN2(&(VAR4[VAR5]), VAR1);\n\tif (VAR3 != NULL)\t// hidden option is not VAR6\n if (VAR7 == 0 && VAR8 != NULL)\n\tfor (VAR9 = 0; VAR8[VAR9] == ''; ++VAR9)\n\tif (VAR8[VAR9] != VAR10 || VAR9 == 0)\n FUN3(FUN4(VAR11),\n return NULL; // do nothing as we hit an VAR12\n\treturn FUN5(VAR5, VAR3, VAR7,\n\treturn FUN6(VAR5, VAR3, (int)VAR7, VAR1);\n return NULL;",
+        "FUN1(\n VAR1\t*VAR2,\n VAR3 = FUN2(VAR2);\n\tif (FUN3(VAR2) == 4 && VAR2[0] == '' && VAR2[1] == ''\n\t&& (VAR4 = FUN4(VAR2, VAR5)) != 0)\n if (VAR4 < 0)\n\tVAR6[0] = FUN5(VAR4);\n\tVAR6[1] = FUN6(VAR4);\n FUN7(VAR6, VAR7, VAR5);\n\tFUN8(VAR5);"
+    ],
+    "API": []
+}

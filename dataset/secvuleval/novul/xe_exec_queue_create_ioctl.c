@@ -1,0 +1,141 @@
+int xe_exec_queue_create_ioctl(struct drm_device *dev, void *data,
+			       struct drm_file *file)
+{
+	struct xe_device *xe = to_xe_device(dev);
+	struct xe_file *xef = to_xe_file(file);
+	struct drm_xe_exec_queue_create *args = data;
+	struct drm_xe_engine_class_instance eci[XE_HW_ENGINE_MAX_INSTANCE];
+	struct drm_xe_engine_class_instance __user *user_eci =
+		u64_to_user_ptr(args->instances);
+	struct xe_hw_engine *hwe;
+	struct xe_vm *vm, *migrate_vm;
+	struct xe_gt *gt;
+	struct xe_exec_queue *q = NULL;
+	u32 logical_mask;
+	u32 id;
+	u32 len;
+	int err;
+
+	if (XE_IOCTL_DBG(xe, args->flags) ||
+	    XE_IOCTL_DBG(xe, args->reserved[0] || args->reserved[1]))
+		return -EINVAL;
+
+	len = args->width * args->num_placements;
+	if (XE_IOCTL_DBG(xe, !len || len > XE_HW_ENGINE_MAX_INSTANCE))
+		return -EINVAL;
+
+	err = __copy_from_user(eci, user_eci,
+			       sizeof(struct drm_xe_engine_class_instance) *
+			       len);
+	if (XE_IOCTL_DBG(xe, err))
+		return -EFAULT;
+
+	if (XE_IOCTL_DBG(xe, eci[0].gt_id >= xe->info.gt_count))
+		return -EINVAL;
+
+	if (eci[0].engine_class == DRM_XE_ENGINE_CLASS_VM_BIND) {
+		for_each_gt(gt, xe, id) {
+			struct xe_exec_queue *new;
+			u32 flags;
+
+			if (xe_gt_is_media_type(gt))
+				continue;
+
+			eci[0].gt_id = gt->info.id;
+			logical_mask = bind_exec_queue_logical_mask(xe, gt, eci,
+								    args->width,
+								    args->num_placements);
+			if (XE_IOCTL_DBG(xe, !logical_mask))
+				return -EINVAL;
+
+			hwe = find_hw_engine(xe, eci[0]);
+			if (XE_IOCTL_DBG(xe, !hwe))
+				return -EINVAL;
+
+			/* The migration vm doesn't hold rpm ref */
+			xe_pm_runtime_get_noresume(xe);
+
+			flags = EXEC_QUEUE_FLAG_VM | (id ? EXEC_QUEUE_FLAG_BIND_ENGINE_CHILD : 0);
+
+			migrate_vm = xe_migrate_get_vm(gt_to_tile(gt)->migrate);
+			new = xe_exec_queue_create(xe, migrate_vm, logical_mask,
+						   args->width, hwe, flags,
+						   args->extensions);
+
+			xe_pm_runtime_put(xe); /* now held by engine */
+
+			xe_vm_put(migrate_vm);
+			if (IS_ERR(new)) {
+				err = PTR_ERR(new);
+				if (q)
+					goto put_exec_queue;
+				return err;
+			}
+			if (id == 0)
+				q = new;
+			else
+				list_add_tail(&new->multi_gt_list,
+					      &q->multi_gt_link);
+		}
+	} else {
+		gt = xe_device_get_gt(xe, eci[0].gt_id);
+		logical_mask = calc_validate_logical_mask(xe, gt, eci,
+							  args->width,
+							  args->num_placements);
+		if (XE_IOCTL_DBG(xe, !logical_mask))
+			return -EINVAL;
+
+		hwe = find_hw_engine(xe, eci[0]);
+		if (XE_IOCTL_DBG(xe, !hwe))
+			return -EINVAL;
+
+		vm = xe_vm_lookup(xef, args->vm_id);
+		if (XE_IOCTL_DBG(xe, !vm))
+			return -ENOENT;
+
+		err = down_read_interruptible(&vm->lock);
+		if (err) {
+			xe_vm_put(vm);
+			return err;
+		}
+
+		if (XE_IOCTL_DBG(xe, xe_vm_is_closed_or_banned(vm))) {
+			up_read(&vm->lock);
+			xe_vm_put(vm);
+			return -ENOENT;
+		}
+
+		q = xe_exec_queue_create(xe, vm, logical_mask,
+					 args->width, hwe, 0,
+					 args->extensions);
+		up_read(&vm->lock);
+		xe_vm_put(vm);
+		if (IS_ERR(q))
+			return PTR_ERR(q);
+
+		if (xe_vm_in_preempt_fence_mode(vm)) {
+			q->lr.context = dma_fence_context_alloc(1);
+
+			err = xe_vm_add_compute_exec_queue(vm, q);
+			if (XE_IOCTL_DBG(xe, err))
+				goto put_exec_queue;
+		}
+	}
+
+	mutex_lock(&xef->exec_queue.lock);
+	err = xa_alloc(&xef->exec_queue.xa, &id, q, xa_limit_32b, GFP_KERNEL);
+	mutex_unlock(&xef->exec_queue.lock);
+	if (err)
+		goto kill_exec_queue;
+
+	args->exec_queue_id = id;
+	q->xef = xe_file_get(xef);
+
+	return 0;
+
+kill_exec_queue:
+	xe_exec_queue_kill(q);
+put_exec_queue:
+	xe_exec_queue_put(q);
+	return err;
+}

@@ -1,0 +1,1 @@
+ Function purpose: The function "esp_do_nodma" handles the execution of SCSI commands and data transfer between the device and the host, managing the state of the ESP (Emulated SCSI Peripheral) state machine.

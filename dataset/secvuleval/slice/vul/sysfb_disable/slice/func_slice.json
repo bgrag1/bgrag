@@ -1,0 +1,6 @@
+{
+    "API": [
+        "void FUN1(void)\n\tFUN2(&VAR1);\n\tFUN3(&VAR1);",
+        "void FUN1(void)\n\tFUN2(&VAR1);\n\tFUN3(&VAR1);"
+    ]
+}

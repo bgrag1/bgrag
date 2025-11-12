@@ -1,0 +1,1 @@
+ Function purpose: The function "ip_identify" in the code snippet is designed to identify and return a specific "ast_sip_endpoint" based on the source IP address and port from a received SIP packet.

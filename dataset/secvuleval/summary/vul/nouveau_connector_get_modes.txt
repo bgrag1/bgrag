@@ -1,0 +1,1 @@
+ Function purpose: The function retrieves and processes display modes for a DRM connector, including handling EDID data, detecting native modes, and adding modes for LVDS and eDP connectors, ultimately returning the count of added modes.

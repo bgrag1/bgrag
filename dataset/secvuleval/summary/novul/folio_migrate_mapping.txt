@@ -1,0 +1,1 @@
+ Function purpose: The function "folio_migrate_mapping" migrates a folio from one address space to another, updating references and accounting for page state changes, while ensuring atomic operations and proper handling of zones and memory cgroups.

@@ -1,0 +1,1 @@
+ Function purpose: The function "fou_gro_receive" processes a GRO-ed sk_buff for a FOU (Frame Over UDP) tunnel, identifying the appropriate offload handler based on the protocol and invoking the GRO receive callback if available.

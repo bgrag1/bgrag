@@ -1,0 +1,1 @@
+ Function purpose: The function clears security attributes by setting the provided security attributes structure to NULL and freeing the ACL (Access Control List) if it exists, returning the error code if there is an issue with freeing the memory.

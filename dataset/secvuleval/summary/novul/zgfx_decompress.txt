@@ -1,0 +1,1 @@
+ Function purpose: The function "zgfx_decompress" is designed to decompress data compressed using the ZGFX format, handling both single and segmented compressed data representations, and returns the decompressed data along with its size.

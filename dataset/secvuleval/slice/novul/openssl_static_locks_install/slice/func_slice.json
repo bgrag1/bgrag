@@ -1,0 +1,16 @@
+{
+    "array": [
+        "static int FUN1(void)\n if (VAR1 != NULL)\n size_t VAR2 = FUN2(FUN3(), sizeof(VAR3));\n if (VAR2 == VAR4 ||\n (VAR1 = malloc(VAR2)) == NULL)\n FUN4(VAR1[VAR5]);",
+        "static int FUN1(void)\n VAR1[VAR2] = FUN2();\n if (VAR1[VAR2] == NULL)"
+    ],
+    "API": [
+        "static int FUN1(void)\n size_t VAR1 = FUN2(FUN3(), sizeof(VAR2));\n if (VAR1 == VAR3 ||\n (VAR4 = malloc(VAR1)) == NULL)\n if (VAR4[VAR5] == NULL)\n FUN4(VAR4[VAR6]);",
+        "static int FUN1(void)\n VAR1[VAR2] = FUN2();\n if (VAR1[VAR2] == NULL)",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n size_t VAR2 = FUN2(FUN3(), sizeof(VAR3));\n if (VAR2 == VAR4 ||\n (VAR1 = malloc(VAR2)) == NULL)\n VAR1[VAR5] = FUN4();\n if (VAR1[VAR5] == NULL)",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n if (VAR2 == VAR3 ||\n (VAR1 = malloc(VAR2)) == NULL)\n if (VAR1[VAR4] == NULL)\n FUN2(VAR1[VAR5]);",
+        "static int FUN1(void)\n size_t VAR1 = FUN2(FUN3(), sizeof(VAR2));\n if (VAR1 == VAR3 ||\n (VAR4 = malloc(VAR1)) == NULL)\n FUN4(\"\", VAR1);\n if (VAR4[VAR5] == NULL)\n FUN5(VAR4[VAR6]);",
+        "static int FUN1(void)\n if (VAR1 != NULL)\n size_t VAR2 = FUN2(FUN3(), sizeof(VAR3));\n if (VAR2 == VAR4 ||\n (VAR1 = malloc(VAR2)) == NULL)",
+        "static int FUN1(void)\n size_t VAR1 = FUN2(FUN3(), sizeof(VAR2));\n if (VAR1 == VAR3 ||\n (VAR4 = malloc(VAR1)) == NULL)\n FUN4(\"\", VAR1);\n if (VAR4[VAR5] == NULL)\n FUN5(VAR4[VAR6]);",
+        "static int FUN1(void)\n size_t VAR1 = FUN2(FUN3(), sizeof(VAR2));\n if (VAR1 == VAR3 ||\n (VAR4 = malloc(VAR1)) == NULL)\n FUN4(\"\", VAR1);\n if (VAR4[VAR5] == NULL)\n FUN5(VAR4[VAR6]);"
+    ]
+}
